@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Farabi | Islamic History</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f7f3e8;
+            color: #24352b;
+            line-height: 1.8;
+        }
+
+        nav {
+            background: #173b2b;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            color: #d6b56d;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: #f5f1e6;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #d6b56d;
+        }
+
+        .hero {
+            background: #173b2b;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .arabic {
+            font-size: 34px;
+            color: #d6b56d;
+            margin-bottom: 20px;
+            direction: rtl;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #e8e2d2;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 60px 25px;
+        }
+
+        .section {
+            margin-bottom: 45px;
+        }
+
+        .section h2 {
+            color: #173b2b;
+            font-size: 30px;
+            margin-bottom: 18px;
+            border-left: 5px solid #d6b56d;
+            padding-left: 15px;
+        }
+
+        .section p {
+            font-size: 17px;
+            margin-bottom: 15px;
+        }
+
+        .works {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .work-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border-top: 4px solid #d6b56d;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+        }
+
+        .work-card h3 {
+            color: #173b2b;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .work-card p {
+            font-size: 15px;
+        }
+
+        .ideas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .idea {
+            background: #173b2b;
+            color: white;
+            padding: 18px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .quote {
+            margin: 50px 0;
+            padding: 30px;
+            background: #eee7d4;
+            border-left: 5px solid #d6b56d;
+            font-size: 21px;
+            font-style: italic;
+            color: #304c3c;
+        }
+
+        .sources {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+        }
+
+        .sources h2 {
+            color: #173b2b;
+            margin-bottom: 15px;
+        }
+
+        .sources ul {
+            padding-left: 25px;
+        }
+
+        .sources li {
+            margin-bottom: 8px;
+        }
+
+        .bottom-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 50px 0 20px;
+        }
+
+        .bottom-links a {
+            text-decoration: none;
+            background: #173b2b;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 6px;
+        }
+
+        .bottom-links a:hover {
+            background: #285841;
+        }
+
+        footer {
+            background: #173b2b;
+            color: #d9d4c6;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .arabic {
+                font-size: 28px;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Islamic History</a>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="scholars.html">Scholars</a></li>
+            <li><a href="civilizations.html">Civilizations</a></li>
+            <li><a href="timeline.html">Timeline</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+
+        <div class="arabic">
+            أَبُو نَصْرٍ مُحَمَّدُ بْنُ مُحَمَّدٍ الْفَارَابِي
+        </div>
+
+        <h1>Al-Farabi</h1>
+
+        <p>c. 872–950 CE</p>
+
+        <p>
+            Philosopher · Logician · Political Thinker · Music Theorist
+        </p>
+
+    </section>
+
+    <main class="container">
+
+        <section class="section">
+
+            <h2>Who Was Al-Farabi?</h2>
+
+            <p>
+                Abu Nasr Muhammad ibn Muhammad al-Farabi was one of the most
+                influential philosophers of the medieval Islamic world. He was
+                known for his work in philosophy, logic, political thought,
+                ethics, language, music, and the classification of knowledge.
+            </p>
+
+            <p>
+                Because of the breadth and influence of his philosophical work,
+                later intellectual traditions often regarded him as one of the
+                major philosophers of the Islamic Golden Age.
+            </p>
+
+        </section>
+
+        <section class="section">
+
+            <h2>Early Life and Education</h2>
+
+            <p>
+                Al-Farabi was probably born around 872 CE in the region of
+                Farab in Central Asia. He later travelled to major centers of
+                learning, including Baghdad, where he studied and developed
+                his philosophical and logical knowledge.
+            </p>
+
+            <p>
+                Baghdad was an important intellectual center of the Abbasid
+                period, and Al-Farabi's intellectual formation took place within
+                a scholarly environment in which Greek philosophical works were
+                being translated, studied, interpreted, and debated.
+            </p>
+
+        </section>
+
+        <section class="section">
+
+            <h2>Al-Farabi and Logic</h2>
+
+            <p>
+                Logic occupied a central position in Al-Farabi's intellectual
+                system. He studied and commented extensively on Aristotelian
+                logic and regarded logical reasoning as an important instrument
+                for disciplined thought.
+            </p>
+
+            <p>
+                His writings helped transmit and develop the study of logic
+                within the Arabic intellectual tradition. His treatment of
+                language, demonstration, reasoning, and argument influenced
+                later Muslim philosophers and scholars.
+            </p>
+
+        </section>
+
+        <section class="section">
+
+            <h2>The Classification of Knowledge</h2>
+
+            <p>
+                One of Al-Farabi's important contributions was his attempt to
+                organize the branches of human knowledge into a systematic
+                structure.
+            </p>
+
+            <p>
+                He discussed subjects such as language, logic, mathematics,
+                natural sciences, metaphysics, political science, jurisprudence,
+                and theology, considering how different forms of knowledge
+                relate to one another.
+            </p>
+
+        </section>
+
+        <section class="section">
+
+            <h2>Philosophy and Human Happiness</h2>
+
+            <p>
+                Al-Farabi considered the achievement of human perfection and
+                happiness to be central questions of philosophy. He connected
+                intellectual development, moral cultivation, and the proper
+                organization of human society.
+            </p>
+
+            <p>
+                In his philosophical system, genuine happiness was not simply
+                understood as material pleasure. It was connected with the
+                development of human intellectual and moral capacities.
+            </p>
+
+        </section>
+
+        <section class="section">
+
+            <h2>The Virtuous City</h2>
+
+            <p>
+                Al-Farabi's political philosophy is especially famous for its
+                concept of the virtuous city, or <em>al-Madinah al-Fadilah</em>.
+            </p>
+
+            <p>
+                He imagined an ideal political community in which leadership,
+                education, moral development, and the pursuit of genuine
+                happiness were closely connected.
+            </p>
+
+            <p>
+                For Al-Farabi, political organization was not merely about
+                power. The purpose of political life was also connected with
+                the moral and intellectual development of human beings.
+            </p>
+
+        </section>
+
+        <section class="section">
+
+            <h2>Religion and Philosophy</h2>
+
+            <p>
+                Al-Farabi explored the relationship between philosophical
+                reasoning and religion. He examined how philosophical truths
+                could be communicated to wider communities through symbolic,
+                imaginative, and religious forms of expression.
+            </p>
+
+            <p>
+                His discussions became an important part of later debates among
+                Muslim philosophers and theologians concerning reason, revelation,
+                political authority, and human knowledge.
+            </p>
+
+        </section>
+
+        <section class="section">
+
+            <h2>Al-Farabi and Music</h2>
+
+            <p>
+                Al-Farabi was also an important theorist of music. His
+                <em>Kitab al-Musiqa al-Kabir</em>, or
+                <em>The Great Book of Music</em>, contains extensive discussions
+                of musical theory, sounds, intervals, rhythm, instruments, and
+                the relationship between music and human experience.
+            </p>
+
+            <p>
+                His work demonstrates the extraordinary range of his intellectual
+                interests, extending beyond philosophy and logic into mathematical
+                and artistic questions.
+            </p>
+
+        </section>
+
+        <section class="section">
+
+            <h2>Major Works</h2>
+
+            <div class="works">
+
+                <div class="work-card">
+
+                    <h3>Al-Madinah al-Fadilah</h3>
+
+                    <p>
+                        A major work of political philosophy describing the
+                        virtuous city and the relationship between leadership,
+                        knowledge, morality, and human happiness.
+                    </p>
+
+                </div>
+
+                <div class="work-card">
+
+                    <h3>Ihsa' al-'Ulum</h3>
+
+                    <p>
+                        A systematic classification of the sciences and branches
+                        of knowledge, reflecting Al-Farabi's interest in the
+                        organization of intellectual disciplines.
+                    </p>
+
+                </div>
+
+                <div class="work-card">
+
+                    <h3>Kitab al-Musiqa al-Kabir</h3>
+
+                    <p>
+                        A major treatise on musical theory, sound, rhythm,
+                        intervals, and the mathematical and philosophical
+                        dimensions of music.
+                    </p>
+
+                </div>
+
+                <div class="work-card">
+
+                    <h3>Kitab al-Huruf</h3>
+
+                    <p>
+                        A philosophical work exploring language, terminology,
+                        intellectual concepts, and the relationship between
+                        language and philosophical thought.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="section">
+
+            <h2>Al-Farabi and the Islamic Intellectual Tradition</h2>
+
+            <p>
+                Al-Farabi played an important role in the development of
+                philosophy in the Islamic world. His engagement with Greek
+                philosophy was not simply a matter of translation; he developed
+                philosophical systems and interpretations that influenced later
+                Muslim thinkers.
+            </p>
+
+            <p>
+                His influence can be seen in the works of later philosophers,
+                particularly Ibn Sina, who developed many philosophical themes
+                within his own intellectual framework.
+            </p>
+
+        </section>
+
+        <section class="section">
+
+            <h2>Influence and Legacy</h2>
+
+            <p>
+                Al-Farabi's influence extended across philosophy, logic, political
+                thought, music theory, and the classification of knowledge.
+                Later scholars debated, developed, and sometimes criticized his
+                philosophical positions.
+            </p>
+
+            <p>
+                His writings remain important for understanding how Muslim
+                intellectuals engaged with Greek philosophy while developing
+                philosophical traditions in the Arabic language.
+            </p>
+
+        </section>
+
+        <section class="section">
+
+            <h2>Key Ideas</h2>
+
+            <div class="ideas">
+
+                <div class="idea">Logic</div>
+                <div class="idea">Philosophy</div>
+                <div class="idea">Human Happiness</div>
+                <div class="idea">Political Thought</div>
+                <div class="idea">Virtuous City</div>
+                <div class="idea">Classification of Knowledge</div>
+                <div class="idea">Music Theory</div>
+                <div class="idea">Ethics</div>
+
+            </div>
+
+        </section>
+
+        <div class="quote">
+            Al-Farabi's philosophy sought to connect knowledge, reason,
+            moral development, and the organization of human society.
+        </div>
+
+        <section class="sources">
+
+            <h2>Selected Sources</h2>
+
+            <ul>
+
+                <li>
+                    Al-Farabi,
+                    <em>Al-Madinah al-Fadilah</em>
+                </li>
+
+                <li>
+                    Al-Farabi,
+                    <em>Ihsa' al-'Ulum</em>
+                </li>
+
+                <li>
+                    Al-Farabi,
+                    <em>Kitab al-Musiqa al-Kabir</em>
+                </li>
+
+                <li>
+                    Al-Farabi,
+                    <em>Kitab al-Huruf</em>
+                </li>
+
+                <li>
+                    Charles E. Butterworth,
+                    studies on Al-Farabi's political philosophy
+                </li>
+
+                <li>
+                    Muhsin Mahdi,
+                    <em>Alfarabi and the Foundation of Islamic Political Philosophy</em>
+                </li>
+
+            </ul>
+
+        </section>
+
+        <div class="bottom-links">
+
+            <a href="scholars.html">
+                ← Back to Scholars
+            </a>
+
+            <a href="index.html">
+                Back to Home
+            </a>
+
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 Islamic History · A Digital Knowledge Project
+    </footer>
+
+</body>
+</html>
