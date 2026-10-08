@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Al-Biruni | Islamic History</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f7f3e8;
+            color: #24352b;
+            line-height: 1.8;
+        }
+
+        nav {
+            background: #173b2b;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            color: #d6b56d;
+            font-size: 22px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav ul li a {
+            color: #f5f1e6;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #d6b56d;
+        }
+
+        .hero {
+            background: linear-gradient(
+                rgba(23, 59, 43, 0.95),
+                rgba(23, 59, 43, 0.95)
+            );
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .arabic {
+            font-size: 34px;
+            color: #d6b56d;
+            margin-bottom: 20px;
+            direction: rtl;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #e8e2d2;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 60px 25px;
+        }
+
+        .section {
+            margin-bottom: 45px;
+        }
+
+        .section h2 {
+            color: #173b2b;
+            font-size: 30px;
+            margin-bottom: 18px;
+            border-left: 5px solid #d6b56d;
+            padding-left: 15px;
+        }
+
+        .section p {
+            font-size: 17px;
+            margin-bottom: 15px;
+        }
+
+        .works {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 25px;
+        }
+
+        .work-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            border-top: 4px solid #d6b56d;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+        }
+
+        .work-card h3 {
+            color: #173b2b;
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .work-card p {
+            font-size: 15px;
+        }
+
+        .ideas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .idea {
+            background: #173b2b;
+            color: white;
+            padding: 18px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .quote {
+            margin: 50px 0;
+            padding: 30px;
+            background: #eee7d4;
+            border-left: 5px solid #d6b56d;
+            font-size: 21px;
+            font-style: italic;
+            color: #304c3c;
+        }
+
+        .sources {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+        }
+
+        .sources h2 {
+            color: #173b2b;
+            margin-bottom: 15px;
+        }
+
+        .sources ul {
+            padding-left: 25px;
+        }
+
+        .sources li {
+            margin-bottom: 8px;
+        }
+
+        .bottom-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 50px 0 20px;
+        }
+
+        .bottom-links a {
+            text-decoration: none;
+            background: #173b2b;
+            color: white;
+            padding: 12px 22px;
+            border-radius: 6px;
+        }
+
+        .bottom-links a:hover {
+            background: #285841;
+        }
+
+        footer {
+            background: #173b2b;
+            color: #d9d4c6;
+            text-align: center;
+            padding: 25px;
+            margin-top: 30px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .arabic {
+                font-size: 28px;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">Islamic History</a>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="scholars.html">Scholars</a></li>
+            <li><a href="civilizations.html">Civilizations</a></li>
+            <li><a href="timeline.html">Timeline</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero">
+        <div class="arabic">أَبُو الرَّيْحَانِ الْبِيرُونِي</div>
+
+        <h1>Al-Biruni</h1>
+
+        <p>973 – c. 1050 CE</p>
+
+        <p>
+            Astronomer · Mathematician · Geographer · Historian · Scholar
+        </p>
+    </section>
+
+    <main class="container">
+
+        <section class="section">
+            <h2>Who Was Al-Biruni?</h2>
+
+            <p>
+                Abu al-Rayhan Muhammad ibn Ahmad al-Biruni was one of the most
+                remarkable scholars of the medieval Islamic world. Born in
+                Khwarazm around 973 CE, he worked across astronomy, mathematics,
+                geography, chronology, mineralogy, and the study of cultures
+                and religions.
+            </p>
+
+            <p>
+                His intellectual interests were remarkably broad. Rather than
+                limiting knowledge to a single discipline, Al-Biruni combined
+                mathematical reasoning, observation, measurement, historical
+                investigation, and comparative study.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Early Life and Education</h2>
+
+            <p>
+                Al-Biruni was born in the region of Khwarazm in Central Asia.
+                His early intellectual environment exposed him to mathematics,
+                astronomy, philosophy, and other branches of learning.
+            </p>
+
+            <p>
+                He developed a reputation for exceptional mathematical and
+                astronomical ability while still relatively young. His life
+                later brought him into contact with several important political
+                and intellectual centers of the Islamic world.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Al-Biruni and Astronomy</h2>
+
+            <p>
+                Astronomy was one of the central fields of Al-Biruni's
+                scholarship. He studied the movements of celestial bodies,
+                developed mathematical techniques for astronomical calculations,
+                and investigated questions concerning the measurement of the
+                Earth and the determination of geographical locations.
+            </p>
+
+            <p>
+                His astronomical work demonstrates the close relationship
+                between mathematics, observation, and scientific reasoning in
+                the medieval Islamic intellectual tradition.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Measuring the Earth</h2>
+
+            <p>
+                One of Al-Biruni's most famous achievements was his work on
+                determining the Earth's dimensions. He developed a method for
+                estimating the Earth's radius using geometric reasoning and
+                observations of the angle of elevation of a mountain.
+            </p>
+
+            <p>
+                His approach illustrates an important feature of his scholarship:
+                he attempted to transform observations about the natural world
+                into measurable mathematical problems.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Al-Biruni and Geography</h2>
+
+            <p>
+                Al-Biruni made significant contributions to mathematical
+                geography. He was interested in determining geographical
+                coordinates and understanding the relationship between places
+                on the Earth's surface.
+            </p>
+
+            <p>
+                His geographical work reflects his broader interest in
+                accurate measurement and systematic description of the world.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Kitab al-Hind</h2>
+
+            <p>
+                One of Al-Biruni's best-known works is
+                <em>Kitab al-Hind</em>, a detailed study of the religion,
+                philosophy, sciences, customs, literature, and intellectual
+                traditions of India.
+            </p>
+
+            <p>
+                Rather than simply describing India from a distance, Al-Biruni
+                attempted to understand Indian intellectual traditions on their
+                own terms. His work therefore provides an important example of
+                comparative cultural and religious study in the medieval period.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>A Comparative Approach to Knowledge</h2>
+
+            <p>
+                One of the most distinctive features of Al-Biruni's scholarship
+                was his willingness to study cultures and intellectual traditions
+                different from his own.
+            </p>
+
+            <p>
+                He paid close attention to language, terminology, beliefs,
+                mathematical traditions, and philosophical ideas. This made his
+                work valuable not only as a historical source but also as an
+                example of careful comparative inquiry.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Mathematics and Scientific Inquiry</h2>
+
+            <p>
+                Mathematics played a central role in Al-Biruni's approach to
+                scientific questions. He used geometry, trigonometry, numerical
+                calculations, and careful observation in his investigations.
+            </p>
+
+            <p>
+                His work shows how mathematical reasoning could be combined with
+                empirical observation to investigate questions about nature,
+                geography, and astronomy.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Major Works</h2>
+
+            <div class="works">
+
+                <div class="work-card">
+                    <h3>Kitab al-Hind</h3>
+                    <p>
+                        A major study of Indian religion, philosophy, science,
+                        mathematics, customs, and intellectual traditions.
+                    </p>
+                </div>
+
+                <div class="work-card">
+                    <h3>Al-Qanun al-Mas'udi</h3>
+                    <p>
+                        A major astronomical work containing extensive
+                        mathematical and astronomical discussions.
+                    </p>
+                </div>
+
+                <div class="work-card">
+                    <h3>Chronology of Ancient Nations</h3>
+                    <p>
+                        A study of calendars, chronology, historical eras, and
+                        the systems used by different peoples to measure time.
+                    </p>
+                </div>
+
+                <div class="work-card">
+                    <h3>Kitab al-Jamahir</h3>
+                    <p>
+                        A work concerned with minerals, precious stones,
+                        physical properties, and related observations.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>Al-Biruni and the Study of Time</h2>
+
+            <p>
+                Al-Biruni was deeply interested in chronology and the ways
+                different civilizations measured and organized time.
+                His studies of calendars and historical eras demonstrate that
+                the measurement of time was not merely a mathematical problem
+                but also an important part of understanding human civilizations.
+            </p>
+
+            <p>
+                This aspect of his scholarship connects astronomy, history,
+                mathematics, and cultural studies in a particularly interesting
+                way.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Intellectual Legacy</h2>
+
+            <p>
+                Al-Biruni left a remarkable intellectual legacy because of the
+                range and methodological character of his scholarship. He
+                investigated nature through mathematics and observation while
+                also studying history, cultures, religions, and languages.
+            </p>
+
+            <p>
+                Modern historians of science regard him as an important figure
+                in the history of astronomy, mathematics, geography, and
+                comparative cultural study.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>Key Ideas</h2>
+
+            <div class="ideas">
+                <div class="idea">Astronomy</div>
+                <div class="idea">Mathematics</div>
+                <div class="idea">Geography</div>
+                <div class="idea">Measurement</div>
+                <div class="idea">Chronology</div>
+                <div class="idea">Comparative Study</div>
+                <div class="idea">Scientific Inquiry</div>
+                <div class="idea">Cultural Understanding</div>
+            </div>
+        </section>
+
+        <div class="quote">
+            Al-Biruni's scholarship demonstrates how mathematical reasoning,
+            observation, historical investigation, and comparative study could
+            work together in the pursuit of knowledge.
+        </div>
+
+        <section class="sources">
+            <h2>Selected Sources</h2>
+
+            <ul>
+                <li>Al-Biruni, <em>Kitab al-Hind</em></li>
+                <li>Al-Biruni, <em>Al-Qanun al-Mas'udi</em></li>
+                <li>Al-Biruni, <em>The Chronology of Ancient Nations</em></li>
+                <li>Al-Biruni, <em>Kitab al-Jamahir</em></li>
+                <li>
+                    George Saliba,
+                    <em>Islamic Science and the Making of the European Renaissance</em>
+                </li>
+                <li>
+                    David A. King,
+                    studies on Islamic astronomy and scientific instruments
+                </li>
+            </ul>
+        </section>
+
+        <div class="bottom-links">
+            <a href="scholars.html">← Back to Scholars</a>
+            <a href="index.html">Back to Home</a>
+        </div>
+
+    </main>
+
+    <footer>
+        © 2026 Islamic History · A Digital Knowledge Project
+    </footer>
+
+</body>
+</html>
