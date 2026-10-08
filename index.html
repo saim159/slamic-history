@@ -1,574 +1,531 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Islamic History | Knowledge, Civilization & Heritage</title>
+<title>Islamic History | Knowledge, Civilization & Heritage</title>
 
-    <meta name="description" content="Explore Islamic history, great scholars, civilizations and important historical events.">
+<meta name="description" content="Explore Islamic history, great scholars, civilizations and important historical events.">
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            background: #f7f4ec;
-            color: #24352c;
-            line-height: 1.7;
-        }
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f7f4ec;
+    color: #24352c;
+    line-height: 1.7;
+}
 
-        /* Navigation */
+/* Navigation */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #173f35;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+}
 
-        nav {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background: #173f35;
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.12);
-        }
+.logo {
+    color: #d8b45c;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+}
 
-        .logo {
-            color: #d8b45c;
-            font-size: 25px;
-            font-weight: bold;
-            text-decoration: none;
-        }
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 28px;
+}
 
-        nav ul {
-            display: flex;
-            list-style: none;
-            gap: 28px;
-        }
+nav ul li a {
+    color: #f7f4ec;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
 
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 15px;
-        }
+nav ul li a:hover {
+    color: #d8b45c;
+}
 
-        nav ul li a:hover {
-            color: #d8b45c;
-        }
+/* Hero */
+.hero {
+    min-height: 82vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 8%;
+    background:
+        linear-gradient(rgba(23,63,53,0.88), rgba(23,63,53,0.88)),
+        radial-gradient(circle at top, #386b5a, #173f35);
+    color: white;
+}
 
-        /* Hero */
+.hero-content {
+    max-width: 900px;
+}
 
-        .hero {
-            min-height: 82vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            padding: 80px 20px;
-            background:
-                linear-gradient(rgba(23,63,53,0.92), rgba(23,63,53,0.92));
-            color: white;
-        }
+.arabic {
+    font-size: 34px;
+    color: #d8b45c;
+    margin-bottom: 25px;
+    direction: rtl;
+}
 
-        .hero-content {
-            max-width: 900px;
-        }
+.hero h1 {
+    font-size: 58px;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
 
-        .arabic {
-            font-size: 38px;
-            color: #e3c46b;
-            margin-bottom: 25px;
-            direction: rtl;
-        }
+.hero p {
+    font-size: 20px;
+    color: #e8e3d5;
+    max-width: 750px;
+    margin: auto;
+}
 
-        .hero h1 {
-            font-size: 62px;
-            margin-bottom: 15px;
-            letter-spacing: 1px;
-        }
+.hero-buttons {
+    margin-top: 35px;
+}
 
-        .hero .subtitle {
-            font-family: Arial, sans-serif;
-            font-size: 18px;
-            color: #e6e1d5;
-            margin-bottom: 30px;
-        }
+.btn {
+    display: inline-block;
+    padding: 13px 25px;
+    margin: 7px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-        .hero p {
-            max-width: 720px;
-            margin: auto;
-            font-family: Arial, sans-serif;
-            font-size: 17px;
-            color: #f1eee6;
-        }
+.btn-primary {
+    background: #d8b45c;
+    color: #173f35;
+}
 
-        .btn {
-            display: inline-block;
-            margin-top: 35px;
-            padding: 13px 28px;
-            background: #d8b45c;
-            color: #173f35;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-weight: bold;
-            border-radius: 4px;
-        }
+.btn-secondary {
+    border: 1px solid #d8b45c;
+    color: #d8b45c;
+}
 
-        .btn:hover {
-            background: #ecd487;
-        }
+.btn:hover {
+    transform: translateY(-2px);
+}
 
-        /* General Sections */
+/* General */
+section {
+    padding: 75px 8%;
+}
 
-        section {
-            padding: 80px 8%;
-        }
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
 
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
+.section-title h2 {
+    font-size: 38px;
+    color: #173f35;
+    margin-bottom: 12px;
+}
 
-        .section-title h2 {
-            font-size: 38px;
-            color: #173f35;
-            margin-bottom: 10px;
-        }
+.section-title p {
+    max-width: 700px;
+    margin: auto;
+    color: #64736b;
+}
 
-        .section-title p {
-            font-family: Arial, sans-serif;
-            color: #68736d;
-        }
+/* Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1150px;
+    margin: auto;
+}
 
-        /* Cards */
+.card {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    border-top: 4px solid #d8b45c;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
+    transition: 0.3s;
+}
 
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 25px;
-            max-width: 1200px;
-            margin: auto;
-        }
+.card:hover {
+    transform: translateY(-5px);
+}
 
-        .card {
-            background: white;
-            padding: 32px;
-            border-radius: 8px;
-            border-top: 4px solid #d8b45c;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
-            transition: transform 0.3s ease;
-        }
+.card h3 {
+    color: #173f35;
+    font-size: 24px;
+    margin-bottom: 12px;
+}
 
-        .card:hover {
-            transform: translateY(-7px);
-        }
+.card p {
+    color: #59665f;
+    margin-bottom: 18px;
+}
 
-        .card h3 {
-            color: #173f35;
-            margin-bottom: 12px;
-            font-size: 23px;
-        }
+.card a {
+    color: #173f35;
+    font-weight: bold;
+    text-decoration: none;
+}
 
-        .card p {
-            font-family: Arial, sans-serif;
-            color: #59645e;
-            font-size: 15px;
-        }
+.card a:hover {
+    color: #b18d35;
+}
 
-        .card a {
-            display: inline-block;
-            margin-top: 15px;
-            color: #a47b16;
-            font-family: Arial, sans-serif;
-            text-decoration: none;
-            font-weight: bold;
-        }
+/* Quote */
+.quote {
+    background: #173f35;
+    color: white;
+    text-align: center;
+    padding: 80px 8%;
+}
 
-        /* Timeline */
+.quote p {
+    font-size: 28px;
+    font-style: italic;
+    max-width: 900px;
+    margin: auto;
+}
 
-        .timeline {
-            max-width: 850px;
-            margin: auto;
-            border-left: 3px solid #d8b45c;
-            padding-left: 35px;
-        }
+.quote span {
+    display: block;
+    margin-top: 20px;
+    color: #d8b45c;
+}
 
-        .timeline-item {
-            margin-bottom: 35px;
-            position: relative;
-        }
+/* Footer */
+footer {
+    background: #102e27;
+    color: #c9d0cc;
+    text-align: center;
+    padding: 30px 8%;
+    font-size: 14px;
+}
 
-        .timeline-item::before {
-            content: "";
-            width: 14px;
-            height: 14px;
-            background: #d8b45c;
-            border-radius: 50%;
-            position: absolute;
-            left: -44px;
-            top: 7px;
-        }
+/* Responsive */
+@media (max-width: 800px) {
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
 
-        .timeline-year {
-            color: #a47b16;
-            font-weight: bold;
-            font-family: Arial, sans-serif;
-            margin-bottom: 5px;
-        }
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 
-        .timeline-item h3 {
-            color: #173f35;
-            margin-bottom: 5px;
-        }
+    .hero h1 {
+        font-size: 40px;
+    }
 
-        .timeline-item p {
-            font-family: Arial, sans-serif;
-            color: #59645e;
-        }
+    .hero p {
+        font-size: 17px;
+    }
 
-        /* Quote */
+    .cards {
+        grid-template-columns: 1fr;
+    }
 
-        .quote {
-            background: #173f35;
-            color: white;
-            text-align: center;
-        }
+    .section-title h2 {
+        font-size: 30px;
+    }
 
-        .quote blockquote {
-            max-width: 850px;
-            margin: auto;
-            font-size: 30px;
-            font-style: italic;
-        }
-
-        .quote span {
-            display: block;
-            margin-top: 20px;
-            color: #d8b45c;
-            font-family: Arial, sans-serif;
-        }
-
-        /* Footer */
-
-        footer {
-            background: #102d26;
-            color: #c9d1cd;
-            text-align: center;
-            padding: 35px 20px;
-            font-family: Arial, sans-serif;
-        }
-
-        footer strong {
-            color: #d8b45c;
-        }
-
-        /* Responsive */
-
-        @media (max-width: 800px) {
-
-            nav {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            nav ul {
-                gap: 15px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero h1 {
-                font-size: 43px;
-            }
-
-            .arabic {
-                font-size: 28px;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 60px 6%;
-            }
-
-            .quote blockquote {
-                font-size: 23px;
-            }
-        }
-    </style>
+    .quote p {
+        font-size: 22px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-    <!-- Navigation -->
+<nav>
+    <a href="index.html" class="logo">Islamic History</a>
 
-    <nav>
-        <a href="index.html" class="logo">Islamic History</a>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="scholars.html">Scholars</a></li>
+        <li><a href="civilizations.html">Civilizations</a></li>
+        <li><a href="timeline.html">Timeline</a></li>
+    </ul>
+</nav>
 
-        <ul>
-            <li><a href="#history">History</a></li>
-            <li><a href="#scholars">Scholars</a></li>
-            <li><a href="#civilizations">Civilizations</a></li>
-            <li><a href="#timeline">Timeline</a></li>
-        </ul>
-    </nav>
+<section class="hero">
+    <div class="hero-content">
 
+        <div class="arabic">
+            وَقُلْ رَبِّ زِدْنِي عِلْمًا
+        </div>
 
-    <!-- Hero -->
+        <h1>Islamic History</h1>
 
-    <header class="hero">
+        <p>
+            Explore fourteen centuries of history, knowledge,
+            civilization, scholarship and intellectual heritage.
+        </p>
 
-        <div class="hero-content">
-
-            <div class="arabic">
-                وَقُلْ رَبِّ زِدْنِي عِلْمًا
-            </div>
-
-            <h1>Islamic History</h1>
-
-            <div class="subtitle">
-                Knowledge • Civilization • Heritage
-            </div>
-
-            <p>
-                Explore the intellectual, cultural and political history
-                of the Islamic world through its scholars, civilizations,
-                ideas and historical events.
-            </p>
-
-            <a href="#history" class="btn">
+        <div class="hero-buttons">
+            <a href="history.html" class="btn btn-primary">
                 Explore History
             </a>
 
+            <a href="timeline.html" class="btn btn-secondary">
+                View Timeline
+            </a>
         </div>
 
-    </header>
+    </div>
+</section>
 
+<section>
 
-    <!-- History -->
+    <div class="section-title">
+        <h2>Explore Islamic History</h2>
+        <p>
+            Discover the major periods, events and transformations
+            that shaped the Islamic world.
+        </p>
+    </div>
 
-    <section id="history">
+    <div class="cards">
 
-        <div class="section-title">
-            <h2>A Journey Through Time</h2>
-            <p>Discover the major chapters of Islamic civilization.</p>
-        </div>
+        <div class="card">
+            <h3>The Prophetic Era</h3>
 
-        <div class="cards">
-
-            <div class="card">
-                <h3>The Prophetic Era</h3>
-                <p>
-                    Explore the life of Prophet Muhammad ﷺ, the beginning
-                    of revelation, the Hijrah and the formation of the first
-                    Muslim community.
-                </p>
-                <a href="#">Read More →</a>
-            </div>
-
-            <div class="card">
-                <h3>The Caliphates</h3>
-                <p>
-                    Learn about the Rashidun, Umayyad and Abbasid periods
-                    and their contributions to the development of Islamic
-                    civilization.
-                </p>
-                <a href="#">Read More →</a>
-            </div>
-
-            <div class="card">
-                <h3>Islamic World</h3>
-                <p>
-                    Discover the expansion of Islamic civilization across
-                    Asia, Africa, Europe and the Middle East.
-                </p>
-                <a href="#">Read More →</a>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Scholars -->
-
-    <section id="scholars">
-
-        <div class="section-title">
-            <h2>Great Scholars</h2>
             <p>
-                Thinkers who shaped knowledge, science and philosophy.
+                Explore the life and mission of Prophet Muhammad ﷺ
+                and the foundations of the early Muslim community.
+            </p>
+
+            <a href="history.html">
+                Explore History →
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>The Caliphates</h3>
+
+            <p>
+                Learn about the Rashidun, Umayyad and Abbasid
+                periods and their political development.
+            </p>
+
+            <a href="history.html">
+                Explore History →
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>The Islamic World</h3>
+
+            <p>
+                Discover the diverse regions, societies and
+                civilizations that shaped Islamic history.
+            </p>
+
+            <a href="civilizations.html">
+                Explore Civilizations →
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <div class="section-title">
+        <h2>Great Scholars</h2>
+
+        <p>
+            Meet some of the influential scholars whose work
+            shaped Islamic intellectual history and world knowledge.
+        </p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Al-Ghazali</h3>
+
+            <p>
+                Theology, philosophy and spirituality.
+                One of the most influential thinkers of the Islamic tradition.
+            </p>
+
+            <a href="scholars.html">
+                Explore Scholars →
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>Ibn al-Haytham</h3>
+
+            <p>
+                Pioneer of optics, mathematics and scientific inquiry.
+            </p>
+
+            <a href="scholars.html">
+                Explore Scholars →
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>Ibn Khaldun</h3>
+
+            <p>
+                Historian and thinker whose ideas influenced
+                the study of society and civilization.
+            </p>
+
+            <a href="scholars.html">
+                Explore Scholars →
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <div class="section-title">
+        <h2>Islamic Civilizations</h2>
+
+        <p>
+            Explore some of the major civilizations and cultural
+            centers of the Islamic world.
+        </p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Abbasid Baghdad</h3>
+
+            <p>
+                A major center of scholarship, translation,
+                science, literature and commerce.
+            </p>
+
+            <a href="civilizations.html">
+                Explore Civilization →
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>Al-Andalus</h3>
+
+            <p>
+                A remarkable chapter of Islamic history in the
+                Iberian Peninsula.
+            </p>
+
+            <a href="civilizations.html">
+                Explore Civilization →
+            </a>
+        </div>
+
+        <div class="card">
+            <h3>Ottoman Empire</h3>
+
+            <p>
+                A major imperial tradition that connected
+                Europe, Asia and Africa for centuries.
+            </p>
+
+            <a href="civilizations.html">
+                Explore Civilization →
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <div class="section-title">
+        <h2>Historical Timeline</h2>
+
+        <p>
+            Follow important milestones from the beginning of
+            revelation to the modern era.
+        </p>
+    </div>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>610 CE</h3>
+            <p>
+                Beginning of Qur'anic revelation.
             </p>
         </div>
 
-        <div class="cards">
-
-            <div class="card">
-                <h3>Al-Ghazali</h3>
-                <p>
-                    A major theologian, philosopher and spiritual thinker
-                    whose works influenced Islamic intellectual history.
-                </p>
-                <a href="#">Explore Scholar →</a>
-            </div>
-
-            <div class="card">
-                <h3>Ibn al-Haytham</h3>
-                <p>
-                    A pioneering scientist whose work in optics and
-                    scientific methodology influenced later science.
-                </p>
-                <a href="#">Explore Scholar →</a>
-            </div>
-
-            <div class="card">
-                <h3>Ibn Khaldun</h3>
-                <p>
-                    Historian and social thinker famous for his analysis
-                    of civilization, society and the rise and fall of states.
-                </p>
-                <a href="#">Explore Scholar →</a>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Civilizations -->
-
-    <section id="civilizations">
-
-        <div class="section-title">
-            <h2>Islamic Civilizations</h2>
+        <div class="card">
+            <h3>622 CE</h3>
             <p>
-                Explore the centers of learning, culture and civilization.
+                The Hijrah from Makkah to Madinah.
             </p>
         </div>
 
-        <div class="cards">
-
-            <div class="card">
-                <h3>Abbasid Baghdad</h3>
-                <p>
-                    Baghdad became one of the greatest intellectual centers
-                    of the medieval world.
-                </p>
-                <a href="#">Explore Baghdad →</a>
-            </div>
-
-            <div class="card">
-                <h3>Al-Andalus</h3>
-                <p>
-                    Muslim Spain became an important center of science,
-                    philosophy, architecture and literature.
-                </p>
-                <a href="#">Explore Al-Andalus →</a>
-            </div>
-
-            <div class="card">
-                <h3>Ottoman Empire</h3>
-                <p>
-                    One of the longest-lasting Islamic empires, spanning
-                    Europe, Asia and Africa.
-                </p>
-                <a href="#">Explore Ottoman History →</a>
-            </div>
-
+        <div class="card">
+            <h3>750 CE</h3>
+            <p>
+                Beginning of the Abbasid political era.
+            </p>
         </div>
 
-    </section>
+    </div>
 
+    <div style="text-align:center; margin-top:35px;">
+        <a href="timeline.html" class="btn btn-primary">
+            View Full Timeline →
+        </a>
+    </div>
 
-    <!-- Timeline -->
+</section>
 
-    <section id="timeline">
+<div class="quote">
 
-        <div class="section-title">
-            <h2>Historical Timeline</h2>
-            <p>Some important milestones in Islamic history.</p>
-        </div>
+    <p>
+        “Seek knowledge from the cradle to the grave.”
+    </p>
 
-        <div class="timeline">
+    <span>
+        A tradition of learning and intellectual pursuit
+    </span>
 
-            <div class="timeline-item">
-                <div class="timeline-year">610 CE</div>
-                <h3>Beginning of Revelation</h3>
-                <p>
-                    The first revelation was received by Prophet Muhammad ﷺ
-                    in the Cave of Hira.
-                </p>
-            </div>
+</div>
 
-            <div class="timeline-item">
-                <div class="timeline-year">622 CE</div>
-                <h3>The Hijrah</h3>
-                <p>
-                    The migration from Makkah to Madinah marked a major
-                    turning point in Islamic history.
-                </p>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-year">750 CE</div>
-                <h3>Rise of the Abbasids</h3>
-                <p>
-                    The Abbasid period became one of the most important
-                    eras of Islamic intellectual and cultural development.
-                </p>
-            </div>
-
-            <div class="timeline-item">
-                <div class="timeline-year">1492 CE</div>
-                <h3>End of Muslim Granada</h3>
-                <p>
-                    Granada, the last major Muslim polity in Iberia,
-                    fell to Ferdinand and Isabella.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-
-    <!-- Quote -->
-
-    <section class="quote">
-
-        <blockquote>
-            “Knowledge is the heritage of the believer,
-            wherever it may be found.”
-        </blockquote>
-
-        <span>Islamic Intellectual Heritage</span>
-
-    </section>
-
-
-    <!-- Footer -->
-
-    <footer>
-
-        <p>
-            © 2026 <strong>Islamic History</strong>
-        </p>
-
-        <p>
-            Preserving history. Exploring knowledge. Inspiring reflection.
-        </p>
-
-    </footer>
+<footer>
+    © 2026 Islamic History · A Digital Knowledge Project
+</footer>
 
 </body>
 </html>
