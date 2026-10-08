@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ibn Sina | Islamic History</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f7f5ef;
+            color: #26332d;
+            line-height: 1.8;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #173c32;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 22px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #d8b56a;
+        }
+
+        .brand {
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 0;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #173c32, #285847);
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .arabic {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin: 10px 0;
+        }
+
+        .hero h2 {
+            font-size: 22px;
+            font-weight: normal;
+            color: #d8b56a;
+            margin: 5px 0 15px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 18px;
+            color: #e6eee9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: auto;
+            padding: 70px 25px;
+        }
+
+        .section {
+            background: white;
+            padding: 35px;
+            margin-bottom: 28px;
+            border-radius: 14px;
+            border: 1px solid #e4e0d5;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+        }
+
+        .section h2 {
+            color: #173c32;
+            font-size: 28px;
+            margin-top: 0;
+        }
+
+        .section h3 {
+            color: #285847;
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .section p {
+            color: #4f5b55;
+        }
+
+        .works {
+            background: #f1eee4;
+            padding: 22px;
+            margin-top: 18px;
+            border-radius: 10px;
+        }
+
+        .works strong {
+            color: #173c32;
+        }
+
+        .ideas {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .idea {
+            background: #f7f5ef;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #a17b32;
+        }
+
+        .idea strong {
+            color: #173c32;
+        }
+
+        .quote {
+            background: #173c32;
+            color: white;
+            padding: 35px;
+            border-radius: 14px;
+            text-align: center;
+            margin: 35px 0;
+        }
+
+        .quote p {
+            font-size: 21px;
+            font-style: italic;
+            margin: 0 0 12px;
+        }
+
+        .quote small {
+            color: #d8e2dc;
+        }
+
+        .sources {
+            background: #f1eee4;
+            padding: 30px;
+            border-radius: 14px;
+        }
+
+        .sources h2 {
+            color: #173c32;
+            margin-top: 0;
+        }
+
+        .sources li {
+            margin-bottom: 8px;
+            color: #4f5b55;
+        }
+
+        .bottom-links {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .button {
+            display: inline-block;
+            margin: 8px;
+            padding: 11px 20px;
+            background: #173c32;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+            font-size: 14px;
+        }
+
+        .button:hover {
+            background: #285847;
+        }
+
+        footer {
+            background: #102c25;
+            color: #cbd5d0;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            nav a {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero {
+                padding: 70px 20px;
+            }
+
+            .container {
+                padding: 50px 20px;
+            }
+
+            .section {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav>
+    <a href="index.html" class="brand">Islamic History</a>
+
+    <div>
+        <a href="index.html">Home</a>
+        <a href="history.html">History</a>
+        <a href="scholars.html">Scholars</a>
+        <a href="civilizations.html">Civilizations</a>
+        <a href="timeline.html">Timeline</a>
+    </div>
+</nav>
+
+
+<section class="hero">
+
+    <div class="arabic">
+        أَبُو عَلِيٍّ ابْنُ سِينَا
+    </div>
+
+    <h1>Ibn Sina</h1>
+
+    <h2>c. 980–1037 CE</h2>
+
+    <p>
+        Physician · Philosopher · Scientist · Polymath
+    </p>
+
+</section>
+
+
+<div class="container">
+
+
+    <div class="section">
+
+        <h2>Abu Ali al-Husayn ibn Sina</h2>
+
+        <p>
+            Ibn Sina, known in the Latin West as Avicenna, was one of the most
+            influential intellectual figures of the medieval Islamic world.
+            His writings covered medicine, philosophy, logic, metaphysics,
+            natural philosophy and other fields of knowledge.
+        </p>
+
+        <p>
+            His intellectual legacy extended far beyond the Islamic world.
+            His medical and philosophical works were studied for centuries
+            in both Muslim societies and European universities.
+        </p>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>1. Early Life and Education</h2>
+
+        <p>
+            Ibn Sina was born around 980 CE near Bukhara in Central Asia,
+            in a region that was an important center of learning during the
+            Islamic Golden Age.
+        </p>
+
+        <p>
+            From an early age he demonstrated exceptional intellectual ability.
+            He studied subjects including the Qur'an, language, logic,
+            mathematics, natural philosophy and medicine.
+        </p>
+
+        <p>
+            His education reflected the broad scholarly culture of his time,
+            in which different branches of knowledge were often studied
+            together rather than treated as completely separate disciplines.
+        </p>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>2. Ibn Sina and Medicine</h2>
+
+        <p>
+            Ibn Sina became particularly famous for his contributions to
+            medicine. His approach combined observation, medical theory and
+            systematic organization of knowledge.
+        </p>
+
+        <p>
+            He discussed diseases, diagnosis, treatments, medicines,
+            anatomy and principles of medical practice.
+        </p>
+
+        <div class="works">
+
+            <strong>Major Medical Work:</strong>
+
+            <p>
+                <em>Al-Qanun fi al-Tibb</em>
+                (The Canon of Medicine)
+            </p>
+
+            <p>
+                The Canon became one of the most influential medical
+                encyclopedias of the medieval period and was studied for
+                centuries in different parts of the world.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>3. The Canon of Medicine</h2>
+
+        <p>
+            The Canon of Medicine organized a vast amount of medical knowledge
+            into a structured system. It discussed general medical principles,
+            diseases, medicines and therapeutic methods.
+        </p>
+
+        <p>
+            One of the important features of the work was its systematic
+            organization of medical knowledge. This made it useful not only
+            as a reference work but also as a teaching text.
+        </p>
+
+        <p>
+            The work was translated into Latin and became an important part
+            of the medical curriculum in medieval Europe.
+        </p>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>4. Ibn Sina and Philosophy</h2>
+
+        <p>
+            Ibn Sina was also a major philosopher. His philosophical writings
+            engaged with questions concerning existence, causality, knowledge,
+            the soul and the structure of reality.
+        </p>
+
+        <p>
+            He developed sophisticated philosophical arguments and created
+            influential interpretations of Aristotelian philosophy within
+            the intellectual environment of the Islamic world.
+        </p>
+
+        <p>
+            His philosophical system later became known as Avicennian
+            philosophy and influenced Muslim philosophers and theologians
+            for centuries.
+        </p>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>5. The Argument from Contingency</h2>
+
+        <p>
+            One of Ibn Sina's most influential philosophical contributions
+            concerns the distinction between necessary and contingent
+            existence.
+        </p>
+
+        <p>
+            In simplified form, a contingent being does not possess the
+            reason for its existence within itself. Ibn Sina developed an
+            argument that ultimately points toward a Necessary Existent,
+            whose existence does not depend upon another cause.
+        </p>
+
+        <p>
+            This argument became highly influential in later Islamic
+            philosophical and theological discussions about God and
+            existence.
+        </p>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>6. Major Philosophical Works</h2>
+
+        <div class="works">
+
+            <h3>Kitab al-Shifa</h3>
+
+            <p>
+                A vast philosophical and scientific encyclopedia covering
+                logic, natural philosophy, mathematics and metaphysics.
+            </p>
+
+        </div>
+
+        <div class="works">
+
+            <h3>Al-Najat</h3>
+
+            <p>
+                A more concise presentation of important philosophical
+                ideas associated with Ibn Sina's intellectual system.
+            </p>
+
+        </div>
+
+        <div class="works">
+
+            <h3>Al-Isharat wa al-Tanbihat</h3>
+
+            <p>
+                A sophisticated philosophical work dealing with logic,
+                metaphysics and spiritual-intellectual questions.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>7. Ibn Sina and the Islamic Intellectual Tradition</h2>
+
+        <p>
+            Ibn Sina's intellectual legacy cannot be reduced to medicine
+            alone. His works became part of major debates concerning
+            philosophy, theology and the nature of knowledge.
+        </p>
+
+        <p>
+            Later Muslim scholars engaged with, criticized, modified and
+            developed aspects of his thought. His influence therefore
+            continued even among thinkers who disagreed with some of his
+            philosophical conclusions.
+        </p>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>8. Knowledge and Intellectual Inquiry</h2>
+
+        <p>
+            Ibn Sina represents an intellectual culture in which medicine,
+            mathematics, philosophy and other disciplines could interact
+            within a broader pursuit of knowledge.
+        </p>
+
+        <p>
+            His life illustrates the importance of disciplined study,
+            logical reasoning and sustained intellectual inquiry in the
+            development of scholarship.
+        </p>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>9. Influence in Europe</h2>
+
+        <p>
+            Ibn Sina's works were translated into Latin and circulated
+            widely in medieval Europe.
+        </p>
+
+        <p>
+            His medical writings, particularly the Canon of Medicine,
+            remained influential in European medical education for centuries.
+            His philosophical ideas also entered European discussions
+            concerning metaphysics and natural philosophy.
+        </p>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>10. Legacy</h2>
+
+        <p>
+            Ibn Sina remains one of the most significant figures in the
+            intellectual history of the Islamic world.
+        </p>
+
+        <p>
+            His legacy connects medicine, philosophy, logic and scientific
+            inquiry. His works demonstrate the remarkable breadth of
+            scholarship that developed during the medieval Islamic period.
+        </p>
+
+    </div>
+
+
+    <div class="section">
+
+        <h2>11. Key Ideas</h2>
+
+        <div class="ideas">
+
+            <div class="idea">
+                <strong>Medicine</strong>
+                <br>
+                Systematic organization of medical knowledge and practice.
+            </div>
+
+            <div class="idea">
+                <strong>Philosophy</strong>
+                <br>
+                Deep investigation of existence, causality and knowledge.
+            </div>
+
+            <div class="idea">
+                <strong>Logic</strong>
+                <br>
+                Careful reasoning as an instrument for intellectual inquiry.
+            </div>
+
+            <div class="idea">
+                <strong>Metaphysics</strong>
+                <br>
+                Analysis of necessary and contingent existence.
+            </div>
+
+            <div class="idea">
+                <strong>Intellectual Integration</strong>
+                <br>
+                Engagement with multiple branches of knowledge.
+            </div>
+
+            <div class="idea">
+                <strong>Legacy</strong>
+                <br>
+                Influence across both Islamic and European intellectual history.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="quote">
+
+        <p>
+            “The knowledge of anything, since all things have causes,
+            is not acquired or complete unless it is known by its causes.”
+        </p>
+
+        <small>
+            Attributed to Ibn Sina
+        </small>
+
+    </div>
+
+
+    <div class="sources">
+
+        <h2>Selected Sources</h2>
+
+        <ul>
+            <li>
+                Ibn Sina, <em>Al-Qanun fi al-Tibb</em>
+            </li>
+
+            <li>
+                Ibn Sina, <em>Kitab al-Shifa</em>
+            </li>
+
+            <li>
+                Ibn Sina, <em>Al-Najat</em>
+            </li>
+
+            <li>
+                Ibn Sina, <em>Al-Isharat wa al-Tanbihat</em>
+            </li>
+
+            <li>
+                Dimitri Gutas, <em>Avicenna and the Aristotelian Tradition</em>
+            </li>
+
+            <li>
+                Jon McGinnis, <em>Avicenna</em>
+            </li>
+        </ul>
+
+    </div>
+
+
+    <div class="bottom-links">
+
+        <a href="scholars.html" class="button">
+            ← Back to Scholars
+        </a>
+
+        <a href="index.html" class="button">
+            Home
+        </a>
+
+    </div>
+
+</div>
+
+
+<footer>
+    © 2026 Islamic History · A Digital Knowledge Project
+</footer>
+
+</body>
+</html>
