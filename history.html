@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>History | Islamic History</title>
+
+    <meta name="description" content="Explore the major periods, events and developments of Islamic history.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f7f4ec;
+            color: #24352c;
+            line-height: 1.8;
+        }
+
+        /* Navigation */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #173f35;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+        }
+
+        .logo {
+            color: #d8b45c;
+            font-size: 25px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #d8b45c;
+        }
+
+        /* Hero */
+
+        .hero {
+            background: #173f35;
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+        }
+
+        .arabic {
+            font-size: 32px;
+            color: #e3c46b;
+            margin-bottom: 20px;
+            direction: rtl;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+            color: #e5e2d9;
+            font-size: 17px;
+        }
+
+        /* Main */
+
+        main {
+            max-width: 1100px;
+            margin: auto;
+            padding: 75px 25px;
+        }
+
+        .intro {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .intro h2 {
+            color: #173f35;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .intro p {
+            max-width: 850px;
+            margin: auto;
+            font-family: Arial, sans-serif;
+            color: #59645e;
+        }
+
+        /* History Sections */
+
+        .history-section {
+            background: white;
+            margin-bottom: 35px;
+            padding: 40px;
+            border-left: 5px solid #d8b45c;
+            border-radius: 6px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+        }
+
+        .period {
+            color: #a47b16;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .history-section h2 {
+            color: #173f35;
+            font-size: 30px;
+            margin: 8px 0 18px;
+        }
+
+        .history-section h3 {
+            color: #173f35;
+            font-size: 20px;
+            margin-top: 25px;
+            margin-bottom: 8px;
+        }
+
+        .history-section p {
+            font-family: Arial, sans-serif;
+            color: #505b55;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        /* Timeline */
+
+        .timeline-box {
+            background: #173f35;
+            color: white;
+            padding: 45px;
+            margin: 70px 0;
+            border-radius: 8px;
+        }
+
+        .timeline-box h2 {
+            color: #e3c46b;
+            margin-bottom: 30px;
+            font-size: 30px;
+        }
+
+        .timeline-item {
+            border-left: 2px solid #d8b45c;
+            padding-left: 25px;
+            margin-bottom: 28px;
+        }
+
+        .timeline-item strong {
+            color: #e3c46b;
+            font-family: Arial, sans-serif;
+        }
+
+        .timeline-item p {
+            margin-top: 5px;
+            font-family: Arial, sans-serif;
+            color: #e1e5e2;
+        }
+
+        /* Note */
+
+        .note {
+            background: #eee9dc;
+            padding: 30px;
+            border-radius: 6px;
+            margin-top: 50px;
+        }
+
+        .note h3 {
+            color: #173f35;
+            margin-bottom: 10px;
+        }
+
+        .note p {
+            font-family: Arial, sans-serif;
+            color: #59645e;
+        }
+
+        /* Footer */
+
+        footer {
+            background: #102d26;
+            color: #c9d1cd;
+            text-align: center;
+            padding: 35px 20px;
+            font-family: Arial, sans-serif;
+        }
+
+        footer strong {
+            color: #d8b45c;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .arabic {
+                font-size: 26px;
+            }
+
+            .history-section {
+                padding: 25px;
+            }
+
+            .timeline-box {
+                padding: 30px 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            Islamic History
+        </a>
+
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="history.html">History</a></li>
+            <li><a href="#">Scholars</a></li>
+            <li><a href="#">Civilizations</a></li>
+            <li><a href="index.html#timeline">Timeline</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- Hero -->
+
+    <header class="hero">
+
+        <div class="arabic">
+            وَقُلْ رَبِّ زِدْنِي عِلْمًا
+        </div>
+
+        <h1>History of Islam</h1>
+
+        <p>
+            A chronological introduction to the major periods,
+            people, events and civilizations that shaped Islamic history.
+        </p>
+
+    </header>
+
+
+    <main>
+
+        <!-- Introduction -->
+
+        <div class="intro">
+
+            <h2>A Journey Through History</h2>
+
+            <p>
+                Islamic history spans more than fourteen centuries and
+                encompasses a vast geographical area. It includes not only
+                political history, but also scholarship, culture, law,
+                philosophy, science, art and social development.
+            </p>
+
+        </div>
+
+
+        <!-- Prophetic Era -->
+
+        <article class="history-section">
+
+            <div class="period">
+                c. 570–632 CE
+            </div>
+
+            <h2>The Prophetic Era</h2>
+
+            <p>
+                The history of Islam begins in seventh-century Arabia with
+                the life and mission of Prophet Muhammad ﷺ. According to
+                Islamic tradition, the first revelation came to him in the
+                Cave of Hira around 610 CE.
+            </p>
+
+            <h3>The Beginning of Revelation</h3>
+
+            <p>
+                The Qur'an began to be revealed to Prophet Muhammad ﷺ
+                through the Angel Jibril. The early message emphasized
+                tawhid, accountability, moral responsibility and devotion
+                to Allah.
+            </p>
+
+            <h3>The Hijrah</h3>
+
+            <p>
+                In 622 CE, Prophet Muhammad ﷺ and his companions migrated
+                from Makkah to Madinah. This migration, known as the Hijrah,
+                became a defining event in Islamic history and later formed
+                the starting point of the Islamic calendar.
+            </p>
+
+            <h3>The Madinan Community</h3>
+
+            <p>
+                In Madinah, a new Muslim community developed with religious,
+                social and political institutions. The Prophet ﷺ continued
+                his mission until his death in 632 CE.
+            </p>
+
+        </article>
+
+
+        <!-- Rashidun -->
+
+        <article class="history-section">
+
+            <div class="period">
+                632–661 CE
+            </div>
+
+            <h2>The Rashidun Caliphate</h2>
+
+            <p>
+                Following the death of Prophet Muhammad ﷺ, Abu Bakr,
+                Umar, Uthman and Ali رضي الله عنهم successively led the
+                Muslim community. These four caliphs are traditionally
+                known as the Rashidun, or Rightly Guided Caliphs.
+            </p>
+
+            <h3>Expansion and Administration</h3>
+
+            <p>
+                During this period, Muslim rule expanded beyond Arabia into
+                parts of the Byzantine and Sasanian territories. The period
+                also witnessed important developments in administration,
+                governance and the preservation of Islamic knowledge.
+            </p>
+
+        </article>
+
+
+        <!-- Umayyad -->
+
+        <article class="history-section">
+
+            <div class="period">
+                661–750 CE
+            </div>
+
+            <h2>The Umayyad Caliphate</h2>
+
+            <p>
+                The Umayyad Caliphate established its capital at Damascus
+                and governed a vast territory stretching across parts of
+                Asia, Africa and Europe.
+            </p>
+
+            <h3>Expansion</h3>
+
+            <p>
+                During the Umayyad period, Muslim territories expanded
+                significantly. Islamic rule reached the Iberian Peninsula
+                in the early eighth century, while expansion also continued
+                eastward into Central and South Asia.
+            </p>
+
+            <h3>Architecture and Culture</h3>
+
+            <p>
+                The Umayyad period produced important architectural
+                monuments and contributed to the development of Islamic
+                artistic and administrative traditions.
+            </p>
+
+        </article>
+
+
+        <!-- Abbasid -->
+
+        <article class="history-section">
+
+            <div class="period">
+                750–1258 CE
+            </div>
+
+            <h2>The Abbasid Era</h2>
+
+            <p>
+                The Abbasids came to power in 750 CE and established
+                Baghdad as their capital. Baghdad developed into one of
+                the major intellectual and cultural centers of the medieval
+                world.
+            </p>
+
+            <h3>The Translation Movement</h3>
+
+            <p>
+                Scholars translated and studied works from Greek, Persian,
+                Indian and other intellectual traditions. This contributed
+                to a broader culture of scholarship and inquiry.
+            </p>
+
+            <h3>Science and Scholarship</h3>
+
+            <p>
+                Mathematics, medicine, astronomy, philosophy, geography
+                and other fields developed through the work of scholars
+                working across the Islamic world.
+            </p>
+
+        </article>
+
+
+        <!-- Al Andalus -->
+
+        <article class="history-section">
+
+            <div class="period">
+                711–1492 CE
+            </div>
+
+            <h2>Al-Andalus</h2>
+
+            <p>
+                Muslim rule was established in much of the Iberian Peninsula
+                beginning in the early eighth century. Over the centuries,
+                Al-Andalus became an important region of Islamic political,
+                intellectual and cultural history.
+            </p>
+
+            <h3>Córdoba</h3>
+
+            <p>
+                Córdoba became a major center of learning, architecture,
+                literature and intellectual activity. The region produced
+                influential scholars and thinkers whose works circulated
+                beyond Iberia.
+            </p>
+
+            <h3>The End of Muslim Granada</h3>
+
+            <p>
+                In 1492, Granada, the last major Muslim polity in Iberia,
+                surrendered to Ferdinand II of Aragon and Isabella I of
+                Castile.
+            </p>
+
+        </article>
+
+
+        <!-- Ottoman -->
+
+        <article class="history-section">
+
+            <div class="period">
+                c. 1299–1922
+            </div>
+
+            <h2>The Ottoman Empire</h2>
+
+            <p>
+                The Ottoman state emerged in Anatolia and gradually became
+                one of the major empires of the early modern world. At its
+                height, its territories extended across parts of Europe,
+                Asia and Africa.
+            </p>
+
+            <h3>Constantinople / Istanbul</h3>
+
+            <p>
+                In 1453, Ottoman forces under Sultan Mehmed II captured
+                Constantinople. The city became an important political,
+                cultural and economic center of the empire.
+            </p>
+
+            <h3>Legacy</h3>
+
+            <p>
+                Ottoman history includes major developments in architecture,
+                administration, scholarship, diplomacy and urban culture.
+                The Ottoman Sultanate was abolished in 1922.
+            </p>
+
+        </article>
+
+
+        <!-- Timeline -->
+
+        <div class="timeline-box">
+
+            <h2>Key Dates</h2>
+
+            <div class="timeline-item">
+                <strong>610 CE</strong>
+                <p>Beginning of Qur'anic revelation.</p>
+            </div>
+
+            <div class="timeline-item">
+                <strong>622 CE</strong>
+                <p>The Hijrah from Makkah to Madinah.</p>
+            </div>
+
+            <div class="timeline-item">
+                <strong>632 CE</strong>
+                <p>Death of Prophet Muhammad ﷺ.</p>
+            </div>
+
+            <div class="timeline-item">
+                <strong>661 CE</strong>
+                <p>Beginning of the Umayyad Caliphate.</p>
+            </div>
+
+            <div class="timeline-item">
+                <strong>750 CE</strong>
+                <p>Beginning of the Abbasid Caliphate.</p>
+            </div>
+
+            <div class="timeline-item">
+                <strong>1258 CE</strong>
+                <p>Mongol conquest of Baghdad.</p>
+            </div>
+
+            <div class="timeline-item">
+                <strong>1453 CE</strong>
+                <p>Ottoman conquest of Constantinople.</p>
+            </div>
+
+            <div class="timeline-item">
+                <strong>1492 CE</strong>
+                <p>Fall of Granada.</p>
+            </div>
+
+        </div>
+
+
+        <!-- Research Note -->
+
+        <div class="note">
+
+            <h3>About Historical Sources</h3>
+
+            <p>
+                Islamic history contains different historical traditions,
+                interpretations and source materials. This website aims to
+                present historical information carefully and encourage
+                readers to explore primary and scholarly sources.
+            </p>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <p>
+            © 2026 <strong>Islamic History</strong>
+        </p>
+
+        <p>
+            Exploring history through knowledge, evidence and reflection.
+        </p>
+
+    </footer>
+
+</body>
+</html>
