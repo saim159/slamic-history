@@ -6,147 +6,171 @@
   <title>Civilizations | Islamic History</title>
 
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
+      padding: 0;
+    }
+
+    body {
       font-family: Georgia, "Times New Roman", serif;
-      background: #f7f3ea;
+      background: #f5f1e8;
       color: #2f2a24;
       line-height: 1.7;
     }
 
     header {
-      background: #173f35;
+      background: #243b2f;
       color: white;
       padding: 28px 20px;
       text-align: center;
+      border-bottom: 4px solid #b89452;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 32px;
+      font-size: 42px;
+      margin-bottom: 8px;
     }
 
     header p {
-      margin: 8px 0 0;
-      color: #d8e6df;
+      font-size: 17px;
+      color: #e8dfcf;
     }
 
     nav {
-      background: #102f28;
+      background: #18291f;
       text-align: center;
-      padding: 12px;
+      padding: 14px 10px;
     }
 
     nav a {
-      color: white;
+      color: #f4ead8;
       text-decoration: none;
-      margin: 0 12px;
-      font-weight: bold;
+      margin: 0 14px;
+      font-size: 16px;
     }
 
     nav a:hover {
-      text-decoration: underline;
+      color: #d6b66b;
     }
 
-    .container {
+    .hero {
       max-width: 1100px;
-      margin: auto;
-      padding: 50px 20px;
-    }
-
-    .intro {
+      margin: 50px auto 30px;
+      padding: 0 20px;
       text-align: center;
-      margin-bottom: 40px;
     }
 
-    .intro h2 {
-      font-size: 34px;
-      margin-bottom: 10px;
+    .hero h2 {
+      font-size: 36px;
+      color: #243b2f;
+      margin-bottom: 12px;
     }
 
-    .intro p {
-      max-width: 750px;
+    .hero p {
+      max-width: 800px;
       margin: auto;
-      color: #665f56;
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 25px;
-    }
-
-    .card {
-      background: white;
-      border: 1px solid #ddd4c7;
-      border-radius: 14px;
-      padding: 28px;
-      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+      color: #5b5147;
+      font-size: 18px;
     }
 
     .arabic {
-      font-size: 25px;
-      color: #173f35;
-      margin-bottom: 5px;
+      font-size: 28px;
+      color: #8b6b32;
+      margin-top: 18px;
       direction: rtl;
     }
 
-    .card h3 {
-      margin: 5px 0;
-      font-size: 24px;
+    .grid {
+      max-width: 1100px;
+      margin: 40px auto 70px;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
     }
 
-    .date {
-      color: #8a6a32;
+    .card {
+      background: #fffdf8;
+      border: 1px solid #ddd2bf;
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.10);
+    }
+
+    .card h3 {
+      color: #243b2f;
+      font-size: 26px;
+      margin-bottom: 5px;
+    }
+
+    .card .date {
+      color: #96743a;
       font-weight: bold;
-      margin-bottom: 15px;
+      margin-bottom: 10px;
+    }
+
+    .card .arabic-name {
+      direction: rtl;
+      color: #8b6b32;
+      font-size: 22px;
+      margin-bottom: 14px;
     }
 
     .card p {
-      color: #5e574f;
+      color: #554d44;
+      margin-bottom: 20px;
     }
 
-    .button {
+    .btn {
       display: inline-block;
-      margin-top: 15px;
-      padding: 10px 16px;
-      background: #173f35;
+      background: #243b2f;
       color: white;
       text-decoration: none;
+      padding: 10px 18px;
       border-radius: 7px;
-      font-weight: bold;
+      font-size: 15px;
+      transition: background 0.2s ease;
     }
 
-    .button:hover {
-      background: #24584b;
+    .btn:hover {
+      background: #8b6b32;
     }
 
     footer {
-      background: #102f28;
-      color: #d8e6df;
+      background: #18291f;
+      color: #dcd2c2;
       text-align: center;
-      padding: 25px 15px;
-      margin-top: 30px;
+      padding: 28px 20px;
+      font-size: 14px;
     }
 
-    footer a {
-      color: white;
-      text-decoration: none;
-      margin: 0 8px;
-    }
-
-    @media (max-width: 600px) {
+    @media (max-width: 750px) {
       header h1 {
-        font-size: 27px;
-      }
-
-      .intro h2 {
-        font-size: 28px;
+        font-size: 32px;
       }
 
       nav a {
         display: inline-block;
-        margin: 5px 7px;
+        margin: 5px 8px;
+      }
+
+      .hero h2 {
+        font-size: 29px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card h3 {
+        font-size: 23px;
       }
     }
   </style>
@@ -156,7 +180,7 @@
 
   <header>
     <h1>Islamic History</h1>
-    <p>Civilizations, cultures and intellectual heritage</p>
+    <p>Civilizations, Knowledge, Scholarship and Intellectual Heritage</p>
   </header>
 
   <nav>
@@ -167,131 +191,159 @@
     <a href="timeline.html">Timeline</a>
   </nav>
 
-  <main class="container">
+  <section class="hero">
+    <h2>Islamic Civilizations</h2>
 
-    <section class="intro">
-      <h2>Islamic Civilizations</h2>
-      <p>
-        Explore major civilizations and political cultures that shaped
-        the history of the Islamic world.
-      </p>
-    </section>
-
-    <section class="grid">
-
-      <!-- Abbasid Baghdad -->
-      <article class="card">
-        <div class="arabic">بَغْدَادُ العَبَّاسِيَّةُ</div>
-        <h3>Abbasid Baghdad</h3>
-        <div class="date">762–1258 CE</div>
-
-        <p>
-          Baghdad became the political capital of the Abbasid Caliphate
-          and one of the most important intellectual and cultural centres
-          of the medieval Islamic world.
-        </p>
-
-        <a class="button" href="abbasid-baghdad.html">
-          Explore Civilization →
-        </a>
-      </article>
-
-      <!-- Al-Andalus -->
-      <article class="card">
-        <div class="arabic">الأَنْدَلُسُ</div>
-        <h3>Al-Andalus</h3>
-        <div class="date">711–1492 CE</div>
-
-        <p>
-          Muslim-ruled Iberia became a major centre of scholarship,
-          architecture, agriculture, philosophy and cultural exchange.
-        </p>
-
-        <a class="button" href="#">
-          Explore Civilization →
-        </a>
-      </article>
-
-      <!-- Ottoman -->
-      <article class="card">
-        <div class="arabic">الدَّوْلَةُ العُثْمَانِيَّةُ</div>
-        <h3>Ottoman Civilization</h3>
-        <div class="date">c. 1299–1922 CE</div>
-
-        <p>
-          The Ottoman Empire developed into one of the longest-lasting
-          Muslim imperial states, connecting Europe, Asia and Africa.
-        </p>
-
-        <a class="button" href="#">
-          Explore Civilization →
-        </a>
-      </article>
-
-      <!-- Fatimid -->
-      <article class="card">
-        <div class="arabic">الدَّوْلَةُ الفَاطِمِيَّةُ</div>
-        <h3>Fatimid Civilization</h3>
-        <div class="date">909–1171 CE</div>
-
-        <p>
-          The Fatimids established a powerful state in North Africa and
-          Egypt and founded Cairo as a major centre of political and
-          intellectual life.
-        </p>
-
-        <a class="button" href="#">
-          Explore Civilization →
-        </a>
-      </article>
-
-      <!-- Mamluk -->
-      <article class="card">
-        <div class="arabic">دَوْلَةُ المَمَالِيكِ</div>
-        <h3>Mamluk Civilization</h3>
-        <div class="date">1250–1517 CE</div>
-
-        <p>
-          The Mamluk Sultanate became a major political and military power
-          in Egypt and Syria and played a crucial role in the defence of
-          the eastern Mediterranean.
-        </p>
-
-        <a class="button" href="#">
-          Explore Civilization →
-        </a>
-      </article>
-
-      <!-- Seljuk -->
-      <article class="card">
-        <div class="arabic">السَّلَاجِقَةُ</div>
-        <h3>Seljuk Civilization</h3>
-        <div class="date">11th–12th Centuries</div>
-
-        <p>
-          The Seljuks played a major role in the political and intellectual
-          history of the medieval Islamic world, especially in Persia and
-          Anatolia.
-        </p>
-
-        <a class="button" href="#">
-          Explore Civilization →
-        </a>
-      </article>
-
-    </section>
-
-  </main>
-
-  <footer>
-    <p>© 2026 Islamic History · A Digital Knowledge Project</p>
+    <div class="arabic">
+      حَضَارَاتٌ إِسْلَامِيَّةٌ
+    </div>
 
     <p>
-      <a href="index.html">Home</a>
-      <a href="history.html">History</a>
-      <a href="scholars.html">Scholars</a>
-      <a href="civilizations.html">Civilizations</a>
-      <a href="timeline.html">Timeline</a>
+      Explore major Islamic civilizations and their contributions to
+      political history, architecture, science, literature, scholarship,
+      culture and intellectual life.
+    </p>
+  </section>
+
+  <section class="grid">
+
+    <!-- Abbasid Baghdad -->
+    <div class="card">
+      <h3>Abbasid Baghdad</h3>
+      <div class="date">762–1258 CE</div>
+
+      <div class="arabic-name">
+        بَغْدَادُ العَبَّاسِيَّةُ
+      </div>
+
+      <p>
+        Baghdad became one of the most important political, intellectual
+        and cultural centres of the medieval Islamic world. The Abbasid
+        period witnessed major developments in translation, medicine,
+        mathematics, astronomy, philosophy, literature and historical
+        scholarship.
+      </p>
+
+      <a class="btn" href="abbasid-baghdad.html">
+        Explore Civilization →
+      </a>
+    </div>
+
+
+    <!-- Al-Andalus -->
+    <div class="card">
+      <h3>Al-Andalus</h3>
+      <div class="date">711–1492 CE</div>
+
+      <div class="arabic-name">
+        الأَنْدَلُسُ
+      </div>
+
+      <p>
+        Al-Andalus refers to the territories of the Iberian Peninsula
+        under Muslim rule at different periods. It became an important
+        centre of urban life, scholarship, philosophy, medicine,
+        agriculture, architecture and intercultural exchange.
+      </p>
+
+      <a class="btn" href="al-andalus.html">
+        Explore Civilization →
+      </a>
+    </div>
+
+
+    <!-- Ottoman Civilization -->
+    <div class="card">
+      <h3>Ottoman Civilization</h3>
+      <div class="date">c. 1299–1922 CE</div>
+
+      <div class="arabic-name">
+        الدَّوْلَةُ العُثْمَانِيَّةُ
+      </div>
+
+      <p>
+        The Ottoman Empire developed into a major political and cultural
+        power spanning parts of Europe, Asia and Africa. Its legacy
+        includes architecture, law, administration, education, arts
+        and scholarship.
+      </p>
+
+      <a class="btn" href="#">
+        Explore Civilization →
+      </a>
+    </div>
+
+
+    <!-- Fatimid Civilization -->
+    <div class="card">
+      <h3>Fatimid Civilization</h3>
+      <div class="date">909–1171 CE</div>
+
+      <div class="arabic-name">
+        الدَّوْلَةُ الفَاطِمِيَّةُ
+      </div>
+
+      <p>
+        The Fatimid state established Cairo as its capital and developed
+        an influential political, intellectual and architectural
+        tradition in North Africa and Egypt.
+      </p>
+
+      <a class="btn" href="#">
+        Explore Civilization →
+      </a>
+    </div>
+
+
+    <!-- Mamluk Civilization -->
+    <div class="card">
+      <h3>Mamluk Civilization</h3>
+      <div class="date">1250–1517 CE</div>
+
+      <div class="arabic-name">
+        دَوْلَةُ المَمَالِيكِ
+      </div>
+
+      <p>
+        The Mamluk Sultanate played a major role in the political and
+        military history of the medieval Middle East. Cairo became a
+        major centre of scholarship, architecture, trade and religious
+        learning.
+      </p>
+
+      <a class="btn" href="#">
+        Explore Civilization →
+      </a>
+    </div>
+
+
+    <!-- Seljuk Civilization -->
+    <div class="card">
+      <h3>Seljuk Civilization</h3>
+      <div class="date">11th–12th Centuries</div>
+
+      <div class="arabic-name">
+        السَّلَاجِقَةُ
+      </div>
+
+      <p>
+        The Seljuks played an important role in the political and
+        intellectual development of the medieval Islamic world. Their
+        period is associated with institutions of learning, architecture,
+        administration and the growth of Persianate culture.
+      </p>
+
+      <a class="btn" href="#">
+        Explore Civilization →
+      </a>
+    </div>
+
+  </section>
+
+
+  <footer>
+    <p>
+      © 2026 Islamic History. Built for learning and historical exploration.
     </p>
   </footer>
 
