@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Islamic History | Knowledge Through Time</title>
+    <title>Islamic History | Knowledge, Civilization & Heritage</title>
 
-    <meta name="description" content="Explore Islamic history, scholars, civilizations, important events and the intellectual heritage of the Muslim world.">
+    <meta name="description" content="Explore Islamic history, great scholars, civilizations and important historical events.">
 
     <style>
         * {
@@ -21,133 +21,149 @@
 
         body {
             font-family: Georgia, "Times New Roman", serif;
-            background: #f7f3e9;
-            color: #1d2b24;
+            background: #f7f4ec;
+            color: #24352c;
             line-height: 1.7;
         }
 
         /* Navigation */
+
         nav {
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(20, 50, 40, 0.97);
-            padding: 16px 7%;
+            background: #173f35;
+            padding: 18px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.12);
         }
 
         .logo {
-            color: #d9b86c;
-            font-size: 24px;
+            color: #d8b45c;
+            font-size: 25px;
             font-weight: bold;
             text-decoration: none;
         }
 
-        .nav-links {
+        nav ul {
             display: flex;
-            gap: 25px;
             list-style: none;
+            gap: 28px;
         }
 
-        .nav-links a {
-            color: #fff;
+        nav ul li a {
+            color: white;
             text-decoration: none;
+            font-family: Arial, sans-serif;
             font-size: 15px;
         }
 
-        .nav-links a:hover {
-            color: #d9b86c;
+        nav ul li a:hover {
+            color: #d8b45c;
         }
 
         /* Hero */
+
         .hero {
-            min-height: 88vh;
+            min-height: 82vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 60px 20px;
+            padding: 80px 20px;
             background:
-                radial-gradient(circle at top, rgba(217,184,108,0.18), transparent 35%),
-                linear-gradient(135deg, #173d30, #0d2920);
+                linear-gradient(rgba(23,63,53,0.92), rgba(23,63,53,0.92));
             color: white;
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 900px;
         }
 
         .arabic {
-            font-size: 34px;
-            color: #d9b86c;
-            margin-bottom: 20px;
+            font-size: 38px;
+            color: #e3c46b;
+            margin-bottom: 25px;
             direction: rtl;
         }
 
         .hero h1 {
-            font-size: clamp(42px, 7vw, 76px);
-            line-height: 1.1;
-            margin-bottom: 20px;
+            font-size: 62px;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        .hero .subtitle {
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            color: #e6e1d5;
+            margin-bottom: 30px;
         }
 
         .hero p {
-            max-width: 700px;
+            max-width: 720px;
             margin: auto;
-            color: #e8e4d7;
-            font-size: 18px;
+            font-family: Arial, sans-serif;
+            font-size: 17px;
+            color: #f1eee6;
         }
 
-        .hero-button {
+        .btn {
             display: inline-block;
-            margin-top: 30px;
+            margin-top: 35px;
             padding: 13px 28px;
-            background: #d9b86c;
-            color: #173d30;
+            background: #d8b45c;
+            color: #173f35;
             text-decoration: none;
-            border-radius: 6px;
+            font-family: Arial, sans-serif;
             font-weight: bold;
+            border-radius: 4px;
         }
 
-        .hero-button:hover {
-            background: #f0d38d;
+        .btn:hover {
+            background: #ecd487;
         }
 
         /* General Sections */
+
         section {
-            padding: 80px 7%;
+            padding: 80px 8%;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 45px;
+            margin-bottom: 50px;
         }
 
         .section-title h2 {
             font-size: 38px;
-            color: #173d30;
+            color: #173f35;
+            margin-bottom: 10px;
         }
 
         .section-title p {
-            color: #66736c;
-            max-width: 650px;
-            margin: 10px auto;
+            font-family: Arial, sans-serif;
+            color: #68736d;
         }
 
         /* Cards */
+
         .cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 25px;
+            max-width: 1200px;
+            margin: auto;
         }
 
         .card {
             background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            border-top: 4px solid #d9b86c;
+            padding: 32px;
+            border-radius: 8px;
+            border-top: 4px solid #d8b45c;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.06);
             transition: transform 0.3s ease;
         }
 
@@ -155,118 +171,138 @@
             transform: translateY(-7px);
         }
 
-        .card-icon {
-            font-size: 38px;
-            margin-bottom: 15px;
-        }
-
         .card h3 {
-            color: #173d30;
-            margin-bottom: 10px;
-            font-size: 22px;
+            color: #173f35;
+            margin-bottom: 12px;
+            font-size: 23px;
         }
 
         .card p {
-            color: #66736c;
+            font-family: Arial, sans-serif;
+            color: #59645e;
+            font-size: 15px;
+        }
+
+        .card a {
+            display: inline-block;
+            margin-top: 15px;
+            color: #a47b16;
+            font-family: Arial, sans-serif;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         /* Timeline */
+
         .timeline {
-            max-width: 900px;
+            max-width: 850px;
             margin: auto;
-            border-left: 3px solid #d9b86c;
-            padding-left: 30px;
+            border-left: 3px solid #d8b45c;
+            padding-left: 35px;
         }
 
         .timeline-item {
-            margin-bottom: 40px;
+            margin-bottom: 35px;
             position: relative;
         }
 
         .timeline-item::before {
             content: "";
-            position: absolute;
-            left: -41px;
-            top: 5px;
-            width: 16px;
-            height: 16px;
-            background: #d9b86c;
+            width: 14px;
+            height: 14px;
+            background: #d8b45c;
             border-radius: 50%;
-            border: 4px solid #f7f3e9;
+            position: absolute;
+            left: -44px;
+            top: 7px;
         }
 
         .timeline-year {
-            color: #a27c2d;
+            color: #a47b16;
             font-weight: bold;
+            font-family: Arial, sans-serif;
+            margin-bottom: 5px;
         }
 
         .timeline-item h3 {
-            color: #173d30;
-            margin: 5px 0;
+            color: #173f35;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item p {
+            font-family: Arial, sans-serif;
+            color: #59645e;
         }
 
         /* Quote */
-        .quote-section {
-            background: #173d30;
+
+        .quote {
+            background: #173f35;
             color: white;
             text-align: center;
         }
 
-        blockquote {
+        .quote blockquote {
             max-width: 850px;
             margin: auto;
-            font-size: 26px;
+            font-size: 30px;
             font-style: italic;
         }
 
-        .quote-source {
+        .quote span {
+            display: block;
             margin-top: 20px;
-            color: #d9b86c;
+            color: #d8b45c;
+            font-family: Arial, sans-serif;
         }
 
         /* Footer */
+
         footer {
-            background: #0d2920;
-            color: #d9d5c9;
+            background: #102d26;
+            color: #c9d1cd;
             text-align: center;
             padding: 35px 20px;
+            font-family: Arial, sans-serif;
         }
 
         footer strong {
-            color: #d9b86c;
+            color: #d8b45c;
         }
 
-        /* Mobile */
-        @media (max-width: 700px) {
+        /* Responsive */
+
+        @media (max-width: 800px) {
+
             nav {
                 flex-direction: column;
-                gap: 12px;
+                gap: 15px;
             }
 
-            .nav-links {
-                gap: 12px;
+            nav ul {
+                gap: 15px;
                 flex-wrap: wrap;
                 justify-content: center;
             }
 
-            .hero {
-                min-height: 80vh;
+            .hero h1 {
+                font-size: 43px;
             }
 
             .arabic {
-                font-size: 27px;
+                font-size: 28px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
             }
 
             section {
-                padding: 60px 5%;
+                padding: 60px 6%;
             }
 
-            .section-title h2 {
-                font-size: 30px;
-            }
-
-            blockquote {
-                font-size: 21px;
+            .quote blockquote {
+                font-size: 23px;
             }
         }
     </style>
@@ -275,19 +311,21 @@
 <body>
 
     <!-- Navigation -->
-    <nav>
-        <a href="#" class="logo">Islamic History</a>
 
-        <ul class="nav-links">
+    <nav>
+        <a href="index.html" class="logo">Islamic History</a>
+
+        <ul>
             <li><a href="#history">History</a></li>
             <li><a href="#scholars">Scholars</a></li>
             <li><a href="#civilizations">Civilizations</a></li>
-            <li><a href="#events">Events</a></li>
+            <li><a href="#timeline">Timeline</a></li>
         </ul>
     </nav>
 
 
-    <!-- Hero Section -->
+    <!-- Hero -->
+
     <header class="hero">
 
         <div class="hero-content">
@@ -298,12 +336,17 @@
 
             <h1>Islamic History</h1>
 
+            <div class="subtitle">
+                Knowledge • Civilization • Heritage
+            </div>
+
             <p>
-                Explore the people, ideas, civilizations and events
-                that shaped the history of the Muslim world.
+                Explore the intellectual, cultural and political history
+                of the Islamic world through its scholars, civilizations,
+                ideas and historical events.
             </p>
 
-            <a href="#history" class="hero-button">
+            <a href="#history" class="btn">
                 Explore History
             </a>
 
@@ -312,49 +355,44 @@
     </header>
 
 
-    <!-- Introduction -->
+    <!-- History -->
+
     <section id="history">
 
         <div class="section-title">
-
             <h2>A Journey Through Time</h2>
-
-            <p>
-                Islamic history is more than a collection of dates.
-                It is a story of faith, knowledge, civilization,
-                intellectual discovery and human experience.
-            </p>
-
+            <p>Discover the major chapters of Islamic civilization.</p>
         </div>
 
         <div class="cards">
 
             <div class="card">
-                <div class="card-icon">📜</div>
-                <h3>Early Islam</h3>
+                <h3>The Prophetic Era</h3>
                 <p>
-                    Explore the life of Prophet Muhammad ﷺ,
-                    the rise of Islam and the development of
-                    the early Muslim community.
+                    Explore the life of Prophet Muhammad ﷺ, the beginning
+                    of revelation, the Hijrah and the formation of the first
+                    Muslim community.
                 </p>
+                <a href="#">Read More →</a>
             </div>
 
             <div class="card">
-                <div class="card-icon">🏛️</div>
-                <h3>Islamic Civilizations</h3>
+                <h3>The Caliphates</h3>
                 <p>
-                    Discover the Umayyads, Abbasids, Ottomans,
-                    Andalusia and other major centers of Islamic civilization.
+                    Learn about the Rashidun, Umayyad and Abbasid periods
+                    and their contributions to the development of Islamic
+                    civilization.
                 </p>
+                <a href="#">Read More →</a>
             </div>
 
             <div class="card">
-                <div class="card-icon">📚</div>
-                <h3>Knowledge & Scholarship</h3>
+                <h3>Islamic World</h3>
                 <p>
-                    Learn about Muslim scholars and the development
-                    of philosophy, medicine, astronomy, mathematics and law.
+                    Discover the expansion of Islamic civilization across
+                    Asia, Africa, Europe and the Middle East.
                 </p>
+                <a href="#">Read More →</a>
             </div>
 
         </div>
@@ -363,55 +401,43 @@
 
 
     <!-- Scholars -->
+
     <section id="scholars">
 
         <div class="section-title">
-
             <h2>Great Scholars</h2>
-
             <p>
-                Meet some of the thinkers whose works influenced
-                Islamic intellectual history and the wider world.
+                Thinkers who shaped knowledge, science and philosophy.
             </p>
-
         </div>
 
         <div class="cards">
 
             <div class="card">
-                <div class="card-icon">🧠</div>
                 <h3>Al-Ghazali</h3>
                 <p>
                     A major theologian, philosopher and spiritual thinker
-                    whose works shaped Islamic intellectual tradition.
+                    whose works influenced Islamic intellectual history.
                 </p>
+                <a href="#">Explore Scholar →</a>
             </div>
 
             <div class="card">
-                <div class="card-icon">🔭</div>
                 <h3>Ibn al-Haytham</h3>
                 <p>
-                    A pioneering scholar associated with optics,
-                    experimentation and scientific inquiry.
+                    A pioneering scientist whose work in optics and
+                    scientific methodology influenced later science.
                 </p>
+                <a href="#">Explore Scholar →</a>
             </div>
 
             <div class="card">
-                <div class="card-icon">⚕️</div>
-                <h3>Ibn Sina</h3>
-                <p>
-                    A renowned physician and philosopher whose
-                    writings became influential across many regions.
-                </p>
-            </div>
-
-            <div class="card">
-                <div class="card-icon">🌍</div>
                 <h3>Ibn Khaldun</h3>
                 <p>
-                    A pioneering historian and social thinker,
-                    famous for his analysis of civilization and society.
+                    Historian and social thinker famous for his analysis
+                    of civilization, society and the rise and fall of states.
                 </p>
+                <a href="#">Explore Scholar →</a>
             </div>
 
         </div>
@@ -420,46 +446,43 @@
 
 
     <!-- Civilizations -->
+
     <section id="civilizations">
 
         <div class="section-title">
-
             <h2>Islamic Civilizations</h2>
-
             <p>
-                Explore the political, cultural and intellectual
-                centers that emerged throughout Islamic history.
+                Explore the centers of learning, culture and civilization.
             </p>
-
         </div>
 
         <div class="cards">
 
             <div class="card">
-                <div class="card-icon">🏺</div>
                 <h3>Abbasid Baghdad</h3>
                 <p>
-                    Baghdad became a major center of scholarship,
-                    translation, science and culture.
+                    Baghdad became one of the greatest intellectual centers
+                    of the medieval world.
                 </p>
+                <a href="#">Explore Baghdad →</a>
             </div>
 
             <div class="card">
-                <div class="card-icon">🕌</div>
                 <h3>Al-Andalus</h3>
                 <p>
-                    Muslim Spain became known for its architecture,
-                    scholarship, literature and cultural exchange.
+                    Muslim Spain became an important center of science,
+                    philosophy, architecture and literature.
                 </p>
+                <a href="#">Explore Al-Andalus →</a>
             </div>
 
             <div class="card">
-                <div class="card-icon">🏰</div>
                 <h3>Ottoman Empire</h3>
                 <p>
-                    One of the longest-lasting Muslim empires,
-                    spanning parts of Europe, Asia and Africa.
+                    One of the longest-lasting Islamic empires, spanning
+                    Europe, Asia and Africa.
                 </p>
+                <a href="#">Explore Ottoman History →</a>
             </div>
 
         </div>
@@ -468,17 +491,12 @@
 
 
     <!-- Timeline -->
-    <section id="events">
+
+    <section id="timeline">
 
         <div class="section-title">
-
             <h2>Historical Timeline</h2>
-
-            <p>
-                A simple starting point for exploring major moments
-                in Islamic history.
-            </p>
-
+            <p>Some important milestones in Islamic history.</p>
         </div>
 
         <div class="timeline">
@@ -496,8 +514,8 @@
                 <div class="timeline-year">622 CE</div>
                 <h3>The Hijrah</h3>
                 <p>
-                    The migration from Makkah to Madinah became
-                    a defining moment in Islamic history.
+                    The migration from Makkah to Madinah marked a major
+                    turning point in Islamic history.
                 </p>
             </div>
 
@@ -505,8 +523,8 @@
                 <div class="timeline-year">750 CE</div>
                 <h3>Rise of the Abbasids</h3>
                 <p>
-                    The Abbasid period became an important era
-                    of intellectual and cultural development.
+                    The Abbasid period became one of the most important
+                    eras of Islamic intellectual and cultural development.
                 </p>
             </div>
 
@@ -514,8 +532,8 @@
                 <div class="timeline-year">1492 CE</div>
                 <h3>End of Muslim Granada</h3>
                 <p>
-                    The fall of Granada marked the end of Muslim
-                    political rule in most of the Iberian Peninsula.
+                    Granada, the last major Muslim polity in Iberia,
+                    fell to Ferdinand and Isabella.
                 </p>
             </div>
 
@@ -525,32 +543,29 @@
 
 
     <!-- Quote -->
-    <section class="quote-section">
+
+    <section class="quote">
 
         <blockquote>
-            "Knowledge is the inheritance of the prophets."
+            “Knowledge is the heritage of the believer,
+            wherever it may be found.”
         </blockquote>
 
-        <div class="quote-source">
-            Islamic intellectual tradition
-        </div>
+        <span>Islamic Intellectual Heritage</span>
 
     </section>
 
 
     <!-- Footer -->
+
     <footer>
 
         <p>
-            <strong>Islamic History</strong>
+            © 2026 <strong>Islamic History</strong>
         </p>
 
         <p>
-            Exploring history through knowledge, evidence and reflection.
-        </p>
-
-        <p>
-            © 2026 Islamic History. Educational Project.
+            Preserving history. Exploring knowledge. Inspiring reflection.
         </p>
 
     </footer>
