@@ -1,322 +1,290 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abbasid Baghdad | Islamic History</title>
 
-    <title>Abbasid Baghdad | Islamic History</title>
+<meta name="description" content="A source-based historical study of Abbasid Baghdad, its foundation, intellectual culture, translation movement, scholarship, and the Mongol conquest of 1258.">
 
-    <meta name="description"
-          content="A source-based historical study of Abbasid Baghdad, its foundation, intellectual culture, translation movement, sciences, literature, Bayt al-Hikmah and the Mongol conquest of 1258.">
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
-    <style>
+body{
+    font-family: Georgia, "Times New Roman", serif;
+    background:#f7f3e8;
+    color:#26352c;
+    line-height:1.8;
+}
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+nav{
+    background:#173d2b;
+    padding:18px 8%;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+}
 
-        body {
-            font-family: Georgia, "Times New Roman", serif;
-            background: #f7f3e9;
-            color: #24352b;
-            line-height: 1.85;
-        }
+.logo{
+    color:#d9b45a;
+    font-size:22px;
+    font-weight:bold;
+    text-decoration:none;
+}
 
-        header {
-            background: #163b2c;
-            color: #f7f3e9;
-            padding: 18px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.15);
-        }
+.nav-links{
+    display:flex;
+    flex-wrap:wrap;
+    gap:18px;
+}
 
-        .logo {
-            font-size: 1.25rem;
-            font-weight: bold;
-        }
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-size:15px;
+}
 
-        nav a {
-            color: #f7f3e9;
-            text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.95rem;
-        }
+.nav-links a:hover{
+    color:#d9b45a;
+}
 
-        nav a:hover {
-            color: #d9b45b;
-        }
+.hero{
+    background:linear-gradient(135deg,#173d2b,#28563e);
+    color:white;
+    text-align:center;
+    padding:75px 20px;
+}
 
-        .hero {
-            background: #163b2c;
-            color: white;
-            text-align: center;
-            padding: 90px 20px 80px;
-        }
+.arabic{
+    font-size:34px;
+    color:#e2c16b;
+    margin-bottom:18px;
+    direction:rtl;
+}
 
-        .arabic {
-            direction: rtl;
-            font-size: 2rem;
-            color: #e1c36a;
-            margin-bottom: 15px;
-        }
+.hero h1{
+    font-size:48px;
+    margin-bottom:8px;
+}
 
-        .hero h1 {
-            font-size: 3.2rem;
-            margin-bottom: 12px;
-        }
+.subtitle{
+    font-size:21px;
+    color:#e8e2d4;
+    margin-bottom:15px;
+}
 
-        .hero p {
-            max-width: 850px;
-            margin: auto;
-            color: #e7e4d9;
-            font-size: 1.08rem;
-        }
+.date{
+    color:#d9b45a;
+    font-weight:bold;
+    letter-spacing:1px;
+}
 
-        .date {
-            margin-top: 20px;
-            color: #d9b45b;
-            font-weight: bold;
-        }
+.container{
+    max-width:1050px;
+    margin:auto;
+    padding:45px 20px;
+}
 
-        main {
-            max-width: 1050px;
-            margin: 60px auto;
-            padding: 0 25px;
-        }
+.intro{
+    font-size:19px;
+    background:#fffdf8;
+    padding:28px;
+    border-left:5px solid #c49a3a;
+    margin-bottom:35px;
+}
 
-        .intro {
-            background: #fffdf7;
-            border-left: 5px solid #b8953e;
-            padding: 28px;
-            margin-bottom: 45px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-        }
+h2{
+    color:#173d2b;
+    margin:42px 0 18px;
+    font-size:29px;
+}
 
-        section {
-            margin-bottom: 50px;
-        }
+h3{
+    color:#28563e;
+    margin:24px 0 10px;
+}
 
-        h2 {
-            color: #163b2c;
-            font-size: 1.9rem;
-            margin-bottom: 18px;
-            border-bottom: 2px solid #d9c68a;
-            padding-bottom: 8px;
-        }
+p{
+    margin-bottom:18px;
+}
 
-        h3 {
-            color: #315b46;
-            margin: 25px 0 10px;
-            font-size: 1.25rem;
-        }
+ul{
+    margin:10px 0 20px 25px;
+}
 
-        p {
-            margin-bottom: 16px;
-        }
+li{
+    margin-bottom:8px;
+}
 
-        ul {
-            margin: 15px 0 20px 25px;
-        }
+.citation{
+    color:#8b681d;
+    text-decoration:none;
+    font-weight:bold;
+}
 
-        li {
-            margin-bottom: 9px;
-        }
+.citation:hover{
+    text-decoration:underline;
+}
 
-        a.citation {
-            color: #8a6b20;
-            font-weight: bold;
-            text-decoration: none;
-        }
+.note{
+    background:#eef4ee;
+    border-left:5px solid #28563e;
+    padding:22px;
+    margin:25px 0;
+}
 
-        a.citation:hover {
-            text-decoration: underline;
-        }
+.warning{
+    background:#fff5df;
+    border-left:5px solid #c49a3a;
+    padding:22px;
+    margin:25px 0;
+}
 
-        .highlight {
-            background: #eef4ee;
-            border: 1px solid #c9d9cb;
-            padding: 25px;
-            border-radius: 8px;
-            margin: 25px 0;
-        }
+.figure-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
+    margin:25px 0;
+}
 
-        .scholarly-note {
-            background: #f5eee1;
-            border-left: 5px solid #a8792e;
-            padding: 24px;
-            margin: 25px 0;
-        }
+.figure-card{
+    background:white;
+    border:1px solid #ddd3bc;
+    padding:20px;
+    border-radius:8px;
+}
 
-        .scholarly-note strong {
-            color: #704f16;
-        }
+.figure-card h3{
+    margin-top:0;
+}
 
-        .quote {
-            background: #163b2c;
-            color: #f7f3e9;
-            padding: 30px;
-            margin: 35px 0;
-            border-radius: 8px;
-            font-style: italic;
-            font-size: 1.08rem;
-        }
+.timeline{
+    border-left:3px solid #c49a3a;
+    padding-left:25px;
+    margin:25px 0;
+}
 
-        .timeline {
-            border-left: 3px solid #b8953e;
-            padding-left: 25px;
-        }
+.timeline-item{
+    margin-bottom:25px;
+}
 
-        .timeline-item {
-            margin-bottom: 28px;
-            position: relative;
-        }
+.timeline-item strong{
+    color:#8b681d;
+}
 
-        .timeline-item::before {
-            content: "";
-            width: 12px;
-            height: 12px;
-            background: #b8953e;
-            border-radius: 50%;
-            position: absolute;
-            left: -32px;
-            top: 9px;
-        }
+.keywords{
+    background:#173d2b;
+    color:white;
+    padding:25px;
+    border-radius:8px;
+    margin-top:25px;
+}
 
-        .year {
-            font-weight: bold;
-            color: #8a6b20;
-        }
+.keyword{
+    display:inline-block;
+    background:#d9b45a;
+    color:#173d2b;
+    padding:5px 10px;
+    border-radius:15px;
+    margin:4px;
+    font-size:13px;
+    font-weight:bold;
+}
 
-        .scholars {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
-            margin-top: 25px;
-        }
+.references{
+    background:#fffdf8;
+    border:1px solid #ddd3bc;
+    padding:28px;
+    margin-top:30px;
+}
 
-        .scholar-card {
-            background: #fffdf7;
-            border: 1px solid #e1d9c5;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.04);
-        }
+.references ol{
+    padding-left:25px;
+}
 
-        .scholar-card h3 {
-            margin-top: 0;
-        }
+.references li{
+    margin-bottom:15px;
+}
 
-        .tag {
-            display: inline-block;
-            background: #e9dfc2;
-            color: #4d4225;
-            padding: 4px 9px;
-            margin: 3px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
+.references a{
+    color:#28563e;
+    font-weight:bold;
+}
 
-        .sources {
-            background: #fffdf7;
-            padding: 30px;
-            border: 1px solid #ded5c0;
-            border-radius: 8px;
-        }
+.primary{
+    background:#eef4ee;
+    padding:28px;
+    margin-top:25px;
+}
 
-        .sources li {
-            margin-bottom: 18px;
-        }
+.back{
+    margin-top:45px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+}
 
-        .sources a {
-            color: #315b46;
-        }
+.back a{
+    text-decoration:none;
+    background:#173d2b;
+    color:white;
+    padding:12px 20px;
+    border-radius:5px;
+}
 
-        .back-links {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 45px;
-        }
+footer{
+    background:#173d2b;
+    color:#ddd;
+    text-align:center;
+    padding:25px;
+    margin-top:50px;
+    font-size:14px;
+}
 
-        .button {
-            display: inline-block;
-            background: #163b2c;
-            color: white;
-            text-decoration: none;
-            padding: 11px 20px;
-            border-radius: 5px;
-        }
+@media(max-width:700px){
+    .hero h1{
+        font-size:36px;
+    }
 
-        .button:hover {
-            background: #315b46;
-        }
+    .arabic{
+        font-size:27px;
+    }
 
-        footer {
-            background: #163b2c;
-            color: #ddd8ca;
-            text-align: center;
-            padding: 30px 20px;
-            margin-top: 70px;
-            font-size: 0.9rem;
-        }
+    .subtitle{
+        font-size:18px;
+    }
 
-        @media (max-width: 750px) {
+    nav{
+        justify-content:center;
+    }
 
-            header {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            nav a {
-                margin: 0 7px;
-                font-size: 0.85rem;
-            }
-
-            .hero h1 {
-                font-size: 2.3rem;
-            }
-
-            .arabic {
-                font-size: 1.5rem;
-            }
-
-        }
-
-    </style>
-
+    .nav-links{
+        justify-content:center;
+    }
+}
+</style>
 </head>
-
 
 <body>
 
+<nav>
+    <a class="logo" href="index.html">Islamic History</a>
 
-<header>
-
-    <div class="logo">
-        Islamic History
-    </div>
-
-    <nav>
-
+    <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="history.html">History</a>
         <a href="scholars.html">Scholars</a>
         <a href="civilizations.html">Civilizations</a>
         <a href="timeline.html">Timeline</a>
-
-    </nav>
-
-</header>
-
-
+    </div>
+</nav>
 
 <section class="hero">
 
@@ -324,13 +292,11 @@
         بَغْدَادُ فِي العَصْرِ العَبَّاسِيِّ
     </div>
 
-    <h1>
-        Abbasid Baghdad
-    </h1>
+    <h1>Abbasid Baghdad</h1>
 
-    <p>
+    <div class="subtitle">
         The Making of a Medieval Intellectual Metropolis
-    </p>
+    </div>
 
     <div class="date">
         762 CE – 1258 CE
@@ -338,991 +304,814 @@
 
 </section>
 
-
-
-<main>
-
+<main class="container">
 
 <div class="intro">
 
-    <p>
-        Baghdad was founded in 762 CE by the second Abbasid caliph,
-        Abu Jaʿfar al-Mansur, and became the principal capital of the
-        Abbasid caliphate. Its official name was
-        <em>Madinat al-Salam</em>, "City of Peace." [1]
-    </p>
+<p>
+Baghdad was founded in 762 CE by the second Abbasid caliph,
+Abu Jaʿfar al-Mansur, and became the principal capital of the Abbasid
+caliphate. Its official name was <em>Madinat al-Salam</em>,
+the "City of Peace." 
+<a class="citation" href="#ref1">[1]</a>
+</p>
 
-    <p>
-        During the following centuries Baghdad developed into one of the
-        most important political, commercial, literary and intellectual
-        centres of the medieval Islamic world. By the tenth century it
-        had become a major centre of Arabic culture and letters. [1]
-    </p>
+<p>
+During the following centuries Baghdad developed into one of the most
+important political, commercial, literary and intellectual centres of
+the medieval Islamic world. By the tenth century it had become a major
+centre of Arabic culture and letters.
+<a class="citation" href="#ref1">[1]</a>
+</p>
 
-    <p>
-        Its intellectual history cannot, however, be reduced to a single
-        institution or a single "golden age." Baghdad's achievements
-        emerged from a much wider network of rulers, scholars, translators,
-        physicians, philosophers, jurists, theologians, booksellers,
-        libraries and students.
-    </p>
+<p>
+Its intellectual history cannot, however, be reduced to a single
+institution or a single "golden age." Baghdad's achievements emerged
+from a much wider network of rulers, scholars, translators, physicians,
+philosophers, jurists, theologians, booksellers, libraries and students.
+</p>
 
 </div>
 
 
-
-<section>
-
-    <h2>1. The Foundation of Baghdad</h2>
-
-    <p>
-        The Abbasid Revolution of 750 CE transferred the caliphate from
-        the Umayyads to the Abbasids. After consolidating his authority,
-        Abu Jaʿfar al-Mansur searched for a permanent political centre
-        for the new dynasty.
-    </p>
-
-    <p>
-        In 762 CE al-Mansur founded Baghdad in Iraq. The city was designed
-        as a major imperial capital and was positioned near important
-        agricultural, commercial and riverine networks. [1]
-    </p>
-
-    <p>
-        Its location on the Tigris helped connect Baghdad with Iraq,
-        Persia, Syria and wider commercial routes. Baghdad subsequently
-        became one of the major centres through which goods, people and
-        knowledge circulated. [2]
-    </p>
-
-    <div class="highlight">
-
-        <strong>Historical significance:</strong>
-
-        <p>
-            Baghdad was a new Abbasid capital, but it was not an
-            intellectual creation from nothing. The Abbasid world inherited
-            scholarly traditions from Iraq, Persia, Syria and other regions.
-            Baghdad brought many of these traditions into an increasingly
-            connected urban environment.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<section>
-
-    <h2>2. Why Baghdad Became a Centre of Knowledge</h2>
-
-    <p>
-        Baghdad's intellectual importance resulted from several conditions
-        operating together.
-    </p>
-
-    <ul>
-
-        <li>
-            Its position within major commercial and river networks. [2]
-        </li>
-
-        <li>
-            The political resources of the Abbasid caliphate.
-        </li>
-
-        <li>
-            Courtly patronage of scholars, physicians, translators and
-            intellectuals.
-        </li>
-
-        <li>
-            The growth of Arabic as a major language of scholarship.
-        </li>
-
-        <li>
-            The development of libraries, book production and scholarly
-            networks.
-        </li>
-
-        <li>
-            The translation and adaptation of knowledge from Greek,
-            Syriac, Persian and Indian traditions. [3][4]
-        </li>
-
-    </ul>
-
-    <p>
-        These factors helped create an environment in which inherited
-        knowledge could be translated, interpreted, criticised and
-        developed in new intellectual contexts.
-    </p>
-
-</section>
-
-
-
-<section>
-
-    <h2>3. Abbasid Political Power and Intellectual Patronage</h2>
-
-    <p>
-        The Abbasid state provided an important political and economic
-        framework for the development of Baghdad. The reigns of
-        al-Mansur, Harun al-Rashid and al-Ma'mun are particularly
-        significant in discussions of Abbasid political and intellectual
-        history.
-    </p>
-
-    <p>
-        Al-Ma'mun's reign (813–833 CE) is especially associated with
-        philosophical and theological debate, astronomy and translation
-        activity. Contemporary and later historical traditions connect
-        his court with a strong interest in learned disciplines. [5]
-    </p>
-
-    <p>
-        Nevertheless, intellectual activity was never completely dependent
-        on the personal interests of one caliph. It involved scholars,
-        families, translators and institutions operating across generations.
-    </p>
-
-</section>
-
-
-
-<section>
-
-    <h2>4. The Translation Movement</h2>
-
-    <p>
-        One of the most important developments of the early Abbasid period
-        was the translation of a large body of learned literature into
-        Arabic.
-    </p>
-
-    <p>
-        This movement included works connected with philosophy, medicine,
-        mathematics, astronomy, astrology, alchemy and other disciplines.
-        The major period of Graeco-Arabic translation extended broadly from
-        the eighth to the tenth centuries. [3]
-    </p>
-
-    <p>
-        Translation into Arabic was part of a much larger intercultural
-        process. Greek works had often passed through Syriac before being
-        translated into Arabic, and scholars inherited intellectual
-        traditions that had developed in Christian, Persian, Indian and
-        other communities. [4]
-    </p>
-
-    <div class="scholarly-note">
-
-        <strong>Scholarly perspective</strong>
-
-        <p>
-            It is therefore misleading to describe the Abbasid translation
-            movement simply as Muslims "saving Greek knowledge." Translation
-            was one stage of a larger process of transmission, interpretation,
-            commentary and intellectual transformation. [3][4]
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<section>
-
-    <h2>5. Bayt al-Hikmah — The House of Wisdom</h2>
-
-    <p>
-        Bayt al-Hikmah, usually translated as "House of Wisdom," is one of
-        the most famous names associated with Abbasid Baghdad.
-    </p>
-
-    <p>
-        Later historical writing has often presented Bayt al-Hikmah as a
-        gigantic university-like institution containing a vast library and
-        functioning as the central translation academy of the Abbasid
-        world.
-    </p>
-
-    <div class="scholarly-note">
-
-        <strong>Important historical caution</strong>
-
-        <p>
-            Modern scholarship questions whether this popular image accurately
-            represents the historical institution. Encyclopaedia Iranica
-            specifically notes that there is no secure historical basis for
-            many of the idealised claims that appear in textbooks.
-            [6]
-        </p>
-
-        <p>
-            The evidence instead points toward a more complex history
-            involving courtly libraries, administrative traditions and
-            translation activities rather than one institution responsible
-            for the entirety of Baghdad's intellectual life. [6]
-        </p>
-
-    </div>
-
-    <p>
-        Therefore, this website uses "Bayt al-Hikmah" as an important part
-        of the history of Abbasid learning while avoiding claims that cannot
-        be securely established from the surviving evidence.
-    </p>
-
-</section>
-
-
-
-<section>
-
-    <h2>6. Books, Libraries and the Culture of Learning</h2>
-
-    <p>
-        The intellectual life of Abbasid Baghdad depended heavily on books,
-        manuscripts, scholars and networks of textual transmission.
-    </p>
-
-    <p>
-        One of the most important sources for understanding this world is
-        <em>al-Fihrist</em>, compiled by Ibn al-Nadim in tenth-century
-        Baghdad.
-    </p>
-
-    <p>
-        Ibn al-Nadim's bibliographical work records authors, books and
-        scholarly disciplines and provides an extraordinary window into
-        the intellectual culture of his period.
-    </p>
-
-    <div class="highlight">
-
-        <strong>Why <em>al-Fihrist</em> matters:</strong>
-
-        <p>
-            It demonstrates the extraordinary breadth of books and
-            disciplines circulating in the Arabic-speaking intellectual
-            world of the Abbasid period.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<section>
-
-    <h2>7. Mathematics</h2>
-
-    <p>
-        Mathematics developed significantly during the Abbasid period.
-        Muhammad ibn Musa al-Khwarizmi became one of the best-known
-        mathematicians associated with the early Abbasid intellectual
-        environment.
-    </p>
-
-    <p>
-        His mathematical writings contributed to the development of
-        algebra, while his astronomical and geographical works formed
-        part of the broader scientific culture of the period.
-    </p>
-
-    <p>
-        Abbasid mathematics developed through interaction with earlier
-        Greek, Persian and Indian traditions. The process involved both
-        transmission and original mathematical development.
-    </p>
-
-</section>
-
-
-
-<section>
-
-    <h2>8. Astronomy</h2>
-
-    <p>
-        Astronomy was another major field of Abbasid scholarship.
-        Mathematical astronomy entered Arabic scholarship through several
-        intellectual traditions, including Greek, Persian and Indian
-        sources.
-    </p>
-
-    <p>
-        Scholars associated with the Abbasid period worked with astronomical
-        tables, mathematical models and observational practices.
-    </p>
-
-    <p>
-        The reign of al-Ma'mun is particularly associated with patronage of
-        astronomical activity and the production of astronomical knowledge.
-        [5]
-    </p>
-
-</section>
-
-
-
-<section>
-
-    <h2>9. Medicine</h2>
-
-    <p>
-        Medicine was one of the most developed scientific disciplines in
-        the Abbasid intellectual world.
-    </p>
-
-    <p>
-        Greek medical writings, particularly the Galenic tradition, were
-        translated into Arabic through networks involving Syriac-speaking
-        Christian scholars and physicians. [4][7]
-    </p>
-
-    <p>
-        Hunayn ibn Ishaq became one of the most important translators and
-        medical scholars associated with this tradition.
-    </p>
-
-    <p>
-        The resulting Arabic medical literature was not merely a collection
-        of translations. Physicians produced commentaries, reorganised
-        inherited knowledge and developed their own medical writings.
-        [7]
-    </p>
-
-</section>
-
-
-
-<section>
-
-    <h2>10. Philosophy and Kalam</h2>
-
-    <p>
-        Abbasid Baghdad also became an important environment for philosophical
-        and theological debate.
-    </p>
-
-    <p>
-        The availability of Greek philosophical works, especially texts
-        associated with Aristotle and other ancient thinkers, stimulated
-        new forms of philosophical inquiry in Arabic. [3]
-    </p>
-
-    <p>
-        At the same time, Muslim theologians developed the discipline of
-        <em>kalam</em>, dealing with questions concerning God, creation,
-        knowledge, human agency and reason.
-    </p>
-
-    <p>
-        The interaction between philosophy, kalam, law, language and the
-        religious sciences became an important feature of Abbasid intellectual
-        culture. [5]
-    </p>
-
-</section>
-
-
-
-<section>
-
-    <h2>11. Literature and Arabic Scholarship</h2>
-
-    <p>
-        Baghdad's intellectual culture extended far beyond the natural
-        sciences.
-    </p>
-
-    <p>
-        Abbasid-era scholarship produced major developments in:
-    </p>
-
-    <ul>
-
-        <li>Arabic poetry</li>
-        <li>Adab literature</li>
-        <li>History</li>
-        <li>Biography</li>
-        <li>Grammar</li>
-        <li>Lexicography</li>
-        <li>Rhetoric</li>
-        <li>Theology</li>
-        <li>Islamic law</li>
-
-    </ul>
-
-    <p>
-        Cambridge's survey of Abbasid intellectual literature covers fields
-        ranging from theology and law to philosophy, Sufism, history,
-        mathematics, astronomy, geography, alchemy and medicine. [5]
-    </p>
-
-</section>
-
-
-
-<section>
-
-    <h2>12. Abbasid Intellectual Culture</h2>
-
-    <p>
-        The intellectual culture of Abbasid Baghdad was fundamentally
-        interconnected.
-    </p>
-
-    <p>
-        Muslim scholars worked alongside Christian and Jewish intellectuals,
-        Persian scholars, Syriac translators and others. Arabic increasingly
-        functioned as a shared scholarly language even when scholars came
-        from different linguistic and religious backgrounds.
-    </p>
-
-    <p>
-        This cultural interaction was not merely passive borrowing. Scholars
-        translated, interpreted, criticised, classified and extended the
-        knowledge they inherited.
-    </p>
-
-    <div class="quote">
-
-        Baghdad's intellectual significance is best understood not as the
-        product of a single building, but as the result of networks of
-        scholars, texts, translators, patrons, libraries and institutions
-        working across generations.
-
-    </div>
-
-</section>
-
-
-
-<section>
-
-    <h2>13. Important Intellectual Figures</h2>
-
-    <div class="scholars">
-
-        <div class="scholar-card">
-
-            <h3>Al-Khwarizmi</h3>
-
-            <p>
-                Mathematics · Astronomy · Geography
-            </p>
-
-            <span class="tag">Algebra</span>
-            <span class="tag">Mathematics</span>
-
-        </div>
-
-
-        <div class="scholar-card">
-
-            <h3>Hunayn ibn Ishaq</h3>
-
-            <p>
-                Medicine · Translation
-            </p>
-
-            <span class="tag">Medicine</span>
-            <span class="tag">Translation</span>
-
-        </div>
-
-
-        <div class="scholar-card">
-
-            <h3>Al-Kindi</h3>
-
-            <p>
-                Philosophy · Mathematics · Science
-            </p>
-
-            <span class="tag">Philosophy</span>
-            <span class="tag">Science</span>
-
-        </div>
-
-
-        <div class="scholar-card">
-
-            <h3>Al-Razi</h3>
-
-            <p>
-                Medicine · Philosophy
-            </p>
-
-            <span class="tag">Medicine</span>
-            <span class="tag">Clinical Thought</span>
-
-        </div>
-
-
-        <div class="scholar-card">
-
-            <h3>Ibn al-Nadim</h3>
-
-            <p>
-                Bibliography · Intellectual History
-            </p>
-
-            <span class="tag">Al-Fihrist</span>
-            <span class="tag">Books</span>
-
-        </div>
-
-
-        <div class="scholar-card">
-
-            <h3>Al-Jahiz</h3>
-
-            <p>
-                Literature · Theology · Natural History
-            </p>
-
-            <span class="tag">Adab</span>
-            <span class="tag">Literature</span>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<section>
-
-    <h2>14. Baghdad and the Wider Islamic Intellectual World</h2>
-
-    <p>
-        Baghdad should not be treated as an isolated intellectual island.
-    </p>
-
-    <p>
-        Kufa and Basra had already developed major traditions of grammar,
-        jurisprudence, theology and literature. Other cities—including
-        Damascus, Nishapur, Rayy, Bukhara and later Cairo and Cordoba—
-        also became important centres of scholarship.
-    </p>
-
-    <p>
-        Baghdad was therefore one major node within a much wider network
-        of Islamic intellectual civilisation.
-    </p>
-
-</section>
-
-
-
-<section>
-
-    <h2>15. Transformation and Political Change</h2>
-
-    <p>
-        Abbasid Baghdad did not experience uninterrupted political strength.
-        The Abbasid caliphate gradually faced military, political and
-        regional challenges.
-    </p>
-
-    <p>
-        The city remained culturally significant even as the political
-        authority of the caliphs changed.
-    </p>
-
-    <p>
-        This distinction is important: the history of Baghdad's intellectual
-        life cannot simply be equated with the strength of Abbasid political
-        power.
-    </p>
-
-</section>
-
-
-
-<section>
-
-    <h2>16. The Mongol Conquest of 1258</h2>
-
-    <p>
-        In 1258 CE, the Mongol forces of Hulagu captured Baghdad. The
-        conquest ended the Abbasid caliphate's political rule in Baghdad. [8]
-    </p>
-
-    <p>
-        The city had already undergone political and social transformations
-        before the invasion. Encyclopaedia Iranica notes that factionalism,
-        repeated fires and floods, and gradual decline had weakened Baghdad
-        before the Mongol conquest. [9]
-    </p>
-
-    <p>
-        Hulagu's forces entered Baghdad in February 1258. The city was
-        subjected to looting and massacre, and the last Abbasid caliph in
-        Baghdad, al-Musta'sim, was executed. [8]
-    </p>
-
-    <div class="scholarly-note">
-
-        <strong>Important historical distinction</strong>
-
-        <p>
-            The fall of Baghdad was a catastrophic political and demographic
-            event, but it should not be described as the moment when all
-            Islamic intellectual life disappeared.
-        </p>
-
-        <p>
-            Scholarship continued in other centres of the Islamic world,
-            including Egypt, Syria, Persia, Anatolia and Central Asia.
-        </p>
-
-    </div>
-
-</section>
-
-
-
-<section>
-
-    <h2>17. Historical Timeline</h2>
-
-    <div class="timeline">
-
-        <div class="timeline-item">
-
-            <div class="year">750 CE</div>
-
-            <p>
-                Abbasid Revolution brings the Abbasid dynasty to power.
-            </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <div class="year">762 CE</div>
-
-            <p>
-                Al-Mansur establishes Baghdad as the Abbasid capital. [1]
-            </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <div class="year">8th–10th centuries</div>
-
-            <p>
-                Major translation and scholarly activity expands in the
-                Abbasid world. [3][4]
-            </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <div class="year">813–833 CE</div>
-
-            <p>
-                Reign of al-Ma'mun, associated with significant intellectual,
-                theological and astronomical patronage. [5]
-            </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <div class="year">10th century</div>
-
-            <p>
-                Baghdad remains a major centre of Arabic culture and letters.
-                [1]
-            </p>
-
-        </div>
-
-
-        <div class="timeline-item">
-
-            <div class="year">1258 CE</div>
-
-            <p>
-                Hulagu captures Baghdad and the Abbasid caliphate in Baghdad
-                comes to an end. [8]
-            </p>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-
-<section>
-
-    <h2>18. Why Abbasid Baghdad Matters</h2>
-
-    <p>
-        Abbasid Baghdad occupies a central place in the history of medieval
-        Islamic civilisation because political power, commerce, literature,
-        religious scholarship and scientific inquiry interacted there on an
-        extraordinary scale.
-    </p>
-
-    <p>
-        Its importance also lies in the history of transmission. Greek,
-        Syriac, Persian and Indian intellectual traditions entered Arabic
-        scholarly culture through complex processes of translation,
-        commentary and adaptation. [3][4]
-    </p>
-
-    <p>
-        Baghdad therefore represents not simply the preservation of an older
-        intellectual heritage, but a historical environment in which inherited
-        knowledge was reorganised and developed into new traditions.
-    </p>
-
-</section>
-
-
-
-<section>
-
-    <h2>19. Key Ideas</h2>
-
-    <span class="tag">Abbasid Caliphate</span>
-    <span class="tag">Baghdad</span>
-    <span class="tag">762 CE</span>
-    <span class="tag">Translation Movement</span>
-    <span class="tag">Bayt al-Hikmah</span>
-    <span class="tag">Greek-Arabic Translation</span>
-    <span class="tag">Syriac Scholarship</span>
-    <span class="tag">Persian Heritage</span>
-    <span class="tag">Mathematics</span>
-    <span class="tag">Astronomy</span>
-    <span class="tag">Medicine</span>
-    <span class="tag">Philosophy</span>
-    <span class="tag">Kalam</span>
-    <span class="tag">Adab</span>
-    <span class="tag">Book Culture</span>
-    <span class="tag">1258</span>
-
-</section>
-
-
-
-<section>
-
-    <h2>20. References</h2>
-
-    <div class="sources">
-
-        <ol>
-
-            <li>
-                Hugh Kennedy,
-                <em>Baghdad i. The Iranian Connection: Before the Mongol Invasion</em>,
-                <em>Encyclopaedia Iranica</em>.
-                <a class="citation"
-                   href="https://www.iranicaonline.org/articles/baghdad/baghdad-iranian-connection-i-pr-mongol/"
-                   target="_blank">
-                    [Open Source]
-                </a>
-            </li>
-
-
-            <li>
-                Bertold Spuler,
-                <em>Commerce iv. Before the Mongol Conquest</em>,
-                <em>Encyclopaedia Iranica</em>.
-                <a class="citation"
-                   href="https://www.iranicaonline.org/articles/commerce-iv/"
-                   target="_blank">
-                    [Open Source]
-                </a>
-            </li>
-
-
-            <li>
-                Dimitri Gutas,
-                <em>
-                    Greek Thought, Arabic Culture: The Graeco-Arabic Translation
-                    Movement in Baghdad and Early Abbasid Society
-                </em>,
-                Routledge.
-                <a class="citation"
-                   href="https://www.routledge.com/Greek-Thought-Arabic-Culture-The-Graeco-Arabic-Translation-Movement-in-Baghdad-and-Early-Abbasaid-Society-2nd-4th5th-10th-c/Gutas/p/book/9780415061339"
-                   target="_blank">
-                    [Publisher]
-                </a>
-            </li>
-
-
-            <li>
-                L. E. Goodman,
-                "The Translation of Greek Materials into Arabic,"
-                in <em>Religion, Learning and Science in the Abbasid Period</em>,
-                Cambridge University Press.
-                <a class="citation"
-                   href="https://www.cambridge.org/core/books/abs/religion-learning-and-science-in-the-abbasid-period/translation-of-greek-materials-into-arabic/F3B5FAED63A903A754334E02EC3B5BAC"
-                   target="_blank">
-                    [Cambridge]
-                </a>
-            </li>
-
-
-            <li>
-                M. J. L. Young, J. D. Latham & R. B. Serjeant (eds.),
-                <em>
-                    Religion, Learning and Science in the Abbasid Period
-                </em>,
-                Cambridge University Press.
-                <a class="citation"
-                   href="https://www.cambridge.org/core/books/religion-learning-and-science-in-the-abbasid-period/C6D43E6F66C933707F3EC0A176096078"
-                   target="_blank">
-                    [Cambridge]
-                </a>
-            </li>
-
-
-            <li>
-                <em>
-                    Greece x. Greek Medicine in Persia
-                </em>,
-                <em>Encyclopaedia Iranica</em>.
-                <a class="citation"
-                   href="https://www.iranicaonline.org/articles/greece-x/"
-                   target="_blank">
-                    [Open Source]
-                </a>
-            </li>
-
-
-            <li>
-                Tayeb El-Hibri,
-                <em>The Abbasid Caliphate: A History</em>,
-                Cambridge University Press.
-                <a class="citation"
-                   href="https://www.cambridge.org/core/books/the-abbasid-caliphate/FD6A3ED58BC54F7A252D872F9A12FC46"
-                   target="_blank">
-                    [Cambridge]
-                </a>
-            </li>
-
-
-            <li>
-                <em>
-                    Hulagu Khan
-                </em>,
-                <em>Encyclopaedia Iranica</em>.
-                <a class="citation"
-                   href="https://www.iranicaonline.org/articles/hulagu-khan/"
-                   target="_blank">
-                    [Open Source]
-                </a>
-            </li>
-
-
-            <li>
-                Abbas Zaryab,
-                <em>
-                    Baghdad ii. From the Mongol Invasion to the Ottoman Occupation
-                </em>,
-                <em>Encyclopaedia Iranica</em>.
-                <a class="citation"
-                   href="https://www.iranicaonline.org/articles/baghdad/baghdad-iranian-connection-ii/"
-                   target="_blank">
-                    [Open Source]
-                </a>
-            </li>
-
-        </ol>
-
-    </div>
-
-</section>
-
-
-
-<section>
-
-    <h2>21. Primary Sources for Further Research</h2>
-
-    <div class="sources">
-
-        <ul>
-
-            <li>
-                Al-Tabari,
-                <em>Tarikh al-Rusul wa al-Muluk</em>.
-            </li>
-
-            <li>
-                Al-Mas'udi,
-                <em>Muruj al-Dhahab</em>.
-            </li>
-
-            <li>
-                Ibn al-Nadim,
-                <em>Al-Fihrist</em>.
-            </li>
-
-            <li>
-                Al-Khwarizmi,
-                mathematical and astronomical works.
-            </li>
-
-            <li>
-                Hunayn ibn Ishaq,
-                medical and translation tradition.
-            </li>
-
-        </ul>
-
-    </div>
-
-</section>
-
-
-
-<div class="back-links">
-
-    <a class="button" href="civilizations.html">
-        ← Back to Civilizations
-    </a>
-
-    <a class="button" href="index.html">
-        Home
-    </a>
+<h2>1. The Foundation of Baghdad</h2>
+
+<p>
+The Abbasid Revolution of 750 CE transferred the caliphate from the
+Umayyads to the Abbasids. After consolidating his authority,
+Abu Jaʿfar al-Mansur sought a permanent political centre for the new
+dynasty.
+</p>
+
+<p>
+In 762 CE al-Mansur founded Baghdad in Iraq and established it as the
+official Abbasid capital. The city's location placed it close to major
+agricultural, commercial and riverine networks.
+<a class="citation" href="#ref1">[1]</a>
+</p>
+
+<p>
+The Tigris connected Baghdad with Iraq and wider regions to the east
+and west. Its geographical position contributed significantly to the
+city's political and commercial importance.
+<a class="citation" href="#ref1">[1]</a>
+<a class="citation" href="#ref2">[2]</a>
+</p>
+
+<div class="note">
+
+<strong>Historical significance:</strong>
+
+<p>
+Baghdad was a new Abbasid capital, but it was not an intellectual
+creation from nothing. The Abbasid world inherited scholarly traditions
+from Iraq, Persia, Syria, India and other regions. Baghdad became one
+of the places where many of these traditions encountered one another.
+</p>
 
 </div>
 
+
+<h2>2. Why Baghdad Became a Centre of Knowledge</h2>
+
+<p>
+Baghdad's intellectual importance resulted from several conditions
+operating together:
+</p>
+
+<ul>
+    <li>Its position within major commercial and river networks.</li>
+    <li>The political resources of the Abbasid caliphate.</li>
+    <li>Patronage of scholars, physicians, translators and intellectuals.</li>
+    <li>The development of Arabic as a major scholarly language.</li>
+    <li>The growth of books, libraries and scholarly networks.</li>
+    <li>Translation and adaptation of knowledge from Greek, Syriac, Persian and Indian traditions.</li>
+</ul>
+
+<p>
+The translation movement was part of a broader intercultural process
+rather than an isolated event. Greek intellectual material often
+reached Arabic through Syriac-speaking Christian scholarly networks,
+while Persian and Indian traditions also contributed to the intellectual
+world of the Abbasid period.
+<a class="citation" href="#ref3">[3]</a>
+<a class="citation" href="#ref4">[4]</a>
+</p>
+
+
+<h2>3. Abbasid Political Power and Intellectual Patronage</h2>
+
+<p>
+The Abbasid state provided an important political and economic framework
+for the development of Baghdad. The reigns of al-Mansur, Harun al-Rashid
+and al-Ma'mun are particularly important in the history of Abbasid
+political and intellectual culture.
+</p>
+
+<p>
+Al-Ma'mun's reign (813–833 CE) is especially associated with theological
+debate, philosophical interests, astronomy and learned activity.
+The broader Abbasid period witnessed major developments in literature,
+science, theology, law and philosophy.
+<a class="citation" href="#ref5">[5]</a>
+</p>
+
+<p>
+Intellectual activity, however, was never simply the product of one
+caliph. Scholars, families, translators, physicians and teachers
+operated across generations and across different cities.
+</p>
+
+
+<h2>4. The Translation Movement</h2>
+
+<p>
+One of the most important developments associated with the early Abbasid
+period was the translation of a large body of learned literature into
+Arabic.
+</p>
+
+<p>
+The movement included works related to philosophy, medicine, mathematics,
+astronomy, astrology, alchemy and other disciplines. Dimitri Gutas
+situates the major Graeco-Arabic translation movement within the
+social and political environment of early Abbasid Baghdad, especially
+from the eighth through tenth centuries.
+<a class="citation" href="#ref3">[3]</a>
+</p>
+
+<p>
+The process was multilingual. Greek works had often passed through
+Syriac before appearing in Arabic, and the translators belonged to
+different religious and linguistic communities.
+<a class="citation" href="#ref4">[4]</a>
+</p>
+
+<div class="note">
+
+<strong>Scholarly perspective</strong>
+
+<p>
+It is therefore misleading to describe the Abbasid translation
+movement simply as Muslims "saving Greek knowledge." Translation was
+one stage of a much larger process involving transmission,
+interpretation, commentary, criticism and intellectual transformation.
+<a class="citation" href="#ref3">[3]</a>
+<a class="citation" href="#ref4">[4]</a>
+</p>
+
+</div>
+
+
+<h2>5. Bayt al-Hikmah — The House of Wisdom</h2>
+
+<p>
+Bayt al-Hikmah, usually translated as "House of Wisdom," is one of the
+most famous names associated with Abbasid Baghdad.
+</p>
+
+<p>
+Popular accounts have often presented it as a gigantic library,
+university-like academy and central translation institution responsible
+for much of the intellectual activity of Abbasid Baghdad.
+</p>
+
+<div class="warning">
+
+<strong>Important historical caution</strong>
+
+<p>
+The historical evidence is considerably more complicated.
+Encyclopaedia Iranica notes that there is no secure historical basis
+for many of the idealised claims commonly repeated in textbooks.
+The evidence has instead been interpreted in connection with
+Abbasid court libraries, administrative traditions and earlier
+Sasanian models of royal repositories.
+<a class="citation" href="#ref6">[6]</a>
+</p>
+
+<p>
+Dimitri Gutas likewise treats the familiar image of Bayt al-Hikmah
+as a much more complicated historical question than the modern
+"great university of Baghdad" narrative suggests.
+<a class="citation" href="#ref3">[3]</a>
+</p>
+
+</div>
+
+<p>
+This distinction does <strong>not</strong> mean that the Abbasid
+translation movement or Baghdad's intellectual importance is doubtful.
+Those developments are well established. The caution concerns the
+exact institutional identity and functions assigned to the name
+<em>Bayt al-Hikmah</em>.
+</p>
+
+
+<h2>6. Books, Libraries and the Culture of Learning</h2>
+
+<p>
+The intellectual life of Abbasid Baghdad depended heavily on books,
+manuscripts, scholars and networks of textual transmission.
+</p>
+
+<p>
+One of the most important sources for understanding this world is
+<em>al-Fihrist</em>, compiled by Ibn al-Nadim in tenth-century Baghdad.
+</p>
+
+<p>
+The work was designed as a catalogue of books and authors available
+in Arabic and became an extraordinary survey of the intellectual
+culture of its period.
+<a class="citation" href="#ref7">[7]</a>
+</p>
+
+<div class="note">
+
+<strong>Why <em>al-Fihrist</em> matters</strong>
+
+<p>
+It provides evidence for the remarkable breadth of books, authors,
+disciplines and intellectual traditions circulating in the medieval
+Islamic world.
+<a class="citation" href="#ref7">[7]</a>
+</p>
+
+</div>
+
+
+<h2>7. Mathematics</h2>
+
+<p>
+Mathematics developed significantly during the Abbasid period.
+Muhammad ibn Musa al-Khwarizmi became one of the best-known mathematicians
+associated with the early Abbasid intellectual environment.
+</p>
+
+<p>
+His work contributed to the development of algebra and to the broader
+mathematical and astronomical culture of the period. Abbasid mathematics
+developed through interaction with earlier Greek, Persian and Indian
+traditions while also producing new mathematical developments.
+<a class="citation" href="#ref5">[5]</a>
+</p>
+
+
+<h2>8. Astronomy</h2>
+
+<p>
+Astronomy was another major field of Abbasid scholarship. Mathematical
+astronomy entered Arabic scholarship through several intellectual
+traditions, including Greek, Persian and Indian sources.
+</p>
+
+<p>
+The reign of al-Ma'mun is particularly associated with patronage of
+astronomical activity and the development of astronomical knowledge.
+The wider Abbasid intellectual environment also produced astronomical
+tables and mathematical investigations.
+<a class="citation" href="#ref5">[5]</a>
+</p>
+
+
+<h2>9. Medicine</h2>
+
+<p>
+Medicine was one of the most developed scientific disciplines in the
+Abbasid intellectual world.
+</p>
+
+<p>
+Greek medical writings, especially the Galenic tradition, were
+translated into Arabic through networks that included Syriac-speaking
+Christian scholars and physicians.
+<a class="citation" href="#ref4">[4]</a>
+<a class="citation" href="#ref8">[8]</a>
+</p>
+
+<p>
+Hunayn ibn Ishaq became one of the most important translators and
+medical scholars associated with this intellectual tradition.
+</p>
+
+<p>
+The resulting Arabic medical literature was not simply a collection
+of translations. Physicians and scholars produced commentaries,
+reorganised inherited knowledge and developed their own medical
+literature.
+<a class="citation" href="#ref8">[8]</a>
+</p>
+
+
+<h2>10. Philosophy and Kalam</h2>
+
+<p>
+Abbasid Baghdad became an important environment for philosophical and
+theological debate.
+</p>
+
+<p>
+The availability of Greek philosophical works, particularly texts
+associated with Aristotle and other ancient thinkers, stimulated new
+forms of philosophical inquiry in Arabic.
+<a class="citation" href="#ref3">[3]</a>
+</p>
+
+<p>
+At the same time, Muslim theologians developed and debated
+<em>kalam</em>, addressing questions concerning God, creation,
+knowledge, human agency and reason.
+<a class="citation" href="#ref9">[9]</a>
+</p>
+
+<p>
+The interaction between philosophy, kalam, law, language and the
+religious sciences became a significant feature of Abbasid intellectual
+culture.
+</p>
+
+
+<h2>11. Literature and Arabic Scholarship</h2>
+
+<p>
+Baghdad's intellectual culture extended far beyond the natural sciences.
+The Abbasid period witnessed major developments in:
+</p>
+
+<ul>
+    <li>Arabic poetry</li>
+    <li>Adab literature</li>
+    <li>History</li>
+    <li>Biography</li>
+    <li>Grammar</li>
+    <li>Lexicography</li>
+    <li>Rhetoric</li>
+    <li>Theology</li>
+    <li>Islamic law</li>
+</ul>
+
+<p>
+The Cambridge survey of Abbasid learning covers theology, law,
+philosophy, Sufism, history, mathematics, astronomy, geography,
+alchemy, medicine and other branches of knowledge.
+<a class="citation" href="#ref5">[5]</a>
+</p>
+
+
+<h2>12. Abbasid Intellectual Culture</h2>
+
+<p>
+The intellectual culture of Abbasid Baghdad was fundamentally
+interconnected.
+</p>
+
+<p>
+Muslim scholars worked within an environment that also included
+Christian and Jewish intellectuals, Persian scholars and Syriac
+translators. Arabic increasingly functioned as a major shared language
+of scholarly communication.
+<a class="citation" href="#ref4">[4]</a>
+</p>
+
+<p>
+This cultural interaction was not merely passive borrowing. Scholars
+translated, interpreted, criticised, classified and extended the
+knowledge they inherited.
+<a class="citation" href="#ref3">[3]</a>
+</p>
+
+<div class="note">
+
+<p>
+<strong>
+Baghdad's intellectual significance is best understood not as the
+product of a single building, but as the result of networks of
+scholars, texts, translators, patrons, libraries and institutions
+working across generations.
+</strong>
+</p>
+
+</div>
+
+
+<h2>13. Important Intellectual Figures</h2>
+
+<div class="figure-grid">
+
+<div class="figure-card">
+<h3>Al-Khwarizmi</h3>
+<p><strong>Mathematics · Astronomy · Geography</strong></p>
+<p>Associated with the early Abbasid scientific tradition and important developments in mathematics and astronomy.</p>
+</div>
+
+<div class="figure-card">
+<h3>Hunayn ibn Ishaq</h3>
+<p><strong>Medicine · Translation</strong></p>
+<p>A major translator and physician in the Arabic medical tradition.</p>
+</div>
+
+<div class="figure-card">
+<h3>Al-Kindi</h3>
+<p><strong>Philosophy · Mathematics · Science</strong></p>
+<p>One of the most important early philosophers writing in Arabic.</p>
+</div>
+
+<div class="figure-card">
+<h3>Al-Razi</h3>
+<p><strong>Medicine · Philosophy</strong></p>
+<p>A major physician and thinker associated with the broader Abbasid intellectual world.</p>
+</div>
+
+<div class="figure-card">
+<h3>Ibn al-Nadim</h3>
+<p><strong>Bibliography · Intellectual History</strong></p>
+<p>Author of <em>al-Fihrist</em>, an extraordinary tenth-century survey of books and intellectual disciplines.</p>
+</div>
+
+<div class="figure-card">
+<h3>Al-Jahiz</h3>
+<p><strong>Literature · Theology · Natural Thought</strong></p>
+<p>A major prose writer and intellectual figure of the Abbasid period.</p>
+</div>
+
+</div>
+
+
+<h2>14. Baghdad and the Wider Islamic Intellectual World</h2>
+
+<p>
+Baghdad should not be treated as an isolated intellectual island.
+</p>
+
+<p>
+Kufa and Basra had already developed important traditions of grammar,
+jurisprudence, theology and literature. Other cities—including
+Damascus, Nishapur, Rayy, Bukhara and later Cairo and Cordoba—also
+became major centres of scholarship.
+</p>
+
+<p>
+Baghdad was therefore one major node within a much wider network of
+Islamic intellectual civilisation.
+</p>
+
+
+<h2>15. Transformation and Political Change</h2>
+
+<p>
+Abbasid Baghdad did not experience uninterrupted political strength.
+The Abbasid caliphate gradually faced military, political and regional
+challenges.
+</p>
+
+<p>
+The history of the caliphate from 750 to 1258 was marked by periods
+of expansion, political fragmentation, changing military structures
+and attempts to preserve Abbasid authority.
+<a class="citation" href="#ref10">[10]</a>
+</p>
+
+<p>
+This distinction is important: the history of Baghdad's intellectual
+life cannot simply be equated with the strength of Abbasid political
+power.
+</p>
+
+
+<h2>16. The Mongol Conquest of 1258</h2>
+
+<p>
+In 1258 CE, the Mongol forces of Hülegü captured Baghdad. The conquest
+ended the Abbasid caliphate's political rule in Baghdad.
+<a class="citation" href="#ref11">[11]</a>
+</p>
+
+<p>
+The city had already undergone political and social transformations
+before the invasion. Encyclopaedia Iranica notes gradual decline,
+factionalism, repeated fires and floods, and other difficulties in
+the period preceding the Mongol conquest.
+<a class="citation" href="#ref12">[12]</a>
+</p>
+
+<p>
+Hülegü's forces entered Baghdad in February 1258. The city was subjected
+to looting and massacre, and the Abbasid caliph al-Musta'sim was
+executed.
+<a class="citation" href="#ref11">[11]</a>
+</p>
+
+<div class="warning">
+
+<strong>Important historical distinction</strong>
+
+<p>
+The fall of Baghdad was a catastrophic political and demographic event,
+but it should not be described as the moment when all Islamic
+intellectual life disappeared.
+</p>
+
+<p>
+Scholarly activity continued in other centres of the Islamic world,
+including Egypt, Syria, Persia, Anatolia and Central Asia.
+</p>
+
+</div>
+
+
+<h2>17. Historical Timeline</h2>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<strong>750 CE</strong>
+<p>The Abbasid Revolution brings the Abbasid dynasty to power.</p>
+</div>
+
+<div class="timeline-item">
+<strong>762 CE</strong>
+<p>Al-Mansur establishes Baghdad as the Abbasid capital.
+<a class="citation" href="#ref1">[1]</a>
+</p>
+</div>
+
+<div class="timeline-item">
+<strong>8th–10th centuries</strong>
+<p>The Graeco-Arabic translation movement develops alongside wider
+scholarly activity in the Abbasid world.
+<a class="citation" href="#ref3">[3]</a>
+<a class="citation" href="#ref4">[4]</a>
+</p>
+</div>
+
+<div class="timeline-item">
+<strong>813–833 CE</strong>
+<p>Reign of al-Ma'mun, associated with significant intellectual,
+theological and astronomical activity.
+<a class="citation" href="#ref5">[5]</a>
+</p>
+</div>
+
+<div class="timeline-item">
+<strong>10th century</strong>
+<p>Baghdad remains a major centre of Arabic culture and letters.
+<a class="citation" href="#ref1">[1]</a>
+</p>
+</div>
+
+<div class="timeline-item">
+<strong>1258 CE</strong>
+<p>Hülegü captures Baghdad and the Abbasid caliphate in Baghdad comes
+to an end.
+<a class="citation" href="#ref11">[11]</a>
+</p>
+</div>
+
+</div>
+
+
+<h2>18. Why Abbasid Baghdad Matters</h2>
+
+<p>
+Abbasid Baghdad occupies a central place in the history of medieval
+Islamic civilisation because political power, commerce, literature,
+religious scholarship and scientific inquiry interacted there on an
+extraordinary scale.
+</p>
+
+<p>
+Its importance also lies in the history of transmission. Greek,
+Syriac, Persian and Indian intellectual traditions entered Arabic
+scholarly culture through complex processes of translation,
+commentary and adaptation.
+<a class="citation" href="#ref3">[3]</a>
+<a class="citation" href="#ref4">[4]</a>
+</p>
+
+<p>
+Baghdad therefore represents not simply the preservation of an older
+intellectual heritage, but a historical environment in which inherited
+knowledge was reorganised and developed into new traditions.
+</p>
+
+
+<h2>19. Key Ideas</h2>
+
+<div class="keywords">
+
+<span class="keyword">Abbasid Caliphate</span>
+<span class="keyword">Baghdad</span>
+<span class="keyword">762 CE</span>
+<span class="keyword">Translation Movement</span>
+<span class="keyword">Bayt al-Hikmah</span>
+<span class="keyword">Greek-Arabic Translation</span>
+<span class="keyword">Syriac Scholarship</span>
+<span class="keyword">Persian Heritage</span>
+<span class="keyword">Mathematics</span>
+<span class="keyword">Astronomy</span>
+<span class="keyword">Medicine</span>
+<span class="keyword">Philosophy</span>
+<span class="keyword">Kalam</span>
+<span class="keyword">Adab</span>
+<span class="keyword">Book Culture</span>
+<span class="keyword">1258</span>
+
+</div>
+
+
+<h2>20. References</h2>
+
+<div class="references">
+
+<ol>
+
+<li id="ref1">
+Hugh Kennedy,
+<em>Baghdad i. The Iranian Connection: Before the Mongol Invasion</em>,
+<em>Encyclopaedia Iranica</em>.
+<br>
+<a href="https://www.iranicaonline.org/articles/baghdad/baghdad-iranian-connection-i-pr-mongol/" target="_blank">
+[Open Source]
+</a>
+</li>
+
+<li id="ref2">
+Bertold Spuler,
+<em>Commerce iv. Before the Mongol Conquest</em>,
+<em>Encyclopaedia Iranica</em>.
+<br>
+<a href="https://www.iranicaonline.org/articles/commerce-iv/" target="_blank">
+[Open Source]
+</a>
+</li>
+
+<li id="ref3">
+Dimitri Gutas,
+<em>Greek Thought, Arabic Culture: The Graeco-Arabic Translation Movement
+in Baghdad and Early Abbasid Society</em>,
+Routledge, 1998.
+<br>
+<a href="https://www.routledge.com/Greek-Thought-Arabic-Culture-The-Graeco-Arabic-Translation-Movement-in-Baghdad-and-Early-Abbasaid-Society-2nd-4th5th-10th-c/Gutas/p/book/9780415061339" target="_blank">
+[Publisher]
+</a>
+</li>
+
+<li id="ref4">
+L. E. Goodman,
+"The Translation of Greek Materials into Arabic,"
+in <em>Religion, Learning and Science in the Abbasid Period</em>,
+Cambridge University Press.
+<br>
+<a href="https://www.cambridge.org/core/books/abs/religion-learning-and-science-in-the-abbasid-period/translation-of-greek-materials-into-arabic/F3B5FAED63A903A754334E02EC3B5BAC" target="_blank">
+[Cambridge]
+</a>
+</li>
+
+<li id="ref5">
+M. J. L. Young, J. D. Latham & R. B. Serjeant (eds.),
+<em>Religion, Learning and Science in the Abbasid Period</em>,
+Cambridge University Press.
+<br>
+<a href="https://www.cambridge.org/core/books/religion-learning-and-science-in-the-abbasid-period/C6D43E6F66C933707F3EC0A176096078" target="_blank">
+[Cambridge]
+</a>
+</li>
+
+<li id="ref6">
+<em>Greece x. Greek Medicine in Persia</em>,
+<em>Encyclopaedia Iranica</em>.
+The article discusses the historical problem surrounding the
+institutional interpretation of Bayt al-Hikmah.
+<br>
+<a href="https://www.iranicaonline.org/articles/greece-x/" target="_blank">
+[Open Source]
+</a>
+</li>
+
+<li id="ref7">
+<em>Fehrest i. The Author and His Work</em>,
+<em>Encyclopaedia Iranica</em>.
+The article discusses Ibn al-Nadim and the significance of
+<em>al-Fihrist</em>.
+<br>
+<a href="https://www.iranicaonline.org/articles/fehrest-i-the-author-and-his-work/" target="_blank">
+[Open Source]
+</a>
+</li>
+
+<li id="ref8">
+Haskell D. Isaacs,
+"Arabic Medical Literature,"
+in <em>Religion, Learning and Science in the Abbasid Period</em>,
+Cambridge University Press.
+<br>
+<a href="https://www.cambridge.org/core/books/abs/religion-learning-and-science-in-the-abbasid-period/arabic-medical-literature/A5B0847F0C465DCEB4C82455579E0910" target="_blank">
+[Cambridge]
+</a>
+</li>
+
+<li id="ref9">
+<em>Sunni Theology</em>,
+in <em>Religion, Learning and Science in the Abbasid Period</em>,
+Cambridge University Press.
+<br>
+<a href="https://www.cambridge.org/core/books/abs/religion-learning-and-science-in-the-abbasid-period/sunni-theology/C71964232DD5A0F6A064E98022601F61" target="_blank">
+[Cambridge]
+</a>
+</li>
+
+<li id="ref10">
+Tayeb El-Hibri,
+<em>The Abbasid Caliphate: A History</em>,
+Cambridge University Press, 2021.
+<br>
+<a href="https://www.cambridge.org/core/books/the-abbasid-caliphate/FD6A3ED58BC54F7A252D872F9A12FC46" target="_blank">
+[Cambridge]
+</a>
+</li>
+
+<li id="ref11">
+<em>Hulagu Khan</em>,
+<em>Encyclopaedia Iranica</em>.
+<br>
+<a href="https://www.iranicaonline.org/articles/hulagu-khan/" target="_blank">
+[Open Source]
+</a>
+</li>
+
+<li id="ref12">
+Abbas Zaryab,
+<em>Baghdad ii. From the Mongol Invasion to the Ottoman Occupation</em>,
+<em>Encyclopaedia Iranica</em>.
+<br>
+<a href="https://www.iranicaonline.org/articles/baghdad/baghdad-iranian-connection-ii/" target="_blank">
+[Open Source]
+</a>
+</li>
+
+</ol>
+
+</div>
+
+
+<h2>21. Primary Sources for Further Research</h2>
+
+<div class="primary">
+
+<ul>
+
+<li>
+Al-Tabari, <em>Tarikh al-Rusul wa al-Muluk</em>.
+</li>
+
+<li>
+Al-Mas'udi, <em>Muruj al-Dhahab</em>.
+</li>
+
+<li>
+Ibn al-Nadim, <em>Al-Fihrist</em>.
+</li>
+
+<li>
+Al-Khwarizmi, mathematical and astronomical works.
+</li>
+
+<li>
+Hunayn ibn Ishaq, medical and translation tradition.
+</li>
+
+</ul>
+
+<p>
+These primary or near-primary materials should be read together with
+modern critical scholarship rather than treated as completely
+self-explanatory historical records.
+</p>
+
+</div>
+
+
+<div class="back">
+
+<a href="civilizations.html">
+← Back to Civilizations
+</a>
+
+<a href="index.html">
+Home
+</a>
+
+</div>
 
 </main>
 
 
-
 <footer>
 
-    © 2026 Islamic History · A Digital Knowledge Project
+© 2026 Islamic History · A Digital Knowledge Project
 
 </footer>
-
 
 </body>
 </html>
