@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Al-Ghazali | Islamic History</title>
+
+<meta name="description" content="Explore the life, works, thought and legacy of Abu Hamid al-Ghazali, one of the most influential thinkers in Islamic intellectual history.">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #f7f4ec;
+    color: #24352c;
+    line-height: 1.8;
+}
+
+/* Navigation */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: #173f35;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.12);
+}
+
+.logo {
+    color: #d8b45c;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav ul li a {
+    color: #f7f4ec;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+nav ul li a:hover {
+    color: #d8b45c;
+}
+
+/* Hero */
+.hero {
+    background:
+        linear-gradient(rgba(23,63,53,0.92), rgba(23,63,53,0.92)),
+        radial-gradient(circle at top, #386b5a, #173f35);
+    color: white;
+    text-align: center;
+    padding: 90px 8%;
+}
+
+.arabic {
+    font-size: 32px;
+    color: #d8b45c;
+    margin-bottom: 20px;
+    direction: rtl;
+}
+
+.hero h1 {
+    font-size: 55px;
+    margin-bottom: 12px;
+}
+
+.hero h2 {
+    font-size: 23px;
+    font-weight: normal;
+    color: #e3dfd2;
+}
+
+.hero p {
+    max-width: 800px;
+    margin: 25px auto 0;
+    color: #d8ddd9;
+}
+
+/* Main */
+main {
+    max-width: 1050px;
+    margin: auto;
+    padding: 70px 25px;
+}
+
+.intro {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.intro h2 {
+    color: #173f35;
+    font-size: 36px;
+    margin-bottom: 18px;
+}
+
+.intro p {
+    color: #59665f;
+}
+
+/* Sections */
+.content-section {
+    background: white;
+    padding: 35px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    border-left: 4px solid #d8b45c;
+}
+
+.content-section h2 {
+    color: #173f35;
+    font-size: 29px;
+    margin-bottom: 18px;
+}
+
+.content-section p {
+    margin-bottom: 15px;
+}
+
+.content-section ul {
+    margin: 15px 0 10px 25px;
+}
+
+.content-section li {
+    margin-bottom: 8px;
+}
+
+/* Works */
+.works {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.work {
+    background: #f7f4ec;
+    padding: 22px;
+    border-radius: 8px;
+    border-top: 3px solid #d8b45c;
+}
+
+.work h3 {
+    color: #173f35;
+    margin-bottom: 8px;
+}
+
+/* Quote */
+.quote {
+    background: #173f35;
+    color: white;
+    padding: 55px 30px;
+    text-align: center;
+    margin-top: 45px;
+    border-radius: 10px;
+}
+
+.quote p {
+    font-size: 25px;
+    font-style: italic;
+    max-width: 850px;
+    margin: auto;
+}
+
+.quote span {
+    display: block;
+    color: #d8b45c;
+    margin-top: 15px;
+}
+
+/* Sources */
+.sources {
+    background: #eee9db;
+    padding: 30px;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.sources h2 {
+    color: #173f35;
+    margin-bottom: 15px;
+}
+
+.sources li {
+    margin-bottom: 10px;
+}
+
+/* Navigation buttons */
+.page-links {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.page-links a {
+    display: inline-block;
+    margin: 7px;
+    padding: 11px 20px;
+    border: 1px solid #173f35;
+    border-radius: 5px;
+    color: #173f35;
+    text-decoration: none;
+}
+
+.page-links a:hover {
+    background: #173f35;
+    color: white;
+}
+
+/* Footer */
+footer {
+    background: #102e27;
+    color: #c9d0cc;
+    text-align: center;
+    padding: 30px 8%;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .hero h2 {
+        font-size: 19px;
+    }
+
+    .works {
+        grid-template-columns: 1fr;
+    }
+
+    .content-section {
+        padding: 25px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+    <a href="index.html" class="logo">
+        Islamic History
+    </a>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="history.html">History</a></li>
+        <li><a href="scholars.html">Scholars</a></li>
+        <li><a href="civilizations.html">Civilizations</a></li>
+        <li><a href="timeline.html">Timeline</a></li>
+    </ul>
+
+</nav>
+
+
+<section class="hero">
+
+    <div class="arabic">
+        أَبُو حَامِدٍ الغَزَالِي
+    </div>
+
+    <h1>Al-Ghazali</h1>
+
+    <h2>1058–1111 CE</h2>
+
+    <p>
+        Theologian · Jurist · Philosopher · Spiritual Thinker
+    </p>
+
+</section>
+
+
+<main>
+
+    <div class="intro">
+
+        <h2>Abu Hamid al-Ghazali</h2>
+
+        <p>
+            Abu Hamid Muhammad ibn Muhammad al-Ghazali was one of the
+            most influential scholars in the intellectual history of
+            the Islamic world. His writings engaged with theology,
+            jurisprudence, philosophy, ethics and spiritual life.
+        </p>
+
+    </div>
+
+
+    <section class="content-section">
+
+        <h2>1. Early Life and Education</h2>
+
+        <p>
+            Al-Ghazali was born in Tus in Khurasan around 1058 CE.
+            He received an early education in the religious sciences
+            and later studied under prominent scholars of his time.
+        </p>
+
+        <p>
+            His intellectual formation included Islamic jurisprudence,
+            theology, logic and other disciplines that were important
+            within the scholarly culture of the medieval Islamic world.
+        </p>
+
+    </section>
+
+
+    <section class="content-section">
+
+        <h2>2. His Teachers and Intellectual Formation</h2>
+
+        <p>
+            Among the important figures associated with his education
+            was Imam al-Haramayn al-Juwayni, under whom al-Ghazali
+            studied in Nishapur.
+        </p>
+
+        <p>
+            His education helped him develop a broad intellectual
+            approach that combined jurisprudence, theology, logic
+            and philosophical inquiry.
+        </p>
+
+    </section>
+
+
+    <section class="content-section">
+
+        <h2>3. The Baghdad Years</h2>
+
+        <p>
+            Al-Ghazali later became associated with the famous
+            Nizamiyya institution in Baghdad, where he taught and
+            became an important intellectual figure.
+        </p>
+
+        <p>
+            During this period he encountered different intellectual
+            traditions and became deeply engaged with questions
+            concerning philosophy, theology and the foundations of
+            knowledge.
+        </p>
+
+    </section>
+
+
+    <section class="content-section">
+
+        <h2>4. The Intellectual Crisis</h2>
+
+        <p>
+            In his autobiographical work
+            <em>Al-Munqidh min al-Dalal</em>, al-Ghazali describes
+            a profound intellectual and spiritual crisis.
+        </p>
+
+        <p>
+            He questioned the reliability of different forms of
+            knowledge and reflected deeply on certainty, perception,
+            reason and spiritual experience.
+        </p>
+
+        <p>
+            His crisis eventually led him to withdraw from his
+            prestigious position in Baghdad and pursue a different
+            path of spiritual and intellectual development.
+        </p>
+
+    </section>
+
+
+    <section class="content-section">
+
+        <h2>5. The Retreat and Spiritual Journey</h2>
+
+        <p>
+            After leaving Baghdad, al-Ghazali spent years travelling
+            and engaging in spiritual reflection. His later writings
+            placed strong emphasis on purification of the soul,
+            sincerity, ethical conduct and the relationship between
+            outward practice and inner character.
+        </p>
+
+        <p>
+            This period profoundly influenced the direction of his
+            later intellectual work.
+        </p>
+
+    </section>
+
+
+    <section class="content-section">
+
+        <h2>6. Major Works</h2>
+
+        <div class="works">
+
+            <div class="work">
+                <h3>Ihya' 'Ulum al-Din</h3>
+
+                <p>
+                    A major work on Islamic religious life, ethics,
+                    worship, spiritual development and purification
+                    of the soul.
+                </p>
+            </div>
+
+
+            <div class="work">
+                <h3>Tahafut al-Falasifa</h3>
+
+                <p>
+                    A critical examination of several philosophical
+                    positions that al-Ghazali regarded as incompatible
+                    with Islamic theological commitments.
+                </p>
+            </div>
+
+
+            <div class="work">
+                <h3>Al-Munqidh min al-Dalal</h3>
+
+                <p>
+                    An autobiographical and intellectual work discussing
+                    his search for certainty and his engagement with
+                    different intellectual traditions.
+                </p>
+            </div>
+
+
+            <div class="work">
+                <h3>Mishkat al-Anwar</h3>
+
+                <p>
+                    A philosophical and spiritual work exploring the
+                    Qur'anic symbolism of light and questions of
+                    spiritual knowledge.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="content-section">
+
+        <h2>7. Al-Ghazali and Philosophy</h2>
+
+        <p>
+            Al-Ghazali's relationship with philosophy was complex.
+            He studied philosophical works carefully before criticizing
+            particular positions within them.
+        </p>
+
+        <p>
+            In <em>Tahafut al-Falasifa</em>, he challenged several
+            positions associated with the philosophers of his time.
+            His critique became one of the most influential episodes
+            in the history of Islamic philosophical and theological
+            thought.
+        </p>
+
+        <p>
+            His approach demonstrates an important intellectual
+            principle: serious criticism often requires understanding
+            an argument before evaluating it.
+        </p>
+
+    </section>
+
+
+    <section class="content-section">
+
+        <h2>8. Theology, Ethics and Spirituality</h2>
+
+        <p>
+            Al-Ghazali sought to connect religious knowledge with
+            ethical transformation and spiritual development.
+        </p>
+
+        <p>
+            For him, knowledge was not simply the accumulation of
+            information. It was also connected with how a person
+            understands truth, develops character and lives according
+            to what they know.
+        </p>
+
+    </section>
+
+
+    <section class="content-section">
+
+        <h2>9. Contribution to Islamic Thought</h2>
+
+        <p>
+            Al-Ghazali contributed to several areas of Islamic
+            intellectual history, including theology, jurisprudence,
+            ethics, logic and spirituality.
+        </p>
+
+        <p>
+            His works helped create a powerful synthesis between
+            intellectual inquiry and spiritual discipline, although
+            different scholars have interpreted his legacy in
+            different ways.
+        </p>
+
+    </section>
+
+
+    <section class="content-section">
+
+        <h2>10. Influence and Legacy</h2>
+
+        <p>
+            Al-Ghazali's writings influenced generations of Muslim
+            scholars and readers. His works were studied across
+            different regions of the Islamic world and continued to
+            shape discussions on theology, philosophy, ethics and
+            spirituality.
+        </p>
+
+        <p>
+            His legacy also became important in later discussions
+            about the relationship between reason, revelation,
+            knowledge and spiritual experience.
+        </p>
+
+    </section>
+
+
+    <section class="content-section">
+
+        <h2>11. Key Ideas</h2>
+
+        <ul>
+            <li>The pursuit of certainty in knowledge.</li>
+            <li>The importance of ethical transformation.</li>
+            <li>The relationship between reason and revelation.</li>
+            <li>The purification and development of the human soul.</li>
+            <li>Critical examination of philosophical arguments.</li>
+            <li>The connection between knowledge and action.</li>
+        </ul>
+
+    </section>
+
+
+    <div class="quote">
+
+        <p>
+            “Knowledge without action is madness,
+            and action without knowledge is vanity.”
+        </p>
+
+        <span>
+            Attributed to al-Ghazali
+        </span>
+
+    </div>
+
+
+    <section class="sources">
+
+        <h2>Selected Sources</h2>
+
+        <ul>
+
+            <li>
+                Al-Ghazali,
+                <em>Al-Munqidh min al-Dalal</em>
+            </li>
+
+            <li>
+                Al-Ghazali,
+                <em>Ihya' 'Ulum al-Din</em>
+            </li>
+
+            <li>
+                Al-Ghazali,
+                <em>Tahafut al-Falasifa</em>
+            </li>
+
+            <li>
+                Al-Ghazali,
+                <em>Mishkat al-Anwar</em>
+            </li>
+
+            <li>
+                Frank Griffel,
+                <em>Al-Ghazali's Philosophical Theology</em>
+            </li>
+
+        </ul>
+
+    </section>
+
+
+    <div class="page-links">
+
+        <a href="scholars.html">
+            ← Back to Scholars
+        </a>
+
+        <a href="index.html">
+            Home
+        </a>
+
+    </div>
+
+</main>
+
+
+<footer>
+
+    © 2026 Islamic History · A Digital Knowledge Project
+
+</footer>
+
+</body>
+</html>
