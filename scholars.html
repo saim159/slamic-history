@@ -1,582 +1,494 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Great Scholars of the Islamic World</title>
 
-  <title>Great Scholars | Islamic History</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        body {
+            margin: 0;
+            font-family: Georgia, "Times New Roman", serif;
+            background: #f7f5ef;
+            color: #26332d;
+            line-height: 1.8;
+        }
 
-    body {
-      font-family: Georgia, "Times New Roman", serif;
-      background: #f7f4ec;
-      color: #24352f;
-      line-height: 1.7;
-    }
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #173c32;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
 
-    /* Navigation */
-    nav {
-      background: #173f35;
-      padding: 18px 8%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 3px 12px rgba(0,0,0,0.12);
-    }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 22px;
+            font-size: 15px;
+        }
 
-    .logo {
-      color: #d8b45c;
-      font-size: 23px;
-      font-weight: bold;
-      text-decoration: none;
-      letter-spacing: 0.5px;
-    }
+        nav a:hover {
+            color: #d8b56a;
+        }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 28px;
-    }
+        .brand {
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 0;
+        }
 
-    nav ul li a {
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 15px;
-      transition: 0.3s;
-    }
+        .hero {
+            background: linear-gradient(135deg, #173c32, #285847);
+            color: white;
+            text-align: center;
+            padding: 90px 20px;
+        }
 
-    nav ul li a:hover {
-      color: #d8b45c;
-    }
+        .arabic {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
 
-    /* Hero */
-    .hero {
-      background: linear-gradient(
-        rgba(23, 63, 53, 0.94),
-        rgba(23, 63, 53, 0.94)
-      );
-      color: white;
-      text-align: center;
-      padding: 90px 20px 85px;
-    }
+        .hero h1 {
+            font-size: 48px;
+            margin: 10px 0;
+        }
 
-    .hero .arabic {
-      font-size: 35px;
-      color: #d8b45c;
-      margin-bottom: 25px;
-      direction: rtl;
-    }
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            font-size: 18px;
+            color: #e6eee9;
+        }
 
-    .hero h1 {
-      font-size: 52px;
-      margin-bottom: 18px;
-      font-weight: normal;
-    }
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 70px 25px;
+        }
 
-    .hero p {
-      max-width: 760px;
-      margin: auto;
-      font-size: 18px;
-      color: #e7e2d4;
-    }
+        .intro {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
 
-    /* Main */
-    .container {
-      width: 86%;
-      max-width: 1200px;
-      margin: auto;
-    }
+        .intro h2 {
+            color: #173c32;
+            font-size: 34px;
+            margin-bottom: 15px;
+        }
 
-    .intro {
-      text-align: center;
-      padding: 75px 20px 45px;
-    }
+        .intro p {
+            color: #58645e;
+        }
 
-    .intro h2 {
-      color: #173f35;
-      font-size: 34px;
-      margin-bottom: 18px;
-    }
+        .scholars {
+            margin-top: 55px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
 
-    .intro p {
-      max-width: 800px;
-      margin: auto;
-      color: #59655f;
-      font-size: 17px;
-    }
+        .card {
+            background: white;
+            border-radius: 14px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 1px solid #e4e0d5;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
 
-    /* Scholar Grid */
-    .scholars-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      padding: 25px 0 75px;
-    }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
 
-    .scholar-card {
-      background: #ffffff;
-      border-radius: 12px;
-      padding: 30px;
-      border-top: 5px solid #d8b45c;
-      box-shadow: 0 7px 25px rgba(0,0,0,0.08);
-      transition: 0.3s;
-      display: flex;
-      flex-direction: column;
-    }
+        .card h3 {
+            color: #173c32;
+            font-size: 25px;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
 
-    .scholar-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
-    }
+        .dates {
+            color: #a17b32;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
 
-    .period {
-      color: #b08b35;
-      font-size: 14px;
-      font-weight: bold;
-      margin-bottom: 8px;
-    }
+        .field {
+            font-size: 14px;
+            color: #68736e;
+            margin-bottom: 15px;
+        }
 
-    .scholar-card h3 {
-      color: #173f35;
-      font-size: 25px;
-      margin-bottom: 5px;
-    }
+        .card p {
+            color: #4f5b55;
+        }
 
-    .arabic-name {
-      color: #777;
-      font-size: 17px;
-      margin-bottom: 12px;
-      direction: rtl;
-    }
+        .works {
+            background: #f1eee4;
+            padding: 15px 18px;
+            border-radius: 8px;
+            margin-top: 18px;
+        }
 
-    .field {
-      display: inline-block;
-      background: #edf3ef;
-      color: #24594b;
-      padding: 5px 10px;
-      border-radius: 20px;
-      font-size: 13px;
-      margin-bottom: 18px;
-      width: fit-content;
-    }
+        .works strong {
+            color: #173c32;
+        }
 
-    .scholar-card p {
-      color: #59655f;
-      font-size: 15px;
-      margin-bottom: 15px;
-    }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 18px;
+            background: #173c32;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+            font-size: 14px;
+        }
 
-    .works {
-      margin-top: auto;
-      padding-top: 12px;
-    }
+        .button:hover {
+            background: #285847;
+        }
 
-    .works strong {
-      color: #173f35;
-      display: block;
-      margin-bottom: 5px;
-    }
+        .legacy {
+            margin-top: 70px;
+            background: #173c32;
+            color: white;
+            border-radius: 16px;
+            padding: 45px;
+            text-align: center;
+        }
 
-    .works span {
-      color: #666;
-      font-size: 14px;
-    }
+        .legacy h2 {
+            font-size: 32px;
+            margin-top: 0;
+        }
 
-    .explore {
-      display: inline-block;
-      margin-top: 20px;
-      color: #173f35;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 14px;
-    }
+        .legacy p {
+            max-width: 800px;
+            margin: auto;
+            color: #e0e8e4;
+        }
 
-    .explore:hover {
-      color: #b08b35;
-    }
+        footer {
+            background: #102c25;
+            color: #cbd5d0;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 14px;
+        }
 
-    /* Why Section */
-    .why-section {
-      background: #173f35;
-      color: white;
-      padding: 75px 20px;
-      text-align: center;
-    }
+        @media (max-width: 700px) {
+            nav {
+                flex-direction: column;
+                gap: 12px;
+            }
 
-    .why-section h2 {
-      color: #d8b45c;
-      font-size: 34px;
-      margin-bottom: 20px;
-    }
+            nav a {
+                margin-left: 10px;
+                margin-right: 10px;
+            }
 
-    .why-section p {
-      max-width: 820px;
-      margin: auto;
-      color: #e5e5df;
-      font-size: 17px;
-    }
+            .hero h1 {
+                font-size: 36px;
+            }
 
-    /* Footer */
-    footer {
-      background: #102e27;
-      color: #c8cec9;
-      text-align: center;
-      padding: 28px 20px;
-      font-size: 14px;
-    }
+            .hero {
+                padding: 70px 20px;
+            }
 
-    footer span {
-      color: #d8b45c;
-    }
-
-    /* Responsive */
-    @media (max-width: 900px) {
-      .scholars-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .hero h1 {
-        font-size: 42px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        gap: 15px;
-      }
-
-      nav ul {
-        gap: 14px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .hero {
-        padding: 65px 18px;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-
-      .hero .arabic {
-        font-size: 27px;
-      }
-
-      .scholars-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .intro h2,
-      .why-section h2 {
-        font-size: 28px;
-      }
-    }
-  </style>
+            .container {
+                padding: 50px 20px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="index.html" class="logo">Islamic History</a>
+<nav>
+    <a href="index.html" class="brand">Islamic History</a>
 
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="history.html">History</a></li>
-      <li><a href="scholars.html">Scholars</a></li>
-      <li><a href="#">Civilizations</a></li>
-      <li><a href="#">Timeline</a></li>
-    </ul>
-  </nav>
+    <div>
+        <a href="index.html">Home</a>
+        <a href="history.html">History</a>
+        <a href="scholars.html">Scholars</a>
+        <a href="civilizations.html">Civilizations</a>
+        <a href="timeline.html">Timeline</a>
+    </div>
+</nav>
 
-
-  <!-- Hero -->
-  <section class="hero">
+<section class="hero">
     <div class="arabic">وَقُلْ رَبِّ زِدْنِي عِلْمًا</div>
 
     <h1>Great Scholars of the Islamic World</h1>
 
     <p>
-      Discover the scholars whose ideas, discoveries, writings, and intellectual
-      traditions shaped the history of the Islamic world and influenced human knowledge.
+        Discover the scholars whose intellectual contributions shaped
+        theology, philosophy, science, medicine, law, history and civilization.
     </p>
-  </section>
+</section>
 
+<div class="container">
 
-  <!-- Introduction -->
-  <section class="intro">
-    <div class="container">
-      <h2>A Legacy of Knowledge</h2>
+    <div class="intro">
+        <h2>A Legacy of Knowledge</h2>
 
-      <p>
-        Throughout Islamic history, scholars contributed to theology, law,
-        philosophy, medicine, mathematics, astronomy, optics, history, and
-        many other fields of knowledge. Their works formed an important part
-        of the intellectual heritage of the Muslim world.
-      </p>
+        <p>
+            Throughout Islamic history, scholars developed rich traditions
+            of learning across many disciplines. Their works influenced not
+            only the Muslim world but also intellectual history across cultures.
+        </p>
     </div>
-  </section>
 
+    <div class="scholars">
 
-  <!-- Scholars -->
-  <section class="container">
-    <div class="scholars-grid">
+        <!-- Al-Ghazali -->
+        <div class="card">
+            <h3>Al-Ghazali</h3>
 
-      <!-- Al-Ghazali -->
-      <article class="scholar-card">
-        <div class="period">1058–1111 CE</div>
+            <div class="dates">1058–1111 CE</div>
 
-        <h3>Al-Ghazali</h3>
+            <div class="field">
+                Theology · Philosophy · Spirituality
+            </div>
 
-        <div class="arabic-name">أبو حامد الغزالي</div>
+            <p>
+                One of the most influential thinkers in Islamic intellectual
+                history. His works explored theology, philosophy, ethics,
+                jurisprudence and spiritual development.
+            </p>
 
-        <div class="field">Theology • Philosophy • Spirituality</div>
+            <div class="works">
+                <strong>Major Works:</strong><br>
+                Ihya' 'Ulum al-Din<br>
+                Tahafut al-Falasifa<br>
+                Al-Munqidh min al-Dalal
+            </div>
 
-        <p>
-          One of the most influential Muslim thinkers of the medieval period.
-          Al-Ghazali wrote extensively on theology, philosophy, ethics,
-          spirituality, and Islamic jurisprudence.
-        </p>
-
-        <div class="works">
-          <strong>Key Works</strong>
-          <span>
-            Ihya' Ulum al-Din, Tahafut al-Falasifa,
-            Al-Munqidh min al-Dalal
-          </span>
+            <a href="ghazali.html" class="button">
+                Explore Scholar →
+            </a>
         </div>
 
-        <a href="#" class="explore">Explore Scholar →</a>
-      </article>
 
+        <!-- Ibn Sina -->
+        <div class="card">
+            <h3>Ibn Sina</h3>
 
-      <!-- Ibn Sina -->
-      <article class="scholar-card">
-        <div class="period">c. 980–1037 CE</div>
+            <div class="dates">c. 980–1037 CE</div>
 
-        <h3>Ibn Sina</h3>
+            <div class="field">
+                Medicine · Philosophy
+            </div>
 
-        <div class="arabic-name">ابن سينا</div>
+            <p>
+                A major philosopher and physician whose works became influential
+                in both Islamic and European intellectual traditions.
+            </p>
 
-        <div class="field">Medicine • Philosophy</div>
+            <div class="works">
+                <strong>Major Works:</strong><br>
+                The Canon of Medicine<br>
+                The Book of Healing
+            </div>
 
-        <p>
-          Ibn Sina, known in Latin Europe as Avicenna, was a major philosopher
-          and physician whose writings became influential in both the Islamic
-          world and medieval Europe.
-        </p>
-
-        <div class="works">
-          <strong>Key Works</strong>
-          <span>
-            The Canon of Medicine, The Book of Healing
-          </span>
+            <a href="#" class="button">
+                Explore Scholar →
+            </a>
         </div>
 
-        <a href="#" class="explore">Explore Scholar →</a>
-      </article>
 
+        <!-- Ibn al-Haytham -->
+        <div class="card">
+            <h3>Ibn al-Haytham</h3>
 
-      <!-- Ibn al-Haytham -->
-      <article class="scholar-card">
-        <div class="period">c. 965–1040 CE</div>
+            <div class="dates">c. 965–1040 CE</div>
 
-        <h3>Ibn al-Haytham</h3>
+            <div class="field">
+                Optics · Mathematics · Science
+            </div>
 
-        <div class="arabic-name">ابن الهيثم</div>
+            <p>
+                A pioneering scientist whose systematic study of vision and
+                optics became an important foundation for later scientific work.
+            </p>
 
-        <div class="field">Optics • Mathematics • Science</div>
+            <div class="works">
+                <strong>Major Work:</strong><br>
+                Kitab al-Manazir
+            </div>
 
-        <p>
-          A pioneering scholar of optics and mathematics. His systematic
-          investigation of vision, light, and experimentation made a lasting
-          contribution to the history of scientific inquiry.
-        </p>
-
-        <div class="works">
-          <strong>Key Work</strong>
-          <span>
-            Kitab al-Manazir (Book of Optics)
-          </span>
+            <a href="#" class="button">
+                Explore Scholar →
+            </a>
         </div>
 
-        <a href="#" class="explore">Explore Scholar →</a>
-      </article>
 
+        <!-- Ibn Khaldun -->
+        <div class="card">
+            <h3>Ibn Khaldun</h3>
 
-      <!-- Ibn Khaldun -->
-      <article class="scholar-card">
-        <div class="period">1332–1406 CE</div>
+            <div class="dates">1332–1406 CE</div>
 
-        <h3>Ibn Khaldun</h3>
+            <div class="field">
+                History · Society · Political Thought
+            </div>
 
-        <div class="arabic-name">ابن خلدون</div>
+            <p>
+                A pioneering historian and social thinker known for his analysis
+                of civilization, political power and the rise and fall of states.
+            </p>
 
-        <div class="field">History • Society • Political Thought</div>
+            <div class="works">
+                <strong>Major Work:</strong><br>
+                Al-Muqaddimah
+            </div>
 
-        <p>
-          A major historian and thinker whose analysis of society, political
-          authority, economic life, and the rise and decline of states became
-          highly influential in the study of history.
-        </p>
-
-        <div class="works">
-          <strong>Key Work</strong>
-          <span>
-            Al-Muqaddimah
-          </span>
+            <a href="#" class="button">
+                Explore Scholar →
+            </a>
         </div>
 
-        <a href="#" class="explore">Explore Scholar →</a>
-      </article>
 
+        <!-- Al-Biruni -->
+        <div class="card">
+            <h3>Al-Biruni</h3>
 
-      <!-- Al-Biruni -->
-      <article class="scholar-card">
-        <div class="period">973–c. 1050 CE</div>
+            <div class="dates">973–c. 1050 CE</div>
 
-        <h3>Al-Biruni</h3>
+            <div class="field">
+                Astronomy · Mathematics · Geography
+            </div>
 
-        <div class="arabic-name">أبو الريحان البيروني</div>
+            <p>
+                A remarkable polymath known for his contributions to astronomy,
+                mathematics, geography and the comparative study of cultures.
+            </p>
 
-        <div class="field">Astronomy • Mathematics • Geography</div>
+            <div class="works">
+                <strong>Major Work:</strong><br>
+                Kitab al-Hind
+            </div>
 
-        <p>
-          Al-Biruni made important contributions to astronomy, mathematics,
-          geography, chronology, and the comparative study of cultures and
-          religions.
-        </p>
-
-        <div class="works">
-          <strong>Key Work</strong>
-          <span>
-            Kitab al-Hind
-          </span>
+            <a href="#" class="button">
+                Explore Scholar →
+            </a>
         </div>
 
-        <a href="#" class="explore">Explore Scholar →</a>
-      </article>
 
+        <!-- Al-Farabi -->
+        <div class="card">
+            <h3>Al-Farabi</h3>
 
-      <!-- Al-Farabi -->
-      <article class="scholar-card">
-        <div class="period">c. 872–950 CE</div>
+            <div class="dates">c. 872–950 CE</div>
 
-        <h3>Al-Farabi</h3>
+            <div class="field">
+                Philosophy · Logic · Political Thought
+            </div>
 
-        <div class="arabic-name">أبو نصر الفارابي</div>
+            <p>
+                A major philosopher who developed influential ideas about logic,
+                political philosophy, knowledge and the ideal society.
+            </p>
 
-        <div class="field">Philosophy • Logic • Political Thought</div>
+            <div class="works">
+                <strong>Major Work:</strong><br>
+                Al-Madinah al-Fadilah
+            </div>
 
-        <p>
-          Al-Farabi was a major philosopher of the Islamic intellectual
-          tradition. He wrote on logic, metaphysics, ethics, music, and
-          political philosophy.
-        </p>
-
-        <div class="works">
-          <strong>Key Work</strong>
-          <span>
-            Al-Madinah al-Fadilah
-          </span>
+            <a href="#" class="button">
+                Explore Scholar →
+            </a>
         </div>
 
-        <a href="#" class="explore">Explore Scholar →</a>
-      </article>
 
+        <!-- Imam al-Bukhari -->
+        <div class="card">
+            <h3>Imam al-Bukhari</h3>
 
-      <!-- Imam al-Bukhari -->
-      <article class="scholar-card">
-        <div class="period">810–870 CE</div>
+            <div class="dates">810–870 CE</div>
 
-        <h3>Imam al-Bukhari</h3>
+            <div class="field">
+                Hadith · Islamic Scholarship
+            </div>
 
-        <div class="arabic-name">الإمام البخاري</div>
+            <p>
+                One of the most renowned hadith scholars in Islamic history,
+                best known for his rigorous collection and authentication of hadith.
+            </p>
 
-        <div class="field">Hadith • Islamic Scholarship</div>
+            <div class="works">
+                <strong>Major Work:</strong><br>
+                Sahih al-Bukhari
+            </div>
 
-        <p>
-          One of the most renowned hadith scholars in Islamic history.
-          His rigorous approach to the transmission and classification of
-          hadith made his work central to Sunni hadith scholarship.
-        </p>
-
-        <div class="works">
-          <strong>Key Work</strong>
-          <span>
-            Sahih al-Bukhari
-          </span>
+            <a href="#" class="button">
+                Explore Scholar →
+            </a>
         </div>
 
-        <a href="#" class="explore">Explore Scholar →</a>
-      </article>
 
+        <!-- Imam al-Shafi'i -->
+        <div class="card">
+            <h3>Imam al-Shafi'i</h3>
 
-      <!-- Imam al-Shafi'i -->
-      <article class="scholar-card">
-        <div class="period">767–820 CE</div>
+            <div class="dates">767–820 CE</div>
 
-        <h3>Imam al-Shafi'i</h3>
+            <div class="field">
+                Fiqh · Usul al-Fiqh
+            </div>
 
-        <div class="arabic-name">الإمام الشافعي</div>
+            <p>
+                A foundational jurist whose work played a major role in the
+                development of Islamic legal theory and jurisprudence.
+            </p>
 
-        <div class="field">Fiqh • Usul al-Fiqh</div>
+            <div class="works">
+                <strong>Major Work:</strong><br>
+                Al-Risalah
+            </div>
 
-        <p>
-          Imam al-Shafi'i played a major role in the development of Islamic
-          jurisprudence and is traditionally associated with systematic
-          discussions of the principles of legal reasoning.
-        </p>
-
-        <div class="works">
-          <strong>Key Work</strong>
-          <span>
-            Al-Risalah
-          </span>
+            <a href="#" class="button">
+                Explore Scholar →
+            </a>
         </div>
-
-        <a href="#" class="explore">Explore Scholar →</a>
-      </article>
 
     </div>
-  </section>
 
 
-  <!-- Why They Matter -->
-  <section class="why-section">
-    <div class="container">
+    <div class="legacy">
 
-      <h2>Why Their Legacy Matters</h2>
+        <h2>Why Their Legacy Matters</h2>
 
-      <p>
-        Studying the scholars of Islamic civilization is not only about
-        remembering names and dates. It is about understanding how knowledge
-        was produced, preserved, debated, transmitted, and developed across
-        different societies and generations. Their intellectual heritage
-        provides a valuable window into the history of ideas.
-      </p>
+        <p>
+            The intellectual heritage of Muslim scholars demonstrates the
+            diversity of knowledge cultivated throughout Islamic civilization.
+            Their contributions continue to influence discussions in science,
+            philosophy, medicine, history, law, ethics and education.
+        </p>
 
     </div>
-  </section>
+
+</div>
 
 
-  <!-- Footer -->
-  <footer>
-    <p>
-      © 2026 <span>Islamic History</span> · A Digital Knowledge Project
-    </p>
-  </footer>
+<footer>
+    © 2026 Islamic History · A Digital Knowledge Project
+</footer>
 
 </body>
 </html>
