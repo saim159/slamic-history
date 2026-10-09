@@ -4,24 +4,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Al-Ghazali | Islamic History</title>
-<meta name="description" content="Explore the life, works, philosophical thought, theology, ethics and intellectual legacy of Abu Hamid al-Ghazali through an academic introduction and selected scholarly sources.">
-<meta name="theme-color" content="#173f35">
+<meta name="description" content="Explore the life, philosophy, writings, and intellectual legacy of Abu Hamid al-Ghazali, one of the most influential scholars in Islamic intellectual history.">
+<title>Al-Ghazali | Islamic History Archive</title>
 
 <style>
 :root {
-    --green: #173f35;
-    --green-dark: #102e27;
-    --green-light: #315e4e;
+    --green: #123d30;
+    --green-dark: #0b2921;
+    --green-light: #1e5140;
     --gold: #c6a45b;
-    --gold-light: #e4d2a0;
+    --gold-light: #e3cd91;
     --ivory: #f7f4ec;
-    --paper: #fffefa;
-    --ink: #25362e;
-    --muted: #68746d;
-    --line: #e5e0d4;
-    --shadow: 0 12px 35px rgba(24, 49, 39, .07);
+    --paper: #fffdf8;
+    --ink: #25342d;
+    --muted: #68756d;
+    --border: #e4dfd1;
+    --shadow: 0 12px 35px rgba(19, 43, 33, .08);
 }
 
 * {
@@ -32,148 +30,145 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 100px;
+    scroll-padding-top: 90px;
 }
 
 body {
-    font-family: Georgia, "Times New Roman", serif;
     background: var(--ivory);
     color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
     line-height: 1.8;
 }
 
 a {
-    color: #245b49;
-    overflow-wrap: anywhere;
+    color: inherit;
 }
 
-a:focus-visible,
-button:focus-visible {
-    outline: 3px solid var(--gold);
-    outline-offset: 4px;
-}
-
-.skip-link {
-    position: absolute;
-    top: -100px;
-    left: 12px;
-    z-index: 2000;
-    padding: 10px 16px;
-    background: white;
-    color: var(--green);
-}
-
-.skip-link:focus {
-    top: 12px;
-}
-
-nav {
+.navbar {
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
+    background: var(--green-dark);
+    border-bottom: 1px solid rgba(198,164,91,.45);
+}
+
+.nav-inner {
+    width: min(1180px, 92%);
+    min-height: 72px;
+    margin: auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
-    padding: 15px 7%;
-    background: var(--green);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, .13);
+    gap: 24px;
 }
 
-.logo {
+.brand {
     color: var(--gold-light);
-    text-decoration: none;
-    font-size: 23px;
+    font-size: 17px;
     font-weight: bold;
-    white-space: nowrap;
+    letter-spacing: 1px;
+    text-decoration: none;
 }
 
-nav ul {
+.nav-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
-    list-style: none;
+    gap: 22px;
 }
 
-nav ul a {
-    color: #f7f4ec;
-    text-decoration: none;
+.nav-links a {
+    color: #f5f0e3;
     font-family: Arial, sans-serif;
-    font-size: 13px;
+    font-size: 12px;
+    letter-spacing: .5px;
+    text-decoration: none;
 }
 
-nav ul a:hover {
+.nav-links a:hover {
     color: var(--gold-light);
 }
 
 .hero {
     position: relative;
     overflow: hidden;
-    padding: 75px 7% 80px;
     background:
-        radial-gradient(ellipse at 80% 15%,
-            rgba(198, 164, 91, .18), transparent 36%),
+        radial-gradient(circle at 85% 20%, rgba(198,164,91,.13), transparent 28%),
         linear-gradient(135deg, var(--green-dark), var(--green));
     color: white;
+    padding: 78px 0 65px;
 }
 
+.hero::before,
 .hero::after {
     content: "";
     position: absolute;
-    width: 300px;
-    height: 300px;
-    right: -110px;
-    bottom: -170px;
-    border: 1px solid rgba(228, 210, 160, .35);
+    border: 1px solid rgba(198,164,91,.22);
     border-radius: 50%;
-    box-shadow:
-        0 0 0 25px rgba(228, 210, 160, .035),
-        0 0 0 55px rgba(228, 210, 160, .035),
-        0 0 0 85px rgba(228, 210, 160, .025);
     pointer-events: none;
+}
+
+.hero::before {
+    width: 390px;
+    height: 390px;
+    right: -110px;
+    top: -130px;
+}
+
+.hero::after {
+    width: 280px;
+    height: 280px;
+    right: -55px;
+    top: -75px;
 }
 
 .hero-inner {
     position: relative;
     z-index: 1;
-    max-width: 1050px;
+    width: min(1100px, 90%);
     margin: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(250px, .8fr);
+    align-items: center;
+    gap: 55px;
 }
 
 .eyebrow {
     color: var(--gold-light);
-    font: 700 11px/1.6 Arial, sans-serif;
-    letter-spacing: 2.5px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 3px;
     text-transform: uppercase;
 }
 
-.arabic {
-    margin: 22px 0 5px;
+.arabic-name {
+    margin: 18px 0 0;
     color: var(--gold-light);
-    font-size: clamp(27px, 4vw, 39px);
-    line-height: 1.8;
+    font-size: clamp(35px, 5vw, 57px);
+    line-height: 1.5;
     direction: rtl;
     text-align: left;
 }
 
 .hero h1 {
-    margin: 3px 0 8px;
-    font-size: clamp(42px, 7vw, 70px);
+    margin-top: 2px;
+    font-size: clamp(42px, 6vw, 70px);
+    line-height: 1.12;
     font-weight: normal;
-    line-height: 1.15;
     letter-spacing: -1.5px;
 }
 
-.subtitle {
-    max-width: 720px;
-    color: #e0e6df;
-    font-size: clamp(17px, 2vw, 21px);
+.hero-subtitle {
+    margin-top: 17px;
+    color: #e7e6d9;
+    font-size: 18px;
+    font-style: italic;
 }
 
 .hero-description {
-    max-width: 750px;
-    margin-top: 20px;
-    color: #d1d9d3;
+    max-width: 610px;
+    margin-top: 24px;
+    color: #d9e1d9;
     font-size: 16px;
 }
 
@@ -181,563 +176,622 @@ nav ul a:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    margin-top: 27px;
+    margin-top: 28px;
 }
 
-.pill {
+.tag {
     padding: 7px 12px;
-    border: 1px solid rgba(228, 210, 160, .38);
+    border: 1px solid rgba(227,205,145,.5);
     border-radius: 3px;
-    color: #f0e9d5;
-    font: 12px Arial, sans-serif;
+    color: #f1e6c6;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: .6px;
 }
 
-.page-layout {
-    display: grid;
-    grid-template-columns: 230px minmax(0, 1fr);
-    gap: 35px;
-    max-width: 1180px;
-    margin: auto;
-    padding: 48px 25px 75px;
-}
-
-.sidebar {
-    align-self: start;
-    position: sticky;
-    top: 95px;
-    padding: 24px 19px;
+.scholar-image {
+    width: 100%;
+    max-width: 330px;
+    justify-self: center;
+    padding: 12px;
     background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 6px;
+    border: 1px solid var(--gold);
+    border-radius: 5px;
+    box-shadow: 0 18px 45px rgba(0,0,0,.25);
 }
 
-.sidebar h2 {
-    margin-bottom: 14px;
-    color: var(--green);
-    font-size: 17px;
+.scholar-image img {
+    display: block;
+    width: 100%;
+    height: 370px;
+    object-fit: contain;
+    background: #f1ede2;
 }
 
-.sidebar ul {
-    list-style: none;
+.scholar-image figcaption {
+    padding: 12px 3px 3px;
+    color: #536159;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    line-height: 1.7;
+    text-align: center;
 }
 
-.sidebar li {
-    margin: 7px 0;
-}
-
-.sidebar a {
-    color: var(--muted);
-    font: 13px/1.6 Arial, sans-serif;
-    text-decoration: none;
-}
-
-.sidebar a:hover {
-    color: var(--green);
+.scholar-image figcaption a {
+    display: inline-block;
+    margin-top: 5px;
+    color: #245b46;
     text-decoration: underline;
 }
 
-.sidebar-note {
-    margin-top: 22px;
-    padding-top: 15px;
-    border-top: 1px solid var(--line);
-    color: var(--muted);
-    font-size: 12px;
+.image-note {
+    margin-top: 10px;
+    color: #e4ddc9;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    text-align: center;
 }
 
-main {
-    min-width: 0;
+.page-layout {
+    width: min(1100px, 90%);
+    margin: 55px auto 80px;
+    display: grid;
+    grid-template-columns: 245px minmax(0, 1fr);
+    align-items: start;
+    gap: 45px;
 }
 
-.section {
-    margin-bottom: 25px;
-    padding: clamp(22px, 4vw, 36px);
+.sidebar {
+    position: sticky;
+    top: 100px;
+    padding: 25px 22px;
     background: var(--paper);
-    border: 1px solid var(--line);
-    border-radius: 6px;
+    border: 1px solid var(--border);
     box-shadow: var(--shadow);
 }
 
-.section-label {
-    margin-bottom: 5px;
-    color: #8c7139;
-    font: 700 10px Arial, sans-serif;
+.sidebar-title {
+    margin-bottom: 16px;
+    color: var(--green);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
 
+.sidebar a {
+    display: block;
+    padding: 9px 0;
+    border-bottom: 1px solid #eee9dd;
+    color: #536159;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    color: #9a7834;
+}
+
+.content {
+    min-width: 0;
+}
+
+.section {
+    margin-bottom: 46px;
+    scroll-margin-top: 100px;
+}
+
+.section-kicker {
+    margin-bottom: 5px;
+    color: #9a7834;
+    font-family: Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+}
+
 .section h2 {
-    margin-bottom: 17px;
+    margin-bottom: 18px;
+    padding-bottom: 13px;
+    border-bottom: 1px solid var(--border);
     color: var(--green);
-    font-size: clamp(24px, 3vw, 31px);
+    font-size: clamp(26px, 3vw, 34px);
     font-weight: normal;
-    line-height: 1.35;
+    line-height: 1.3;
 }
 
 .section h3 {
-    margin: 18px 0 8px;
+    margin: 25px 0 8px;
     color: var(--green);
-    font-size: 19px;
+    font-size: 20px;
+    font-weight: normal;
 }
 
 .section p {
-    margin: 0 0 15px;
-}
-
-.section p:last-child {
-    margin-bottom: 0;
-}
-
-.section ul {
-    margin: 10px 0 5px 22px;
-}
-
-.section li {
-    margin-bottom: 8px;
-}
-
-.lead {
-    color: #46594f;
-    font-size: 19px;
-    line-height: 1.85;
+    margin-bottom: 16px;
+    font-size: 16px;
 }
 
 .note {
-    margin-top: 20px;
-    padding: 16px 18px;
-    background: #f4f0e5;
+    margin: 22px 0;
+    padding: 18px 22px;
+    background: #efeadc;
     border-left: 3px solid var(--gold);
+    color: #44564a;
     font-size: 14px;
 }
 
-.note strong {
-    color: var(--green);
+.quote {
+    margin: 25px 0;
+    padding: 25px;
+    background: var(--green);
+    color: #f6f0df;
+    font-size: 19px;
+    font-style: italic;
+    line-height: 1.7;
+}
+
+.quote small {
+    display: block;
+    margin-top: 12px;
+    color: var(--gold-light);
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-style: normal;
 }
 
 .timeline {
     position: relative;
-    margin-top: 25px;
+    margin: 22px 0 0 8px;
     padding-left: 25px;
-    border-left: 2px solid #ded2b2;
+    border-left: 1px solid #c6a45b;
 }
 
 .timeline-item {
     position: relative;
-    padding: 0 0 25px 16px;
-}
-
-.timeline-item:last-child {
-    padding-bottom: 0;
+    margin-bottom: 27px;
 }
 
 .timeline-item::before {
     content: "";
     position: absolute;
-    left: -32px;
     top: 8px;
+    left: -31px;
     width: 11px;
     height: 11px;
-    background: var(--gold);
-    border: 3px solid var(--paper);
+    border: 2px solid var(--gold);
     border-radius: 50%;
-    box-shadow: 0 0 0 1px #c7ad70;
+    background: var(--ivory);
 }
 
 .timeline-date {
-    color: #8c7139;
-    font: 700 12px Arial, sans-serif;
+    color: #997735;
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
     letter-spacing: .5px;
 }
 
 .timeline-item h3 {
-    margin: 3px 0 5px;
-}
-
-.timeline-item p {
-    color: #536159;
-    font-size: 15px;
-}
-
-.work-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 15px;
-    margin-top: 22px;
-}
-
-.work-card {
-    padding: 21px;
-    background: #f8f5ed;
-    border: 1px solid #e8dfcb;
-    border-top: 3px solid var(--gold);
-    border-radius: 4px;
-}
-
-.work-card h3 {
-    margin: 0 0 7px;
+    margin: 4px 0;
     font-size: 18px;
 }
 
-.work-card p {
-    color: #5a665e;
+.timeline-item p {
+    margin-bottom: 0;
     font-size: 14px;
 }
 
-.work-card .work-note {
-    display: block;
-    margin-top: 9px;
-    color: #8a713e;
-    font: 11px Arial, sans-serif;
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.book-card {
+    padding: 21px;
+    background: var(--paper);
+    border: 1px solid var(--border);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow);
+}
+
+.book-card .book-number {
+    color: #a88a4c;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.book-card h3 {
+    margin: 8px 0;
+    font-size: 19px;
+}
+
+.book-card .arabic-title {
+    color: #6b776c;
+    font-size: 16px;
+    direction: rtl;
+}
+
+.book-card p {
+    margin: 8px 0 0;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.topic-list {
+    list-style: none;
+    margin: 18px 0;
+}
+
+.topic-list li {
+    position: relative;
+    margin-bottom: 12px;
+    padding-left: 24px;
+    font-size: 15px;
+}
+
+.topic-list li::before {
+    content: "◆";
+    position: absolute;
+    left: 0;
+    top: 3px;
+    color: var(--gold);
+    font-size: 10px;
 }
 
 .source-list {
-    list-style: none;
-    margin: 0 !important;
+    padding-left: 22px;
 }
 
 .source-list li {
-    padding: 17px 0;
-    border-bottom: 1px solid var(--line);
-}
-
-.source-list li:last-child {
-    border-bottom: 0;
-}
-
-.source-list a {
-    font-weight: bold;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
-}
-
-.source-list p {
-    margin-top: 5px;
-    color: var(--muted);
+    margin-bottom: 14px;
+    padding-left: 5px;
     font-size: 14px;
 }
 
-.ref {
-    font: 12px Arial, sans-serif;
-    white-space: nowrap;
+.source-list a {
+    color: #245b46;
+    overflow-wrap: anywhere;
 }
 
-.ref a {
-    color: #8c7139;
-    text-decoration: none;
+.source-list a:hover {
+    color: #9a7834;
 }
 
-.editorial-note {
-    margin-top: 20px;
-    padding: 15px;
-    background: #f2eee4;
-    border-radius: 4px;
-    color: #5b665e;
-    font-size: 13px;
-}
-
-.page-links {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 30px 0;
-}
-
-.page-links a {
-    display: inline-block;
-    padding: 11px 17px;
-    border: 1px solid var(--green);
-    border-radius: 3px;
-    color: var(--green);
-    font: 13px Arial, sans-serif;
-    text-decoration: none;
-}
-
-.page-links a.primary {
-    background: var(--green);
-    color: white;
-}
-
-.page-links a:hover {
-    background: var(--gold-light);
-    color: var(--green-dark);
-}
-
-footer {
-    padding: 35px 7%;
+.footer {
+    padding: 38px 5%;
     background: var(--green-dark);
-    color: #d0d8d1;
+    color: #dce2d8;
     text-align: center;
-    font-size: 13px;
 }
 
-footer a {
+.footer-title {
+    margin-bottom: 8px;
     color: var(--gold-light);
+    font-size: 19px;
 }
 
-.footer-small {
-    margin-top: 8px;
-    color: #aebbb2;
+.footer p {
+    font-family: Arial, sans-serif;
     font-size: 12px;
 }
 
+.footer a {
+    color: var(--gold-light);
+    text-decoration: none;
+}
+
+.back-top {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 7px 13px;
+    border: 1px solid rgba(227,205,145,.5);
+    color: var(--gold-light);
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    text-decoration: none;
+}
+
 @media (max-width: 850px) {
-    nav {
-        flex-direction: column;
-        padding: 14px 5%;
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 35px;
     }
 
-    nav ul {
-        justify-content: center;
-        gap: 12px 18px;
+    .scholar-image {
+        width: min(100%, 310px);
     }
 
     .page-layout {
         grid-template-columns: 1fr;
-        gap: 22px;
-        padding: 28px 17px 55px;
+        gap: 30px;
     }
 
     .sidebar {
         position: static;
     }
 
-    .sidebar ul {
+    .sidebar nav {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 3px 14px;
+        column-gap: 18px;
+    }
+}
+
+@media (max-width: 560px) {
+    .nav-inner {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
     }
 
-    .sidebar-note {
-        display: none;
+    .nav-links {
+        gap: 13px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
     }
 
     .hero {
-        padding: 55px 7%;
-    }
-}
-
-@media (max-width: 520px) {
-    nav ul {
-        gap: 9px 13px;
+        padding: 50px 0;
     }
 
-    nav ul a {
-        font-size: 12px;
+    .arabic-name {
+        font-size: 38px;
     }
 
-    .work-grid {
+    .hero h1 {
+        font-size: 45px;
+    }
+
+    .book-grid {
         grid-template-columns: 1fr;
     }
 
-    .section {
-        padding: 22px 19px;
-    }
-
-    .lead {
-        font-size: 17px;
-    }
-
-    .sidebar ul {
+    .sidebar nav {
         grid-template-columns: 1fr;
     }
-}
 
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
+    .page-layout {
+        margin-top: 35px;
     }
 }
 </style>
 </head>
 
-<body>
+<body id="top">
 
-<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="navbar">
+    <div class="nav-inner">
+        <a class="brand" href="index.html">ISLAMIC HISTORY ARCHIVE</a>
 
-<nav aria-label="Main navigation">
-    <a href="index.html" class="logo">Islamic History</a>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="history.html">History</a></li>
-        <li><a href="scholars.html">Scholars</a></li>
-        <li><a href="civilizations.html">Civilizations</a></li>
-        <li><a href="timeline.html">Timeline</a></li>
-    </ul>
-</nav>
-
-<header class="hero">
-    <div class="hero-inner">
-        <div class="eyebrow">Scholar Profile · Islamic Intellectual History</div>
-
-        <div class="arabic" lang="ar" dir="rtl">
-            أَبُو حَامِدٍ مُحَمَّدُ بْنُ مُحَمَّدٍ الغَزَالِي
-        </div>
-
-        <h1>Al-Ghazali</h1>
-
-        <p class="subtitle">
-            Jurist, theologian, philosopher and influential writer on
-            ethics and spiritual life
-        </p>
-
-        <p class="hero-description">
-            An introduction to the life, intellectual context, major works
-            and continuing debates surrounding one of the most studied
-            thinkers in Islamic intellectual history.
-        </p>
-
-        <div class="hero-meta">
-            <span class="pill">Died 1111 CE</span>
-            <span class="pill">Seljuk period</span>
-            <span class="pill">Tus · Nishapur · Baghdad</span>
-        </div>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="index.html">HOME</a>
+            <a href="history.html">HISTORY</a>
+            <a href="scholars.html">SCHOLARS</a>
+            <a href="timeline.html">TIMELINE</a>
+        </nav>
     </div>
 </header>
 
+<main>
+<section class="hero">
+    <div class="hero-inner">
+
+        <div class="hero-text">
+            <div class="eyebrow">Scholar · Theologian · Philosopher</div>
+
+            <div class="arabic-name" lang="ar">أَبُو حَامِدٍ الْغَزَالِيّ</div>
+
+            <h1>Al-Ghazali</h1>
+
+            <p class="hero-subtitle">
+                Abu Hamid Muhammad ibn Muhammad al-Ghazali
+            </p>
+
+            <p class="hero-description">
+                A major figure in Islamic intellectual history, Al-Ghazali
+                explored theology, philosophy, law, ethics, and spiritual
+                practice. His writings continue to shape discussions about
+                knowledge, faith, reason, and the moral life.
+            </p>
+
+            <div class="hero-meta">
+                <span class="tag">c. 1055/1058–1111 CE</span>
+                <span class="tag">Persia · Seljuk Era</span>
+                <span class="tag">Islamic Philosophy</span>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <figure class="scholar-image">
+                <img
+                    src="https://upload.wikimedia.org/wikipedia/commons/1/10/Asas_alqiyas_manuscript.jpg"
+                    alt="Historical manuscript page of Asas al-Qiyas, a work attributed to Al-Ghazali"
+                    loading="eager"
+                    onerror="this.onerror=null; this.alt='Manuscript image could not be loaded. Open the image source below.';"
+                >
+
+                <figcaption>
+                    Manuscript of <em>Asas al-Qiyas</em>, associated with
+                    Al-Ghazali's scholarly legacy.
+                    <br>
+                    <a
+                        href="https://commons.wikimedia.org/wiki/File:Asas_alqiyas_manuscript.jpg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >View image source and details</a>
+                </figcaption>
+            </figure>
+
+            <p class="image-note">
+                Manuscript image — not an authentic portrait of Al-Ghazali.
+            </p>
+        </div>
+
+    </div>
+</section>
+
 <div class="page-layout">
 
-    <aside class="sidebar" aria-label="Page contents">
-        <h2>On this page</h2>
-        <ul>
-            <li><a href="#overview">Overview</a></li>
-            <li><a href="#early-life">Early life</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#timeline">Life timeline</a></li>
-            <li><a href="#baghdad">Baghdad and 1095</a></li>
-            <li><a href="#works">Major works</a></li>
-            <li><a href="#philosophy">Philosophy</a></li>
-            <li><a href="#ethics">Ethics and spirituality</a></li>
-            <li><a href="#legacy">Legacy</a></li>
-            <li><a href="#sources">Research sources</a></li>
-        </ul>
-        <p class="sidebar-note">
-            Research-oriented overview. Dates and interpretations are
-            qualified where scholarly discussion warrants caution.
-        </p>
+    <aside class="sidebar">
+        <div class="sidebar-title">On this page</div>
+        <nav aria-label="Page contents">
+            <a href="#overview">Overview</a>
+            <a href="#early-life">Early Life</a>
+            <a href="#education">Education & Career</a>
+            <a href="#timeline">Historical Timeline</a>
+            <a href="#works">Major Works</a>
+            <a href="#philosophy">Philosophy & Theology</a>
+            <a href="#ethics">Ethics & Spirituality</a>
+            <a href="#legacy">Legacy</a>
+            <a href="#sources">Sources & Further Reading</a>
+        </nav>
     </aside>
 
-    <main id="main-content">
+    <article class="content">
 
         <section class="section" id="overview">
-            <div class="section-label">01 · Introduction</div>
-            <h2>Who was Al-Ghazali?</h2>
+            <div class="section-kicker">01 · Introduction</div>
+            <h2>Who Was Al-Ghazali?</h2>
 
-            <p class="lead">
-                Abu Hamid Muhammad ibn Muhammad al-Ghazali (d. 1111 CE)
-                was a major Muslim intellectual whose writings engaged
-                with Islamic law, theology, philosophy, ethics and
-                spiritual practice.
+            <p>
+                Abu Hamid al-Ghazali was a Muslim scholar whose work became
+                influential across several fields of Islamic learning. He
+                wrote on Islamic theology, jurisprudence, philosophy, logic,
+                ethics, and spiritual discipline. He is commonly known in
+                English as Al-Ghazali and in many Islamic scholarly traditions
+                as Imam al-Ghazali.
             </p>
 
             <p>
-                His work cannot be reduced to a single discipline.
-                He studied philosophical arguments, participated in
-                theological debates, wrote on religious practice and
-                explored the relationship between knowledge, intention
-                and human conduct. His intellectual legacy remains the
-                subject of both admiration and scholarly debate.
-                <span class="ref"><a href="#src-sep">[1]</a></span>
+                He lived during the Seljuk period, when scholarly institutions,
+                theological debates, and philosophical inquiry were important
+                features of intellectual life in the Muslim world. His career
+                brought him into contact with major centers of learning,
+                including Nishapur and Baghdad.
+            </p>
+
+            <p>
+                Al-Ghazali's importance lies not in a single book or argument
+                but in the breadth of his scholarship. He examined how
+                revealed knowledge, rational inquiry, moral conduct, and
+                spiritual transformation might relate to one another.
             </p>
 
             <div class="note">
-                <strong>Historical date note:</strong>
-                Al-Ghazali's death is generally dated to 1111 CE.
-                His birth year is disputed: traditional accounts often
-                give 1058–1059, while Frank Griffel argues for
-                approximately 1055–1056. This page therefore does not
-                present one birth year as certain.
-                <span class="ref"><a href="#src-sep">[1]</a></span>
+                <strong>Historical note:</strong> Al-Ghazali's birth year is
+                reported differently in modern scholarship. The commonly
+                cited date is 1058 CE, while some scholars argue for
+                approximately 1055–1056 CE. The dates should therefore not be
+                treated as entirely undisputed.
             </div>
         </section>
 
         <section class="section" id="early-life">
-            <div class="section-label">02 · Origins</div>
-            <h2>Early life and historical setting</h2>
+            <div class="section-kicker">02 · Origins</div>
+            <h2>Early Life and Background</h2>
 
             <p>
-                Al-Ghazali was born in the region of Tus in Khurasan,
-                in the eastern part of the medieval Islamic world.
-                The area formed part of a wider intellectual landscape
-                shaped by scholarly networks, religious institutions
-                and the political power of the Seljuk dynasty.
-                <span class="ref"><a href="#src-sep">[1]</a></span>
+                Al-Ghazali was born in or near Tus, in the region of Khurasan,
+                in what is now northeastern Iran. His family lived in a
+                cultural environment shaped by Persianate society and Islamic
+                scholarship.
             </p>
 
             <p>
-                His life unfolded during a period in which legal
-                scholarship, theology, philosophy and Sufi practice
-                interacted in complex ways. These traditions were not
-                isolated worlds: scholars could study, use and criticise
-                ideas across disciplinary boundaries.
+                Traditional biographical accounts describe his early pursuit
+                of religious learning and his movement through established
+                centers of education. Like other scholars of his era, his
+                intellectual development took place within networks of
+                teachers, students, legal scholarship, and theological debate.
             </p>
 
             <p>
-                Understanding this setting helps explain why
-                al-Ghazali's writings address questions of religious
-                authority, the limits of knowledge, moral responsibility
-                and the purpose of learning.
+                The surviving accounts of his life combine historical
+                information with later biographical traditions. Individual
+                details should be assessed in light of the sources in which
+                they appear, rather than assuming that every anecdote has the
+                same level of historical certainty.
             </p>
         </section>
 
         <section class="section" id="education">
-            <div class="section-label">03 · Intellectual formation</div>
-            <h2>Education and teachers</h2>
+            <div class="section-kicker">03 · Scholarship</div>
+            <h2>Education and Academic Career</h2>
 
             <p>
-                Al-Ghazali received early education in his native region
-                and later studied in Nishapur under the prominent
-                scholar Imam al-Haramayn al-Juwayni. This association
-                was important to his development as a scholar of law
-                and theology.
-                <span class="ref"><a href="#src-sep">[1]</a></span>
+                Al-Ghazali studied Islamic disciplines in Khurasan and became
+                associated with the scholarly circle of the prominent
+                theologian and jurist Imam al-Haramayn al-Juwayni in Nishapur.
+                His education included jurisprudence and theology, alongside
+                other intellectual disciplines studied in his environment.
             </p>
 
             <p>
-                His intellectual formation included engagement with
-                argumentation, logic and theological questions.
-                His later writings show familiarity with philosophical
-                positions as well as the methods used to examine them.
+                His reputation grew, and he eventually became a teacher at the
+                prestigious Nizamiyya institution in Baghdad. This appointment
+                placed him in a major intellectual and political center of the
+                Seljuk world.
             </p>
 
-            <div class="note">
-                <strong>Context matters:</strong>
-                Al-Ghazali's later criticism of particular philosophers
-                should not be confused with a lack of knowledge of
-                philosophy. His critiques developed through engagement
-                with the arguments he examined.
-            </div>
+            <p>
+                Baghdad offered Al-Ghazali opportunities for teaching and
+                debate. It was also a setting in which he examined different
+                intellectual movements and their claims to knowledge.
+            </p>
+
+            <h3>A Turning Point</h3>
+
+            <p>
+                Around 1095 CE, Al-Ghazali left his teaching position in
+                Baghdad. In his autobiographical work, <em>Al-Munqidh min
+                al-Dalal</em> (Deliverance from Error), he describes a period
+                of profound personal and intellectual crisis and a movement
+                toward a more inwardly grounded religious life.
+            </p>
+
+            <p>
+                His departure has often been interpreted as a major turning
+                point in his biography. The details and motives of his journey
+                are best discussed using his own account alongside modern
+                historical scholarship.
+            </p>
         </section>
 
         <section class="section" id="timeline">
-            <div class="section-label">04 · Chronology</div>
-            <h2>A timeline of his life</h2>
-
-            <p>
-                The chronology below gives a concise outline of major
-                events. The birth date remains disputed, and this
-                timeline avoids assigning unsupported exact dates
-                to individual works.
-            </p>
+            <div class="section-kicker">04 · Chronology</div>
+            <h2>A Brief Historical Timeline</h2>
 
             <div class="timeline">
 
                 <div class="timeline-item">
-                    <div class="timeline-date">C. 1055–1059 CE · DISPUTED</div>
-                    <h3>Birth in the Tus region</h3>
+                    <div class="timeline-date">c. 1055–1058 CE</div>
+                    <h3>Birth in the Tus Region</h3>
                     <p>
-                        Later medieval historians commonly give
-                        1058–1059; Griffel's analysis suggests
-                        approximately 1055–1056.
-                        <span class="ref"><a href="#src-sep">[1]</a></span>
+                        Al-Ghazali was born in or near Tus, in Khurasan.
+                        The exact birth year remains debated.
                     </p>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-date">EARLY CAREER</div>
-                    <h3>Study in Nishapur</h3>
+                    <div class="timeline-date">Youth and Early Adulthood</div>
+                    <h3>Studies in Islamic Scholarship</h3>
                     <p>
-                        He studied with al-Juwayni and developed
-                        expertise in the scholarly disciplines
-                        of his period.
+                        He pursued religious learning and became associated
+                        with major scholars, including al-Juwayni.
                     </p>
                 </div>
 
@@ -745,10 +799,8 @@ footer a {
                     <div class="timeline-date">1091 CE</div>
                     <h3>Teaching in Baghdad</h3>
                     <p>
-                        He was appointed to a prestigious teaching
-                        position at the Nizamiyya institution in
-                        Baghdad under the Seljuk vizier Nizam al-Mulk.
-                        <span class="ref"><a href="#src-sep">[1]</a></span>
+                        He was appointed to teach at the Nizamiyya institution
+                        in Baghdad and gained a prominent scholarly position.
                     </p>
                 </div>
 
@@ -756,24 +808,19 @@ footer a {
                     <div class="timeline-date">1095 CE</div>
                     <h3>Departure from Baghdad</h3>
                     <p>
-                        He left his Baghdad teaching position.
-                        His own autobiographical account discusses
-                        spiritual and intellectual concerns, while
-                        modern scholarship also examines his political
-                        circumstances and earlier writings.
-                        <span class="ref"><a href="#src-garden">[2]</a></span>
+                        He left his teaching position during a period he later
+                        described as a profound spiritual and intellectual
+                        crisis.
                     </p>
                 </div>
 
                 <div class="timeline-item">
-                    <div class="timeline-date">1106 CE</div>
-                    <h3>Return to teaching in Nishapur</h3>
+                    <div class="timeline-date">Later Years</div>
+                    <h3>Writing, Teaching, and Spiritual Practice</h3>
                     <p>
-                        Oxford University Press's account of
-                        Kenneth Garden's research discusses
-                        al-Ghazali's return to teaching in Nishapur
-                        and his continuing scholarly activity.
-                        <span class="ref"><a href="#src-garden">[2]</a></span>
+                        He continued his scholarly and spiritual work, with
+                        connections to places including Damascus, Jerusalem,
+                        and his native region.
                     </p>
                 </div>
 
@@ -781,332 +828,347 @@ footer a {
                     <div class="timeline-date">1111 CE</div>
                     <h3>Death in Tus</h3>
                     <p>
-                        Al-Ghazali died in 1111. His writings
-                        continued to circulate and influence later
-                        discussions of theology, ethics and spirituality.
-                        <span class="ref"><a href="#src-sep">[1]</a></span>
+                        Al-Ghazali died in the Tus region. His works continued
+                        to circulate and influence later Muslim scholarship.
                     </p>
                 </div>
 
             </div>
         </section>
 
-        <section class="section" id="baghdad">
-            <div class="section-label">05 · Career and interpretation</div>
-            <h2>Baghdad and the departure of 1095</h2>
-
-            <p>
-                Al-Ghazali's position in Baghdad brought him into
-                a prominent intellectual and political environment.
-                His career was connected with the Seljuk regime,
-                and his departure in 1095 has become one of the
-                most discussed episodes in accounts of his life.
-            </p>
-
-            <p>
-                In <em>Al-Munqidh min al-Dalal</em>, often translated
-                as <em>Deliverance from Error</em>, al-Ghazali describes
-                his search for certainty and concerns about the
-                relationship between knowledge and sincere action.
-            </p>
-
-            <p>
-                Modern historians have questioned whether this
-                autobiographical narrative alone fully explains
-                his departure. Kenneth Garden examines the political
-                context of the Seljuk regime and argues that
-                al-Ghazali's intellectual concerns before 1095 were
-                more continuous with his later work than a simple
-                story of sudden transformation might suggest.
-                <span class="ref"><a href="#src-garden">[2]</a></span>
-            </p>
-
-            <div class="note">
-                <strong>Interpretive caution:</strong>
-                The spiritual explanation is important because
-                al-Ghazali himself presents it in his writings.
-                It should nevertheless be read alongside historical
-                context and modern scholarship, rather than treated
-                as the only possible explanation.
-            </div>
-        </section>
-
         <section class="section" id="works">
-            <div class="section-label">06 · Selected writings</div>
-            <h2>Major works</h2>
+            <div class="section-kicker">05 · Books and Ideas</div>
+            <h2>Major Works</h2>
 
             <p>
-                The following works illustrate the range of
-                al-Ghazali's interests. The summaries are introductory;
-                they do not replace reading the texts themselves
-                or consulting specialist scholarship.
+                Al-Ghazali wrote extensively, and his works address different
+                audiences and intellectual questions. The following are among
+                the best-known works associated with his scholarly legacy.
             </p>
 
-            <div class="work-grid">
+            <div class="book-grid">
 
-                <article class="work-card">
-                    <h3>Ihya' 'Ulum al-Din</h3>
+                <div class="book-card">
+                    <div class="book-number">BOOK 01</div>
+                    <h3><em>Ihya' 'Ulum al-Din</em></h3>
+                    <div class="arabic-title" lang="ar">إحياء علوم الدين</div>
                     <p>
-                        Commonly translated as <em>The Revival of
-                        the Religious Sciences</em>, this extensive
-                        work discusses worship, ethical conduct,
-                        the inner dimensions of religious practice
-                        and the development of character.
+                        Often translated as <em>The Revival of the Religious
+                        Sciences</em>. This extensive work discusses worship,
+                        everyday conduct, moral character, and spiritual
+                        development.
                     </p>
-                    <span class="work-note">Ethics · Worship · Spiritual life</span>
-                </article>
+                </div>
 
-                <article class="work-card">
-                    <h3>Tahafut al-Falasifa</h3>
+                <div class="book-card">
+                    <div class="book-number">BOOK 02</div>
+                    <h3><em>Tahafut al-Falasifa</em></h3>
+                    <div class="arabic-title" lang="ar">تهافت الفلاسفة</div>
                     <p>
-                        Known as <em>The Incoherence of the Philosophers</em>,
-                        this work examines and criticises particular
-                        philosophical positions, especially on
-                        metaphysical questions.
+                        Commonly translated as <em>The Incoherence of the
+                        Philosophers</em>. It examines and criticizes
+                        particular metaphysical positions associated with
+                        influential philosophers.
                     </p>
-                    <span class="work-note">Philosophy · Metaphysics · Theology</span>
-                </article>
+                </div>
 
-                <article class="work-card">
-                    <h3>Al-Munqidh min al-Dalal</h3>
+                <div class="book-card">
+                    <div class="book-number">BOOK 03</div>
+                    <h3><em>Al-Munqidh min al-Dalal</em></h3>
+                    <div class="arabic-title" lang="ar">المنقذ من الضلال</div>
                     <p>
-                        Often translated as <em>Deliverance from Error</em>,
-                        this autobiographical and intellectual account
-                        discusses the search for certainty and
-                        engagement with different paths of knowledge.
+                        Often translated as <em>Deliverance from Error</em>.
+                        This autobiographical and intellectual account
+                        considers doubt, methods of knowing, and the search
+                        for certainty.
                     </p>
-                    <span class="work-note">Knowledge · Autobiography · Certainty</span>
-                </article>
+                </div>
 
-                <article class="work-card">
-                    <h3>Mishkat al-Anwar</h3>
+                <div class="book-card">
+                    <div class="book-number">BOOK 04</div>
+                    <h3><em>Maqasid al-Falasifa</em></h3>
+                    <div class="arabic-title" lang="ar">مقاصد الفلاسفة</div>
                     <p>
-                        Commonly rendered as <em>The Niche of Lights</em>,
-                        this work explores the symbolism of light
-                        in relation to Qur'anic language and
-                        spiritual knowledge.
+                        Often translated as <em>The Aims of the Philosophers</em>.
+                        It presents philosophical positions and is important
+                        for understanding the background to his later
+                        criticism of philosophy.
                     </p>
-                    <span class="work-note">Qur'anic symbolism · Spiritual knowledge</span>
-                </article>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-number">BOOK 05</div>
+                    <h3><em>Al-Iqtisad fi al-I'tiqad</em></h3>
+                    <div class="arabic-title" lang="ar">الاقتصاد في الاعتقاد</div>
+                    <p>
+                        A work on Islamic creed and theological argument,
+                        reflecting his engagement with questions of belief
+                        and rational demonstration.
+                    </p>
+                </div>
+
+                <div class="book-card">
+                    <div class="book-number">BOOK 06</div>
+                    <h3><em>Mishkat al-Anwar</em></h3>
+                    <div class="arabic-title" lang="ar">مشكاة الأنوار</div>
+                    <p>
+                        Commonly rendered as <em>The Niche of Lights</em>.
+                        This work offers a rich interpretation of light
+                        imagery and its spiritual and philosophical
+                        significance.
+                    </p>
+                </div>
 
             </div>
-
-            <p style="margin-top:20px;">
-                These works belong to different genres and address
-                different audiences. They should not be treated as
-                if they all make the same argument or were written
-                for the same purpose.
-            </p>
         </section>
 
         <section class="section" id="philosophy">
-            <div class="section-label">07 · Intellectual debates</div>
-            <h2>Al-Ghazali and philosophy</h2>
+            <div class="section-kicker">06 · Intellectual History</div>
+            <h2>Philosophy, Theology, and Reason</h2>
 
             <p>
-                Al-Ghazali's relationship with philosophy was
-                complex. He examined philosophical arguments
-                and criticised particular conclusions, but his
-                engagement with philosophy also influenced
-                the language and methods of later theological
-                discussions.
-                <span class="ref"><a href="#src-sep">[1]</a></span>
+                Al-Ghazali is frequently discussed in histories of philosophy
+                because of his critical engagement with the philosophical
+                traditions that circulated in the medieval Islamic world.
+                He studied philosophical arguments and presented positions
+                associated with thinkers influenced by Greek philosophy.
             </p>
 
             <p>
-                <em>Tahafut al-Falasifa</em> is particularly
-                associated with his criticism of positions
-                advanced by philosophers such as Ibn Sina
-                and al-Farabi. The text addresses specific
-                metaphysical claims rather than providing
-                a blanket rejection of every form of reasoning
-                or scientific inquiry.
+                In <em>Tahafut al-Falasifa</em>, he challenged a number of
+                metaphysical claims, including arguments concerning the
+                eternity of the world, divine knowledge, and bodily
+                resurrection. His discussion should be read as a detailed
+                theological and philosophical argument, not simply as a
+                rejection of every form of rational inquiry.
             </p>
 
             <p>
-                The Stanford Encyclopedia of Philosophy places
-                al-Ghazali within the broader history of
-                philosophical ideas entering Muslim theology.
-                Its account helps complicate the popular claim
-                that his work simply ended philosophy or science
-                in the Islamic world.
-                <span class="ref"><a href="#src-sep">[1]</a></span>
+                Al-Ghazali also used logical methods and engaged in careful
+                argumentation. His work shows that the relationship between
+                philosophy and Islamic theology in this period was complex:
+                scholars could employ reasoning while disagreeing over its
+                proper scope, assumptions, and conclusions.
             </p>
 
-            <div class="note">
-                <strong>A useful distinction:</strong>
-                Criticising an argument is not the same as
-                rejecting every discipline associated with it.
-                Historical claims about philosophy and science
-                require evidence beyond the work of one thinker.
+            <div class="quote">
+                Understanding a scholar requires reading the arguments in
+                their historical context, rather than reducing a complex
+                intellectual tradition to a single slogan.
+                <small>— Editorial principle of the Islamic History Archive</small>
             </div>
+
+            <h3>Was Al-Ghazali Against Philosophy?</h3>
+
+            <p>
+                This question requires qualification. Al-Ghazali criticized
+                specific philosophical conclusions, particularly in
+                metaphysics, but he also studied philosophical methods and
+                discussed logic. His position is more accurately understood
+                by examining the particular claims he accepted, rejected,
+                or treated as requiring further argument.
+            </p>
+
+            <p>
+                Later scholars have debated the extent of his influence on
+                philosophy in the Islamic world. Claims that he single-handedly
+                ended scientific or philosophical activity are oversimplified
+                and do not adequately represent the complexity of subsequent
+                intellectual history.
+            </p>
         </section>
 
         <section class="section" id="ethics">
-            <div class="section-label">08 · Moral and spiritual thought</div>
-            <h2>Knowledge, ethics and spiritual life</h2>
+            <div class="section-kicker">07 · Moral and Spiritual Thought</div>
+            <h2>Ethics, the Heart, and Spiritual Practice</h2>
 
             <p>
-                A recurring concern in al-Ghazali's writings is
-                the relationship between what a person knows
-                and how that person lives. Religious knowledge
-                is discussed alongside intention, action,
-                character and the condition of the heart.
+                A central concern of Al-Ghazali's writing is the relationship
+                between outward religious practice and inward moral character.
+                In his ethical and spiritual works, he explores intention,
+                sincerity, self-discipline, pride, envy, greed, and the
+                cultivation of virtues.
             </p>
 
             <p>
-                In <em>Ihya' 'Ulum al-Din</em>, questions of
-                worship and law are considered together with
-                ethical and spiritual concerns. Kenneth Garden's
-                study also emphasises the work's relationship
-                to Islamic law, Sufism and philosophical ideas,
-                challenging overly narrow descriptions of its
-                intellectual background.
-                <span class="ref"><a href="#src-garden">[2]</a></span>
+                For Al-Ghazali, religious knowledge should not remain merely
+                theoretical. It should shape conduct, responsibility, and the
+                way a person understands their relationship with God and other
+                people.
             </p>
 
+            <ul class="topic-list">
+                <li>
+                    <strong>Intention:</strong> considering the purpose and
+                    sincerity behind an action.
+                </li>
+                <li>
+                    <strong>Self-examination:</strong> recognizing one's own
+                    moral weaknesses instead of focusing only on others.
+                </li>
+                <li>
+                    <strong>Character:</strong> cultivating virtues and
+                    resisting destructive habits.
+                </li>
+                <li>
+                    <strong>Knowledge and practice:</strong> connecting
+                    learning with responsible action.
+                </li>
+                <li>
+                    <strong>Spiritual discipline:</strong> developing
+                    awareness, humility, and devotion through religious
+                    practice.
+                </li>
+            </ul>
+
             <p>
-                This approach helps explain why al-Ghazali's
-                writings have been studied by readers interested
-                not only in abstract theology but also in
-                moral psychology, education and everyday
-                religious practice.
+                His account of spiritual life belongs to the broader history
+                of Islamic ethics and Sufism. Readers should consider the
+                theological, legal, and spiritual dimensions of his writing
+                together rather than treating them as entirely separate
+                projects.
             </p>
         </section>
 
         <section class="section" id="legacy">
-            <div class="section-label">09 · Historical significance</div>
-            <h2>Influence and legacy</h2>
+            <div class="section-kicker">08 · Historical Influence</div>
+            <h2>Legacy and Continuing Relevance</h2>
 
             <p>
-                Al-Ghazali became an influential figure in
-                subsequent Islamic intellectual history.
-                His work contributed to debates about reason,
-                revelation, theology, philosophical method,
-                religious authority and the ethical purposes
-                of knowledge.
-                <span class="ref"><a href="#src-sep">[1]</a></span>
+                Al-Ghazali became one of the most widely studied authors in
+                Islamic intellectual history. His writings have been read in
+                theological, legal, philosophical, ethical, and spiritual
+                settings, and they continue to attract attention from
+                researchers across several disciplines.
             </p>
 
             <p>
-                His legacy is not interpreted identically by
-                every scholar. Some accounts emphasise his
-                spiritual transformation, while other studies
-                stress the continuity of his intellectual
-                projects, his political context and the
-                rhetorical purposes of his autobiographical
-                writing.
-                <span class="ref"><a href="#src-garden">[2]</a></span>
+                His work offers historical material for examining how Muslim
+                scholars discussed the limits of human knowledge, the use of
+                reason, the interpretation of religious teachings, and the
+                cultivation of moral character.
             </p>
 
             <p>
-                A balanced assessment therefore considers
-                his own texts, the historical circumstances
-                in which he wrote, and the later traditions
-                that interpreted his work.
+                Contemporary readers may find his discussions relevant to
+                questions about the purpose of education, the difference
+                between possessing information and developing wisdom, and
+                the relationship between intellectual achievement and
+                personal integrity. These are modern applications of his
+                themes, rather than claims that he addressed every present-day
+                issue directly.
             </p>
 
-            <h3>Key themes for further study</h3>
-            <ul>
-                <li>The relationship between reason and revelation.</li>
-                <li>Certainty, doubt and the limits of knowledge.</li>
-                <li>Ethics, intention and the practice of religion.</li>
-                <li>Philosophy and theological argument.</li>
-                <li>The role of political context in intellectual life.</li>
-                <li>How later generations interpreted his legacy.</li>
-            </ul>
-        </section>
-
-        <section class="section" id="sources">
-            <div class="section-label">10 · Further reading</div>
-            <h2>Selected academic sources</h2>
-
-            <p>
-                These sources provide starting points for further
-                research. A short web biography should not be
-                treated as a substitute for examining scholarly
-                arguments and the primary texts themselves.
-            </p>
-
-            <ol class="source-list">
-
-                <li id="src-sep">
-                    <a href="https://plato.stanford.edu/entries/al-ghazali/"
-                       target="_blank" rel="noopener noreferrer">
-                        1. Frank Griffel, “Al-Ghazali”
-                    </a>
-                    <p>
-                        Stanford Encyclopedia of Philosophy.
-                        An academic overview of al-Ghazali's life,
-                        philosophy and place in intellectual history,
-                        including discussion of the disputed birth year.
-                    </p>
-                </li>
-
-                <li id="src-garden">
-                    <a href="https://academic.oup.com/book/11386"
-                       target="_blank" rel="noopener noreferrer">
-                        2. Kenneth Garden, The First Islamic Reviver
-                    </a>
-                    <p>
-                        Oxford University Press. A scholarly study
-                        of al-Ghazali's revivalist project, political
-                        context, intellectual development and later
-                        autobiographical account.
-                    </p>
-                </li>
-
-                <li id="src-griffel-book">
-                    <a href="https://academic.oup.com/book/27461"
-                       target="_blank" rel="noopener noreferrer">
-                        3. Frank Griffel, Al-Ghazali's Philosophical Theology
-                    </a>
-                    <p>
-                        Oxford University Press. A specialist
-                        monograph on al-Ghazali's philosophical
-                        theology and intellectual thought.
-                    </p>
-                </li>
-
-                <li id="src-iep">
-                    <a href="https://iep.utm.edu/al-ghazali/"
-                       target="_blank" rel="noopener noreferrer">
-                        4. “Al-Ghazali” — Internet Encyclopedia of Philosophy
-                    </a>
-                    <p>
-                        An additional reference for introductory
-                        study. Consult its bibliographic details
-                        and references when following up individual claims.
-                    </p>
-                </li>
-
-            </ol>
-
-            <div class="editorial-note">
-                <strong>Editorial note:</strong>
-                This page is an introductory educational profile.
-                Historical dates and interpretations are qualified
-                where appropriate. The linked sources should be
-                consulted directly before using this material
-                for formal academic research.
+            <div class="note">
+                <strong>For further study:</strong> Read Al-Ghazali's own
+                writings alongside specialist historical studies. Translations
+                differ, and a modern interpretation should not be confused
+                with the wording or intention of the original Arabic text.
             </div>
         </section>
 
-        <div class="page-links">
-            <a class="primary" href="scholars.html">← Back to Scholars</a>
-            <a href="history.html">Explore History</a>
-            <a href="index.html">Home</a>
-        </div>
+        <section class="section" id="sources">
+            <div class="section-kicker">09 · Research Library</div>
+            <h2>Sources and Further Reading</h2>
 
-    </main>
+            <p>
+                The following academic and reference resources provide
+                starting points for further research into Al-Ghazali's life,
+                thought, and historical context.
+            </p>
+
+            <ol class="source-list">
+                <li>
+                    <strong>Stanford Encyclopedia of Philosophy.</strong>
+                    <em>Al-Ghazali.</em>
+                    <br>
+                    <a
+                        href="https://plato.stanford.edu/entries/al-ghazali/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Read the scholarly encyclopedia entry</a>
+                </li>
+
+                <li>
+                    <strong>Internet Encyclopedia of Philosophy.</strong>
+                    <em>Al-Ghazali.</em>
+                    <br>
+                    <a
+                        href="https://iep.utm.edu/al-ghazali/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Explore the introduction to his philosophy</a>
+                </li>
+
+                <li>
+                    <strong>Frank Griffel.</strong>
+                    <em>Al-Ghazali's Philosophical Theology.</em>
+                    Oxford University Press, 2009.
+                    <br>
+                    <a
+                        href="https://global.oup.com/academic/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Oxford University Press academic catalogue</a>
+                </li>
+
+                <li>
+                    <strong>Kenneth Garden.</strong>
+                    <em>The First Islamic Reviver: Abu Hamid al-Ghazali and
+                    His Revival of the Religious Sciences.</em>
+                    Oxford University Press, 2014.
+                    <br>
+                    <a
+                        href="https://global.oup.com/academic/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >Oxford University Press academic catalogue</a>
+                </li>
+
+                <li>
+                    <strong>Primary source:</strong>
+                    Al-Ghazali, <em>Al-Munqidh min al-Dalal</em>
+                    (<em>Deliverance from Error</em>), in translation.
+                    Consult an academic edition for translation details
+                    and historical context.
+                </li>
+
+                <li>
+                    <strong>Manuscript image:</strong>
+                    Wikimedia Commons, <em>Asas al-Qiyas manuscript</em>.
+                    <br>
+                    <a
+                        href="https://commons.wikimedia.org/wiki/File:Asas_alqiyas_manuscript.jpg"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >View the manuscript file and rights information</a>
+                </li>
+            </ol>
+
+            <div class="note">
+                <strong>Research standard:</strong> This page is an
+                introductory overview, not a substitute for a fully
+                referenced academic biography. Dates, translations, and
+                interpretations should be checked against the cited sources
+                before being used in formal research.
+            </div>
+        </section>
+
+    </article>
 </div>
+</main>
 
-<footer>
-    <p>© 2026 Islamic History · A Digital Knowledge Project</p>
-    <p class="footer-small">
-        An educational resource for exploring Islamic history
-        and intellectual traditions.
+<footer class="footer">
+    <div class="footer-title">Islamic History Archive</div>
+    <p>
+        Exploring the people, ideas, institutions, and civilizations of
+        Islamic history.
     </p>
+    <p style="margin-top: 8px;">
+        Educational resource · Historical interpretation should be grounded
+        in reliable sources.
+    </p>
+    <a class="back-top" href="#top">Back to top ↑</a>
 </footer>
 
 </body>
