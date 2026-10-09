@@ -1,531 +1,998 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102f2a">
+  <meta name="description" content="Explore Islamic history through scholars, civilizations, historical places, books and academic sources.">
+  <title>Islamic History Atlas | People, Places & Ideas</title>
 
-<title>Islamic History | Knowledge, Civilization & Heritage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
 
-<meta name="description" content="Explore Islamic history, great scholars, civilizations and important historical events.">
+  <style>
+    :root {
+      --green: #123a30;
+      --green-dark: #0b2923;
+      --gold: #c5a363;
+      --cream: #f7f5ef;
+      --paper: #fffefa;
+      --ink: #202c28;
+      --muted: #69746e;
+      --line: #e8e4da;
+      --radius: 16px;
+      --shadow: 0 12px 35px rgba(19, 44, 35, .07);
+    }
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "DM Sans", Arial, sans-serif;
+      line-height: 1.65;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, input { font: inherit; }
+    img { display: block; max-width: 100%; }
+    .container { width: min(1160px, 91%); margin: auto; }
 
-html {
-    scroll-behavior: smooth;
-}
+    .topbar {
+      background: var(--green-dark);
+      color: #d9dfd9;
+      padding: 8px 0;
+      font-size: 11px;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+    .topbar .container {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
 
-body {
-    font-family: Georgia, "Times New Roman", serif;
-    background: #f7f4ec;
-    color: #24352c;
-    line-height: 1.7;
-}
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 254, 250, .96);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .brand-mark {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: var(--gold);
+      border-radius: 12px;
+      font-size: 24px;
+    }
+    .brand-name {
+      display: block;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 17px;
+      line-height: 1.3;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+    .brand-tag {
+      display: block;
+      font-size: 10px;
+      color: var(--muted);
+      letter-spacing: 1.5px;
+      margin-top: 3px;
+    }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .nav-links a:hover { color: #98753a; }
+    .nav-search {
+      border: 1px solid var(--line);
+      background: white;
+      border-radius: 50%;
+      width: 41px;
+      height: 41px;
+      display: grid;
+      place-items: center;
+      font-size: 19px;
+    }
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      padding: 8px 12px;
+      color: var(--green);
+      cursor: pointer;
+    }
 
-/* Navigation */
-nav {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    background: #173f35;
-    padding: 18px 8%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 3px 15px rgba(0,0,0,0.12);
-}
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(ellipse at 80% 10%, rgba(197,163,99,.18), transparent 36%),
+        linear-gradient(115deg, #0b2923 0%, #123a30 58%, #1c483a 100%);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -150px;
+      top: -220px;
+      width: 550px;
+      height: 550px;
+      border: 1px solid rgba(197,163,99,.17);
+      border-radius: 50%;
+      box-shadow: 0 0 0 45px rgba(197,163,99,.025),
+                  0 0 0 90px rgba(197,163,99,.025);
+      pointer-events: none;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr .92fr;
+      align-items: center;
+      gap: 55px;
+      padding-top: 76px;
+      padding-bottom: 78px;
+      position: relative;
+      z-index: 1;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--gold);
+    }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 {
+      font-family: "Playfair Display", Georgia, serif;
+      line-height: 1.2;
+    }
+    h1 {
+      max-width: 650px;
+      font-size: clamp(38px, 4.7vw, 62px);
+      letter-spacing: -1.5px;
+      margin: 21px 0;
+    }
+    .hero-copy {
+      color: #d8e1db;
+      max-width: 570px;
+      font-size: 15px;
+      line-height: 1.9;
+      margin-bottom: 27px;
+    }
+    .search-box {
+      display: flex;
+      gap: 8px;
+      padding: 7px;
+      border-radius: 12px;
+      background: white;
+      max-width: 590px;
+      box-shadow: 0 15px 35px rgba(0,0,0,.14);
+    }
+    .search-box input {
+      min-width: 0;
+      flex: 1;
+      border: 0;
+      outline: none;
+      padding: 12px;
+      color: var(--ink);
+      font-size: 13px;
+      background: transparent;
+    }
+    .search-box button, .button {
+      border: 0;
+      border-radius: 8px;
+      background: var(--gold);
+      color: #172d25;
+      font-weight: 700;
+      padding: 12px 20px;
+      cursor: pointer;
+      transition: transform .2s, background .2s;
+    }
+    .search-box button:hover, .button:hover {
+      transform: translateY(-2px);
+      background: #d8ba7b;
+    }
+    .popular {
+      margin-top: 17px;
+      font-size: 12px;
+      color: #d4ded6;
+    }
+    .popular a {
+      color: #f1d7a0;
+      margin-left: 8px;
+      text-decoration: underline;
+      text-decoration-color: rgba(241,215,160,.35);
+      text-underline-offset: 3px;
+    }
 
-.logo {
-    color: #d8b45c;
-    font-size: 25px;
-    font-weight: bold;
-    text-decoration: none;
-}
+    .hero-art {
+      min-height: 390px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-image {
+      width: 100%;
+      height: 385px;
+      object-fit: cover;
+      border-radius: 48% 48% 15px 15px;
+      border: 1px solid rgba(255,255,255,.2);
+      box-shadow: 0 30px 60px rgba(0,0,0,.25);
+    }
+    .image-caption {
+      position: absolute;
+      left: -28px;
+      bottom: 20px;
+      max-width: 255px;
+      background: #fffefa;
+      color: var(--ink);
+      border-radius: 12px;
+      padding: 17px 19px;
+      box-shadow: var(--shadow);
+    }
+    .image-caption small {
+      display: block;
+      color: #96753b;
+      font-size: 10px;
+      letter-spacing: 1.3px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .image-caption strong {
+      display: block;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 17px;
+      margin-top: 4px;
+    }
 
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 28px;
-}
+    .search-results {
+      display: none;
+      margin-top: 14px;
+      max-width: 590px;
+      background: #fffefa;
+      color: var(--ink);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .search-results.show { display: block; }
+    .result-item {
+      display: block;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+    }
+    .result-item:hover { background: var(--cream); }
+    .result-item span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+    }
 
-nav ul li a {
-    color: #f7f4ec;
-    text-decoration: none;
-    font-size: 16px;
-    transition: 0.3s;
-}
+    section { padding: 76px 0; }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 25px;
+      margin-bottom: 30px;
+    }
+    .section-head h2 {
+      font-size: clamp(28px, 3vw, 38px);
+      margin: 10px 0 0;
+      color: var(--green);
+    }
+    .section-head p {
+      max-width: 460px;
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+    .section-label {
+      color: #98753a;
+      text-transform: uppercase;
+      letter-spacing: 1.8px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+    .text-link {
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .text-link:hover { color: #98753a; }
 
-nav ul li a:hover {
-    color: #d8b45c;
-}
+    .archive { background: var(--cream); }
+    .archive-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 19px;
+    }
+    .archive-card {
+      background: white;
+      border: 1px solid #eeeae0;
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform .25s, box-shadow .25s;
+    }
+    .archive-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow);
+    }
+    .card-image {
+      height: 180px;
+      width: 100%;
+      object-fit: cover;
+      background: #e7e2d5;
+    }
+    .card-content { padding: 20px; }
+    .card-icon {
+      display: inline-grid;
+      place-items: center;
+      width: 39px;
+      height: 39px;
+      border-radius: 10px;
+      background: #edf2ed;
+      color: var(--green);
+      font-size: 19px;
+      margin-top: -40px;
+      position: relative;
+      border: 3px solid white;
+    }
+    .card-content h3 {
+      font-size: 20px;
+      color: var(--green);
+      margin: 12px 0 9px;
+    }
+    .card-content p {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+      min-height: 65px;
+      margin-bottom: 16px;
+    }
+    .card-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--line);
+      padding-top: 13px;
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--green);
+    }
 
-/* Hero */
-.hero {
-    min-height: 82vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 80px 8%;
-    background:
-        linear-gradient(rgba(23,63,53,0.88), rgba(23,63,53,0.88)),
-        radial-gradient(circle at top, #386b5a, #173f35);
-    color: white;
-}
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 25px;
+    }
+    .feature-panel {
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-height: 345px;
+      background: var(--green);
+      color: white;
+      position: relative;
+    }
+    .feature-panel > img {
+      width: 100%;
+      height: 345px;
+      object-fit: cover;
+      opacity: .62;
+    }
+    .feature-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      padding: 30px;
+      background: linear-gradient(0deg, rgba(6,25,20,.95), rgba(6,25,20,.03) 90%);
+    }
+    .feature-overlay h3 {
+      font-size: 30px;
+      margin: 9px 0;
+    }
+    .feature-overlay p {
+      color: #dbe2dd;
+      font-size: 13px;
+      max-width: 440px;
+      margin-bottom: 15px;
+    }
+    .feature-overlay .text-link { color: #f1d7a0; }
+    .timeline-panel {
+      border: 1px solid var(--line);
+      background: var(--cream);
+      border-radius: var(--radius);
+      padding: 29px;
+    }
+    .timeline-panel h3 {
+      color: var(--green);
+      font-size: 25px;
+      margin-bottom: 8px;
+    }
+    .timeline-panel > p {
+      color: var(--muted);
+      font-size: 13px;
+      margin-bottom: 25px;
+    }
+    .timeline-list {
+      border-left: 2px solid #d6c29a;
+      margin-left: 7px;
+      padding-left: 23px;
+    }
+    .timeline-event {
+      position: relative;
+      margin-bottom: 25px;
+    }
+    .timeline-event:last-child { margin-bottom: 0; }
+    .timeline-event::before {
+      content: "";
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--gold);
+      left: -29px;
+      top: 7px;
+      border: 3px solid var(--cream);
+      box-shadow: 0 0 0 1px var(--gold);
+    }
+    .timeline-event time {
+      color: #98753a;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+    .timeline-event h4 {
+      margin: 3px 0;
+      font-size: 15px;
+      color: var(--green);
+    }
+    .timeline-event p {
+      color: var(--muted);
+      font-size: 12px;
+      margin: 0;
+    }
 
-.hero-content {
-    max-width: 900px;
-}
+    .research-band {
+      background: #e9e6db;
+      padding: 46px 0;
+    }
+    .research-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+    .research-content h2 {
+      color: var(--green);
+      font-size: 28px;
+      margin: 8px 0;
+    }
+    .research-content p {
+      color: var(--muted);
+      max-width: 650px;
+      font-size: 13px;
+      margin: 0;
+    }
+    .research-content .button { flex-shrink: 0; }
 
-.arabic {
-    font-size: 34px;
-    color: #d8b45c;
-    margin-bottom: 25px;
-    direction: rtl;
-}
+    footer {
+      background: var(--green-dark);
+      color: #d7dfd8;
+      padding: 50px 0 22px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 35px;
+      padding-bottom: 35px;
+    }
+    footer .brand-name { color: white; }
+    footer .brand-tag { color: #aebeb4; }
+    .footer-about {
+      color: #aebeb4;
+      font-size: 12px;
+      max-width: 350px;
+      margin-top: 17px;
+    }
+    .footer-title {
+      color: var(--gold);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+    }
+    .footer-links { display: grid; gap: 9px; font-size: 12px; }
+    .footer-links a:hover { color: white; }
+    .copyright {
+      border-top: 1px solid rgba(255,255,255,.12);
+      padding-top: 20px;
+      color: #9eafa5;
+      font-size: 11px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
 
-.hero h1 {
-    font-size: 58px;
-    margin-bottom: 20px;
-    line-height: 1.2;
-}
-
-.hero p {
-    font-size: 20px;
-    color: #e8e3d5;
-    max-width: 750px;
-    margin: auto;
-}
-
-.hero-buttons {
-    margin-top: 35px;
-}
-
-.btn {
-    display: inline-block;
-    padding: 13px 25px;
-    margin: 7px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-.btn-primary {
-    background: #d8b45c;
-    color: #173f35;
-}
-
-.btn-secondary {
-    border: 1px solid #d8b45c;
-    color: #d8b45c;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-}
-
-/* General */
-section {
-    padding: 75px 8%;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 45px;
-}
-
-.section-title h2 {
-    font-size: 38px;
-    color: #173f35;
-    margin-bottom: 12px;
-}
-
-.section-title p {
-    max-width: 700px;
-    margin: auto;
-    color: #64736b;
-}
-
-/* Cards */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
-    max-width: 1150px;
-    margin: auto;
-}
-
-.card {
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    border-top: 4px solid #d8b45c;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.07);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-.card h3 {
-    color: #173f35;
-    font-size: 24px;
-    margin-bottom: 12px;
-}
-
-.card p {
-    color: #59665f;
-    margin-bottom: 18px;
-}
-
-.card a {
-    color: #173f35;
-    font-weight: bold;
-    text-decoration: none;
-}
-
-.card a:hover {
-    color: #b18d35;
-}
-
-/* Quote */
-.quote {
-    background: #173f35;
-    color: white;
-    text-align: center;
-    padding: 80px 8%;
-}
-
-.quote p {
-    font-size: 28px;
-    font-style: italic;
-    max-width: 900px;
-    margin: auto;
-}
-
-.quote span {
-    display: block;
-    margin-top: 20px;
-    color: #d8b45c;
-}
-
-/* Footer */
-footer {
-    background: #102e27;
-    color: #c9d0cc;
-    text-align: center;
-    padding: 30px 8%;
-    font-size: 14px;
-}
-
-/* Responsive */
-@media (max-width: 800px) {
-    nav {
+    @media (max-width: 1000px) {
+      .nav-links { gap: 13px; font-size: 12px; }
+      .hero-grid { gap: 30px; }
+      .archive-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .card-image { height: 220px; }
+    }
+    @media (max-width: 760px) {
+      .nav { min-height: 72px; }
+      .menu-toggle { display: block; }
+      .nav-search { display: none; }
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        background: var(--paper);
+        padding: 18px 5%;
+        border-bottom: 1px solid var(--line);
         flex-direction: column;
-        gap: 15px;
+        align-items: stretch;
+        gap: 0;
+      }
+      .nav-links.open { display: flex; }
+      .nav-links a { padding: 12px 0; border-bottom: 1px solid var(--line); }
+      .hero-grid { grid-template-columns: 1fr; padding-top: 55px; padding-bottom: 55px; }
+      h1 { font-size: clamp(37px, 10vw, 54px); }
+      .hero-art { min-height: 290px; margin-top: 5px; }
+      .hero-image { height: 300px; }
+      .image-caption { left: 10px; bottom: 10px; }
+      section { padding: 55px 0; }
+      .section-head { align-items: start; flex-direction: column; gap: 12px; }
+      .featured-grid { grid-template-columns: 1fr; }
+      .research-content { align-items: start; flex-direction: column; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .footer-grid > div:first-child { grid-column: 1 / -1; }
     }
-
-    nav ul {
-        gap: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
+    @media (max-width: 480px) {
+      .brand-name { font-size: 14px; }
+      .brand-tag { font-size: 8px; letter-spacing: 1px; }
+      .brand-mark { width: 38px; height: 38px; }
+      .topbar { font-size: 9px; }
+      .archive-grid { grid-template-columns: 1fr; }
+      .card-image { height: 220px; }
+      .search-box { flex-wrap: wrap; }
+      .search-box input { flex-basis: 100%; }
+      .search-box button { width: 100%; }
+      .hero-art { min-height: 250px; }
+      .hero-image { height: 260px; }
+      .image-caption { max-width: 220px; padding: 13px 15px; }
+      .feature-overlay { padding: 21px; }
+      .feature-overlay h3 { font-size: 25px; }
+      .timeline-panel { padding: 22px; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .footer-grid > div:first-child { grid-column: auto; }
     }
-
-    .hero h1 {
-        font-size: 40px;
-    }
-
-    .hero p {
-        font-size: 17px;
-    }
-
-    .cards {
-        grid-template-columns: 1fr;
-    }
-
-    .section-title h2 {
-        font-size: 30px;
-    }
-
-    .quote p {
-        font-size: 22px;
-    }
-}
-</style>
+  </style>
 </head>
 
 <body>
-
-<nav>
-    <a href="index.html" class="logo">Islamic History</a>
-
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="history.html">History</a></li>
-        <li><a href="scholars.html">Scholars</a></li>
-        <li><a href="civilizations.html">Civilizations</a></li>
-        <li><a href="timeline.html">Timeline</a></li>
-    </ul>
-</nav>
-
-<section class="hero">
-    <div class="hero-content">
-
-        <div class="arabic">
-            وَقُلْ رَبِّ زِدْنِي عِلْمًا
-        </div>
-
-        <h1>Islamic History</h1>
-
-        <p>
-            Explore fourteen centuries of history, knowledge,
-            civilization, scholarship and intellectual heritage.
-        </p>
-
-        <div class="hero-buttons">
-            <a href="history.html" class="btn btn-primary">
-                Explore History
-            </a>
-
-            <a href="timeline.html" class="btn btn-secondary">
-                View Timeline
-            </a>
-        </div>
-
+  <div class="topbar">
+    <div class="container">
+      <span>A Digital Research Library</span>
+      <span>People · Places · Ideas · Empires</span>
     </div>
-</section>
+  </div>
 
-<section>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="Islamic History Atlas home">
+        <span class="brand-mark">۞</span>
+        <span>
+          <span class="brand-name">Islamic History Atlas</span>
+          <span class="brand-tag">HISTORY WITH CONTEXT</span>
+        </span>
+      </a>
 
-    <div class="section-title">
-        <h2>Explore Islamic History</h2>
-        <p>
-            Discover the major periods, events and transformations
-            that shaped the Islamic world.
-        </p>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">☰ Menu</button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+        <a href="scholars.html">Scholars</a>
+        <a href="civilizations.html">Dynasties</a>
+        <a href="history.html#places">Places</a>
+        <a href="history.html#library">Library</a>
+        <a href="timeline.html">Timeline</a>
+      </nav>
+
+      <a class="nav-search" href="#search" aria-label="Go to search">⌕</a>
     </div>
+  </header>
 
-    <div class="cards">
+  <main>
+    <section class="hero" id="search">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Discover · Understand · Research</span>
+          <h1>Explore the histories that shaped the Islamic world.</h1>
+          <p class="hero-copy">
+            Discover scholars, civilizations, historical places and intellectual
+            traditions through a growing research archive built around evidence,
+            context and reliable sources.
+          </p>
 
-        <div class="card">
-            <h3>The Prophetic Era</h3>
+          <form class="search-box" id="searchForm" role="search">
+            <input id="siteSearch" type="search"
+              placeholder="Search scholars, dynasties, places, books…"
+              aria-label="Search the archive">
+            <button type="submit">Search ↗</button>
+          </form>
+          <div id="searchResults" class="search-results" aria-live="polite"></div>
 
-            <p>
-                Explore the life and mission of Prophet Muhammad ﷺ
-                and the foundations of the early Muslim community.
-            </p>
-
-            <a href="history.html">
-                Explore History →
-            </a>
+          <div class="popular">
+            Explore:
+            <a href="scholars.html">Al-Ghazali</a>
+            <a href="civilizations.html">Abbasids</a>
+            <a href="timeline.html">Timeline</a>
+          </div>
         </div>
 
-        <div class="card">
-            <h3>The Caliphates</h3>
+        <div class="hero-art">
+          <img class="hero-image"
+            src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1100&q=85"
+            alt="Islamic architectural details"
+            onerror="this.style.display='none';">
+          <div class="image-caption">
+            <small>A living historical archive</small>
+            <strong>Connect people, places and ideas.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <p>
-                Learn about the Rashidun, Umayyad and Abbasid
-                periods and their political development.
-            </p>
-
-            <a href="history.html">
-                Explore History →
-            </a>
+    <section class="archive" id="explore">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Explore the archive</span>
+            <h2>Where would you like to begin?</h2>
+          </div>
+          <p>
+            Explore interconnected records of influential thinkers,
+            historical states, places and the written sources that help us
+            understand the past.
+          </p>
         </div>
 
-        <div class="card">
-            <h3>The Islamic World</h3>
+        <div class="archive-grid">
+          <a class="archive-card searchable" href="scholars.html"
+             data-search="scholars scientist philosopher al ghazali ibn sina avicenna al biruni ibn al haytham ibn khaldun biography">
+            <img class="card-image"
+              src="https://images.unsplash.com/photo-1591604129939-f1efa4d9f7fa?auto=format&fit=crop&w=700&q=80"
+              alt="Islamic architecture"
+              loading="lazy" onerror="this.style.display='none';">
+            <div class="card-content">
+              <span class="card-icon">✦</span>
+              <h3>Scholars & Thinkers</h3>
+              <p>Explore biographies, intellectual contributions, writings and scholarly debates.</p>
+              <span class="card-link">Explore scholars <span>↗</span></span>
+            </div>
+          </a>
 
-            <p>
-                Discover the diverse regions, societies and
-                civilizations that shaped Islamic history.
-            </p>
+          <a class="archive-card searchable" href="civilizations.html"
+             data-search="dynasties empires abbasid caliphate umayyad ottoman rulers political history civilization">
+            <img class="card-image"
+              src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=700&q=80"
+              alt="Historic Islamic setting"
+              loading="lazy" onerror="this.style.display='none';">
+            <div class="card-content">
+              <span class="card-icon">⌂</span>
+              <h3>Dynasties & Empires</h3>
+              <p>Follow rulers, political changes, capitals, turning points and historical chronology.</p>
+              <span class="card-link">Explore dynasties <span>↗</span></span>
+            </div>
+          </a>
 
-            <a href="civilizations.html">
-                Explore Civilizations →
-            </a>
+          <a class="archive-card searchable" href="history.html#places"
+             data-search="historical places architecture mosque city baghdad samarra cordoba maps monuments">
+            <img class="card-image"
+              src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=700&q=80"
+              alt="Historic architecture"
+              loading="lazy" onerror="this.style.display='none';">
+            <div class="card-content">
+              <span class="card-icon">⌖</span>
+              <h3>Places & Architecture</h3>
+              <p>Discover historic cities, monuments, architecture and their geographical settings.</p>
+              <span class="card-link">Explore places <span>↗</span></span>
+            </div>
+          </a>
+
+          <a class="archive-card searchable" href="history.html#library"
+             data-search="library books manuscripts sources bibliography references articles research books">
+            <img class="card-image"
+              src="https://images.unsplash.com/photo-1507842217343-583bb7270b66?auto=format&fit=crop&w=700&q=80"
+              alt="Library bookshelves"
+              loading="lazy" onerror="this.style.display='none';">
+            <div class="card-content">
+              <span class="card-icon">▤</span>
+              <h3>Library & Sources</h3>
+              <p>Find books, manuscripts, academic publications and traceable references.</p>
+              <span class="card-link">Explore sources <span>↗</span></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="section-label">Featured research</span>
+            <h2>History in its wider context</h2>
+          </div>
+          <a class="text-link" href="history.html">Explore historical records ↗</a>
         </div>
 
+        <div class="featured-grid">
+          <article class="feature-panel searchable"
+            data-search="baghdad abbasid caliphate city intellectual history translation movement 762 1258">
+            <img
+              src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=1000&q=85"
+              alt="Islamic architecture and historical heritage"
+              loading="lazy" onerror="this.style.display='none';">
+            <div class="feature-overlay">
+              <span class="section-label">City · Knowledge · Empire</span>
+              <h3>Baghdad and the Abbasid Age</h3>
+              <p>Explore a major centre of political life, scholarship and cultural exchange in medieval Islamic history.</p>
+              <a class="text-link" href="civilizations.html">Explore the Abbasids ↗</a>
+            </div>
+          </article>
+
+          <div class="timeline-panel">
+            <span class="section-label">A journey through time</span>
+            <h3>Milestones in history</h3>
+            <p>Start with key dates, then explore the people and events connected to them.</p>
+
+            <div class="timeline-list">
+              <div class="timeline-event searchable"
+                data-search="750 abbasid revolution caliphate history">
+                <time>750 CE</time>
+                <h4>The Abbasid Revolution</h4>
+                <p>A new caliphate begins after the Umayyad rule in the central Islamic lands.</p>
+              </div>
+              <div class="timeline-event searchable"
+                data-search="762 ce baghdad founded al mansur city">
+                <time>762 CE</time>
+                <h4>Baghdad is founded</h4>
+                <p>Caliph al-Mansur establishes a new capital for the Abbasid state.</p>
+              </div>
+              <div class="timeline-event searchable"
+                data-search="1258 mongol conquest baghdad abbasid history">
+                <time>1258 CE</time>
+                <h4>The Mongol conquest of Baghdad</h4>
+                <p>A major turning point in the history of the Baghdad-centred Abbasid caliphate.</p>
+              </div>
+            </div>
+
+            <p style="margin:24px 0 0">
+              <a class="text-link" href="timeline.html">Explore the full timeline ↗</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="research-band">
+      <div class="container research-content">
+        <div>
+          <span class="section-label">Research with evidence</span>
+          <h2>Every historical claim deserves a source.</h2>
+          <p>
+            Our goal is to distinguish established facts, historical interpretations
+            and unresolved debates — while helping readers trace claims back to
+            books, scholarly publications and primary sources.
+          </p>
+        </div>
+        <a class="button" href="history.html#library">Browse research ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <span class="brand-mark">۞</span>
+            <span>
+              <span class="brand-name">Islamic History Atlas</span>
+              <span class="brand-tag">HISTORY WITH CONTEXT</span>
+            </span>
+          </a>
+          <p class="footer-about">
+            An independent learning and research project exploring Islamic
+            history through people, places, ideas and carefully documented sources.
+          </p>
+        </div>
+        <div>
+          <div class="footer-title">Explore</div>
+          <div class="footer-links">
+            <a href="scholars.html">Scholars & Thinkers</a>
+            <a href="civilizations.html">Dynasties & Empires</a>
+            <a href="history.html#places">Historical Places</a>
+            <a href="timeline.html">Timeline</a>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">Research</div>
+          <div class="footer-links">
+            <a href="history.html#library">Books & Sources</a>
+            <a href="history.html">Historical Records</a>
+            <a href="history.html#about">About This Project</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright">
+        <span>© <span id="year"></span> Islamic History Atlas. An independent research project.</span>
+        <span>Learn from the past. Read the sources. Think critically.</span>
+      </div>
     </div>
+  </footer>
 
-</section>
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
 
-<section>
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+    });
 
-    <div class="section-title">
-        <h2>Great Scholars</h2>
+    navLinks.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      });
+    });
 
-        <p>
-            Meet some of the influential scholars whose work
-            shaped Islamic intellectual history and world knowledge.
-        </p>
-    </div>
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-    <div class="cards">
+    const searchInput = document.getElementById("siteSearch");
+    const searchResults = document.getElementById("searchResults");
+    const searchForm = document.getElementById("searchForm");
 
-        <div class="card">
-            <h3>Al-Ghazali</h3>
+    const records = [
+      {
+        title: "Scholars & Thinkers",
+        detail: "Biographies, ideas and intellectual history",
+        keywords: "scholars thinkers al ghazali ghazali ibn sina avicenna al biruni ibn al haytham ibn khaldun",
+        url: "scholars.html"
+      },
+      {
+        title: "Dynasties & Empires",
+        detail: "Rulers, states and political history",
+        keywords: "dynasties empires abbasid umayyad ottoman caliphate rulers civilization",
+        url: "civilizations.html"
+      },
+      {
+        title: "Historical Places",
+        detail: "Cities, monuments and architecture",
+        keywords: "places architecture baghdad samarra cordoba mosque map city",
+        url: "history.html#places"
+      },
+      {
+        title: "Library & Sources",
+        detail: "Books, manuscripts and references",
+        keywords: "library books manuscripts sources references bibliography research",
+        url: "history.html#library"
+      },
+      {
+        title: "Historical Timeline",
+        detail: "Events and dates across Islamic history",
+        keywords: "timeline dates events 750 762 1258 mongol",
+        url: "timeline.html"
+      },
+      {
+        title: "Baghdad and the Abbasid Age",
+        detail: "The Baghdad-centred Abbasid caliphate",
+        keywords: "baghdad abbasid caliphate city 762 1258",
+        url: "civilizations.html"
+      }
+    ];
 
-            <p>
-                Theology, philosophy and spirituality.
-                One of the most influential thinkers of the Islamic tradition.
-            </p>
+    function runSearch(event) {
+      if (event) event.preventDefault();
 
-            <a href="scholars.html">
-                Explore Scholars →
-            </a>
-        </div>
+      const query = searchInput.value.trim().toLowerCase();
+      searchResults.innerHTML = "";
 
-        <div class="card">
-            <h3>Ibn al-Haytham</h3>
+      if (!query) {
+        searchResults.classList.remove("show");
+        searchInput.focus();
+        return;
+      }
 
-            <p>
-                Pioneer of optics, mathematics and scientific inquiry.
-            </p>
+      const matches = records.filter(record =>
+        (record.title + " " + record.detail + " " + record.keywords)
+          .toLowerCase().includes(query)
+      );
 
-            <a href="scholars.html">
-                Explore Scholars →
-            </a>
-        </div>
+      searchResults.classList.add("show");
 
-        <div class="card">
-            <h3>Ibn Khaldun</h3>
+      if (!matches.length) {
+        searchResults.innerHTML =
+          '<div class="result-item">No matching section found.<span>Try “Ghazali”, “Abbasid”, “Baghdad” or “books”.</span></div>';
+        return;
+      }
 
-            <p>
-                Historian and thinker whose ideas influenced
-                the study of society and civilization.
-            </p>
+      matches.forEach(record => {
+        const link = document.createElement("a");
+        link.className = "result-item";
+        link.href = record.url;
 
-            <a href="scholars.html">
-                Explore Scholars →
-            </a>
-        </div>
+        const title = document.createElement("strong");
+        title.textContent = record.title;
 
-    </div>
+        const detail = document.createElement("span");
+        detail.textContent = record.detail;
 
-</section>
+        link.append(title, detail);
+        searchResults.appendChild(link);
+      });
+    }
 
-<section>
+    searchForm.addEventListener("submit", runSearch);
 
-    <div class="section-title">
-        <h2>Islamic Civilizations</h2>
+    searchInput.addEventListener("input", () => {
+      if (searchInput.value.trim()) runSearch();
+      else searchResults.classList.remove("show");
+    });
 
-        <p>
-            Explore some of the major civilizations and cultural
-            centers of the Islamic world.
-        </p>
-    </div>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Abbasid Baghdad</h3>
-
-            <p>
-                A major center of scholarship, translation,
-                science, literature and commerce.
-            </p>
-
-            <a href="civilizations.html">
-                Explore Civilization →
-            </a>
-        </div>
-
-        <div class="card">
-            <h3>Al-Andalus</h3>
-
-            <p>
-                A remarkable chapter of Islamic history in the
-                Iberian Peninsula.
-            </p>
-
-            <a href="civilizations.html">
-                Explore Civilization →
-            </a>
-        </div>
-
-        <div class="card">
-            <h3>Ottoman Empire</h3>
-
-            <p>
-                A major imperial tradition that connected
-                Europe, Asia and Africa for centuries.
-            </p>
-
-            <a href="civilizations.html">
-                Explore Civilization →
-            </a>
-        </div>
-
-    </div>
-
-</section>
-
-<section>
-
-    <div class="section-title">
-        <h2>Historical Timeline</h2>
-
-        <p>
-            Follow important milestones from the beginning of
-            revelation to the modern era.
-        </p>
-    </div>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>610 CE</h3>
-            <p>
-                Beginning of Qur'anic revelation.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>622 CE</h3>
-            <p>
-                The Hijrah from Makkah to Madinah.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>750 CE</h3>
-            <p>
-                Beginning of the Abbasid political era.
-            </p>
-        </div>
-
-    </div>
-
-    <div style="text-align:center; margin-top:35px;">
-        <a href="timeline.html" class="btn btn-primary">
-            View Full Timeline →
-        </a>
-    </div>
-
-</section>
-
-<div class="quote">
-
-    <p>
-        “Seek knowledge from the cradle to the grave.”
-    </p>
-
-    <span>
-        A tradition of learning and intellectual pursuit
-    </span>
-
-</div>
-
-<footer>
-    © 2026 Islamic History · A Digital Knowledge Project
-</footer>
-
+    document.addEventListener("click", event => {
+      if (!searchForm.contains(event.target) &&
+          !searchResults.contains(event.target)) {
+        searchResults.classList.remove("show");
+      }
+    });
+  </script>
 </body>
 </html>
