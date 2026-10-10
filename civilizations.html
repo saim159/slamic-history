@@ -2,656 +2,1091 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#102d25">
-<meta name="description" content="Explore the geography, history, architecture and intellectual heritage of Islamic civilizations.">
-<title>Civilizations | History Atlas: Islamic Civilizations</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#103d32">
+  <meta name="description" content="Explore Islamic civilizations through history, maps, scholarship, architecture, and primary sources.">
+  <title>Islamic Civilizations | History Atlas</title>
 
-<style>
-:root {
-  --green:#102d25;
-  --green2:#1b4538;
-  --gold:#d5b16b;
-  --cream:#f7f3e9;
-  --paper:#fffdf7;
-  --ink:#25332d;
-  --muted:#6d786f;
-  --line:#e5dfd0;
-}
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-  margin:0;
-  background:var(--cream);
-  color:var(--ink);
-  font-family:Georgia,"Times New Roman",serif;
-  line-height:1.7;
-}
-a { color:inherit; }
-button,input { font:inherit; }
-.wrap { width:min(1160px,92%); margin:auto; }
+  <style>
+    :root {
+      --green: #103d32;
+      --green2: #1d5948;
+      --gold: #d8ad58;
+      --cream: #f7f4eb;
+      --paper: #fffdf7;
+      --ink: #20332d;
+      --muted: #65746c;
+      --line: #e5dfcf;
+      --shadow: 0 12px 35px rgba(20, 50, 38, .09);
+    }
 
-header {
-  background:var(--green);
-  color:white;
-  border-bottom:3px solid var(--gold);
-}
-.nav {
-  min-height:76px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:16px;
-  padding:14px 0;
-}
-.brand {
-  font-size:1.12rem;
-  font-weight:bold;
-  text-decoration:none;
-}
-.brand span { color:var(--gold); }
-.nav-links {
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:17px;
-}
-.nav-links a {
-  color:#f4ead8;
-  text-decoration:none;
-  font-size:.92rem;
-}
-.nav-links a:hover { color:var(--gold); }
-.lang-btn {
-  background:transparent;
-  color:white;
-  border:1px solid var(--gold);
-  border-radius:4px;
-  padding:6px 11px;
-  cursor:pointer;
-}
-.lang-btn:hover { background:var(--gold); color:var(--green); }
+    * { box-sizing: border-box; }
 
-.hero {
-  color:white;
-  background:
-    radial-gradient(ellipse at 85% 12%,#355d48 0,transparent 43%),
-    linear-gradient(125deg,#102d25,#1b4538);
-  padding:74px 0 65px;
-  position:relative;
-  overflow:hidden;
-}
-.hero:after {
-  content:"✦  ✧  ✦";
-  position:absolute;
-  right:4%;
-  bottom:-22px;
-  font-size:clamp(5rem,13vw,10rem);
-  letter-spacing:12px;
-  color:#d5b16b20;
-  pointer-events:none;
-}
-.eyebrow,.kicker {
-  color:var(--gold);
-  text-transform:uppercase;
-  letter-spacing:2px;
-  font:bold .76rem Arial,sans-serif;
-}
-h1 {
-  font-size:clamp(2.4rem,5.6vw,4.7rem);
-  line-height:1.08;
-  max-width:850px;
-  margin:14px 0 18px;
-  font-weight:500;
-}
-.hero p { max-width:740px; color:#e2e9df; font-size:1.08rem; }
-.arabic {
-  color:var(--gold);
-  font-size:clamp(1.8rem,4vw,2.5rem);
-  direction:rtl;
-  margin:12px 0;
-}
-.hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:25px; }
-.btn {
-  display:inline-block;
-  padding:10px 17px;
-  border-radius:4px;
-  text-decoration:none;
-  font:bold .9rem Arial,sans-serif;
-  transition:transform .2s,background .2s;
-}
-.btn:hover { transform:translateY(-2px); }
-.btn-gold { background:var(--gold); color:var(--green); }
-.btn-outline { border:1px solid #ffffff80; color:white; }
+    html { scroll-behavior: smooth; }
 
-section { padding:64px 0; }
-.section-head { max-width:770px; margin-bottom:27px; }
-.section-head h2 {
-  font-size:clamp(1.8rem,3.7vw,2.8rem);
-  line-height:1.2;
-  margin:9px 0 12px;
-}
-.section-head p { color:var(--muted); }
-.kicker { color:#99743a; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--cream);
+      color: var(--ink);
+      line-height: 1.7;
+    }
 
-.panel {
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:12px;
-  overflow:hidden;
-  box-shadow:0 8px 25px #172e2010;
-}
-.map-panel { padding:20px; }
-.map-heading {
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:10px;
-}
-.map-heading h3 { margin:0; font-size:1.25rem; }
-.map-tag {
-  font: .75rem Arial,sans-serif;
-  background:#e9eee6;
-  color:var(--green2);
-  padding:5px 10px;
-  border-radius:30px;
-}
-.map-scroll { overflow-x:auto; margin-top:12px; }
-.map-scroll svg { display:block; width:100%; min-width:580px; }
-.map-legend {
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
-  font:.82rem Arial,sans-serif;
-  margin-top:12px;
-}
-.map-note { font:.83rem/1.6 Arial,sans-serif; color:var(--muted); margin:12px 0 0; }
+    a { color: inherit; }
 
-.stats {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-  margin-top:20px;
-}
-.stat {
-  background:#eaeedf;
-  border-radius:8px;
-  padding:18px;
-  text-align:center;
-}
-.stat strong { display:block; font-size:1.5rem; color:var(--green); }
-.stat span { font-size:.85rem; color:var(--muted); }
+    button, input { font: inherit; }
 
-.directory { background:#eee9dc; }
-.search-row {
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin:22px 0 26px;
-}
-.search-box {
-  flex:1 1 260px;
-  min-width:0;
-  padding:13px 15px;
-  border:1px solid #cfc5b3;
-  border-radius:6px;
-  background:var(--paper);
-  color:var(--ink);
-  outline-offset:3px;
-}
-.search-box:focus { outline:2px solid #b89452; }
-.result-count { color:var(--muted); font:.85rem Arial,sans-serif; align-self:center; }
+    .topbar {
+      background: var(--green);
+      color: white;
+      padding: 13px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
 
-.cards {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:21px;
-}
-.card {
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:10px;
-  overflow:hidden;
-  transition:transform .2s,box-shadow .2s;
-}
-.card:hover {
-  transform:translateY(-4px);
-  box-shadow:0 12px 28px #172e2018;
-}
-.card[hidden] { display:none; }
-.card-image { position:relative; }
-.card-image img {
-  display:block;
-  width:100%;
-  height:215px;
-  object-fit:cover;
-  background:#d8dfd3;
-}
-.card-number {
-  position:absolute;
-  left:13px;
-  top:13px;
-  background:#102d25e8;
-  color:var(--gold);
-  border:1px solid #d5b16b90;
-  border-radius:4px;
-  padding:4px 9px;
-  font:bold .75rem Arial,sans-serif;
-}
-.card-body { padding:20px; }
-.card h3 { color:var(--green); font-size:1.35rem; line-height:1.25; margin:0 0 7px; }
-.date { color:#987136; font:bold .82rem Arial,sans-serif; margin-bottom:9px; }
-.arabic-name { direction:rtl; color:#8b6b32; font-size:1.3rem; margin-bottom:10px; }
-.card p { color:#5b625a; font-size:.93rem; margin-bottom:16px; }
-.card .btn { background:var(--green); color:white; }
-.card .btn:hover { background:#8b6b32; }
-.no-results {
-  display:none;
-  padding:25px;
-  text-align:center;
-  color:var(--muted);
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:8px;
-}
-.no-results.show { display:block; }
+    .brand {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      letter-spacing: .4px;
+      font-size: 1.08rem;
+    }
 
-.timeline {
-  display:grid;
-  grid-template-columns:repeat(3,minmax(0,1fr));
-  gap:16px;
-}
-.period {
-  background:var(--paper);
-  border-top:3px solid var(--gold);
-  padding:20px;
-  border-radius:5px;
-}
-.period .year { color:#987136; font:bold .78rem Arial,sans-serif; }
-.period h3 { margin:8px 0; color:var(--green); font-size:1.12rem; }
-.period p { color:var(--muted); font-size:.9rem; margin:0; }
+    .brand span { color: var(--gold); }
 
-.method-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
-.method-card { padding:24px; }
-.method-card h3 { color:var(--green); font-size:1.3rem; }
-.method-card ul { padding-left:21px; margin-bottom:0; }
-.method-card li { margin:7px 0; }
-.method-card p { color:var(--muted); }
+    .top-actions {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
 
-.text-link { color:#255744; font-weight:bold; text-decoration:none; border-bottom:1px solid #bda36d; }
-.text-link:hover { color:#a27630; }
+    .top-actions a {
+      text-decoration: none;
+      font-family: Arial, sans-serif;
+      font-size: .88rem;
+    }
 
-footer { background:var(--green); color:#e6e9df; padding:32px 0; }
-.footer-row { display:flex; justify-content:space-between; flex-wrap:wrap; gap:20px; }
-footer p { margin:4px 0; font-size:.88rem; }
-footer a { color:var(--gold); text-decoration:none; }
+    .lang-btn {
+      background: var(--gold);
+      color: #182c22;
+      border: 0;
+      border-radius: 7px;
+      padding: 8px 13px;
+      cursor: pointer;
+      font-weight: bold;
+    }
 
-@media(max-width:900px) {
-  .cards { grid-template-columns:repeat(2,minmax(0,1fr)); }
-  .timeline { grid-template-columns:repeat(2,minmax(0,1fr)); }
-}
-@media(max-width:580px) {
-  .hero { padding:52px 0; }
-  section { padding:46px 0; }
-  .nav { align-items:flex-start; }
-  .nav-links { gap:11px; }
-  .cards,.timeline,.method-grid,.stats { grid-template-columns:1fr; }
-  .card-image img { height:230px; }
-}
-</style>
+    .hero {
+      background:
+        radial-gradient(ellipse at 85% 20%, rgba(216,173,88,.17), transparent 36%),
+        linear-gradient(130deg, #103d32, #1b5846);
+      color: white;
+      padding: 72px 6% 64px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "✦  ۞  ✦";
+      position: absolute;
+      right: 4%;
+      bottom: 0;
+      font-size: clamp(3rem, 9vw, 8rem);
+      color: rgba(255,255,255,.07);
+      letter-spacing: 12px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 1150px;
+      margin: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font: bold .78rem Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: clamp(2.25rem, 5.5vw, 4.5rem);
+      line-height: 1.12;
+      margin: 15px 0;
+      max-width: 850px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      font: 1.08rem/1.9 Arial, sans-serif;
+      color: #e5eee7;
+    }
+
+    .hero-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 11px 18px;
+      border-radius: 7px;
+      font: bold .9rem Arial, sans-serif;
+    }
+
+    .btn-gold { background: var(--gold); color: #172d23; }
+    .btn-outline { border: 1px solid rgba(255,255,255,.55); color: white; }
+
+    .container {
+      max-width: 1180px;
+      width: 90%;
+      margin: auto;
+    }
+
+    .section { padding: 55px 0; }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 25px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      color: var(--green);
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      line-height: 1.25;
+    }
+
+    .section-heading p {
+      max-width: 620px;
+      margin: 8px 0 0;
+      color: var(--muted);
+      font: .96rem/1.8 Arial, sans-serif;
+    }
+
+    .map-panel {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+
+    .map-title { padding: 20px 24px 0; }
+
+    .map-title h3 {
+      margin: 0;
+      color: var(--green);
+      font-size: 1.3rem;
+    }
+
+    .map-title p {
+      color: var(--muted);
+      margin: 5px 0 0;
+      font: .9rem/1.7 Arial, sans-serif;
+    }
+
+    .map-svg {
+      display: block;
+      width: 100%;
+      height: auto;
+      min-height: 230px;
+    }
+
+    .map-note {
+      padding: 0 24px 20px;
+      color: var(--muted);
+      font: .84rem/1.7 Arial, sans-serif;
+    }
+
+    .search-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin: 25px 0;
+    }
+
+    .search-row input {
+      flex: 1 1 260px;
+      min-width: 0;
+      padding: 13px 16px;
+      border: 1px solid #d7d1c1;
+      border-radius: 9px;
+      background: white;
+      outline-color: var(--green2);
+    }
+
+    .search-hint {
+      width: 100%;
+      margin: -3px 0 0;
+      color: var(--muted);
+      font: .82rem Arial, sans-serif;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 23px;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 35px rgba(20, 50, 38, .14);
+    }
+
+    .card-visual {
+      height: 215px;
+      background: #d8d0b7;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .visual-fallback {
+      display: none;
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(145deg, #174838, #47705a 58%, #d2ad62);
+      place-items: center;
+    }
+
+    .visual-fallback svg {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .period {
+      position: absolute;
+      bottom: 12px;
+      left: 12px;
+      background: rgba(16, 61, 50, .94);
+      color: white;
+      padding: 6px 10px;
+      border-radius: 5px;
+      font: bold .75rem Arial, sans-serif;
+      z-index: 2;
+    }
+
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .card-body h3 {
+      margin: 0 0 8px;
+      color: var(--green);
+      font-size: 1.35rem;
+      line-height: 1.35;
+    }
+
+    .card-body p {
+      color: var(--muted);
+      font: .92rem/1.8 Arial, sans-serif;
+      margin: 0 0 14px;
+    }
+
+    .topic {
+      color: #886627;
+      font: bold .76rem/1.7 Arial, sans-serif;
+      letter-spacing: .2px;
+      margin-bottom: 10px;
+    }
+
+    .card-link {
+      display: inline-block;
+      margin-top: auto;
+      padding-top: 8px;
+      color: var(--green2);
+      text-decoration: none;
+      font: bold .91rem Arial, sans-serif;
+    }
+
+    .card-link:hover { text-decoration: underline; }
+
+    .empty-state {
+      display: none;
+      background: var(--paper);
+      padding: 25px;
+      border-radius: 10px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .timeline-item {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--gold);
+      border-radius: 10px;
+      padding: 19px;
+    }
+
+    .timeline-item .year {
+      color: #99732c;
+      font: bold .9rem Arial, sans-serif;
+    }
+
+    .timeline-item h3 {
+      color: var(--green);
+      margin: 7px 0;
+      font-size: 1.08rem;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+      font: .88rem/1.75 Arial, sans-serif;
+      margin: 0;
+    }
+
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 17px;
+    }
+
+    .method-card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 22px;
+    }
+
+    .method-card .number {
+      color: #99732c;
+      font: bold 1.5rem Arial, sans-serif;
+    }
+
+    .method-card h3 {
+      color: var(--green);
+      margin: 8px 0;
+      font-size: 1.13rem;
+    }
+
+    .method-card p {
+      color: var(--muted);
+      font: .9rem/1.8 Arial, sans-serif;
+      margin: 0;
+    }
+
+    .notice {
+      border-left: 4px solid var(--gold);
+      background: #f0eadb;
+      padding: 15px 18px;
+      color: #4d5c4e;
+      font: .87rem/1.8 Arial, sans-serif;
+      border-radius: 0 8px 8px 0;
+      margin-top: 24px;
+    }
+
+    .cta {
+      background: var(--green);
+      color: white;
+      padding: 35px;
+      border-radius: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .cta h2 { margin: 0 0 7px; font-size: 1.65rem; }
+    .cta p { margin: 0; color: #dce8de; font: .92rem/1.8 Arial, sans-serif; }
+
+    footer {
+      background: #0b2c24;
+      color: #d9e4dc;
+      text-align: center;
+      padding: 25px 5%;
+      font: .85rem/1.8 Arial, sans-serif;
+    }
+
+    footer a { color: var(--gold); text-decoration: none; }
+
+    [hidden] { display: none !important; }
+
+    @media (max-width: 900px) {
+      .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .method-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
+    @media (max-width: 580px) {
+      .hero { padding: 50px 5%; }
+      .container { width: 92%; }
+      .cards, .timeline, .method-grid { grid-template-columns: 1fr; }
+      .card-visual { height: 220px; }
+      .section { padding: 38px 0; }
+      .cta { padding: 24px; }
+    }
+  </style>
 </head>
 
 <body>
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="index.html">History Atlas<span>.</span></a>
-    <nav class="nav-links" aria-label="Main navigation">
+  <header class="topbar">
+    <a class="brand" href="index.html">HISTORY ATLAS <span>✦</span></a>
+
+    <nav class="top-actions" aria-label="Main navigation">
       <a href="index.html" data-en="Home" data-bn="হোম">Home</a>
       <a href="history.html" data-en="History" data-bn="ইতিহাস">History</a>
-      <a href="scholars.html" data-en="Scholars" data-bn="পণ্ডিতগণ">Scholars</a>
-      <a href="timeline.html" data-en="Timeline" data-bn="সময়রেখা">Timeline</a>
-      <button class="lang-btn" id="languageBtn" type="button">বাংলা</button>
+      <a href="scholars.html" data-en="Scholars" data-bn="মনিষী">Scholars</a>
+      <a href="timeline.html" data-en="Timeline" data-bn="সময়রেখা">Timeline</a>
+      <button class="lang-btn" id="langToggle" type="button">বাংলা</button>
     </nav>
-  </div>
-</header>
+  </header>
 
-<main>
-<section class="hero">
-  <div class="wrap">
-    <div class="eyebrow" data-en="Places · People · Ideas" data-bn="স্থান · ব্যক্তিত্ব · চিন্তাধারা">Places · People · Ideas</div>
-    <h1 data-en="Explore the worlds of Islamic civilizations." data-bn="ইসলামি সভ্যতার বহুমাত্রিক জগৎ আবিষ্কার করো।">Explore the worlds of Islamic civilizations.</h1>
-    <div class="arabic">حَضَارَاتٌ إِسْلَامِيَّةٌ</div>
-    <p data-en="Discover changing empires, remarkable cities, architecture, scholarship and cultural exchange across centuries. Explore the past through historical context and evidence." data-bn="শতাব্দীর পর শতাব্দী ধরে গড়ে ওঠা সাম্রাজ্য, ঐতিহাসিক নগর, স্থাপত্য, জ্ঞানচর্চা ও সাংস্কৃতিক বিনিময়কে জানো। ঐতিহাসিক প্রেক্ষাপট ও প্রমাণের আলোকে অতীত অনুসন্ধান করো।">Discover changing empires, remarkable cities, architecture, scholarship and cultural exchange across centuries. Explore the past through historical context and evidence.</p>
-    <div class="hero-actions">
-      <a class="btn btn-gold" href="#directory" data-en="Explore civilizations ↓" data-bn="সভ্যতাগুলো দেখো ↓">Explore civilizations ↓</a>
-      <a class="btn btn-outline" href="#map" data-en="View historical map" data-bn="ঐতিহাসিক মানচিত্র দেখো">View historical map</a>
-    </div>
-  </div>
-</section>
+  <main>
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="eyebrow" data-en="Explore the past · Understand the present"
+             data-bn="অতীত অন্বেষণ · বর্তমানকে বোঝা">
+          Explore the past · Understand the present
+        </div>
 
-<section id="map">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker" data-en="01 · Historical geography" data-bn="০১ · ঐতিহাসিক ভূগোল">01 · Historical geography</div>
-      <h2 data-en="A changing world of cities and empires" data-bn="নগর ও সাম্রাজ্যের পরিবর্তনশীল জগৎ">A changing world of cities and empires</h2>
-      <p data-en="Islamic history unfolded across many regions. This schematic map marks selected centres associated with the civilizations featured below; it does not show their exact borders or the same historical year." data-bn="ইসলামি ইতিহাস বহু অঞ্চলে বিকশিত হয়েছে। এই ব্যাখ্যামূলক মানচিত্রে নিচে আলোচিত সভ্যতাগুলোর সঙ্গে যুক্ত কয়েকটি কেন্দ্র দেখানো হয়েছে; এটি তাদের নির্ভুল সীমানা বা একই বছরের রাজনৈতিক অবস্থা দেখায় না।">Islamic history unfolded across many regions. This schematic map marks selected centres associated with the civilizations featured below; it does not show their exact borders or the same historical year.</p>
-    </div>
+        <h1 data-en="Islamic Civilizations"
+            data-bn="ইসলামি সভ্যতাসমূহ">Islamic Civilizations</h1>
 
-    <div class="panel map-panel">
-      <div class="map-heading">
-        <h3 data-en="Selected historical centres" data-bn="নির্বাচিত ঐতিহাসিক কেন্দ্র">Selected historical centres</h3>
-        <span class="map-tag" data-en="Schematic · Not to scale" data-bn="ব্যাখ্যামূলক · মাপানুপাতিক নয়">Schematic · Not to scale</span>
+        <p data-en="Explore the cities, institutions, ideas, architecture, and people that shaped Islamic history. Follow the evidence, compare different periods, and begin your own historical research."
+           data-bn="ইসলামি ইতিহাসকে গড়ে তোলা নগর, প্রতিষ্ঠান, চিন্তাধারা, স্থাপত্য ও মনীষীদের জানুন। ঐতিহাসিক প্রমাণ অনুসরণ করুন, বিভিন্ন যুগের তুলনা করুন এবং নিজের গবেষণার যাত্রা শুরু করুন।">
+          Explore the cities, institutions, ideas, architecture, and people that shaped Islamic history.
+          Follow the evidence, compare different periods, and begin your own historical research.
+        </p>
+
+        <div class="hero-links">
+          <a class="btn btn-gold" href="#civilizations"
+             data-en="Explore civilizations ↓" data-bn="সভ্যতাগুলো দেখুন ↓">
+            Explore civilizations ↓
+          </a>
+          <a class="btn btn-outline" href="research.html"
+             data-en="Research pathways" data-bn="গবেষণার পথ">
+            Research pathways
+          </a>
+        </div>
       </div>
+    </section>
 
-      <div class="map-scroll">
-        <svg viewBox="0 0 900 430" role="img" aria-labelledby="mapTitle mapDescription">
-          <title id="mapTitle">Selected centres in Islamic history</title>
-          <desc id="mapDescription">A schematic diagram locating Cordoba, Cairo, Damascus, Baghdad, Konya and Istanbul.</desc>
-          <defs>
-            <linearGradient id="mapSea" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#dce9e5"/>
-              <stop offset="1" stop-color="#edf0df"/>
-            </linearGradient>
-            <pattern id="mapGrid" width="30" height="30" patternUnits="userSpaceOnUse">
-              <path d="M30 0H0V30" fill="none" stroke="#b7c9bd" stroke-width=".6" opacity=".5"/>
-            </pattern>
-          </defs>
-          <rect width="900" height="430" rx="12" fill="url(#mapSea)"/>
-          <rect width="900" height="430" rx="12" fill="url(#mapGrid)"/>
-          <!-- Decorative schematic land shapes, not exact coastlines -->
-          <path d="M45 90 L110 48 L200 55 L250 90 L290 110 L280 150 L245 180 L220 220 L185 260 L145 280 L110 240 L120 195 L85 160 Z" fill="#c6d2b7" stroke="#9daf9a"/>
-          <path d="M290 40 L380 35 L435 65 L485 80 L540 65 L600 75 L650 55 L730 75 L820 120 L850 160 L800 185 L745 165 L700 195 L640 175 L590 200 L540 180 L490 205 L445 185 L400 200 L350 165 L310 130 Z" fill="#c6d2b7" stroke="#9daf9a"/>
-          <path d="M360 205 L410 195 L455 230 L475 285 L445 345 L415 365 L390 315 L375 265 Z" fill="#c6d2b7" stroke="#9daf9a"/>
-          <path d="M520 215 L575 205 L615 235 L595 275 L555 270 L530 245 Z" fill="#c6d2b7" stroke="#9daf9a"/>
-          <!-- Broad illustrative links -->
-          <g fill="none" stroke="#a77d37" stroke-width="2.5" stroke-dasharray="5 7" opacity=".9">
-            <path d="M190 160 Q280 95 385 160"/>
-            <path d="M385 160 Q425 125 485 145"/>
-            <path d="M385 160 Q420 205 450 225"/>
-            <path d="M485 145 Q530 105 585 115"/>
-            <path d="M585 115 Q620 85 665 100"/>
-            <path d="M450 225 Q470 180 485 145"/>
-          </g>
-          <g font-family="Arial,sans-serif" font-size="15" fill="#183b2e">
-            <g transform="translate(190 160)">
-              <circle r="8" fill="#a77d37" stroke="#fffdf7" stroke-width="3"/>
-              <text x="0" y="-19" text-anchor="middle" font-weight="bold">Córdoba</text>
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2 data-en="A connected historical world"
+                data-bn="পারস্পরিক সংযুক্ত ঐতিহাসিক বিশ্ব">
+              A connected historical world
+            </h2>
+            <p data-en="Cities connected through trade, scholarship, travel, diplomacy, and the movement of ideas."
+               data-bn="বাণিজ্য, জ্ঞানচর্চা, ভ্রমণ, কূটনীতি ও চিন্তার আদান-প্রদানের মাধ্যমে সংযুক্ত নগরসমূহ।">
+              Cities connected through trade, scholarship, travel, diplomacy, and the movement of ideas.
+            </p>
+          </div>
+        </div>
+
+        <div class="map-panel">
+          <div class="map-title">
+            <h3 data-en="Cities of knowledge and power"
+                data-bn="জ্ঞান ও ক্ষমতার ঐতিহাসিক নগর">
+              Cities of knowledge and power
+            </h3>
+            <p data-en="A simplified illustrative map—not a precise historical boundary map."
+               data-bn="এটি একটি সরলীকৃত ধারণামূলক মানচিত্র; নির্ভুল ঐতিহাসিক সীমানার মানচিত্র নয়।">
+              A simplified illustrative map—not a precise historical boundary map.
+            </p>
+          </div>
+
+          <svg class="map-svg" viewBox="0 0 1000 440" role="img"
+               aria-label="Illustrative map showing Cordoba, Cairo, Damascus, Baghdad, Konya and Samarkand">
+            <defs>
+              <linearGradient id="land" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#e9e0c9"/>
+                <stop offset="100%" stop-color="#c8d7bb"/>
+              </linearGradient>
+              <pattern id="dots" width="23" height="23" patternUnits="userSpaceOnUse">
+                <circle cx="3" cy="3" r="1.3" fill="#9cad8d" opacity=".5"/>
+              </pattern>
+            </defs>
+
+            <rect width="1000" height="440" fill="#e8eee5"/>
+            <path d="M0 80 Q140 30 250 90 T480 90 T720 65 T1000 95 L1000 0 L0 0Z"
+                  fill="#d7e4dc"/>
+            <path d="M0 250 Q180 200 340 260 T650 240 T1000 250 L1000 440 L0 440Z"
+                  fill="#c9d9d3"/>
+            <path d="M40 135 L140 85 L230 112 L270 160 L235 200 L250 245 L190 270
+                     L145 235 L95 220 L60 180Z"
+                  fill="url(#land)" stroke="#9cab8b" stroke-width="2"/>
+            <path d="M280 100 L370 78 L430 110 L480 100 L550 125 L610 100 L690 120
+                     L740 90 L830 115 L900 165 L875 220 L810 245 L760 220 L720 250
+                     L650 230 L600 270 L550 250 L490 270 L430 230 L370 235 L330 190Z"
+                  fill="url(#land)" stroke="#9cab8b" stroke-width="2"/>
+            <path d="M270 100 L370 78 L430 110 L480 100 L550 125 L610 100 L690 120
+                     L740 90 L830 115 L900 165 L875 220 L810 245 L760 220 L720 250
+                     L650 230 L600 270 L550 250 L490 270 L430 230 L370 235 L330 190Z"
+                  fill="url(#dots)" opacity=".8"/>
+
+            <g fill="none" stroke="#b18c43" stroke-width="2.5" stroke-dasharray="7 7" opacity=".9">
+              <path d="M180 170 Q350 90 475 175"/>
+              <path d="M475 175 Q520 190 575 210"/>
+              <path d="M575 210 Q640 180 710 155"/>
+              <path d="M575 210 Q670 240 770 180"/>
+              <path d="M710 155 Q800 125 860 160"/>
             </g>
-            <g transform="translate(385 160)">
-              <circle r="8" fill="#a77d37" stroke="#fffdf7" stroke-width="3"/>
-              <text x="0" y="-19" text-anchor="middle" font-weight="bold">Cairo</text>
+
+            <g font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#183d31">
+              <circle cx="180" cy="170" r="7" fill="#b38a36" stroke="#fff" stroke-width="3"/>
+              <text x="125" y="153">Cordoba</text>
+
+              <circle cx="475" cy="175" r="7" fill="#b38a36" stroke="#fff" stroke-width="3"/>
+              <text x="440" y="155">Cairo</text>
+
+              <circle cx="575" cy="210" r="7" fill="#b38a36" stroke="#fff" stroke-width="3"/>
+              <text x="520" y="240">Damascus</text>
+
+              <circle cx="710" cy="155" r="7" fill="#b38a36" stroke="#fff" stroke-width="3"/>
+              <text x="680" y="135">Baghdad</text>
+
+              <circle cx="770" cy="180" r="7" fill="#b38a36" stroke="#fff" stroke-width="3"/>
+              <text x="778" y="205">Konya</text>
+
+              <circle cx="860" cy="160" r="7" fill="#b38a36" stroke="#fff" stroke-width="3"/>
+              <text x="825" y="138">Samarkand</text>
             </g>
-            <g transform="translate(450 225)">
-              <circle r="8" fill="#a77d37" stroke="#fffdf7" stroke-width="3"/>
-              <text x="0" y="26" text-anchor="middle" font-weight="bold">Damascus</text>
-            </g>
-            <g transform="translate(485 145)">
-              <circle r="8" fill="#a77d37" stroke="#fffdf7" stroke-width="3"/>
-              <text x="0" y="-19" text-anchor="middle" font-weight="bold">Baghdad</text>
-            </g>
-            <g transform="translate(585 115)">
-              <circle r="8" fill="#a77d37" stroke="#fffdf7" stroke-width="3"/>
-              <text x="0" y="-19" text-anchor="middle" font-weight="bold">Konya</text>
-            </g>
-            <g transform="translate(665 100)">
-              <circle r="8" fill="#a77d37" stroke="#fffdf7" stroke-width="3"/>
-              <text x="0" y="-19" text-anchor="middle" font-weight="bold">Istanbul</text>
-            </g>
-          </g>
-          <text x="22" y="400" font-family="Arial,sans-serif" font-size="12" fill="#52695b">ILLUSTRATIVE HISTORICAL NETWORK</text>
-          <text x="875" y="400" text-anchor="end" font-family="Arial,sans-serif" font-size="12" fill="#52695b">AFRO-EURASIA</text>
-        </svg>
+
+            <text x="25" y="410" font-size="13" fill="#49685a" font-family="Arial, sans-serif">
+              HISTORY ATLAS · ILLUSTRATIVE ROUTES
+            </text>
+          </svg>
+
+          <div class="map-note"
+               data-en="The routes are illustrative. The cities had different roles in different periods and were not all part of one state at the same time."
+               data-bn="রুটগুলো ধারণামূলক। বিভিন্ন সময়ে নগরগুলোর ভূমিকা ছিল ভিন্ন; সব নগর একই সময়ে একই রাষ্ট্রের অংশ ছিল না।">
+            The routes are illustrative. The cities had different roles in different periods and were not all part of one state at the same time.
+          </div>
+        </div>
       </div>
-      <div class="map-legend">
-        <span>🟡 <span data-en="Selected historical centre" data-bn="নির্বাচিত ঐতিহাসিক কেন্দ্র">Selected historical centre</span></span>
-        <span>╌╌ <span data-en="Illustrative connection" data-bn="ব্যাখ্যামূলক যোগাযোগপথ">Illustrative connection</span></span>
+    </section>
+
+    <section class="section" id="civilizations">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2 data-en="Explore civilizations" data-bn="সভ্যতাগুলো অন্বেষণ করুন">
+              Explore civilizations
+            </h2>
+            <p data-en="Choose a civilization to explore its history, institutions, intellectual traditions, and legacy."
+               data-bn="ইতিহাস, প্রতিষ্ঠান, জ্ঞানচর্চার ধারা ও উত্তরাধিকার জানতে একটি সভ্যতা নির্বাচন করুন।">
+              Choose a civilization to explore its history, institutions, intellectual traditions, and legacy.
+            </p>
+          </div>
+        </div>
+
+        <div class="search-row">
+          <input id="searchInput" type="search"
+                 placeholder="Search civilizations..."
+                 aria-label="Search civilizations"
+                 data-placeholder-en="Search civilizations..."
+                 data-placeholder-bn="সভ্যতা খুঁজুন...">
+          <p class="search-hint"
+             data-en="Try: Abbasid, Andalus, Fatimid, Ottoman, Mamluk, Seljuk."
+             data-bn="খুঁজে দেখুন: আব্বাসীয়, আন্দালুস, ফাতেমীয়, উসমানীয়, মামলুক, সেলজুক।">
+            Try: Abbasid, Andalus, Fatimid, Ottoman, Mamluk, Seljuk.
+          </p>
+        </div>
+
+        <div class="cards" id="civilizationCards">
+
+          <!-- ABBASID -->
+          <article class="card" data-search="abbasid baghdad আব্বাসীয় বাগদাদ">
+            <div class="card-visual">
+              <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                   alt="Historic architecture representing the medieval Islamic world"
+                   loading="lazy"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+              <div class="visual-fallback" aria-hidden="true">
+                <svg viewBox="0 0 500 280">
+                  <rect width="500" height="280" fill="#244c3e"/>
+                  <circle cx="395" cy="52" r="28" fill="#d8ad58" opacity=".9"/>
+                  <path d="M0 235 L500 235 L500 280 L0 280Z" fill="#b28a45"/>
+                  <path d="M60 235V150Q60 105 105 105Q150 105 150 150V235Z" fill="#e8d9b5"/>
+                  <path d="M180 235V125Q180 70 235 70Q290 70 290 125V235Z" fill="#d4b66d"/>
+                  <path d="M320 235V160Q320 120 360 120Q400 120 400 160V235Z" fill="#e8d9b5"/>
+                  <g fill="#244c3e">
+                    <rect x="90" y="170" width="28" height="65"/>
+                    <rect x="216" y="135" width="38" height="100"/>
+                    <rect x="348" y="177" width="25" height="58"/>
+                  </g>
+                </svg>
+              </div>
+              <span class="period">750–1258 CE</span>
+            </div>
+            <div class="card-body">
+              <div class="topic" data-en="SCHOLARSHIP · BAGHDAD" data-bn="জ্ঞানচর্চা · বাগদাদ">SCHOLARSHIP · BAGHDAD</div>
+              <h3 data-en="Abbasid Baghdad" data-bn="আব্বাসীয় বাগদাদ">Abbasid Baghdad</h3>
+              <p data-en="Explore the Abbasid caliphate, translation movements, urban life, science, philosophy, and scholarly networks."
+                 data-bn="আব্বাসীয় খেলাফত, অনুবাদ আন্দোলন, নগরজীবন, বিজ্ঞান, দর্শন ও জ্ঞানচর্চার নেটওয়ার্ক সম্পর্কে জানুন।">
+                Explore the Abbasid caliphate, translation movements, urban life, science, philosophy, and scholarly networks.
+              </p>
+              <a class="card-link" href="abbasid-baghdad.html"
+                 data-en="Explore Abbasid history →" data-bn="আব্বাসীয় ইতিহাস দেখুন →">
+                Explore Abbasid history →
+              </a>
+            </div>
+          </article>
+
+          <!-- AL-ANDALUS -->
+          <article class="card" data-search="al andalus cordoba spain আন্দালুস কর্ডোবা">
+            <div class="card-visual">
+              <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                   alt="Historic architecture in Spain"
+                   loading="lazy"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+              <div class="visual-fallback" aria-hidden="true">
+                <svg viewBox="0 0 500 280">
+                  <rect width="500" height="280" fill="#d5d7bc"/>
+                  <rect y="220" width="500" height="60" fill="#9a7a47"/>
+                  <path d="M70 220V100Q70 50 120 50Q170 50 170 100V220Z" fill="#f4e6c3"/>
+                  <path d="M185 220V80Q185 25 240 25Q295 25 295 80V220Z" fill="#b68c4b"/>
+                  <path d="M310 220V100Q310 50 360 50Q410 50 410 100V220Z" fill="#f4e6c3"/>
+                  <g fill="#704b2d">
+                    <path d="M100 220V115Q100 80 120 80Q140 80 140 115V220Z"/>
+                    <path d="M210 220V100Q210 60 240 60Q270 60 270 100V220Z"/>
+                    <path d="M340 220V115Q340 80 360 80Q380 80 380 115V220Z"/>
+                  </g>
+                </svg>
+              </div>
+              <span class="period">711–1492 CE</span>
+            </div>
+            <div class="card-body">
+              <div class="topic" data-en="ARCHITECTURE · LEARNING" data-bn="স্থাপত্য · জ্ঞানচর্চা">ARCHITECTURE · LEARNING</div>
+              <h3 data-en="Al-Andalus" data-bn="আল-আন্দালুস">Al-Andalus</h3>
+              <p data-en="Study Muslim-ruled Iberia, Cordoba, architecture, scholarship, political change, and cultural exchange."
+                 data-bn="মুসলিম শাসিত আইবেরিয়া, কর্ডোবা, স্থাপত্য, জ্ঞানচর্চা, রাজনৈতিক পরিবর্তন ও সাংস্কৃতিক আদান-প্রদান অধ্যয়ন করুন।">
+                Study Muslim-ruled Iberia, Cordoba, architecture, scholarship, political change, and cultural exchange.
+              </p>
+              <a class="card-link" href="al-andalus.html"
+                 data-en="Explore Al-Andalus →" data-bn="আল-আন্দালুস দেখুন →">
+                Explore Al-Andalus →
+              </a>
+            </div>
+          </article>
+
+          <!-- OTTOMAN -->
+          <article class="card" data-search="ottoman istanbul osman উসমানীয় ইস্তাম্বুল">
+            <div class="card-visual">
+              <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                   alt="Monumental historic architecture"
+                   loading="lazy"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+              <div class="visual-fallback" aria-hidden="true">
+                <svg viewBox="0 0 500 280">
+                  <rect width="500" height="280" fill="#b8d0cf"/>
+                  <path d="M0 220Q120 205 250 220T500 215V280H0Z" fill="#457a80"/>
+                  <path d="M75 220V125Q75 65 135 65Q195 65 195 125V220Z" fill="#e7d7b4"/>
+                  <path d="M160 220V100Q160 30 235 30Q310 30 310 100V220Z" fill="#d7bd7d"/>
+                  <path d="M300 220V125Q300 65 360 65Q420 65 420 125V220Z" fill="#e7d7b4"/>
+                  <g fill="#a17d42">
+                    <path d="M95 125L135 90L175 125Z"/>
+                    <path d="M180 100L235 55L290 100Z"/>
+                    <path d="M320 125L360 90L400 125Z"/>
+                  </g>
+                </svg>
+              </div>
+              <span class="period">c. 1299–1922 CE</span>
+            </div>
+            <div class="card-body">
+              <div class="topic" data-en="EMPIRE · LAW · ARCHITECTURE" data-bn="সাম্রাজ্য · আইন · স্থাপত্য">EMPIRE · LAW · ARCHITECTURE</div>
+              <h3 data-en="Ottoman Empire" data-bn="উসমানীয় সাম্রাজ্য">Ottoman Empire</h3>
+              <p data-en="Explore imperial institutions, legal traditions, cities, architecture, diplomacy, and the transformation of a long-lived empire."
+                 data-bn="সাম্রাজ্যিক প্রতিষ্ঠান, আইনগত ঐতিহ্য, নগর, স্থাপত্য, কূটনীতি ও দীর্ঘস্থায়ী সাম্রাজ্যের রূপান্তর অন্বেষণ করুন।">
+                Explore imperial institutions, legal traditions, cities, architecture, diplomacy, and the transformation of a long-lived empire.
+              </p>
+              <a class="card-link" href="ottoman.html"
+                 data-en="Explore Ottoman history →" data-bn="উসমানীয় ইতিহাস দেখুন →">
+                Explore Ottoman history →
+              </a>
+            </div>
+          </article>
+
+          <!-- FATIMID: HAS A BUILT-IN SVG FALLBACK -->
+          <article class="card" data-search="fatimid cairo egypt fatimiyya ফাতেমীয় ফাতিমি কায়রো মিশর">
+            <div class="card-visual">
+              <img
+                src="https://images.unsplash.com/photo-1539768942893-daf53e448371?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                alt="Historic architecture representing Egypt"
+                loading="lazy"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+
+              <!-- This illustration appears if the online image fails -->
+              <div class="visual-fallback" aria-hidden="true">
+                <svg viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="fatimidSky" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#183f35"/>
+                      <stop offset="100%" stop-color="#4e7960"/>
+                    </linearGradient>
+                  </defs>
+                  <rect width="500" height="280" fill="url(#fatimidSky)"/>
+                  <circle cx="395" cy="52" r="27" fill="#e3c276"/>
+                  <path d="M0 245 L500 245 L500 280 L0 280Z" fill="#b68d49"/>
+                  <path d="M30 245V155Q30 110 75 110Q120 110 120 155V245Z" fill="#e9d8ad"/>
+                  <path d="M135 245V125Q135 60 200 60Q265 60 265 125V245Z" fill="#d9bb79"/>
+                  <path d="M280 245V155Q280 110 325 110Q370 110 370 155V245Z" fill="#e9d8ad"/>
+                  <path d="M385 245V175Q385 140 420 140Q455 140 455 175V245Z" fill="#c7aa6e"/>
+                  <g fill="#23483b">
+                    <path d="M55 245V168Q55 135 75 135Q95 135 95 168V245Z"/>
+                    <path d="M165 245V130Q165 90 200 90Q235 90 235 130V245Z"/>
+                    <path d="M305 245V168Q305 135 325 135Q345 135 345 168V245Z"/>
+                    <path d="M403 245V185Q403 160 420 160Q437 160 437 185V245Z"/>
+                  </g>
+                  <g stroke="#f1dfb5" stroke-width="3" fill="none" opacity=".85">
+                    <path d="M15 105L15 80M8 88L15 76L22 88"/>
+                    <path d="M470 140L470 112M463 120L470 108L477 120"/>
+                  </g>
+                  <text x="250" y="267" fill="#183f35" font-size="12"
+                        text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold">
+                    CAIRO · FATIMID ERA
+                  </text>
+                </svg>
+              </div>
+
+              <span class="period">909–1171 CE</span>
+            </div>
+            <div class="card-body">
+              <div class="topic" data-en="CAIRO · INSTITUTIONS · CULTURE"
+                   data-bn="কায়রো · প্রতিষ্ঠান · সংস্কৃতি">
+                CAIRO · INSTITUTIONS · CULTURE
+              </div>
+              <h3 data-en="Fatimid Caliphate" data-bn="ফাতেমীয় খেলাফত">Fatimid Caliphate</h3>
+              <p data-en="Discover the Fatimid state in North Africa and Egypt, the founding of Cairo, Ismaili intellectual traditions, and al-Azhar's early history."
+                 data-bn="উত্তর আফ্রিকা ও মিশরে ফাতেমীয় রাষ্ট্র, কায়রোর প্রতিষ্ঠা, ইসমাইলি জ্ঞানচর্চার ঐতিহ্য এবং আল-আযহারের প্রাথমিক ইতিহাস জানুন।">
+                Discover the Fatimid state in North Africa and Egypt, the founding of Cairo, Ismaili intellectual traditions, and al-Azhar's early history.
+              </p>
+              <a class="card-link" href="fatimid.html"
+                 data-en="Explore Fatimid history →" data-bn="ফাতেমীয় ইতিহাস দেখুন →">
+                Explore Fatimid history →
+              </a>
+            </div>
+          </article>
+
+          <!-- MAMLUK -->
+          <article class="card" data-search="mamluk mamluks cairo mameluke মামলুক মামলুকরা কায়রো">
+            <div class="card-visual">
+              <img src="https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                   alt="Historic stone architecture"
+                   loading="lazy"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+              <div class="visual-fallback" aria-hidden="true">
+                <svg viewBox="0 0 500 280">
+                  <rect width="500" height="280" fill="#d8d1bb"/>
+                  <rect y="230" width="500" height="50" fill="#8b704b"/>
+                  <path d="M35 230V130H465V230Z" fill="#e7d7b4"/>
+                  <path d="M100 130V90Q100 40 150 40Q200 40 200 90V130Z" fill="#bd9858"/>
+                  <path d="M235 130V70Q235 15 290 15Q345 15 345 70V130Z" fill="#a98242"/>
+                  <g fill="#735a3b">
+                    <path d="M65 230V170Q65 140 85 140Q105 140 105 170V230Z"/>
+                    <path d="M125 230V170Q125 140 145 140Q165 140 165 170V230Z"/>
+                    <path d="M255 230V150Q255 110 290 110Q325 110 325 150V230Z"/>
+                    <path d="M370 230V170Q370 140 390 140Q410 140 410 170V230Z"/>
+                  </g>
+                </svg>
+              </div>
+              <span class="period">1250–1517 CE</span>
+            </div>
+            <div class="card-body">
+              <div class="topic" data-en="MILITARY · ARCHITECTURE · TRADE"
+                   data-bn="সামরিক ইতিহাস · স্থাপত্য · বাণিজ্য">
+                MILITARY · ARCHITECTURE · TRADE
+              </div>
+              <h3 data-en="Mamluk Sultanate" data-bn="মামলুক সালতানাত">Mamluk Sultanate</h3>
+              <p data-en="Study Mamluk rule in Egypt and Syria, military institutions, monumental architecture, trade routes, and scholarship."
+                 data-bn="মিশর ও সিরিয়ায় মামলুক শাসন, সামরিক প্রতিষ্ঠান, স্মারক স্থাপত্য, বাণিজ্যপথ ও জ্ঞানচর্চা অধ্যয়ন করুন।">
+                Study Mamluk rule in Egypt and Syria, military institutions, monumental architecture, trade routes, and scholarship.
+              </p>
+              <a class="card-link" href="mamluk.html"
+                 data-en="Explore Mamluk history →" data-bn="মামলুক ইতিহাস দেখুন →">
+                Explore Mamluk history →
+              </a>
+            </div>
+          </article>
+
+          <!-- SELJUK -->
+          <article class="card" data-search="seljuk seljuq anatolia konya সেলজুক আনাতোলিয়া কোনিয়া">
+            <div class="card-visual">
+              <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&amp;fit=crop&amp;w=900&amp;q=80"
+                   alt="Historic architecture representing the medieval Islamic world"
+                   loading="lazy"
+                   onerror="this.style.display='none';this.nextElementSibling.style.display='grid';">
+              <div class="visual-fallback" aria-hidden="true">
+                <svg viewBox="0 0 500 280">
+                  <rect width="500" height="280" fill="#c7d3bf"/>
+                  <path d="M0 230L110 170L200 220L320 150L500 220V280H0Z" fill="#879d7c"/>
+                  <rect x="75" y="120" width="350" height="110" fill="#e9d8b5"/>
+                  <path d="M180 120V75Q180 35 220 35Q260 35 260 75V120Z" fill="#ba9657"/>
+                  <path d="M210 35V15H230V35" fill="#a47e3e"/>
+                  <g fill="#4e624a">
+                    <rect x="105" y="150" width="35" height="80"/>
+                    <rect x="175" y="150" width="35" height="80"/>
+                    <rect x="290" y="150" width="35" height="80"/>
+                    <rect x="360" y="150" width="35" height="80"/>
+                  </g>
+                </svg>
+              </div>
+              <span class="period">11th–13th centuries</span>
+            </div>
+            <div class="card-body">
+              <div class="topic" data-en="ANATOLIA · EDUCATION · POLITICS"
+                   data-bn="আনাতোলিয়া · শিক্ষা · রাজনীতি">
+                ANATOLIA · EDUCATION · POLITICS
+              </div>
+              <h3 data-en="Seljuk Sultanates" data-bn="সেলজুক সালতানাতসমূহ">Seljuk Sultanates</h3>
+              <p data-en="Explore Seljuk political history, madrasas, Persianate culture, Anatolian architecture, and regional change."
+                 data-bn="সেলজুক রাজনৈতিক ইতিহাস, মাদরাসা, ফারসি-প্রভাবিত সংস্কৃতি, আনাতোলীয় স্থাপত্য ও আঞ্চলিক পরিবর্তন অন্বেষণ করুন।">
+                Explore Seljuk political history, madrasas, Persianate culture, Anatolian architecture, and regional change.
+              </p>
+              <a class="card-link" href="seljuk.html"
+                 data-en="Explore Seljuk history →" data-bn="সেলজুক ইতিহাস দেখুন →">
+                Explore Seljuk history →
+              </a>
+            </div>
+          </article>
+
+        </div>
+
+        <p class="empty-state" id="emptyState"
+           data-en="No matching civilization found. Try another keyword."
+           data-bn="মিল আছে এমন কোনো সভ্যতা পাওয়া যায়নি। অন্য শব্দ দিয়ে খুঁজুন।">
+          No matching civilization found. Try another keyword.
+        </p>
       </div>
-      <p class="map-note" data-en="The map is a conceptual overview, not a precise geographic reconstruction. The cities flourished in different periods, and the links do not represent one empire or a single dated route." data-bn="এটি ধারণাভিত্তিক চিত্র, নির্ভুল ভৌগোলিক পুনর্গঠন নয়। শহরগুলো বিভিন্ন সময়ে সমৃদ্ধ হয়েছিল; রেখাগুলো কোনো একক সাম্রাজ্য বা নির্দিষ্ট সময়ের যাত্রাপথ নির্দেশ করে না।">The map is a conceptual overview, not a precise geographic reconstruction. The cities flourished in different periods, and the links do not represent one empire or a single dated route.</p>
-    </div>
+    </section>
 
-    <div class="stats">
-      <div class="stat"><strong>06</strong><span data-en="Civilization profiles" data-bn="সভ্যতার পরিচিতি">Civilization profiles</span></div>
-      <div class="stat"><strong>07–20</strong><span data-en="Centuries of historical change" data-bn="ঐতিহাসিক পরিবর্তনের শতাব্দী">Centuries of historical change</span></div>
-      <div class="stat"><strong>3</strong><span data-en="Continents connected across time" data-bn="সময়ের প্রবাহে সংযুক্ত মহাদেশ">Continents connected across time</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="directory" id="directory">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker" data-en="02 · Civilization directory" data-bn="০২ · সভ্যতার তালিকা">02 · Civilization directory</div>
-      <h2 data-en="Explore six historical traditions" data-bn="ছয়টি ঐতিহাসিক ধারা অনুসন্ধান করো">Explore six historical traditions</h2>
-      <p data-en="Explore each profile for its political context, intellectual life, architecture and historical legacy. Search by English or Bengali name." data-bn="প্রতিটি পরিচিতিতে রাজনৈতিক প্রেক্ষাপট, জ্ঞানচর্চা, স্থাপত্য ও ঐতিহাসিক উত্তরাধিকার জানো। ইংরেজি বা বাংলা নাম দিয়ে খুঁজতে পারো।">Explore each profile for its political context, intellectual life, architecture and historical legacy. Search by English or Bengali name.</p>
-    </div>
-
-    <div class="search-row">
-      <input class="search-box" id="civilizationSearch" type="search" placeholder="Search civilizations..." aria-label="Search civilizations" data-placeholder-en="Search civilizations..." data-placeholder-bn="সভ্যতা খুঁজুন...">
-      <span class="result-count" id="resultCount" aria-live="polite">6 civilizations</span>
-    </div>
-
-    <div class="cards" id="civilizationCards">
-      <article class="card" data-search="abbasid baghdad abbāsid বাগদাদ আব্বাসীয় আব্বাসি">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=900&q=80" alt="Mosque architecture representing historic Islamic urban heritage" loading="lazy">
-          <span class="card-number">01</span>
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2 data-en="A brief chronological guide" data-bn="সংক্ষিপ্ত কালানুক্রমিক নির্দেশিকা">
+              A brief chronological guide
+            </h2>
+            <p data-en="Dates provide orientation; historical periods often overlap and differ by region."
+               data-bn="তারিখগুলো প্রাথমিক ধারণা দেয়; বিভিন্ন অঞ্চলে ঐতিহাসিক যুগের সময়সীমা পরস্পরের সঙ্গে মিলে যেতে পারে।">
+              Dates provide orientation; historical periods often overlap and differ by region.
+            </p>
+          </div>
         </div>
-        <div class="card-body">
-          <h3 data-en="Abbasid Baghdad" data-bn="আব্বাসীয় বাগদাদ">Abbasid Baghdad</h3>
-          <div class="date">750–1258 CE <span data-en="(Abbasid Caliphate)" data-bn="(আব্বাসীয় খেলাফত)">(Abbasid Caliphate)</span></div>
-          <div class="arabic-name">بَغْدَادُ العَبَّاسِيَّةُ</div>
-          <p data-en="Baghdad became a major political and intellectual centre. Across the Abbasid period, scholars worked in translation, mathematics, medicine, astronomy, philosophy and historical writing." data-bn="বাগদাদ গুরুত্বপূর্ণ রাজনৈতিক ও বুদ্ধিবৃত্তিক কেন্দ্রে পরিণত হয়েছিল। আব্বাসীয় যুগে অনুবাদ, গণিত, চিকিৎসা, জ্যোতির্বিজ্ঞান, দর্শন ও ইতিহাসচর্চায় বহু পণ্ডিত কাজ করেন।">Baghdad became a major political and intellectual centre. Across the Abbasid period, scholars worked in translation, mathematics, medicine, astronomy, philosophy and historical writing.</p>
-          <a class="btn" href="abbasid-baghdad.html" data-en="Explore Baghdad →" data-bn="বাগদাদ সম্পর্কে জানো →">Explore Baghdad →</a>
-        </div>
-      </article>
 
-      <article class="card" data-search="al andalus andalusia cordoba spain উমাইয়া আন্দালুস আল আন্দালুস কর্ডোবা">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?auto=format&fit=crop&w=900&q=80" alt="Historic Spanish architecture" loading="lazy">
-          <span class="card-number">02</span>
-        </div>
-        <div class="card-body">
-          <h3 data-en="Al-Andalus" data-bn="আল-আন্দালুস">Al-Andalus</h3>
-          <div class="date">711–1492 CE <span data-en="(Muslim rule in parts of Iberia)" data-bn="(ইবেরিয়ার বিভিন্ন অঞ্চলে মুসলিম শাসন)">(Muslim rule in parts of Iberia)</span></div>
-          <div class="arabic-name">الأَنْدَلُسُ</div>
-          <p data-en="Al-Andalus included Iberian territories governed by Muslim rulers at different times. Its history includes urban culture, architecture, agriculture, philosophy, medicine and complex intercultural encounters." data-bn="আল-আন্দালুস বলতে বিভিন্ন সময়ে মুসলিম শাসকদের অধীনে থাকা ইবেরীয় অঞ্চলগুলোকে বোঝায়। এর ইতিহাসে নগরসংস্কৃতি, স্থাপত্য, কৃষি, দর্শন, চিকিৎসা ও জটিল আন্তঃসাংস্কৃতিক যোগাযোগ রয়েছে।">Al-Andalus included Iberian territories governed by Muslim rulers at different times. Its history includes urban culture, architecture, agriculture, philosophy, medicine and complex intercultural encounters.</p>
-          <a class="btn" href="al-andalus.html" data-en="Explore Al-Andalus →" data-bn="আল-আন্দালুস সম্পর্কে জানো →">Explore Al-Andalus →</a>
-        </div>
-      </article>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="year">750 CE</div>
+            <h3 data-en="Abbasid Revolution" data-bn="আব্বাসীয় বিপ্লব">Abbasid Revolution</h3>
+            <p data-en="The Abbasids came to power, and Baghdad later became a major political and intellectual centre."
+               data-bn="আব্বাসীয়রা ক্ষমতায় আসে; পরবর্তীতে বাগদাদ গুরুত্বপূর্ণ রাজনৈতিক ও বুদ্ধিবৃত্তিক কেন্দ্রে পরিণত হয়।">
+              The Abbasids came to power, and Baghdad later became a major political and intellectual centre.
+            </p>
+          </article>
 
-      <article class="card" data-search="ottoman ottomans istanbul constantinople উসমানীয় অটোমান ইস্তাম্বুল">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=900&q=80" alt="Monumental historic architecture" loading="lazy">
-          <span class="card-number">03</span>
-        </div>
-        <div class="card-body">
-          <h3 data-en="Ottoman Civilization" data-bn="উসমানীয় সভ্যতা">Ottoman Civilization</h3>
-          <div class="date">c. 1299–1922 CE</div>
-          <div class="arabic-name">الدَّوْلَةُ العُثْمَانِيَّةُ</div>
-          <p data-en="The Ottoman Empire became a major power across parts of Europe, Asia and Africa. Its history includes architecture, administration, law, education, arts and diverse scholarly traditions." data-bn="উসমানীয় সাম্রাজ্য ইউরোপ, এশিয়া ও আফ্রিকার বিভিন্ন অঞ্চলে একটি বড় শক্তিতে পরিণত হয়েছিল। এর ইতিহাসে স্থাপত্য, প্রশাসন, আইন, শিক্ষা, শিল্পকলা ও বৈচিত্র্যময় জ্ঞানচর্চা রয়েছে।">The Ottoman Empire became a major power across parts of Europe, Asia and Africa. Its history includes architecture, administration, law, education, arts and diverse scholarly traditions.</p>
-          <a class="btn" href="ottoman.html" data-en="Explore Ottoman history →" data-bn="উসমানীয় ইতিহাস জানো →">Explore Ottoman history →</a>
-        </div>
-      </article>
+          <article class="timeline-item">
+            <div class="year">909 CE</div>
+            <h3 data-en="Fatimid Caliphate" data-bn="ফাতেমীয় খেলাফত">Fatimid Caliphate</h3>
+            <p data-en="The Fatimid state emerged in North Africa and later established Cairo as its capital."
+               data-bn="উত্তর আফ্রিকায় ফাতেমীয় রাষ্ট্রের উত্থান ঘটে; পরে কায়রো তাদের রাজধানী হয়।">
+              The Fatimid state emerged in North Africa and later established Cairo as its capital.
+            </p>
+          </article>
 
-      <article class="card" data-search="fatimid fatimids cairo egypt ফাতেমীয় ফাতিমি কায়রো মিশর">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1539650116574-75c0c6d73f6e?auto=format&fit=crop&w=900&q=80" alt="Historic North African and Egyptian landscape" loading="lazy">
-          <span class="card-number">04</span>
+          <article class="timeline-item">
+            <div class="year">11th century</div>
+            <h3 data-en="Seljuk Expansion" data-bn="সেলজুকদের বিস্তার">Seljuk Expansion</h3>
+            <p data-en="Seljuk political and military influence expanded across parts of the Middle East and Anatolia."
+               data-bn="মধ্যপ্রাচ্য ও আনাতোলিয়ার বিভিন্ন অঞ্চলে সেলজুক রাজনৈতিক ও সামরিক প্রভাব বিস্তৃত হয়।">
+              Seljuk political and military influence expanded across parts of the Middle East and Anatolia.
+            </p>
+          </article>
+
+          <article class="timeline-item">
+            <div class="year">13th century</div>
+            <h3 data-en="Mamluk Rule" data-bn="মামলুক শাসন">Mamluk Rule</h3>
+            <p data-en="The Mamluks established a powerful sultanate centred on Egypt and Syria."
+               data-bn="মামলুকরা মিশর ও সিরিয়াকেন্দ্রিক একটি শক্তিশালী সালতানাত প্রতিষ্ঠা করে।">
+              The Mamluks established a powerful sultanate centred on Egypt and Syria.
+            </p>
+          </article>
         </div>
-        <div class="card-body">
-          <h3 data-en="Fatimid Civilization" data-bn="ফাতেমীয় সভ্যতা">Fatimid Civilization</h3>
-          <div class="date">909–1171 CE</div>
-          <div class="arabic-name">الدَّوْلَةُ الفَاطِمِيَّةُ</div>
-          <p data-en="The Fatimid state originated in North Africa and later established Cairo as its capital. It shaped political life, architecture, trade and distinctive institutions of learning in Egypt." data-bn="ফাতেমীয় রাষ্ট্রের সূচনা উত্তর আফ্রিকায়; পরে কায়রো এর রাজধানী হয়। মিশরের রাজনৈতিক জীবন, স্থাপত্য, বাণিজ্য ও স্বতন্ত্র জ্ঞানচর্চার প্রতিষ্ঠান গঠনে এটি ভূমিকা রাখে।">The Fatimid state originated in North Africa and later established Cairo as its capital. It shaped political life, architecture, trade and distinctive institutions of learning in Egypt.</p>
-          <a class="btn" href="fatimid.html" data-en="Explore Fatimid history →" data-bn="ফাতেমীয় ইতিহাস জানো →">Explore Fatimid history →</a>
-        </div>
-      </article>
-
-      <article class="card" data-search="mamluk mamluks cairo egypt mamluk sultanate মামলুক মামলুক সালতানাত মিশর কায়রো">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1572252009286-268acec5ca0a?auto=format&fit=crop&w=900&q=80" alt="Historic stone architecture" loading="lazy">
-          <span class="card-number">05</span>
-        </div>
-        <div class="card-body">
-          <h3 data-en="Mamluk Civilization" data-bn="মামলুক সভ্যতা">Mamluk Civilization</h3>
-          <div class="date">1250–1517 CE</div>
-          <div class="arabic-name">دَوْلَةُ المَمَالِيكِ</div>
-          <p data-en="The Mamluk Sultanate played a major role in the medieval Middle East. Cairo developed as a centre of trade, religious learning, monumental architecture and scholarship." data-bn="মধ্যযুগীয় মধ্যপ্রাচ্যে মামলুক সালতানাত গুরুত্বপূর্ণ ভূমিকা পালন করে। কায়রো বাণিজ্য, ধর্মীয় জ্ঞানচর্চা, স্মারক স্থাপত্য ও পাণ্ডিত্যের কেন্দ্রে পরিণত হয়।">The Mamluk Sultanate played a major role in the medieval Middle East. Cairo developed as a centre of trade, religious learning, monumental architecture and scholarship.</p>
-          <a class="btn" href="mamluk.html" data-en="Explore Mamluk history →" data-bn="মামলুক ইতিহাস জানো →">Explore Mamluk history →</a>
-        </div>
-      </article>
-
-      <article class="card" data-search="seljuk seljuks seljuq konya anatolia সেলজুক সালজুক কোনিয়া আনাতোলিয়া">
-        <div class="card-image">
-          <img src="https://images.unsplash.com/photo-1519817650390-64a93db51149?auto=format&fit=crop&w=900&q=80" alt="Historic Islamic architectural detail" loading="lazy">
-          <span class="card-number">06</span>
-        </div>
-        <div class="card-body">
-          <h3 data-en="Seljuk Civilization" data-bn="সেলজুক সভ্যতা">Seljuk Civilization</h3>
-          <div class="date" data-en="11th–13th centuries (regional variation)" data-bn="১১শ–১৩শ শতাব্দী (অঞ্চলভেদে পার্থক্য)">11th–13th centuries (regional variation)</div>
-          <div class="arabic-name">السَّلَاجِقَةُ</div>
-          <p data-en="The Seljuks influenced the politics and intellectual life of the medieval Islamic world. Their legacy includes institutions of learning, architecture, administration and Persianate cultural traditions." data-bn="মধ্যযুগীয় ইসলামি বিশ্বের রাজনীতি ও বুদ্ধিবৃত্তিক জীবনে সেলজুকদের প্রভাব ছিল। তাদের উত্তরাধিকারে শিক্ষাপ্রতিষ্ঠান, স্থাপত্য, প্রশাসন ও ফারসি-প্রভাবিত সাংস্কৃতিক ধারা অন্তর্ভুক্ত।">The Seljuks influenced the politics and intellectual life of the medieval Islamic world. Their legacy includes institutions of learning, architecture, administration and Persianate cultural traditions.</p>
-          <a class="btn" href="seljuk.html" data-en="Explore Seljuk history →" data-bn="সেলজুক ইতিহাস জানো →">Explore Seljuk history →</a>
-        </div>
-      </article>
-    </div>
-
-    <div class="no-results" id="noResults" data-en="No matching civilization found. Try another name." data-bn="মিল পাওয়া যায়নি। অন্য নাম দিয়ে খুঁজে দেখো।">No matching civilization found. Try another name.</div>
-  </div>
-</section>
-
-<section id="timeline">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker" data-en="03 · Chronological perspective" data-bn="০৩ · কালানুক্রমিক দৃষ্টিভঙ্গি">03 · Chronological perspective</div>
-      <h2 data-en="Civilizations across changing centuries" data-bn="পরিবর্তনশীল শতাব্দীতে সভ্যতার বিকাশ">Civilizations across changing centuries</h2>
-      <p data-en="These broad periods overlap. Political dynasties, cultural traditions and intellectual networks did not all begin or end at the same time." data-bn="এই সময়পর্বগুলোর মধ্যে পারস্পরিক মিল রয়েছে। রাজনৈতিক রাজবংশ, সাংস্কৃতিক ঐতিহ্য ও বুদ্ধিবৃত্তিক নেটওয়ার্ক একই সময়ে শুরু বা শেষ হয়নি।">These broad periods overlap. Political dynasties, cultural traditions and intellectual networks did not all begin or end at the same time.</p>
-    </div>
-
-    <div class="timeline">
-      <article class="period">
-        <div class="year">7TH–10TH CENTURIES</div>
-        <h3 data-en="Early and Abbasid Worlds" data-bn="প্রাথমিক ও আব্বাসীয় যুগ">Early and Abbasid Worlds</h3>
-        <p data-en="New political centres emerged, while scholarship and translation developed across connected regions." data-bn="নতুন রাজনৈতিক কেন্দ্র গড়ে ওঠে এবং সংযুক্ত অঞ্চলগুলোতে জ্ঞানচর্চা ও অনুবাদের বিকাশ ঘটে।">New political centres emerged, while scholarship and translation developed across connected regions.</p>
-      </article>
-      <article class="period">
-        <div class="year">10TH–13TH CENTURIES</div>
-        <h3 data-en="Regional Powers" data-bn="আঞ্চলিক শক্তির বিকাশ">Regional Powers</h3>
-        <p data-en="Fatimid, Seljuk and Andalusi histories show the variety of political and intellectual life." data-bn="ফাতেমীয়, সেলজুক ও আন্দালুসীয় ইতিহাস রাজনৈতিক ও বুদ্ধিবৃত্তিক জীবনের বৈচিত্র্য দেখায়।">Fatimid, Seljuk and Andalusi histories show the variety of political and intellectual life.</p>
-      </article>
-      <article class="period">
-        <div class="year">13TH–16TH CENTURIES</div>
-        <h3 data-en="Mamluk and Ottoman Eras" data-bn="মামলুক ও উসমানীয় যুগ">Mamluk and Ottoman Eras</h3>
-        <p data-en="Regional change, urban institutions, trade and monumental architecture continued to shape society." data-bn="আঞ্চলিক পরিবর্তন, নগরপ্রতিষ্ঠান, বাণিজ্য ও স্মারক স্থাপত্য সমাজকে গড়ে তুলতে থাকে।">Regional change, urban institutions, trade and monumental architecture continued to shape society.</p>
-      </article>
-    </div>
-    <p style="margin-top:22px;"><a class="text-link" href="timeline.html" data-en="Explore the complete timeline →" data-bn="সম্পূর্ণ সময়রেখা দেখো →">Explore the complete timeline →</a></p>
-  </div>
-</section>
-
-<section style="background:#eee9dc;" id="research">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="kicker" data-en="04 · Read history critically" data-bn="০৪ · সমালোচনামূলকভাবে ইতিহাস পাঠ">04 · Read history critically</div>
-      <h2 data-en="How to study a civilization" data-bn="কীভাবে একটি সভ্যতা অধ্যয়ন করবে">How to study a civilization</h2>
-      <p data-en="A civilization is more than a dynasty or a collection of monuments. Study its people, institutions, economy, beliefs, environment and sources." data-bn="একটি সভ্যতা কেবল রাজবংশ বা স্থাপনার সমষ্টি নয়। এর মানুষ, প্রতিষ্ঠান, অর্থনীতি, বিশ্বাস, পরিবেশ ও ঐতিহাসিক সূত্র অধ্যয়ন করো।">A civilization is more than a dynasty or a collection of monuments. Study its people, institutions, economy, beliefs, environment and sources.</p>
-    </div>
-
-    <div class="method-grid">
-      <div class="panel method-card">
-        <h3 data-en="Questions worth asking" data-bn="যেসব প্রশ্ন করা দরকার">Questions worth asking</h3>
-        <ul>
-          <li data-en="Who held political power, and how did administration work?" data-bn="কারা রাজনৈতিক ক্ষমতায় ছিল এবং প্রশাসন কীভাবে চলত?">Who held political power, and how did administration work?</li>
-          <li data-en="How did scholars, artisans and merchants contribute?" data-bn="পণ্ডিত, কারিগর ও বণিকেরা কী অবদান রেখেছিলেন?">How did scholars, artisans and merchants contribute?</li>
-          <li data-en="What evidence survives, and who produced it?" data-bn="কী কী ঐতিহাসিক প্রমাণ টিকে আছে এবং সেগুলো কারা তৈরি করেছিলেন?">What evidence survives, and who produced it?</li>
-          <li data-en="How did the society change over time?" data-bn="সময়ের সঙ্গে সমাজটি কীভাবে পরিবর্তিত হয়েছিল?">How did the society change over time?</li>
-        </ul>
       </div>
+    </section>
 
-      <div class="panel method-card">
-        <h3 data-en="Build an evidence-based account" data-bn="প্রমাণভিত্তিক ইতিহাস তৈরি করো">Build an evidence-based account</h3>
-        <p data-en="Compare chronicles with inscriptions, coins, architecture, manuscripts and modern scholarly research. Distinguish established facts from interpretation, and acknowledge disagreement where evidence is uncertain." data-bn="ইতিহাসগ্রন্থের সঙ্গে শিলালিপি, মুদ্রা, স্থাপত্য, পাণ্ডুলিপি ও আধুনিক গবেষণার তুলনা করো। প্রতিষ্ঠিত তথ্য ও ব্যাখ্যাকে আলাদা রাখো এবং প্রমাণ অনিশ্চিত হলে মতভেদ স্বীকার করো।">Compare chronicles with inscriptions, coins, architecture, manuscripts and modern scholarly research. Distinguish established facts from interpretation, and acknowledge disagreement where evidence is uncertain.</p>
-        <a class="text-link" href="research.html" data-en="Open research pathways →" data-bn="গবেষণার পথগুলো দেখো →">Open research pathways →</a>
+    <section class="section">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <h2 data-en="How to study a civilization" data-bn="কীভাবে একটি সভ্যতা অধ্যয়ন করবেন">
+              How to study a civilization
+            </h2>
+            <p data-en="A research-minded approach helps separate historical evidence from later legends and assumptions."
+               data-bn="গবেষণাভিত্তিক পদ্ধতি ঐতিহাসিক প্রমাণকে পরবর্তী কিংবদন্তি ও অনুমান থেকে আলাদা করতে সাহায্য করে।">
+              A research-minded approach helps separate historical evidence from later legends and assumptions.
+            </p>
+          </div>
+        </div>
+
+        <div class="method-grid">
+          <article class="method-card">
+            <div class="number">01</div>
+            <h3 data-en="Start with chronology" data-bn="কালানুক্রম দিয়ে শুরু করুন">Start with chronology</h3>
+            <p data-en="Identify the period, rulers, major political changes, and the limits of the state's territory."
+               data-bn="সময়কাল, শাসক, প্রধান রাজনৈতিক পরিবর্তন এবং রাষ্ট্রের ভূখণ্ডের সীমা শনাক্ত করুন।">
+              Identify the period, rulers, major political changes, and the limits of the state's territory.
+            </p>
+          </article>
+
+          <article class="method-card">
+            <div class="number">02</div>
+            <h3 data-en="Examine primary sources" data-bn="প্রাথমিক সূত্র পরীক্ষা করুন">Examine primary sources</h3>
+            <p data-en="Look for chronicles, inscriptions, coins, buildings, manuscripts, legal texts, and contemporary accounts."
+               data-bn="ইতিহাসগ্রন্থ, শিলালিপি, মুদ্রা, স্থাপত্য, পাণ্ডুলিপি, আইনগ্রন্থ ও সমকালীন বিবরণ খুঁজুন।">
+              Look for chronicles, inscriptions, coins, buildings, manuscripts, legal texts, and contemporary accounts.
+            </p>
+          </article>
+
+          <article class="method-card">
+            <div class="number">03</div>
+            <h3 data-en="Compare interpretations" data-bn="বিভিন্ন ব্যাখ্যার তুলনা করুন">Compare interpretations</h3>
+            <p data-en="Compare reputable modern studies and ask which claims are supported by evidence and which remain debated."
+               data-bn="বিশ্বস্ত আধুনিক গবেষণা তুলনা করুন এবং কোন দাবির পক্ষে প্রমাণ আছে আর কোনটি বিতর্কিত, তা যাচাই করুন।">
+              Compare reputable modern studies and ask which claims are supported by evidence and which remain debated.
+            </p>
+          </article>
+        </div>
+
+        <div class="notice"
+             data-en="Image note: some cards use online photographs when available. If an image cannot load, an original decorative illustration appears instead. Illustrations are symbolic and should not be treated as authenticated historical reconstructions."
+             data-bn="ছবির নোট: কিছু কার্ডে অনলাইন ছবি ব্যবহার করা হয়েছে। কোনো ছবি লোড না হলে তার পরিবর্তে কোডের ভেতরের প্রতীকী চিত্র দেখা যাবে। এসব চিত্র অলংকারমূলক; এগুলোকে প্রামাণ্য ঐতিহাসিক পুনর্নির্মাণ হিসেবে গণ্য করবেন না।">
+          Image note: some cards use online photographs when available. If an image cannot load, an original decorative illustration appears instead. Illustrations are symbolic and should not be treated as authenticated historical reconstructions.
+        </div>
       </div>
-    </div>
-  </div>
-</section>
-</main>
+    </section>
 
-<footer>
-  <div class="wrap footer-row">
+    <section class="section">
+      <div class="container">
+        <div class="cta">
+          <div>
+            <h2 data-en="Ready to begin your research?" data-bn="গবেষণা শুরু করতে প্রস্তুত?">
+              Ready to begin your research?
+            </h2>
+            <p data-en="Build a question, examine sources, and follow the evidence."
+               data-bn="একটি গবেষণা-প্রশ্ন তৈরি করুন, সূত্র পরীক্ষা করুন এবং প্রমাণ অনুসরণ করুন।">
+              Build a question, examine sources, and follow the evidence.
+            </p>
+          </div>
+          <a class="btn btn-gold" href="research.html"
+             data-en="Open research pathways →" data-bn="গবেষণার পথ দেখুন →">
+            Open research pathways →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>History Atlas: Islamic Civilizations</strong></div>
+    <div data-en="A learning and research project · Bilingual edition"
+         data-bn="একটি শিক্ষামূলক ও গবেষণামূলক প্রকল্প · দ্বিভাষিক সংস্করণ">
+      A learning and research project · Bilingual edition
+    </div>
     <div>
-      <strong>History Atlas: Islamic Civilizations</strong>
-      <p data-en="A learning and historical research project." data-bn="একটি শিক্ষামূলক ও ঐতিহাসিক গবেষণা উদ্যোগ।">A learning and historical research project.</p>
+      <a href="index.html" data-en="Home" data-bn="হোম">Home</a> ·
+      <a href="history.html" data-en="History" data-bn="ইতিহাস">History</a> ·
+      <a href="research.html" data-en="Research" data-bn="গবেষণা">Research</a>
     </div>
-    <div>
-      <p><a href="index.html" data-en="Home" data-bn="হোম">Home</a> · <a href="history.html" data-en="History" data-bn="ইতিহাস">History</a> · <a href="scholars.html" data-en="Scholars" data-bn="পণ্ডিতগণ">Scholars</a></p>
-      <p>© 2026 History Atlas</p>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<script>
-const languageBtn = document.getElementById("languageBtn");
-const searchBox = document.getElementById("civilizationSearch");
-const cards = Array.from(document.querySelectorAll(".card"));
-const resultCount = document.getElementById("resultCount");
-const noResults = document.getElementById("noResults");
+  <script>
+    (() => {
+      let currentLanguage = "en";
 
-let currentLanguage = "en";
+      const toggle = document.getElementById("langToggle");
+      const searchInput = document.getElementById("searchInput");
+      const cards = Array.from(document.querySelectorAll(".card"));
+      const emptyState = document.getElementById("emptyState");
 
-function setLanguage(language) {
-  currentLanguage = language;
-  document.documentElement.lang = language;
+      function setLanguage(language) {
+        currentLanguage = language;
+        document.documentElement.lang = language;
 
-  document.querySelectorAll("[data-en][data-bn]").forEach(element => {
-    element.textContent = element.dataset[language];
-  });
+        document.querySelectorAll("[data-en][data-bn]").forEach((element) => {
+          element.textContent = element.dataset[language];
+        });
 
-  searchBox.placeholder = searchBox.dataset[
-    language === "en" ? "placeholderEn" : "placeholderBn"
-  ];
+        searchInput.placeholder =
+          searchInput.dataset["placeholder" + (language === "en" ? "En" : "Bn")];
 
-  languageBtn.textContent = language === "en" ? "বাংলা" : "English";
-  languageBtn.setAttribute(
-    "aria-label",
-    language === "en" ? "Switch to Bengali" : "Switch to English"
-  );
+        toggle.textContent = language === "en" ? "বাংলা" : "English";
+        filterCards();
+      }
 
-  filterCards();
-}
+      function filterCards() {
+        const query = searchInput.value.trim().toLocaleLowerCase();
+        let visibleCount = 0;
 
-function filterCards() {
-  const query = searchBox.value.trim().toLowerCase();
-  let visible = 0;
+        cards.forEach((card) => {
+          const searchableText =
+            (card.dataset.search + " " + card.textContent).toLocaleLowerCase();
 
-  cards.forEach(card => {
-    const searchableText = (
-      card.dataset.search + " " + card.innerText
-    ).toLowerCase();
+          const matches = searchableText.includes(query);
+          card.hidden = !matches;
 
-    const match = searchableText.includes(query);
-    card.hidden = !match;
-    if (match) visible++;
-  });
+          if (matches) visibleCount++;
+        });
 
-  resultCount.textContent = currentLanguage === "en"
-    ? `${visible} ${visible === 1 ? "civilization" : "civilizations"}`
-    : `${visible}টি সভ্যতা`;
+        emptyState.style.display = visibleCount === 0 ? "block" : "none";
+      }
 
-  noResults.classList.toggle("show", visible === 0);
-}
+      toggle.addEventListener("click", () => {
+        setLanguage(currentLanguage === "en" ? "bn" : "en");
+      });
 
-languageBtn.addEventListener("click", () => {
-  setLanguage(currentLanguage === "en" ? "bn" : "en");
-});
+      searchInput.addEventListener("input", filterCards);
 
-searchBox.addEventListener("input", filterCards);
-
-setLanguage("en");
-</script>
+      setLanguage("en");
+    })();
+  </script>
 </body>
 </html>
