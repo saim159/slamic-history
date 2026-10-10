@@ -1,0 +1,637 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A bilingual research guide to early history, ancient Arabia, ancient civilizations, historical evidence and Islamic historical traditions.">
+  <title>Volume 01 | History Atlas: Islamic Civilizations</title>
+  <style>
+    :root {
+      --bg: #f5f3ed;
+      --paper: #ffffff;
+      --ink: #202c27;
+      --muted: #66746c;
+      --green: #176b52;
+      --green-dark: #104b3b;
+      --gold: #bd9653;
+      --line: #dce4dc;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: Georgia, "Noto Serif Bengali", "SolaimanLipi",
+                   "Nirmala UI", serif;
+      line-height: 1.8;
+    }
+
+    a { color: var(--green); }
+    a:hover { color: var(--green-dark); }
+
+    .topbar {
+      background: #123e32;
+      color: white;
+      padding: 15px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      letter-spacing: .3px;
+    }
+
+    .topbar button {
+      border: 1px solid #c7d8ce;
+      border-radius: 8px;
+      background: transparent;
+      color: white;
+      padding: 8px 14px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .container {
+      width: min(1080px, 92%);
+      margin: auto;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #123e32, #236b52);
+      color: white;
+      padding: 76px 0 68px;
+    }
+
+    .eyebrow {
+      color: #e5c98e;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font: 700 12px Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: clamp(32px, 6vw, 55px);
+      line-height: 1.2;
+      margin: 18px 0;
+    }
+
+    .hero p {
+      max-width: 760px;
+      color: #e2eee7;
+      font-size: 18px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 11px 18px;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .btn-primary {
+      color: #173e31;
+      background: #f0d69f;
+    }
+
+    .btn-secondary {
+      color: white;
+      border: 1px solid #b5cfc0;
+    }
+
+    main { padding: 42px 0 65px; }
+
+    section { margin: 0 0 42px; }
+
+    .section-label {
+      color: var(--green);
+      font: 700 12px Arial, sans-serif;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      font-size: clamp(25px, 4vw, 34px);
+      line-height: 1.35;
+      margin: 8px 0 16px;
+    }
+
+    h3 { line-height: 1.4; }
+
+    .lead {
+      color: var(--muted);
+      font-size: 18px;
+      max-width: 800px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 23px;
+      box-shadow: 0 5px 18px #1c392b08;
+    }
+
+    .card h3 { margin-top: 0; }
+
+    .tag {
+      display: inline-block;
+      background: #eaf3ed;
+      color: var(--green-dark);
+      border-radius: 30px;
+      padding: 3px 10px;
+      font: 700 11px Arial, sans-serif;
+      letter-spacing: .4px;
+    }
+
+    .notice {
+      background: #fff8e9;
+      border-left: 4px solid var(--gold);
+      padding: 19px 22px;
+      border-radius: 8px;
+    }
+
+    .timeline {
+      border-left: 2px solid #b5cdbf;
+      margin-left: 8px;
+      padding-left: 22px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin: 0 0 24px;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -29px;
+      top: 9px;
+      width: 11px;
+      height: 11px;
+      background: var(--green);
+      border-radius: 50%;
+    }
+
+    .timeline-item strong {
+      display: block;
+      color: var(--green-dark);
+    }
+
+    .source-list li { margin-bottom: 14px; }
+
+    .source-list a { font-weight: bold; }
+
+    footer {
+      background: #123e32;
+      color: #d9e7de;
+      padding: 30px 0;
+      font-size: 14px;
+    }
+
+    footer a { color: #f0d69f; }
+
+    @media (max-width: 680px) {
+      .grid { grid-template-columns: 1fr; }
+      .hero { padding: 52px 0; }
+      .card { padding: 19px; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="topbar">
+    <a class="brand" href="index.html">HISTORY ATLAS</a>
+    <nav aria-label="Main navigation">
+      <a href="index.html" style="color:white;text-decoration:none;margin-right:14px"
+         data-en="Home" data-bn="হোমপেজ">Home</a>
+      <a href="muslim-ummah-history.html"
+         style="color:white;text-decoration:none;margin-right:14px"
+         data-en="20-Volume Guide" data-bn="২০ খণ্ডের নির্দেশিকা">20-Volume Guide</a>
+      <button id="languageButton" type="button">বাংলা</button>
+    </nav>
+  </header>
+
+  <header class="hero">
+    <div class="container">
+      <div class="eyebrow"
+           data-en="Volume 01 · Research Guide · Provisional"
+           data-bn="প্রথম খণ্ড · গবেষণা নির্দেশিকা · প্রাথমিক সংস্করণ">
+        Volume 01 · Research Guide · Provisional
+      </div>
+
+      <h1 data-en="Early History, Ancient Civilizations & Arabia"
+          data-bn="প্রাচীন ইতিহাস, সভ্যতা ও আরব">
+        Early History, Ancient Civilizations & Arabia
+      </h1>
+
+      <p data-en="Explore the ancient world through historical texts, archaeology, inscriptions, geography and critical questions. This page is an independent research guide, not a verified transcription of the book's contents."
+         data-bn="ঐতিহাসিক গ্রন্থ, প্রত্নতত্ত্ব, শিলালিপি, ভূগোল ও অনুসন্ধানী প্রশ্নের মাধ্যমে প্রাচীন বিশ্বকে জানো। এটি একটি স্বতন্ত্র গবেষণা নির্দেশিকা; মূল বইয়ের যাচাইকৃত সূচির হুবহু অনুলিপি নয়।">
+        Explore the ancient world through historical texts, archaeology,
+        inscriptions, geography and critical questions. This page is an
+        independent research guide, not a verified transcription of the
+        book's contents.
+      </p>
+
+      <div class="actions">
+        <a class="btn btn-primary" href="#topics"
+           data-en="Explore the Topics →" data-bn="বিষয়গুলো দেখো →">
+          Explore the Topics →
+        </a>
+        <a class="btn btn-secondary" href="#sources"
+           data-en="Research Sources" data-bn="গবেষণার সূত্র">
+          Research Sources
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section>
+      <div class="section-label"
+           data-en="Start Here" data-bn="এখান থেকে শুরু">
+        Start Here
+      </div>
+      <h2 data-en="How should we study the distant past?"
+          data-bn="দূর অতীতকে কীভাবে অধ্যয়ন করব?">
+        How should we study the distant past?
+      </h2>
+      <p class="lead"
+         data-en="The ancient past cannot be reconstructed from one kind of source alone. Historians compare written accounts with inscriptions, material remains, environmental evidence and the context in which each source was produced."
+         data-bn="প্রাচীন অতীতকে শুধু একটি ধরনের সূত্রের ভিত্তিতে পুনর্গঠন করা যায় না। ইতিহাসবিদ লিখিত বিবরণের সঙ্গে শিলালিপি, প্রত্নবস্তু, পরিবেশগত প্রমাণ এবং প্রতিটি সূত্র তৈরির প্রেক্ষাপট মিলিয়ে দেখেন।">
+        The ancient past cannot be reconstructed from one kind of source alone.
+        Historians compare written accounts with inscriptions, material remains,
+        environmental evidence and the context in which each source was produced.
+      </p>
+
+      <div class="notice">
+        <strong data-en="Research principle" data-bn="গবেষণার নীতি">
+          Research principle
+        </strong>
+        <p data-en="Distinguish religious belief, a later historical report, a contemporary inscription and a modern scholarly interpretation. They may answer different questions and should not automatically be treated as equivalent evidence."
+           data-bn="ধর্মীয় বিশ্বাস, পরবর্তী ঐতিহাসিক বিবরণ, সমকালীন শিলালিপি এবং আধুনিক গবেষকের ব্যাখ্যাকে আলাদা করে দেখো। এগুলো ভিন্ন প্রশ্নের উত্তর দিতে পারে; তাই সবগুলোকে স্বয়ংক্রিয়ভাবে একই ধরনের প্রমাণ মনে করা উচিত নয়।">
+          Distinguish religious belief, a later historical report, a contemporary
+          inscription and a modern scholarly interpretation.
+        </p>
+      </div>
+    </section>
+
+    <section id="topics">
+      <div class="section-label"
+           data-en="Research Pathways" data-bn="গবেষণার বিষয়পথ">
+        Research Pathways
+      </div>
+      <h2 data-en="Six areas of investigation"
+          data-bn="অনুসন্ধানের ছয়টি ক্ষেত্র">
+        Six areas of investigation
+      </h2>
+
+      <div class="grid">
+        <article class="card">
+          <span class="tag">01</span>
+          <h3 data-en="Human Origins and Sacred History"
+              data-bn="মানবজাতির সূচনা ও ধর্মীয় ইতিহাস">
+            Human Origins and Sacred History
+          </h3>
+          <p data-en="Study how religious traditions describe creation and early humanity. Keep theological interpretation distinct from questions addressed by archaeology, palaeoanthropology and historical research."
+             data-bn="সৃষ্টি ও মানবজাতির সূচনা সম্পর্কে ধর্মীয় ঐতিহ্য কী বলে, তা অধ্যয়ন করো। ধর্মতাত্ত্বিক ব্যাখ্যাকে প্রত্নতত্ত্ব, প্রাচীন মানববিজ্ঞান ও ঐতিহাসিক গবেষণার প্রশ্ন থেকে আলাদা রাখো।">
+            Study how religious traditions describe creation and early humanity.
+          </p>
+          <p><strong data-en="Research question:" data-bn="গবেষণার প্রশ্ন:">Research question:</strong>
+          <span data-en="What kind of question can each source answer?"
+                data-bn="কোন ধরনের সূত্র কোন প্রশ্নের উত্তর দিতে পারে?">
+            What kind of question can each source answer?
+          </span></p>
+        </article>
+
+        <article class="card">
+          <span class="tag">02</span>
+          <h3 data-en="Mesopotamia and Early States"
+              data-bn="মেসোপটেমিয়া ও প্রাচীন রাষ্ট্র">
+            Mesopotamia and Early States
+          </h3>
+          <p data-en="Explore cities, writing systems, trade networks, kingship and the evidence left by communities around the Tigris and Euphrates."
+             data-bn="টাইগ্রিস ও ইউফ্রেটিস নদীর আশপাশের নগর, লিপি, বাণিজ্যপথ, রাজশাসন এবং প্রাচীন জনগোষ্ঠীর রেখে যাওয়া প্রমাণ অনুসন্ধান করো।">
+            Explore cities, writing systems, trade networks, kingship and
+            the evidence left by communities around the Tigris and Euphrates.
+          </p>
+          <p><strong data-en="Research question:" data-bn="গবেষণার প্রশ্ন:">Research question:</strong>
+          <span data-en="How do inscriptions and material remains complement chronicles?"
+                data-bn="শিলালিপি ও প্রত্নবস্তু কীভাবে ঐতিহাসিক বিবরণকে সম্পূরক করে?">
+            How do inscriptions and material remains complement chronicles?
+          </span></p>
+        </article>
+
+        <article class="card">
+          <span class="tag">03</span>
+          <h3 data-en="Ancient Egypt and the Nile"
+              data-bn="প্রাচীন মিশর ও নীলনদ">
+            Ancient Egypt and the Nile
+          </h3>
+          <p data-en="Investigate the relationship between geography, agriculture, state power, monumental architecture and religious practice."
+             data-bn="ভূগোল, কৃষি, রাষ্ট্রীয় ক্ষমতা, স্মারক স্থাপত্য এবং ধর্মীয় আচারের পারস্পরিক সম্পর্ক অনুসন্ধান করো।">
+            Investigate the relationship between geography, agriculture,
+            state power, monumental architecture and religious practice.
+          </p>
+          <p><strong data-en="Research question:" data-bn="গবেষণার প্রশ্ন:">Research question:</strong>
+          <span data-en="What can monuments tell us, and what can they not tell us?"
+                data-bn="স্মারক স্থাপত্য আমাদের কী জানাতে পারে, আর কী জানাতে পারে না?">
+            What can monuments tell us, and what can they not tell us?
+          </span></p>
+        </article>
+
+        <article class="card">
+          <span class="tag">04</span>
+          <h3 data-en="Ancient South Arabia"
+              data-bn="প্রাচীন দক্ষিণ আরব">
+            Ancient South Arabia
+          </h3>
+          <p data-en="Study Saba and other South Arabian kingdoms through inscriptions, settlements, irrigation systems and trade in incense and other goods."
+             data-bn="শিলালিপি, বসতি, সেচব্যবস্থা এবং ধূপসহ বিভিন্ন পণ্যের বাণিজ্যের মাধ্যমে সাবা ও অন্যান্য দক্ষিণ আরবীয় রাজ্য অধ্যয়ন করো।">
+            Study Saba and other South Arabian kingdoms through inscriptions,
+            settlements, irrigation systems and trade.
+          </p>
+          <p><strong data-en="Research question:" data-bn="গবেষণার প্রশ্ন:">Research question:</strong>
+          <span data-en="How do inscriptions help reconstruct a kingdom's history?"
+                data-bn="শিলালিপি কীভাবে একটি রাজ্যের ইতিহাস পুনর্গঠনে সাহায্য করে?">
+            How do inscriptions help reconstruct a kingdom's history?
+          </span></p>
+        </article>
+
+        <article class="card">
+          <span class="tag">05</span>
+          <h3 data-en="North Arabia and Regional Networks"
+              data-bn="উত্তর আরব ও আঞ্চলিক যোগাযোগ">
+            North Arabia and Regional Networks
+          </h3>
+          <p data-en="Examine settlements, caravan routes, neighbouring empires and the changing political and cultural links across Arabia and the Levant."
+             data-bn="আরব ও লেভান্ত অঞ্চলের বসতি, কাফেলার পথ, প্রতিবেশী সাম্রাজ্য এবং পরিবর্তনশীল রাজনৈতিক ও সাংস্কৃতিক সম্পর্ক পরীক্ষা করো।">
+            Examine settlements, caravan routes, neighbouring empires and
+            changing political and cultural links.
+          </p>
+          <p><strong data-en="Research question:" data-bn="গবেষণার প্রশ্ন:">Research question:</strong>
+          <span data-en="How did trade connect communities and empires?"
+                data-bn="বাণিজ্য কীভাবে জনগোষ্ঠী ও সাম্রাজ্যগুলোকে যুক্ত করেছিল?">
+            How did trade connect communities and empires?
+          </span></p>
+        </article>
+
+        <article class="card">
+          <span class="tag">06</span>
+          <h3 data-en="Arabia Before Islam"
+              data-bn="ইসলাম-পূর্ব আরব">
+            Arabia Before Islam
+          </h3>
+          <p data-en="Explore tribal society, poetry, religion, markets, political alliances and links with Byzantine and Sasanian powers without reducing the whole region to one uniform society."
+             data-bn="গোত্রীয় সমাজ, কবিতা, ধর্ম, বাজার, রাজনৈতিক জোট এবং বাইজেন্টাইন ও সাসানীয় শক্তির সঙ্গে সম্পর্ক অনুসন্ধান করো। পুরো অঞ্চলকে একরকম সমাজ হিসেবে দেখো না।">
+            Explore tribal society, poetry, religion, markets and regional
+            political alliances without reducing the whole region to one uniform society.
+          </p>
+          <p><strong data-en="Research question:" data-bn="গবেষণার প্রশ্ন:">Research question:</strong>
+          <span data-en="What do different sources reveal about the diversity of Arabia?"
+                data-bn="বিভিন্ন সূত্র ইসলাম-পূর্ব আরবের বৈচিত্র্য সম্পর্কে কী জানায়?">
+            What do different sources reveal about the diversity of Arabia?
+          </span></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="timeline">
+      <div class="section-label"
+           data-en="Chronology" data-bn="কালক্রম">
+        Chronology
+      </div>
+      <h2 data-en="A preliminary historical framework"
+          data-bn="প্রাথমিক ঐতিহাসিক কাঠামো">
+        A preliminary historical framework
+      </h2>
+      <p data-en="The periods below are broad guides, not a complete or universally agreed chronology. Dates and labels vary by region and scholarly method."
+         data-bn="নিচের সময়কালগুলো সাধারণ নির্দেশনা; এগুলো পূর্ণাঙ্গ বা সর্বজনস্বীকৃত কালপঞ্জি নয়। অঞ্চল ও গবেষণাপদ্ধতি অনুযায়ী তারিখ ও পরিভাষায় পার্থক্য থাকতে পারে।">
+        The periods below are broad guides, not a complete or universally
+        agreed chronology.
+      </p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <strong>c. 8000–2000 BCE</strong>
+          <span data-en="Early communities, agriculture and changing settlement patterns across parts of Arabia and the Near East."
+                data-bn="আরব ও নিকটপ্রাচ্যের বিভিন্ন অঞ্চলে প্রাচীন জনগোষ্ঠী, কৃষি এবং বসতির পরিবর্তন।">
+            Early communities, agriculture and changing settlement patterns.
+          </span>
+        </div>
+        <div class="timeline-item">
+          <strong>c. 3500–1000 BCE</strong>
+          <span data-en="Urban development, writing traditions and political states in parts of Mesopotamia and neighbouring regions."
+                data-bn="মেসোপটেমিয়া ও পার্শ্ববর্তী অঞ্চলের কিছু অংশে নগরায়ণ, লিপির বিকাশ ও রাষ্ট্র গঠন।">
+            Urban development, writing traditions and political states.
+          </span>
+        </div>
+        <div class="timeline-item">
+          <strong>1st millennium BCE</strong>
+          <span data-en="South Arabian kingdoms and expanding evidence from inscriptions and long-distance trade."
+                data-bn="দক্ষিণ আরবীয় রাজ্যগুলোর বিকাশ এবং শিলালিপি ও দূরপাল্লার বাণিজ্য সম্পর্কে প্রমাণের বৃদ্ধি।">
+            South Arabian kingdoms and expanding evidence from inscriptions.
+          </span>
+        </div>
+        <div class="timeline-item">
+          <strong>1st–6th centuries CE</strong>
+          <span data-en="Arabian communities interacted with neighbouring political powers, commercial networks and religious traditions."
+                data-bn="আরবের জনগোষ্ঠীগুলো প্রতিবেশী রাজনৈতিক শক্তি, বাণিজ্যপথ ও ধর্মীয় ঐতিহ্যের সঙ্গে যোগাযোগ রাখত।">
+            Arabian communities interacted with neighbouring powers.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section id="questions">
+      <div class="section-label"
+           data-en="Research Practice" data-bn="গবেষণার অনুশীলন">
+        Research Practice
+      </div>
+      <h2 data-en="Questions every researcher should ask"
+          data-bn="প্রত্যেক গবেষকের যে প্রশ্নগুলো করা উচিত">
+        Questions every researcher should ask
+      </h2>
+
+      <div class="card">
+        <ul>
+          <li data-en="Who produced this source, and approximately when?"
+              data-bn="সূত্রটি কে তৈরি করেছেন এবং আনুমানিক কখন?">
+            Who produced this source, and approximately when?
+          </li>
+          <li data-en="Is it contemporary with the event, or was it written later?"
+              data-bn="সূত্রটি ঘটনার সমসাময়িক, নাকি পরে লেখা?">
+            Is it contemporary with the event, or was it written later?
+          </li>
+          <li data-en="What was the author's purpose, audience and political context?"
+              data-bn="লেখকের উদ্দেশ্য, পাঠকগোষ্ঠী ও রাজনৈতিক প্রেক্ষাপট কী ছিল?">
+            What was the author's purpose, audience and political context?
+          </li>
+          <li data-en="Can another independent source support or challenge the claim?"
+              data-bn="অন্য কোনো স্বতন্ত্র সূত্র দাবিটিকে সমর্থন বা প্রশ্নবিদ্ধ করে কি?">
+            Can another independent source support or challenge the claim?
+          </li>
+          <li data-en="What remains uncertain, disputed or unknown?"
+              data-bn="কোন বিষয়গুলো এখনো অনিশ্চিত, বিতর্কিত বা অজানা?">
+            What remains uncertain, disputed or unknown?
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="sources">
+      <div class="section-label"
+           data-en="Further Reading" data-bn="আরও পড়াশোনা">
+        Further Reading
+      </div>
+      <h2 data-en="Research sources and collections"
+          data-bn="গবেষণার সূত্র ও সংগ্রহশালা">
+        Research sources and collections
+      </h2>
+
+      <div class="card">
+        <ol class="source-list">
+          <li>
+            <a href="https://www.metmuseum.org/toah/ht/02/wap.html"
+               target="_blank" rel="noopener">
+              The Metropolitan Museum of Art — Arabian Peninsula, 8000–2000 B.C.
+            </a>
+            <div data-en="A museum chronology for early Arabian archaeology and material culture."
+                 data-bn="প্রাচীন আরবের প্রত্নতত্ত্ব ও বস্তুগত সংস্কৃতি সম্পর্কে জাদুঘরভিত্তিক কালপঞ্জি।">
+              A museum chronology for early Arabian archaeology and material culture.
+            </div>
+          </li>
+          <li>
+            <a href="https://www.britishmuseum.org/collection/galleries/ancient-south-arabia"
+               target="_blank" rel="noopener">
+              The British Museum — Ancient South Arabia
+            </a>
+            <div data-en="An introduction to the kingdoms, trade and material heritage of ancient South Arabia."
+                 data-bn="প্রাচীন দক্ষিণ আরবের রাজ্য, বাণিজ্য ও বস্তুগত ঐতিহ্যের পরিচিতি।">
+              An introduction to ancient South Arabia.
+            </div>
+          </li>
+          <li>
+            <a href="https://www.britishmuseum.org/collection/object/W_1910-0507-7"
+               target="_blank" rel="noopener">
+              The British Museum — Sabaean Inscription
+            </a>
+            <div data-en="An individual museum object with a South Arabian inscription and catalogue information."
+                 data-bn="দক্ষিণ আরবীয় শিলালিপি ও সংগ্রহশালার তথ্যসহ একটি নির্দিষ্ট প্রত্নবস্তুর বিবরণ।">
+              An individual museum object with a South Arabian inscription.
+            </div>
+          </li>
+          <li>
+            <a href="https://www.metmuseum.org/-/media/files/learn/for-educators/publications-for-educators/art-of-the-ancient-near-east.pdf"
+               target="_blank" rel="noopener">
+              The Metropolitan Museum of Art — A Brief History of the Ancient Near East
+            </a>
+            <div data-en="An educational overview of the region's ancient societies and cultural networks."
+                 data-bn="প্রাচীন নিকটপ্রাচ্যের সমাজ ও সাংস্কৃতিক যোগাযোগ সম্পর্কে শিক্ষামূলক পর্যালোচনা।">
+              An educational overview of ancient Near Eastern societies.
+            </div>
+          </li>
+          <li>
+            <a href="https://quran.com/"
+               target="_blank" rel="noopener">
+              The Qur'an — Read and compare translations
+            </a>
+            <div data-en="Use the Arabic text and translations when studying Qur'anic narratives; record the surah and verse for every citation."
+                 data-bn="কুরআনিক বর্ণনা অধ্যয়নের সময় আরবি পাঠ ও অনুবাদ তুলনা করো; প্রতিটি উদ্ধৃতির সূরা ও আয়াত নম্বর লিখে রাখো।">
+              Use the Arabic text and translations when studying Qur'anic narratives.
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="notice">
+        <strong data-en="Editorial note" data-bn="সম্পাদনাগত নোট">
+          Editorial note
+        </strong>
+        <p data-en="This page is a developing research resource. Its topic structure is provisional and is not presented as the official table of contents of Mawlana Ismail Rehan's book. Historical claims should be checked against identifiable sources before publication."
+           data-bn="এই পৃষ্ঠাটি নির্মাণাধীন গবেষণা-সহায়ক উপকরণ। এর বিষয়বিন্যাস প্রাথমিক এবং এটিকে মাওলানা ইসমাইল রেহানের বইয়ের আনুষ্ঠানিক সূচি হিসেবে উপস্থাপন করা হচ্ছে না। প্রকাশের আগে ঐতিহাসিক দাবিগুলো শনাক্তযোগ্য সূত্রের সঙ্গে মিলিয়ে যাচাই করতে হবে।">
+          This page is a developing research resource. Its topic structure is
+          provisional and is not presented as the official table of contents
+          of Mawlana Ismail Rehan's book.
+        </p>
+      </div>
+    </section>
+
+    <div class="actions">
+      <a class="btn btn-primary" href="muslim-ummah-history.html"
+         data-en="← Back to the 20-Volume Guide"
+         data-bn="← ২০ খণ্ডের নির্দেশিকায় ফিরে যাও">
+        ← Back to the 20-Volume Guide
+      </a>
+      <a class="btn" style="border:1px solid var(--line)"
+         href="index.html"
+         data-en="Return to Homepage"
+         data-bn="হোমপেজে ফিরে যাও">
+        Return to Homepage
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>History Atlas: Islamic Civilizations</strong>
+      <p data-en="Explore the past. Examine the evidence."
+         data-bn="অতীতকে জানো। প্রমাণ যাচাই করো।">
+        Explore the past. Examine the evidence.
+      </p>
+      <a href="index.html" data-en="Home" data-bn="হোমপেজ">Home</a>
+      ·
+      <a href="muslim-ummah-history.html"
+         data-en="20-Volume Guide" data-bn="২০ খণ্ডের নির্দেশিকা">
+        20-Volume Guide
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    const languageButton = document.getElementById("languageButton");
+    let currentLanguage = "en";
+
+    function setLanguage(language) {
+      currentLanguage = language;
+      document.documentElement.lang = language;
+
+      document.querySelectorAll("[data-en][data-bn]").forEach(function (element) {
+        element.textContent = element.dataset[language];
+      });
+
+      languageButton.textContent = language === "en" ? "বাংলা" : "English";
+    }
+
+    languageButton.addEventListener("click", function () {
+      setLanguage(currentLanguage === "en" ? "bn" : "en");
+    });
+  </script>
+</body>
+</html>
