@@ -1,1250 +1,503 @@
 
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#102c25">
-
-  <title>মুসলিম ইতিহাস আর্কাইভ | Muslim History Archive</title>
-
-  <meta name="description"
-    content="মুসলিম উম্মাহর ইতিহাস, ঐতিহাসিক গ্রন্থ, মুসলিম সভ্যতা, মনীষী, মানচিত্র ও প্রাথমিক সূত্র নিয়ে গবেষণাভিত্তিক ডিজিটাল আর্কাইভ।">
-
-  <style>
-    :root {
-      --green: #102c25;
-      --green-light: #1a4034;
-      --green-soft: #254b3c;
-      --gold: #c5a66a;
-      --gold-light: #e5d3a6;
-      --ivory: #f6f2e8;
-      --paper: #fffdf7;
-      --text: #25352e;
-      --muted: #6e786f;
-      --border: #e4ddce;
-      --white: #ffffff;
-      --shadow: 0 12px 35px rgba(16, 44, 37, 0.08);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      font-family: "Noto Serif Bengali", "Nirmala UI", "Vrinda",
-        "SolaimanLipi", serif;
-      background: var(--ivory);
-      color: var(--text);
-      line-height: 1.85;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    button, input {
-      font: inherit;
-    }
-
-    .container {
-      width: min(1160px, 91%);
-      margin-inline: auto;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      color: var(--gold);
-      font-family: Georgia, serif;
-      font-size: 0.78rem;
-      font-weight: bold;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-    }
-
-    .section {
-      padding: 78px 0;
-    }
-
-    .section-heading {
-      max-width: 720px;
-      margin-bottom: 34px;
-    }
-
-    .section-heading h2 {
-      margin: 8px 0 12px;
-      color: var(--green);
-      font-size: clamp(1.7rem, 4vw, 2.45rem);
-      line-height: 1.5;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 1rem;
-    }
-
-    /* Navigation */
-
-    .navbar {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: rgba(16, 44, 37, 0.97);
-      border-bottom: 1px solid rgba(197, 166, 106, 0.25);
-      backdrop-filter: blur(12px);
-    }
-
-    .nav-inner {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      color: var(--white);
-      min-width: 0;
-    }
-
-    .brand-mark {
-      width: 43px;
-      height: 43px;
-      flex-shrink: 0;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--gold);
-      color: var(--gold-light);
-      border-radius: 50% 50% 50% 8px;
-      font-size: 1.45rem;
-    }
-
-    .brand-name {
-      font-size: 1.02rem;
-      font-weight: bold;
-      line-height: 1.45;
-    }
-
-    .brand-subtitle {
-      display: block;
-      color: #c7d0c8;
-      font-family: Georgia, serif;
-      font-size: 0.68rem;
-      letter-spacing: 1px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 22px;
-      color: #e5e9e3;
-      font-size: 0.9rem;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold-light);
-    }
-
-    .nav-cta {
-      border: 1px solid var(--gold);
-      border-radius: 5px;
-      padding: 7px 13px;
-      color: var(--gold-light) !important;
-    }
-
-    /* Hero */
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      color: var(--white);
-      background:
-        radial-gradient(ellipse at 85% 15%, rgba(197,166,106,.15), transparent 35%),
-        linear-gradient(130deg, #102c25 0%, #173c30 58%, #244b39 100%);
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      width: 420px;
-      height: 420px;
-      right: -180px;
-      bottom: -240px;
-      border: 1px solid rgba(229, 211, 166, 0.2);
-      border-radius: 50%;
-      box-shadow:
-        0 0 0 35px rgba(229,211,166,.025),
-        0 0 0 70px rgba(229,211,166,.025),
-        0 0 0 105px rgba(229,211,166,.025);
-      pointer-events: none;
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.3fr 0.7fr;
-      align-items: center;
-      gap: 55px;
-      padding-top: 86px;
-      padding-bottom: 88px;
-    }
-
-    .hero h1 {
-      max-width: 740px;
-      margin: 15px 0 18px;
-      font-size: clamp(2.25rem, 5.5vw, 4.15rem);
-      line-height: 1.36;
-      font-weight: 700;
-    }
-
-    .hero h1 span {
-      color: var(--gold-light);
-    }
-
-    .hero-description {
-      max-width: 650px;
-      color: #d6e0d8;
-      font-size: 1.06rem;
-      line-height: 2;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-      margin-top: 30px;
-    }
-
-    .btn {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      gap: 8px;
-      padding: 12px 20px;
-      border-radius: 5px;
-      border: 1px solid transparent;
-      font-weight: bold;
-      transition: transform 0.2s, background 0.2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-    }
-
-    .btn-gold {
-      background: var(--gold);
-      color: #172e24;
-    }
-
-    .btn-outline {
-      color: var(--white);
-      border-color: rgba(255,255,255,.4);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--gold);
-      color: var(--gold-light);
-    }
-
-    .hero-art {
-      min-height: 325px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .archive-emblem {
-      width: min(310px, 100%);
-      aspect-ratio: 0.85;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      text-align: center;
-      border: 1px solid rgba(229, 211, 166, 0.58);
-      outline: 1px solid rgba(229, 211, 166, 0.23);
-      outline-offset: 10px;
-      border-radius: 150px 150px 8px 8px;
-      background:
-        linear-gradient(rgba(16,44,37,.20), rgba(16,44,37,.65)),
-        repeating-linear-gradient(
-          45deg,
-          transparent,
-          transparent 14px,
-          rgba(229,211,166,.035) 14px,
-          rgba(229,211,166,.035) 15px
-        );
-    }
-
-    .archive-emblem .ornament {
-      color: var(--gold-light);
-      font-size: 4.5rem;
-      line-height: 1.3;
-    }
-
-    .archive-emblem .arabic {
-      color: var(--gold-light);
-      font-size: 1.7rem;
-    }
-
-    .archive-emblem p {
-      color: #d6e0d8;
-      font-family: Georgia, serif;
-      font-size: 0.72rem;
-      letter-spacing: 2px;
-    }
-
-    /* Quick facts */
-
-    .quick-stats {
-      position: relative;
-      z-index: 2;
-      margin-top: -27px;
-    }
-
-    .stats-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border: 1px solid var(--border);
-      border-radius: 9px;
-      background: var(--paper);
-      box-shadow: var(--shadow);
-    }
-
-    .stat {
-      padding: 22px;
-      text-align: center;
-    }
-
-    .stat + .stat {
-      border-left: 1px solid var(--border);
-    }
-
-    .stat strong {
-      display: block;
-      color: var(--green);
-      font-family: Georgia, serif;
-      font-size: 1.9rem;
-      line-height: 1.4;
-    }
-
-    .stat span {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
-
-    /* Volumes */
-
-    .volumes-section {
-      padding-top: 95px;
-    }
-
-    .volume-tools {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      margin-bottom: 25px;
-    }
-
-    .search-box {
-      width: min(360px, 100%);
-      padding: 11px 14px;
-      border: 1px solid var(--border);
-      border-radius: 5px;
-      background: var(--paper);
-      color: var(--text);
-      outline: none;
-    }
-
-    .search-box:focus {
-      border-color: var(--gold);
-      box-shadow: 0 0 0 3px rgba(197,166,106,.15);
-    }
-
-    .volume-grid {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 17px;
-    }
-
-    .volume-card {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      min-height: 220px;
-      padding: 23px 20px;
-      overflow: hidden;
-      border: 1px solid var(--border);
-      border-radius: 7px;
-      background: var(--paper);
-      transition: transform .2s, box-shadow .2s, border-color .2s;
-    }
-
-    .volume-card.available {
-      border-color: var(--gold);
-      box-shadow: 0 5px 22px rgba(16,44,37,.06);
-    }
-
-    .volume-card.available:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-
-    .volume-number {
-      color: var(--gold);
-      font-family: Georgia, serif;
-      font-size: 2.15rem;
-      font-weight: bold;
-      line-height: 1.3;
-    }
-
-    .volume-card h3 {
-      margin: 13px 0 8px;
-      color: var(--green);
-      font-size: 1.05rem;
-    }
-
-    .volume-card p {
-      flex: 1;
-      color: var(--muted);
-      font-size: .88rem;
-      line-height: 1.8;
-    }
-
-    .volume-link {
-      display: inline-block;
-      width: fit-content;
-      margin-top: 16px;
-      color: var(--green);
-      font-size: .9rem;
-      font-weight: bold;
-    }
-
-    .volume-card.available .volume-link {
-      color: #856629;
-    }
-
-    .coming-soon {
-      align-self: flex-start;
-      margin-top: 15px;
-      padding: 3px 9px;
-      border-radius: 3px;
-      background: #f0ede5;
-      color: #77766d;
-      font-size: .76rem;
-    }
-
-    .no-results {
-      display: none;
-      padding: 25px;
-      color: var(--muted);
-      text-align: center;
-    }
-
-    /* Research method */
-
-    .method-section {
-      background: var(--paper);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .method-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 22px;
-    }
-
-    .method-card {
-      padding: 25px;
-      border: 1px solid var(--border);
-      border-radius: 7px;
-      background: #fffefa;
-    }
-
-    .method-icon {
-      width: 48px;
-      height: 48px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 16px;
-      border-radius: 50%;
-      background: #e9e5d7;
-      color: var(--green);
-      font-size: 1.4rem;
-    }
-
-    .method-card h3 {
-      margin-bottom: 9px;
-      color: var(--green);
-      font-size: 1.1rem;
-    }
-
-    .method-card p {
-      color: var(--muted);
-      font-size: .93rem;
-    }
-
-    /* Visual archive */
-
-    .visual-section {
-      background: var(--green);
-      color: var(--white);
-    }
-
-    .visual-section .section-heading h2 {
-      color: var(--white);
-    }
-
-    .visual-section .section-heading p {
-      color: #d0d9d0;
-    }
-
-    .visual-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .visual-card {
-      min-height: 210px;
-      padding: 25px;
-      border: 1px solid rgba(229,211,166,.25);
-      border-radius: 7px;
-      background: rgba(255,255,255,.045);
-    }
-
-    .visual-card .visual-symbol {
-      display: block;
-      margin-bottom: 15px;
-      color: var(--gold-light);
-      font-size: 2.2rem;
-    }
-
-    .visual-card h3 {
-      margin-bottom: 8px;
-      color: var(--gold-light);
-      font-size: 1.12rem;
-    }
-
-    .visual-card p {
-      color: #d0d9d0;
-      font-size: .91rem;
-    }
-
-    .visual-note {
-      margin-top: 22px;
-      padding-left: 15px;
-      border-left: 2px solid var(--gold);
-      color: #d0d9d0;
-      font-size: .88rem;
-    }
-
-    /* First volume CTA */
-
-    .first-volume {
-      padding: 65px 0;
-    }
-
-    .first-volume-box {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
-      padding: 36px;
-      border: 1px solid var(--gold);
-      border-radius: 8px;
-      background:
-        linear-gradient(120deg, rgba(16,44,37,.97), rgba(32,72,55,.96));
-      color: var(--white);
-    }
-
-    .first-volume-box h2 {
-      margin: 7px 0;
-      font-size: clamp(1.4rem, 3vw, 2rem);
-    }
-
-    .first-volume-box p {
-      max-width: 670px;
-      color: #d0d9d0;
-      font-size: .94rem;
-    }
-
-    .first-volume-box .btn {
-      flex-shrink: 0;
-    }
-
-    /* Footer */
-
-    footer {
-      padding: 40px 0 22px;
-      background: #0b211b;
-      color: #c9d2ca;
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.2fr .8fr;
-      gap: 35px;
-      padding-bottom: 28px;
-    }
-
-    .footer-title {
-      margin-bottom: 10px;
-      color: var(--gold-light);
-      font-size: 1.15rem;
-    }
-
-    .footer-description {
-      max-width: 580px;
-      color: #c0cbc2;
-      font-size: .9rem;
-    }
-
-    .footer-links {
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-      font-size: .9rem;
-    }
-
-    .footer-links a:hover {
-      color: var(--gold-light);
-    }
-
-    .copyright {
-      padding-top: 18px;
-      border-top: 1px solid rgba(255,255,255,.12);
-      color: #aebbb1;
-      font-family: Georgia, serif;
-      font-size: .8rem;
-      text-align: center;
-    }
-
-    /* Mobile */
-
-    @media (max-width: 900px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        gap: 30px;
-        padding-top: 65px;
-        padding-bottom: 70px;
-      }
-
-      .hero-art {
-        min-height: auto;
-        padding: 12px 0;
-      }
-
-      .archive-emblem {
-        width: 210px;
-        aspect-ratio: 0.9;
-      }
-
-      .archive-emblem .ornament {
-        font-size: 3rem;
-      }
-
-      .volume-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-      }
-
-      .method-grid,
-      .visual-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .first-volume-box {
-        align-items: flex-start;
-        flex-direction: column;
-      }
-    }
-
-    @media (max-width: 600px) {
-      .nav-inner {
-        min-height: 70px;
-      }
-
-      .nav-links {
-        gap: 12px;
-        font-size: .8rem;
-      }
-
-      .nav-links a:nth-child(2),
-      .nav-links a:nth-child(3) {
-        display: none;
-      }
-
-      .brand-name {
-        font-size: .88rem;
-      }
-
-      .brand-subtitle {
-        font-size: .6rem;
-      }
-
-      .brand-mark {
-        width: 37px;
-        height: 37px;
-      }
-
-      .section {
-        padding: 58px 0;
-      }
-
-      .hero-inner {
-        padding-top: 53px;
-      }
-
-      .hero-description {
-        font-size: .97rem;
-      }
-
-      .stats-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .stat + .stat {
-        border-left: 0;
-        border-top: 1px solid var(--border);
-      }
-
-      .volume-tools {
-        align-items: stretch;
-        flex-direction: column;
-      }
-
-      .search-box {
-        width: 100%;
-      }
-
-      .volume-grid {
-        gap: 10px;
-      }
-
-      .volume-card {
-        min-height: 205px;
-        padding: 17px 14px;
-      }
-
-      .volume-number {
-        font-size: 1.8rem;
-      }
-
-      .volume-card h3 {
-        font-size: .98rem;
-      }
-
-      .volume-card p {
-        font-size: .82rem;
-      }
-
-      .method-grid,
-      .visual-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .first-volume-box {
-        padding: 25px 20px;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      *, *::before, *::after {
-        transition: none !important;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10271f">
+<meta name="description" content="Explore Islamic civilizations through historical maps, timelines, biographies, primary sources and original research.">
+<title>History Atlas | Islamic Civilizations</title>
+
+<style>
+:root {
+  --green:#10271f;
+  --green2:#193a2e;
+  --gold:#c9a96e;
+  --cream:#f5f1e7;
+  --paper:#fffdf8;
+  --ink:#26352d;
+  --muted:#70796f;
+  --line:#e5dfd1;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:Georgia,"Noto Serif Bengali",serif;background:var(--cream);color:var(--ink);line-height:1.75}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+img{display:block;max-width:100%}
+.container{width:min(1180px,92%);margin:auto}
+.eyebrow{font:700 .73rem Arial,sans-serif;letter-spacing:2.4px;text-transform:uppercase;color:var(--gold)}
+.section{padding:76px 0}
+.section-head{max-width:730px;margin-bottom:30px}
+.section-head h2{font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.25;color:var(--green);margin:9px 0 12px}
+.section-head p{color:var(--muted);max-width:680px}
+header{position:sticky;top:0;z-index:20;background:rgba(16,39,31,.97);border-bottom:1px solid #ffffff20;backdrop-filter:blur(12px)}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;color:white}
+.logo{width:43px;height:43px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:1.6rem}
+.brand strong{display:block;font-size:1rem;line-height:1.4}
+.brand small{display:block;color:#c5cfc6;font:10px Arial,sans-serif;letter-spacing:1.3px}
+.navlinks{display:flex;align-items:center;gap:22px;color:#edf0e9;font:13px Arial,sans-serif}
+.navlinks a:hover{color:var(--gold)}
+.lang{background:transparent;border:1px solid var(--gold);border-radius:4px;color:#f3dfb7;padding:7px 11px;cursor:pointer}
+.menu-toggle{display:none;background:none;border:1px solid #ffffff55;color:white;padding:7px 10px;border-radius:4px}
+.hero{background:var(--green);color:white;position:relative;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:46px;align-items:center;padding-top:65px;padding-bottom:70px}
+.hero h1{font-size:clamp(2.5rem,5.1vw,4.5rem);line-height:1.12;letter-spacing:-1.4px;margin:18px 0}
+.hero h1 em{color:#e2c58e;font-style:normal}
+.hero-copy{color:#d2ddd4;max-width:540px;font-size:1.02rem}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:12px 18px;border:1px solid transparent;border-radius:4px;font:700 13px Arial,sans-serif;cursor:pointer}
+.btn-gold{background:var(--gold);color:#15291f}
+.btn-outline{border-color:#ffffff70;color:white}
+.btn:hover{filter:brightness(1.08)}
+.hero-visual{position:relative;min-height:430px}
+.hero-visual img{width:100%;height:430px;object-fit:cover;border-radius:5px;filter:brightness(.78)}
+.image-caption{position:absolute;bottom:20px;left:20px;right:20px;padding:17px;background:#10271fdb;border-left:3px solid var(--gold);color:white}
+.image-caption strong{display:block;font-size:1.15rem}
+.image-caption span{font:11px Arial,sans-serif;color:#e5d5b5;letter-spacing:1px}
+.image-credit{font:10px Arial,sans-serif;color:#b7c3b9;margin-top:9px}
+.stats{position:relative;margin-top:-1px;background:#e9e2d2;border-bottom:1px solid var(--line)}
+.stats-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+.stat{padding:21px 12px;text-align:center}
+.stat+.stat{border-left:1px solid #d5cbb7}
+.stat strong{display:block;color:var(--green);font-size:1.4rem}
+.stat span{color:var(--muted);font-size:.83rem}
+.path-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:19px}
+.path-card{background:var(--paper);border:1px solid var(--line);border-radius:5px;overflow:hidden;transition:transform .2s,box-shadow .2s}
+.path-card:hover{transform:translateY(-4px);box-shadow:0 12px 30px #10271f12}
+.path-card img{width:100%;height:205px;object-fit:cover;background:#d8d2c4}
+.path-body{padding:21px}
+.path-number{font:700 11px Arial,sans-serif;color:#9b7b43;letter-spacing:1.7px}
+.path-body h3{font-size:1.24rem;color:var(--green);margin:7px 0}
+.path-body p{font-size:.91rem;color:var(--muted);min-height:76px}
+.text-link{display:inline-block;margin-top:13px;color:#84642f;font:700 12px Arial,sans-serif}
+.text-link span{margin-left:5px}
+.featured{background:#e9e2d2}
+.feature-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.feature{position:relative;min-height:330px;overflow:hidden;border-radius:5px;background:var(--green);color:white}
+.feature img{width:100%;height:330px;object-fit:cover;opacity:.78;transition:transform .4s}
+.feature:hover img{transform:scale(1.04)}
+.feature-info{position:absolute;inset:auto 0 0;padding:45px 23px 22px;background:linear-gradient(transparent,#10271ff2)}
+.feature-info h3{font-size:1.5rem;margin:5px 0}
+.feature-info p{font-size:.89rem;color:#e0e5de}
+.feature-info .text-link{color:#f0d9a9}
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.time-card{padding:22px 18px;background:var(--paper);border-top:3px solid var(--gold);border-radius:3px}
+.time-card .date{font:700 12px Arial,sans-serif;color:#8b6d3d;letter-spacing:1px}
+.time-card h3{font-size:1.05rem;margin:8px 0;color:var(--green)}
+.time-card p{font-size:.88rem;color:var(--muted)}
+.sources-section{background:var(--green);color:white}
+.sources-section .section-head h2{color:white}
+.sources-section .section-head p{color:#cbd5cc}
+.source-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.source-card{border:1px solid #ffffff2a;padding:23px;background:#ffffff08;border-radius:4px}
+.source-card .source-icon{font-size:1.7rem;color:var(--gold)}
+.source-card h3{font-size:1.1rem;margin:9px 0}
+.source-card p{font-size:.88rem;color:#cbd5cc}
+.source-card a{display:inline-block;margin-top:13px;color:#e6c98e;font:700 12px Arial,sans-serif}
+.method-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.method-card{padding:23px;border:1px solid var(--line);background:var(--paper);border-radius:4px}
+.method-card .symbol{font-size:1.8rem;color:#987741}
+.method-card h3{color:var(--green);margin:8px 0}
+.method-card p{font-size:.9rem;color:var(--muted)}
+.cta{padding:55px 0}
+.cta-box{background:var(--green);color:white;border:1px solid var(--gold);padding:35px;display:flex;align-items:center;justify-content:space-between;gap:25px;border-radius:5px}
+.cta-box h2{font-size:clamp(1.5rem,3vw,2.2rem);margin:8px 0}
+.cta-box p{color:#d0dbd1;max-width:700px;font-size:.91rem}
+footer{background:#0b1d17;color:#c6d0c7;padding:35px 0 20px}
+.footer-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:30px;padding-bottom:25px}
+footer h3{color:#e5c990;margin-bottom:10px}
+footer p,footer a{font-size:.87rem}
+.footer-links{display:grid;gap:6px}
+footer a:hover{color:var(--gold)}
+.copyright{border-top:1px solid #ffffff22;padding-top:17px;text-align:center;color:#aebbb0;font:11px Arial,sans-serif}
+[hidden]{display:none!important}
+
+@media(max-width:900px){
+ .hero-grid{grid-template-columns:1fr;gap:28px}
+ .hero-visual,.hero-visual img{height:360px;min-height:360px}
+ .path-grid{grid-template-columns:repeat(2,1fr)}
+ .timeline{grid-template-columns:repeat(2,1fr)}
+ .navlinks{gap:12px}
+ .navlinks>a{font-size:12px}
+}
+@media(max-width:620px){
+ .nav{min-height:68px}
+ .menu-toggle{display:block}
+ .navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:var(--green);padding:18px 4%;border-top:1px solid #ffffff22;align-items:stretch;flex-direction:column}
+ .navlinks.open{display:flex}
+ .navlinks a{padding:5px}
+ .hero-grid{padding-top:46px;padding-bottom:45px}
+ .hero h1{font-size:2.65rem}
+ .hero-visual,.hero-visual img{height:290px;min-height:290px}
+ .stats-grid{grid-template-columns:1fr}
+ .stat+.stat{border-left:0;border-top:1px solid #d5cbb7}
+ .section{padding:55px 0}
+ .path-grid,.feature-grid,.source-grid,.method-grid{grid-template-columns:1fr}
+ .path-card img{height:220px}
+ .path-body p{min-height:0}
+ .timeline{grid-template-columns:1fr 1fr;gap:10px}
+ .time-card{padding:16px 13px}
+ .feature,.feature img{min-height:290px;height:290px}
+ .cta-box{align-items:flex-start;flex-direction:column;padding:25px}
+ .footer-grid{grid-template-columns:1fr}
+}
+</style>
 </head>
 
 <body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="History Atlas home">
+      <span class="logo">۞</span>
+      <span>
+        <strong>History Atlas</strong>
+        <small>ISLAMIC CIVILIZATIONS</small>
+      </span>
+    </a>
 
-  <!-- Navigation -->
-  <header class="navbar">
-    <div class="container nav-inner">
-      <a class="brand" href="index.html" aria-label="হোমপেজ">
-        <span class="brand-mark" aria-hidden="true">۞</span>
-        <span class="brand-name">
-          মুসলিম ইতিহাস আর্কাইভ
-          <span class="brand-subtitle">MUSLIM HISTORY ARCHIVE</span>
-        </span>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+
+    <nav class="navlinks" id="navLinks">
+      <a href="#explore" data-en="Explore" data-bn="অন্বেষণ">Explore</a>
+      <a href="#eras" data-en="Historical Eras" data-bn="ঐতিহাসিক যুগ">Historical Eras</a>
+      <a href="#sources" data-en="Sources" data-bn="তথ্যসূত্র">Sources</a>
+      <a href="#about" data-en="Our Method" data-bn="গবেষণাপদ্ধতি">Our Method</a>
+      <button class="lang" id="langToggle" aria-label="Switch language">বাংলা</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow" data-en="History · Geography · Ideas" data-bn="ইতিহাস · ভূগোল · চিন্তাধারা">History · Geography · Ideas</span>
+      <h1 data-en="Explore the World That <em>Shaped History.</em>" data-bn="ইতিহাস গড়ে তোলা <em>বিশ্বকে জানুন।</em>">Explore the World That <em>Shaped History.</em></h1>
+      <p class="hero-copy" data-en="Discover the people, places, ideas and turning points of Islamic civilizations through historical maps, timelines, original research and primary sources." data-bn="ঐতিহাসিক মানচিত্র, সময়রেখা, নিজস্ব গবেষণা ও প্রাথমিক সূত্রের মাধ্যমে ইসলামী সভ্যতার মানুষ, স্থান, চিন্তাধারা এবং গুরুত্বপূর্ণ পরিবর্তনগুলো অনুসন্ধান করুন।">Discover the people, places, ideas and turning points of Islamic civilizations through historical maps, timelines, original research and primary sources.</p>
+      <div class="actions">
+        <a class="btn btn-gold" href="#explore" data-en="Explore the Atlas ↗" data-bn="অ্যাটলাস অন্বেষণ করুন ↗">Explore the Atlas ↗</a>
+        <a class="btn btn-outline" href="#sources" data-en="Browse Historical Sources" data-bn="ঐতিহাসিক সূত্র দেখুন">Browse Historical Sources</a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <img
+        src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=1200&q=85"
+        alt="Historic art and architecture representing the study of civilizations"
+        fetchpriority="high">
+      <div class="image-caption">
+        <span data-en="A CONNECTED HISTORICAL WORLD" data-bn="পরস্পর-সংযুক্ত ঐতিহাসিক বিশ্ব">A CONNECTED HISTORICAL WORLD</span>
+        <strong data-en="Places. People. Ideas." data-bn="স্থান। মানুষ। চিন্তাধারা।">Places. People. Ideas.</strong>
+      </div>
+      <p class="image-credit" data-en="Illustrative image · See image source and usage terms before publication." data-bn="প্রতিনিধিত্বমূলক ছবি · প্রকাশের আগে ছবির উৎস ও ব্যবহারের শর্ত যাচাই করুন।">Illustrative image · See image source and usage terms before publication.</p>
+    </div>
+  </div>
+</section>
+
+<section class="stats" aria-label="Project overview">
+  <div class="container stats-grid">
+    <div class="stat"><strong data-en="Explore by Place" data-bn="স্থানভিত্তিক অনুসন্ধান">Explore by Place</strong><span data-en="Maps and historical geography" data-bn="মানচিত্র ও ঐতিহাসিক ভূগোল">Maps and historical geography</span></div>
+    <div class="stat"><strong data-en="Trace the Past" data-bn="অতীতের ধারাবাহিকতা">Trace the Past</strong><span data-en="Chronologies and turning points" data-bn="সময়রেখা ও গুরুত্বপূর্ণ ঘটনা">Chronologies and turning points</span></div>
+    <div class="stat"><strong data-en="Check the Evidence" data-bn="প্রমাণ যাচাই">Check the Evidence</strong><span data-en="Sources and research notes" data-bn="সূত্র ও গবেষণা-নোট">Sources and research notes</span></div>
+  </div>
+</section>
+
+<section class="section" id="explore">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-en="Choose your pathway" data-bn="অনুসন্ধানের পথ বেছে নিন">Choose your pathway</span>
+      <h2 data-en="History Is More Than a Timeline." data-bn="ইতিহাস শুধু সময়রেখা নয়।">History Is More Than a Timeline.</h2>
+      <p data-en="Follow connections across regions, people, events and ideas. Each pathway brings together related topics instead of reproducing the structure of a single book." data-bn="অঞ্চল, ব্যক্তি, ঘটনা ও চিন্তার পারস্পরিক সম্পর্ক অনুসরণ করুন। একটি বইয়ের সূচি অনুকরণ না করে প্রতিটি বিভাগে সম্পর্কিত বিষয়গুলো একত্র করা হবে।">Follow connections across regions, people, events and ideas. Each pathway brings together related topics instead of reproducing the structure of a single book.</p>
+    </div>
+
+    <div class="path-grid">
+      <article class="path-card">
+        <img src="https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=900&q=80" alt="Mosque architecture representing historic Islamic cities" loading="lazy">
+        <div class="path-body">
+          <span class="path-number">PATHWAY 01</span>
+          <h3 data-en="Places & Civilizations" data-bn="স্থান ও সভ্যতা">Places & Civilizations</h3>
+          <p data-en="Explore historic cities, regions, trade routes and the geographical settings of major events." data-bn="ঐতিহাসিক নগর, অঞ্চল, বাণিজ্যপথ এবং গুরুত্বপূর্ণ ঘটনাগুলোর ভৌগোলিক প্রেক্ষাপট জানুন।">Explore historic cities, regions, trade routes and the geographical settings of major events.</p>
+          <a class="text-link" href="civilizations.html" data-en="Explore civilizations" data-bn="সভ্যতাগুলো দেখুন">Explore civilizations <span>↗</span></a>
+        </div>
+      </article>
+
+      <article class="path-card">
+        <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=900&q=80" alt="Books and manuscripts representing historical research" loading="lazy">
+        <div class="path-body">
+          <span class="path-number">PATHWAY 02</span>
+          <h3 data-en="People & Ideas" data-bn="ব্যক্তিত্ব ও চিন্তাধারা">People & Ideas</h3>
+          <p data-en="Discover scholars, historians, rulers and the intellectual traditions connected to their work." data-bn="মনীষী, ঐতিহাসিক, শাসক এবং তাঁদের কাজের সঙ্গে যুক্ত বুদ্ধিবৃত্তিক ধারাগুলো জানুন।">Discover scholars, historians, rulers and the intellectual traditions connected to their work.</p>
+          <a class="text-link" href="scholars.html" data-en="Meet the thinkers" data-bn="মনীষীদের জানুন">Meet the thinkers <span>↗</span></a>
+        </div>
+      </article>
+
+      <article class="path-card">
+        <img src="https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&w=900&q=80" alt="Historic museum artifacts representing the material past" loading="lazy">
+        <div class="path-body">
+          <span class="path-number">PATHWAY 03</span>
+          <h3 data-en="Events & Turning Points" data-bn="ঘটনা ও ঐতিহাসিক পরিবর্তন">Events & Turning Points</h3>
+          <p data-en="Investigate migrations, political transitions, conflicts and the forces behind historical change." data-bn="হিজরত, রাজনৈতিক পরিবর্তন, সংঘাত এবং ইতিহাস বদলে দেওয়া শক্তিগুলো অনুসন্ধান করুন।">Investigate migrations, political transitions, conflicts and the forces behind historical change.</p>
+          <a class="text-link" href="history.html" data-en="Explore historical events" data-bn="ঐতিহাসিক ঘটনাগুলো দেখুন">Explore historical events <span>↗</span></a>
+        </div>
+      </article>
+
+      <article class="path-card">
+        <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=900&q=80" alt="Scientific imagery representing humanity's search for knowledge" loading="lazy">
+        <div class="path-body">
+          <span class="path-number">PATHWAY 04</span>
+          <h3 data-en="Knowledge & Discovery" data-bn="জ্ঞান ও আবিষ্কার">Knowledge & Discovery</h3>
+          <p data-en="Explore the histories of medicine, astronomy, mathematics, philosophy and learning." data-bn="চিকিৎসা, জ্যোতির্বিজ্ঞান, গণিত, দর্শন ও জ্ঞানচর্চার ইতিহাস অনুসন্ধান করুন।">Explore the histories of medicine, astronomy, mathematics, philosophy and learning.</p>
+          <a class="text-link" href="al-biruni.html" data-en="Explore scholarship" data-bn="জ্ঞানচর্চা দেখুন">Explore scholarship <span>↗</span></a>
+        </div>
+      </article>
+
+      <article class="path-card">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Landscape representing the geography of historic journeys" loading="lazy">
+        <div class="path-body">
+          <span class="path-number">PATHWAY 05</span>
+          <h3 data-en="Historical Eras" data-bn="ঐতিহাসিক যুগ">Historical Eras</h3>
+          <p data-en="Place events in context with chronological guides, eras and changing political landscapes." data-bn="সময়কাল, ঘটনাক্রম এবং পরিবর্তিত রাজনৈতিক ভূদৃশ্যের মাধ্যমে ইতিহাসের প্রেক্ষাপট বুঝুন।">Place events in context with chronological guides, eras and changing political landscapes.</p>
+          <a class="text-link" href="timeline.html" data-en="View the timeline" data-bn="সময়রেখা দেখুন">View the timeline <span>↗</span></a>
+        </div>
+      </article>
+
+      <article class="path-card">
+        <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900&q=80" alt="Library books representing primary historical sources" loading="lazy">
+        <div class="path-body">
+          <span class="path-number">PATHWAY 06</span>
+          <h3 data-en="Sources & Evidence" data-bn="সূত্র ও ঐতিহাসিক প্রমাণ">Sources & Evidence</h3>
+          <p data-en="Learn about chronicles, biographies, manuscripts, editions and the limits of historical evidence." data-bn="ইতিহাসগ্রন্থ, জীবনী, পাণ্ডুলিপি, সংস্করণ এবং ঐতিহাসিক প্রমাণের সীমাবদ্ধতা জানুন।">Learn about chronicles, biographies, manuscripts, editions and the limits of historical evidence.</p>
+          <a class="text-link" href="#sources" data-en="Browse the source guide" data-bn="সূত্র নির্দেশিকা দেখুন">Browse the source guide <span>↗</span></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section featured" id="eras">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-en="Visual exploration" data-bn="দৃশ্যভিত্তিক অনুসন্ধান">Visual exploration</span>
+      <h2 data-en="See History in Space and Time." data-bn="স্থান ও সময়ের ভেতর ইতিহাসকে দেখুন।">See History in Space and Time.</h2>
+      <p data-en="Maps and timelines help connect individual events to larger historical processes." data-bn="মানচিত্র ও সময়রেখা বিচ্ছিন্ন ঘটনাকে বৃহত্তর ঐতিহাসিক প্রক্রিয়ার সঙ্গে যুক্ত করতে সাহায্য করে।">Maps and timelines help connect individual events to larger historical processes.</p>
+    </div>
+
+    <div class="feature-grid">
+      <a class="feature" href="civilizations.html">
+        <img src="https://images.unsplash.com/photo-1477587458883-47145ed94245?auto=format&fit=crop&w=1100&q=85" alt="Historic architecture and cityscape" loading="lazy">
+        <div class="feature-info">
+          <span class="eyebrow" data-en="GEOGRAPHIC EXPLORER" data-bn="ভৌগোলিক অনুসন্ধান">GEOGRAPHIC EXPLORER</span>
+          <h3 data-en="Follow the Routes of History" data-bn="ইতিহাসের পথ ধরে এগিয়ে চলুন">Follow the Routes of History</h3>
+          <p data-en="Explore regions, cities and historical connections on maps." data-bn="মানচিত্রে অঞ্চল, নগর ও ঐতিহাসিক সংযোগ অনুসন্ধান করুন।">Explore regions, cities and historical connections on maps.</p>
+          <span class="text-link" data-en="Explore places ↗" data-bn="স্থানগুলো দেখুন ↗">Explore places ↗</span>
+        </div>
       </a>
 
-      <nav class="nav-links" aria-label="প্রধান নেভিগেশন">
-        <a href="#home">হোম</a>
-        <a href="#volumes">২০ খণ্ড</a>
-        <a href="#method">গবেষণাপদ্ধতি</a>
-        <a href="#visuals">ভিজ্যুয়াল আর্কাইভ</a>
-        <a class="nav-cta" href="volume-1.html">আর্কাইভে প্রবেশ ↗</a>
-      </nav>
+      <a class="feature" href="timeline.html">
+        <img src="https://images.unsplash.com/photo-1516979187457-637abb4f9353?auto=format&fit=crop&w=1100&q=85" alt="Books arranged for historical study" loading="lazy">
+        <div class="feature-info">
+          <span class="eyebrow" data-en="CHRONOLOGY" data-bn="ঘটনাক্রম">CHRONOLOGY</span>
+          <h3 data-en="Connect Events Across Centuries" data-bn="শতাব্দী পেরিয়ে ঘটনাগুলোকে যুক্ত করুন">Connect Events Across Centuries</h3>
+          <p data-en="Trace eras, turning points and historical sequences." data-bn="যুগ, গুরুত্বপূর্ণ পরিবর্তন ও ঘটনাক্রম অনুসরণ করুন।">Trace eras, turning points and historical sequences.</p>
+          <span class="text-link" data-en="Explore the timeline ↗" data-bn="সময়রেখা দেখুন ↗">Explore the timeline ↗</span>
+        </div>
+      </a>
     </div>
-  </header>
-
-  <main>
-
-    <!-- Hero -->
-    <section class="hero" id="home">
-      <div class="container hero-inner">
-
-        <div>
-          <span class="eyebrow">History · Sources · Civilization</span>
-
-          <h1>
-            অতীতকে জানি,<br>
-            <span>ইতিহাসকে বুঝি।</span>
-          </h1>
-
-          <p class="hero-description">
-            মুসলিম উম্মাহর ইতিহাস, সভ্যতার উত্থান-পতন, জ্ঞানচর্চা,
-            ঐতিহাসিক ব্যক্তিত্ব ও গুরুত্বপূর্ণ ঘটনাবলিকে মূল গ্রন্থ,
-            গবেষণাভিত্তিক আলোচনা, মানচিত্র ও সময়রেখার মাধ্যমে
-            অনুসন্ধানের একটি ডিজিটাল উদ্যোগ।
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-gold" href="#volumes">
-              ইতিহাস অন্বেষণ শুরু করুন ↗
-            </a>
-            <a class="btn btn-outline" href="#method">
-              আমাদের গবেষণাপদ্ধতি
-            </a>
-          </div>
-        </div>
-
-        <div class="hero-art" aria-hidden="true">
-          <div class="archive-emblem">
-            <span class="ornament">۞</span>
-            <span class="arabic" lang="ar" dir="rtl">اقْرَأْ</span>
-            <p>KNOW THE PAST</p>
-            <p>UNDERSTAND HISTORY</p>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Project overview -->
-    <section class="quick-stats" aria-label="প্রকল্পের সংক্ষিপ্ত পরিচয়">
-      <div class="container stats-grid">
-
-        <div class="stat">
-          <strong>২০</strong>
-          <span>খণ্ডভিত্তিক মূল কাঠামো</span>
-        </div>
-
-        <div class="stat">
-          <strong>মূল সূত্র</strong>
-          <span>ঐতিহাসিক গ্রন্থ ও গবেষণা</span>
-        </div>
-
-        <div class="stat">
-          <strong>মানচিত্র</strong>
-          <span>ইতিহাসকে দৃশ্যমান করার উদ্যোগ</span>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Volumes -->
-    <section class="section volumes-section" id="volumes">
-      <div class="container">
-
-        <div class="section-heading">
-          <span class="eyebrow">Explore the archive</span>
-          <h2>বিশ খণ্ডে ইতিহাসের দীর্ঘ যাত্রা</h2>
-          <p>
-            মাওলানা ইসমাইল রেহানের
-            <em>মুসলিম উম্মাহর ইতিহাস</em> গ্রন্থমালার
-            অধ্যায়বিন্যাসকে অনুসরণ করে এই আর্কাইভ সাজানো হবে।
-            প্রতিটি খণ্ডের বিষয়বস্তু ও উপবিষয় যাচাই করে
-            ধাপে ধাপে এখানে যুক্ত করা হবে।
-          </p>
-        </div>
-
-        <div class="volume-tools">
-          <p>যে খণ্ডটি খুঁজছেন, তার নম্বর বা নাম লিখুন।</p>
-
-          <input
-            class="search-box"
-            type="search"
-            id="volumeSearch"
-            placeholder="খণ্ড খুঁজুন..."
-            aria-label="খণ্ড খুঁজুন"
-          >
-        </div>
-
-        <div class="volume-grid" id="volumeGrid">
-
-          <article class="volume-card available" data-search="প্রথম ১ 1 ইতিহাস">
-            <span class="volume-number">01</span>
-            <h3>প্রথম খণ্ড</h3>
-            <p>ইতিহাসশাস্ত্রের পরিচয়, প্রাচীন ইতিহাস এবং নবীজি ﷺ-এর জীবনের প্রাথমিক অধ্যায়সমূহ।</p>
-            <a class="volume-link" href="volume-1.html">সূচি দেখুন ও প্রবেশ করুন ↗</a>
-          </article>
-
-          <article class="volume-card" data-search="দ্বিতীয় ২ 2">
-            <span class="volume-number">02</span>
-            <h3>দ্বিতীয় খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হচ্ছে</span>
-          </article>
-
-          <article class="volume-card" data-search="তৃতীয় ৩ 3">
-            <span class="volume-number">03</span>
-            <h3>তৃতীয় খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-          <article class="volume-card" data-search="চতুর্থ ৪ 4">
-            <span class="volume-number">04</span>
-            <h3>চতুর্থ খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-          <article class="volume-card" data-search="পঞ্চম ৫ 5">
-            <span class="volume-number">05</span>
-            <h3>পঞ্চম খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-          <article class="volume-card" data-search="ষষ্ঠ ৬ 6">
-            <span class="volume-number">06</span>
-            <h3>ষষ্ঠ খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-          <article class="volume-card" data-search="সপ্তম ৭ 7">
-            <span class="volume-number">07</span>
-            <h3>সপ্তম খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-          <article class="volume-card" data-search="অষ্টম ৮ 8">
-            <span class="volume-number">08</span>
-            <h3>অষ্টম খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-          <article class="volume-card" data-search="নবম ৯ 9">
-            <span class="volume-number">09</span>
-            <h3>নবম খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-          <article class="volume-card" data-search="দশম ১০ 10">
-            <span class="volume-number">10</span>
-            <h3>দশম খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-          <article class="volume-card" data-search="একাদশ ১১ 11">
-            <span class="volume-number">11</span>
-            <h3>একাদশ খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-          <article class="volume-card" data-search="দ্বাদশ ১২ 12">
-            <span class="volume-number">12</span>
-            <h3>দ্বাদশ খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-          <article class="volume-card" data-search="ত্রয়োদশ ১৩ 13">
-            <span class="volume-number">13</span>
-            <h3>ত্রয়োদশ খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-          <article class="volume-card" data-search="চতুর্দশ ১৪ 14">
-            <span class="volume-number">14</span>
-            <h3>চতুর্দশ খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-          <article class="volume-card" data-search="পঞ্চদশ ১৫ 15">
-            <span class="volume-number">15</span>
-            <h3>পঞ্চদশ খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-          <article class="volume-card" data-search="ষোড়শ ১৬ 16">
-            <span class="volume-number">16</span>
-            <h3>ষোড়শ খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-          <article class="volume-card" data-search="সপ্তদশ ১৭ 17">
-            <span class="volume-number">17</span>
-            <h3>সপ্তদশ খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-          <article class="volume-card" data-search="অষ্টাদশ ১৮ 18">
-            <span class="volume-number">18</span>
-            <h3>অষ্টাদশ খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-          <article class="volume-card" data-search="ঊনবিংশ ১৯ 19">
-            <span class="volume-number">19</span>
-            <h3>ঊনবিংশ খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-          <article class="volume-card" data-search="বিংশ বিংশতম ২০ 20">
-            <span class="volume-number">20</span>
-            <h3>বিংশ খণ্ড</h3>
-            <p>মূল গ্রন্থের সূচি যাচাই করে বিষয়বস্তু যুক্ত করা হবে।</p>
-            <span class="coming-soon">প্রস্তুত করা হবে</span>
-          </article>
-
-        </div>
-
-        <p class="no-results" id="noResults">
-          এই নামে কোনো খণ্ড পাওয়া যায়নি। অন্যভাবে খুঁজে দেখুন।
-        </p>
-
-      </div>
-    </section>
-
-    <!-- Research method -->
-    <section class="section method-section" id="method">
-      <div class="container">
-
-        <div class="section-heading">
-          <span class="eyebrow">Our research principles</span>
-          <h2>ইতিহাস জানার পাশাপাশি, ইতিহাস যাচাই</h2>
-          <p>
-            ইতিহাস শুধু ঘটনা মুখস্থ করার বিষয় নয়। কে তথ্যটি লিখেছেন,
-            কোন সময়ে লিখেছেন, তাঁর উৎস কী এবং অন্য সূত্রে কী পাওয়া যায়—
-            এসব প্রশ্নও আমাদের অনুসন্ধানের অংশ হবে।
-          </p>
-        </div>
-
-        <div class="method-grid">
-
-          <article class="method-card">
-            <div class="method-icon" aria-hidden="true">▤</div>
-            <h3>মূল ঐতিহাসিক গ্রন্থ</h3>
-            <p>
-              তাবারি, ইবন সা‘দ, বালাযুরি, ইবনুল আসিরসহ
-              প্রাসঙ্গিক ঐতিহাসিক লেখকদের গ্রন্থ শনাক্ত করে
-              যাচাইযোগ্য সংস্করণ ও তথ্যসূত্র উল্লেখ করার চেষ্টা থাকবে।
-              কোনো নির্দিষ্ট গ্রন্থে কী আছে, তা যাচাই ছাড়া দাবি করা হবে না।
-            </p>
-          </article>
-
-          <article class="method-card">
-            <div class="method-icon" aria-hidden="true">⌕</div>
-            <h3>তুলনামূলক গবেষণা</h3>
-            <p>
-              প্রাসঙ্গিক ক্ষেত্রে একাধিক প্রাচীন সূত্র এবং আধুনিক
-              গবেষণার বক্তব্য তুলনা করা হবে। মতভেদ, অনিশ্চয়তা
-              এবং তথ্যের সীমাবদ্ধতা পাঠকের কাছ থেকে গোপন করা হবে না।
-            </p>
-          </article>
-
-          <article class="method-card">
-            <div class="method-icon" aria-hidden="true">✎</div>
-            <h3>নিজস্ব ভাষায় ব্যাখ্যা</h3>
-            <p>
-              মূল গ্রন্থের অধ্যায়বিন্যাস ও বিষয় নির্বাচনের দিকনির্দেশ
-              অনুসরণ করে বিষয়গুলো নতুনভাবে ব্যাখ্যা করা হবে।
-              দীর্ঘ অংশ হুবহু অনুলিপি না করে সূত্রসহ মৌলিক
-              সারসংক্ষেপ ও বিশ্লেষণ তৈরি করা হবে।
-            </p>
-          </article>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Maps and illustrations -->
-    <section class="section visual-section" id="visuals">
-      <div class="container">
-
-        <div class="section-heading">
-          <span class="eyebrow">History made visible</span>
-          <h2>মানচিত্র, সময়রেখা ও প্রতীকি চিত্র</h2>
-          <p>
-            সঠিক ভৌগোলিক অবস্থান ও দৃশ্যমান উপস্থাপনা ইতিহাস বোঝাকে
-            আরও সহজ করে। তাই প্রাসঙ্গিক অধ্যায়গুলোতে লেখা ছাড়াও
-            প্রয়োজনীয় ভিজ্যুয়াল উপাদান যুক্ত করা হবে।
-          </p>
-        </div>
-
-        <div class="visual-grid">
-
-          <article class="visual-card">
-            <span class="visual-symbol" aria-hidden="true">⌖</span>
-            <h3>ঐতিহাসিক মানচিত্র</h3>
-            <p>
-              হিজরত, সামরিক অভিযান, বাণিজ্যপথ, রাজ্যের সীমানা,
-              নগর ও সভ্যতার অবস্থান—যেখানে প্রয়োজন সেখানে
-              মানচিত্র এবং প্রাসঙ্গিক স্থান-চিহ্ন থাকবে।
-            </p>
-          </article>
-
-          <article class="visual-card">
-            <span class="visual-symbol" aria-hidden="true">◷</span>
-            <h3>সময়রেখা ও ঘটনাক্রম</h3>
-            <p>
-              গুরুত্বপূর্ণ ঘটনা, শাসনকাল, রাজবংশের পরিবর্তন
-              ও ঐতিহাসিক প্রেক্ষাপটকে তারিখসহ ধারাবাহিকভাবে
-              দেখানো হবে, যেখানে তারিখ নির্ভরযোগ্যভাবে জানা যায়।
-            </p>
-          </article>
-
-          <article class="visual-card">
-            <span class="visual-symbol" aria-hidden="true">◈</span>
-            <h3>ব্যক্তিত্বের প্রতীকি চিত্র</h3>
-            <p>
-              ঐতিহাসিক ব্যক্তিদের জন্য প্রয়োজনমতো প্রতীকি
-              চিত্র বা শিল্পভিত্তিক পুনর্নির্মাণ থাকবে।
-              প্রকৃত প্রতিকৃতি বলে নিশ্চিত প্রমাণ না থাকলে
-              চিত্রটিকে স্পষ্টভাবে কল্পিত বা প্রতীকি বলা হবে।
-            </p>
-          </article>
-
-        </div>
-
-        <p class="visual-note">
-          সম্পাদকীয় নীতি: মানচিত্র, ছবি ও পুনর্নির্মাণের উৎস,
-          লাইসেন্স এবং ঐতিহাসিক নির্ভরযোগ্যতা যাচাই করা হবে।
-          কোনো কল্পিত চিত্রকে প্রামাণ্য ঐতিহাসিক নিদর্শন হিসেবে
-          উপস্থাপন করা হবে না।
-        </p>
-
-      </div>
-    </section>
-
-    <!-- First volume call to action -->
-    <section class="first-volume">
-      <div class="container">
-        <div class="first-volume-box">
-
-          <div>
-            <span class="eyebrow">Begin with volume one</span>
-            <h2>প্রথম খণ্ড থেকেই শুরু হোক যাত্রা</h2>
-            <p>
-              প্রথমে ইতিহাসশাস্ত্রের পরিচয়, ইতিহাসচর্চার পদ্ধতি,
-              গুরুত্বপূর্ণ ঐতিহাসিক গ্রন্থ, প্রাচীন ইতিহাস এবং
-              নবীজি ﷺ-এর জীবনীসংক্রান্ত বিষয়গুলোকে সূচি অনুযায়ী
-              সাজানো হবে। এরপর প্রতিটি অধ্যায় আলাদাভাবে গবেষণা,
-              সূত্র, মানচিত্র ও প্রয়োজনীয় চিত্র দিয়ে সমৃদ্ধ করা হবে।
-            </p>
-          </div>
-
-          <a class="btn btn-gold" href="volume-1.html">
-            প্রথম খণ্ডের সূচি ↗
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container">
-
-      <div class="footer-grid">
-
-        <div>
-          <h2 class="footer-title">মুসলিম ইতিহাস আর্কাইভ</h2>
-          <p class="footer-description">
-            মুসলিম ইতিহাস ও সভ্যতা সম্পর্কে পাঠ, গবেষণা,
-            সূত্র অনুসন্ধান এবং জ্ঞানচর্চার জন্য একটি
-            ধারাবাহিক ডিজিটাল উদ্যোগ।
-          </p>
-        </div>
-
-        <div>
-          <h3 class="footer-title">দ্রুত প্রবেশ</h3>
-          <div class="footer-links">
-            <a href="#home">হোমপেজ</a>
-            <a href="#volumes">২০ খণ্ডের সূচি</a>
-            <a href="#method">গবেষণাপদ্ধতি</a>
-            <a href="#visuals">মানচিত্র ও চিত্র</a>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="copyright">
-        <p>Muslim History Archive · Built for learning and historical research</p>
-        <p>ইতিহাসকে জানি, সূত্রকে যাচাই করি, জ্ঞানকে সমৃদ্ধ করি।</p>
-      </div>
-
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-en="A changing world" data-bn="পরিবর্তনশীল বিশ্ব">A changing world</span>
+      <h2 data-en="History Across Time" data-bn="সময়জুড়ে ইতিহাস">History Across Time</h2>
+      <p data-en="A broad chronological orientation. Specific dates and interpretations will be documented on individual research pages." data-bn="ইতিহাসের কালানুক্রমিক পরিচিতি। নির্দিষ্ট তারিখ ও ব্যাখ্যা সংশ্লিষ্ট গবেষণা-পেজে সূত্রসহ দেওয়া হবে।">A broad chronological orientation. Specific dates and interpretations will be documented on individual research pages.</p>
     </div>
-  </footer>
 
-  <script>
-    const searchInput = document.getElementById("volumeSearch");
-    const volumeCards = document.querySelectorAll(".volume-card");
-    const noResults = document.getElementById("noResults");
+    <div class="timeline">
+      <article class="time-card">
+        <span class="date" data-en="ANCIENT WORLDS" data-bn="প্রাচীন বিশ্ব">ANCIENT WORLDS</span>
+        <h3 data-en="Early Civilizations" data-bn="প্রাচীন সভ্যতাসমূহ">Early Civilizations</h3>
+        <p data-en="Cities, writing, trade and the emergence of states." data-bn="নগর, লিখনপদ্ধতি, বাণিজ্য ও রাষ্ট্রের বিকাশ।">Cities, writing, trade and the emergence of states.</p>
+      </article>
+      <article class="time-card">
+        <span class="date" data-en="7TH CENTURY ONWARD" data-bn="সপ্তম শতাব্দী থেকে">7TH CENTURY ONWARD</span>
+        <h3 data-en="The Early Islamic World" data-bn="প্রাথমিক ইসলামী বিশ্ব">The Early Islamic World</h3>
+        <p data-en="The emergence of Islam and transformations across Arabia and beyond." data-bn="ইসলামের আবির্ভাব এবং আরব ও তার বাইরের পরিবর্তন।">The emergence of Islam and transformations across Arabia and beyond.</p>
+      </article>
+      <article class="time-card">
+        <span class="date" data-en="MEDIEVAL PERIODS" data-bn="মধ্যযুগীয় সময়কাল">MEDIEVAL PERIODS</span>
+        <h3 data-en="Connected Civilizations" data-bn="সংযুক্ত সভ্যতাসমূহ">Connected Civilizations</h3>
+        <p data-en="Scholarship, commerce, political change and cultural exchange." data-bn="জ্ঞানচর্চা, বাণিজ্য, রাজনৈতিক পরিবর্তন ও সাংস্কৃতিক বিনিময়।">Scholarship, commerce, political change and cultural exchange.</p>
+      </article>
+      <article class="time-card">
+        <span class="date" data-en="LATER CENTURIES" data-bn="পরবর্তী শতাব্দীসমূহ">LATER CENTURIES</span>
+        <h3 data-en="Empires & Transformations" data-bn="সাম্রাজ্য ও রূপান্তর">Empires & Transformations</h3>
+        <p data-en="Changing institutions, societies, borders and global connections." data-bn="পরিবর্তনশীল প্রতিষ্ঠান, সমাজ, সীমানা ও বৈশ্বিক সংযোগ।">Changing institutions, societies, borders and global connections.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-    searchInput.addEventListener("input", function () {
-      const query = this.value.trim().toLowerCase();
-      let visibleCount = 0;
+<section class="section sources-section" id="sources">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-en="Research library" data-bn="গবেষণা গ্রন্থাগার">Research library</span>
+      <h2 data-en="Read the Sources. Examine the Evidence." data-bn="সূত্র পড়ুন। প্রমাণ যাচাই করুন।">Read the Sources. Examine the Evidence.</h2>
+      <p data-en="Historical claims should be traceable. Our research pages will identify relevant sources, explain their context and distinguish evidence from interpretation." data-bn="ঐতিহাসিক দাবির উৎস অনুসরণযোগ্য হওয়া উচিত। আমাদের গবেষণা-পেজে প্রাসঙ্গিক সূত্র, তার প্রেক্ষাপট এবং প্রমাণ ও ব্যাখ্যার পার্থক্য তুলে ধরা হবে।">Historical claims should be traceable. Our research pages will identify relevant sources, explain their context and distinguish evidence from interpretation.</p>
+    </div>
 
-      volumeCards.forEach(function (card) {
-        const searchableText =
-          (card.innerText + " " + card.dataset.search).toLowerCase();
+    <div class="source-grid">
+      <article class="source-card">
+        <span class="source-icon">▤</span>
+        <h3 data-en="Historical Chronicles" data-bn="ঐতিহাসিক কালপঞ্জি ও গ্রন্থ">Historical Chronicles</h3>
+        <p data-en="Investigate authors, composition dates, editions and the historical traditions preserved in chronicles." data-bn="ঐতিহাসিক গ্রন্থের লেখক, রচনাকাল, সংস্করণ এবং সংরক্ষিত ঐতিহাসিক বর্ণনা অনুসন্ধান করুন।">Investigate authors, composition dates, editions and the historical traditions preserved in chronicles.</p>
+        <a href="history.html" data-en="Explore historical writing ↗" data-bn="ইতিহাসচর্চা দেখুন ↗">Explore historical writing ↗</a>
+      </article>
+      <article class="source-card">
+        <span class="source-icon">✧</span>
+        <h3 data-en="Biographies & Biographical Works" data-bn="জীবনী ও জীবনীগ্রন্থ">Biographies & Biographical Works</h3>
+        <p data-en="Study how scholars and notable figures were described, remembered and discussed by later writers." data-bn="মনীষী ও গুরুত্বপূর্ণ ব্যক্তিদের পরবর্তী লেখকেরা কীভাবে বর্ণনা ও মূল্যায়ন করেছেন তা জানুন।">Study how scholars and notable figures were described, remembered and discussed by later writers.</p>
+        <a href="scholars.html" data-en="Explore biographies ↗" data-bn="জীবনী দেখুন ↗">Explore biographies ↗</a>
+      </article>
+      <article class="source-card">
+        <span class="source-icon">⌕</span>
+        <h3 data-en="Research Notes & References" data-bn="গবেষণা-নোট ও তথ্যসূত্র">Research Notes & References</h3>
+        <p data-en="Bibliographies, source comparisons and clear citations for further reading and verification." data-bn="আরও পড়া ও যাচাইয়ের জন্য গ্রন্থপঞ্জি, সূত্রের তুলনা এবং স্পষ্ট উদ্ধৃতি।">Bibliographies, source comparisons and clear citations for further reading and verification.</p>
+        <a href="README.md" data-en="View project information ↗" data-bn="প্রকল্পের তথ্য দেখুন ↗">View project information ↗</a>
+      </article>
+    </div>
+  </div>
+</section>
 
-        const matches = searchableText.includes(query);
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow" data-en="How we work" data-bn="আমাদের পদ্ধতি">How we work</span>
+      <h2 data-en="Research Before Representation." data-bn="উপস্থাপনার আগে গবেষণা।">Research Before Representation.</h2>
+      <p data-en="A visual history platform must be engaging without sacrificing accuracy, transparency or respect for historical uncertainty." data-bn="দৃশ্যভিত্তিক ইতিহাস প্ল্যাটফর্মকে আকর্ষণীয় হওয়ার পাশাপাশি নির্ভুলতা, স্বচ্ছতা এবং ঐতিহাসিক অনিশ্চয়তার প্রতি শ্রদ্ধাশীল থাকতে হবে।">A visual history platform must be engaging without sacrificing accuracy, transparency or respect for historical uncertainty.</p>
+    </div>
 
-        card.style.display = matches ? "flex" : "none";
+    <div class="method-grid">
+      <article class="method-card">
+        <span class="symbol">◎</span>
+        <h3 data-en="Traceable References" data-bn="যাচাইযোগ্য তথ্যসূত্র">Traceable References</h3>
+        <p data-en="Cite the relevant work, author and edition; include volume and page when verified." data-bn="প্রাসঙ্গিক গ্রন্থ, লেখক ও সংস্করণ উল্লেখ করা হবে; যাচাই করা গেলে খণ্ড ও পৃষ্ঠাও দেওয়া হবে।">Cite the relevant work, author and edition; include volume and page when verified.</p>
+      </article>
+      <article class="method-card">
+        <span class="symbol">⌖</span>
+        <h3 data-en="Responsible Visuals" data-bn="দায়িত্বশীল ভিজ্যুয়াল">Responsible Visuals</h3>
+        <p data-en="Distinguish authentic artifacts from modern illustrations and imagined portraits. Check image licences and attribution." data-bn="প্রকৃত নিদর্শন, আধুনিক চিত্র ও কল্পিত প্রতিকৃতির পার্থক্য স্পষ্ট থাকবে। ছবির লাইসেন্স ও স্বীকৃতি যাচাই করা হবে।">Distinguish authentic artifacts from modern illustrations and imagined portraits. Check image licences and attribution.</p>
+      </article>
+      <article class="method-card">
+        <span class="symbol">⇄</span>
+        <h3 data-en="Compare Perspectives" data-bn="বিভিন্ন দৃষ্টিভঙ্গির তুলনা">Compare Perspectives</h3>
+        <p data-en="Where sources disagree, explain the disagreement rather than presenting uncertain details as settled fact." data-bn="সূত্রের মধ্যে মতভেদ থাকলে অনিশ্চিত তথ্যকে চূড়ান্ত সত্য হিসেবে না দেখিয়ে মতভেদ ব্যাখ্যা করা হবে।">Where sources disagree, explain the disagreement rather than presenting uncertain details as settled fact.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
-        if (matches) {
-          visibleCount++;
-        }
-      });
+<section class="cta">
+  <div class="container">
+    <div class="cta-box">
+      <div>
+        <span class="eyebrow" data-en="Start exploring" data-bn="অনুসন্ধান শুরু করুন">Start exploring</span>
+        <h2 data-en="Every place has a past. Every source has a story." data-bn="প্রতিটি স্থানের আছে অতীত। প্রতিটি সূত্রের আছে নিজস্ব ইতিহাস।">Every place has a past. Every source has a story.</h2>
+        <p data-en="Begin with the existing historical collections. New research dossiers, maps, bilingual pages and source guides will be added progressively." data-bn="বর্তমান ঐতিহাসিক সংগ্রহ দিয়ে শুরু করুন। পর্যায়ক্রমে নতুন গবেষণা-সংকলন, মানচিত্র, দ্বিভাষিক পেজ ও সূত্র নির্দেশিকা যুক্ত হবে।">Begin with the existing historical collections. New research dossiers, maps, bilingual pages and source guides will be added progressively.</p>
+      </div>
+      <a class="btn btn-gold" href="history.html" data-en="Begin exploring ↗" data-bn="অনুসন্ধান শুরু করুন ↗">Begin exploring ↗</a>
+    </div>
+  </div>
+</section>
+</main>
 
-      noResults.style.display = visibleCount === 0 ? "block" : "none";
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>History Atlas</h3>
+        <p data-en="An independent educational project exploring Islamic civilizations through historical research, geography and primary sources." data-bn="ঐতিহাসিক গবেষণা, ভূগোল ও প্রাথমিক সূত্রের মাধ্যমে ইসলামী সভ্যতা অনুসন্ধানের একটি স্বতন্ত্র শিক্ষামূলক উদ্যোগ।">An independent educational project exploring Islamic civilizations through historical research, geography and primary sources.</p>
+      </div>
+      <div>
+        <h3 data-en="Explore" data-bn="অন্বেষণ">Explore</h3>
+        <div class="footer-links">
+          <a href="#explore" data-en="Research Pathways" data-bn="গবেষণার বিভাগ">Research Pathways</a>
+          <a href="#eras" data-en="Historical Eras" data-bn="ঐতিহাসিক যুগ">Historical Eras</a>
+          <a href="#sources" data-en="Sources & Evidence" data-bn="সূত্র ও প্রমাণ">Sources & Evidence</a>
+          <a href="#about" data-en="Research Principles" data-bn="গবেষণার নীতি">Research Principles</a>
+        </div>
+      </div>
+    </div>
+    <div class="copyright">HISTORY ATLAS: ISLAMIC CIVILIZATIONS · EDUCATION · RESEARCH · SOURCES</div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  const langButton = document.getElementById("langToggle");
+  const navLinks = document.getElementById("navLinks");
+  const menuToggle = document.getElementById("menuToggle");
+
+  let currentLanguage = "en";
+
+  function setLanguage(language) {
+    currentLanguage = language;
+    document.documentElement.lang = language;
+
+    document.querySelectorAll("[data-en][data-bn]").forEach(function (element) {
+      element.innerHTML = element.dataset[language];
     });
-  </script>
 
+    langButton.textContent = language === "en" ? "বাংলা" : "English";
+    langButton.setAttribute(
+      "aria-label",
+      language === "en" ? "Switch to Bengali" : "Switch to English"
+    );
+
+    document.title = language === "en"
+      ? "History Atlas | Islamic Civilizations"
+      : "হিস্ট্রি অ্যাটলাস | ইসলামী সভ্যতা";
+
+    document.querySelector('meta[name="description"]').content =
+      language === "en"
+        ? "Explore Islamic civilizations through historical maps, timelines, biographies, primary sources and original research."
+        : "ঐতিহাসিক মানচিত্র, সময়রেখা, জীবনী, প্রাথমিক সূত্র ও গবেষণার মাধ্যমে ইসলামী সভ্যতা অনুসন্ধান করুন।";
+
+    try {
+      localStorage.setItem("historyAtlasLanguage", language);
+    } catch (error) {
+      // The page still works if browser storage is unavailable.
+    }
+  }
+
+  langButton.addEventListener("click", function () {
+    setLanguage(currentLanguage === "en" ? "bn" : "en");
+  });
+
+  menuToggle.addEventListener("click", function () {
+    navLinks.classList.toggle("open");
+    menuToggle.setAttribute(
+      "aria-expanded",
+      navLinks.classList.contains("open") ? "true" : "false"
+    );
+  });
+
+  navLinks.querySelectorAll("a").forEach(function (link) {
+    link.addEventListener("click", function () {
+      navLinks.classList.remove("open");
+    });
+  });
+
+  try {
+    const savedLanguage = localStorage.getItem("historyAtlasLanguage");
+    if (savedLanguage === "bn") setLanguage("bn");
+  } catch (error) {
+    // English remains the default.
+  }
+})();
+</script>
 </body>
 </html>
