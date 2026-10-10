@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore research themes and questions in Islamic civilization, intellectual history, philosophy, science, society and historical methodology.">
+  <meta name="theme-color" content="#102d25">
+  <title>Research Themes | History Atlas</title>
+
+  <style>
+    :root {
+      --green: #102d25;
+      --green-light: #1b4638;
+      --gold: #d5b16b;
+      --cream: #f7f3e9;
+      --paper: #fffdf7;
+      --ink: #20352d;
+      --muted: #66756d;
+      --line: #e4dfd1;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Georgia, "Noto Serif Bengali", "Nirmala UI", serif;
+      line-height: 1.8;
+    }
+
+    a { color: inherit; }
+
+    .container {
+      width: min(1080px, 91%);
+      margin: auto;
+    }
+
+    header {
+      background: var(--green);
+      color: white;
+      border-bottom: 3px solid var(--gold);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      padding: 17px 0;
+    }
+
+    .brand {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+
+    .brand small {
+      display: block;
+      color: var(--gold);
+      letter-spacing: 1.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a { color: white; text-decoration: none; }
+
+    button {
+      border: 1px solid var(--gold);
+      border-radius: 5px;
+      background: var(--gold);
+      color: var(--green);
+      padding: 8px 13px;
+      font: inherit;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, var(--green), var(--green-light));
+      color: white;
+      padding: 64px 0;
+    }
+
+    .eyebrow {
+      color: #b9934c;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: .82rem;
+    }
+
+    .hero .eyebrow { color: var(--gold); }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 3.7rem);
+      line-height: 1.2;
+      max-width: 800px;
+      margin: 12px 0;
+    }
+
+    .hero p { max-width: 760px; color: #e3e9e3; }
+
+    section { padding: 48px 0; }
+
+    h2 {
+      color: var(--green);
+      line-height: 1.35;
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+    }
+
+    .section-intro {
+      max-width: 800px;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 25px;
+    }
+
+    .card {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      padding: 23px;
+    }
+
+    .card h3 {
+      color: var(--green);
+      margin-top: 5px;
+      line-height: 1.5;
+    }
+
+    .card p { color: var(--muted); }
+
+    .tag {
+      color: #8c6a2c;
+      font-size: .78rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .questions {
+      padding-left: 22px;
+    }
+
+    .questions li { margin-bottom: 10px; }
+
+    .method {
+      background: #eee8d9;
+      border-block: 1px solid var(--line);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .step {
+      background: var(--paper);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .step strong {
+      display: block;
+      color: var(--green);
+      margin-bottom: 5px;
+    }
+
+    .resource-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .resource-links a {
+      background: var(--green);
+      color: white;
+      border-radius: 5px;
+      padding: 10px 15px;
+      text-decoration: none;
+    }
+
+    .notice {
+      background: #fffaf0;
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--gold);
+      border-radius: 6px;
+      padding: 18px;
+      color: #526056;
+      margin-top: 24px;
+    }
+
+    footer {
+      background: var(--green);
+      color: #e6ece6;
+      padding: 26px 0;
+    }
+
+    footer a { color: var(--gold); }
+
+    [hidden] { display: none !important; }
+
+    @media (max-width: 680px) {
+      .grid, .steps { grid-template-columns: 1fr; }
+      .hero { padding: 48px 0; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        HISTORY ATLAS
+        <small>ISLAMIC CIVILIZATIONS</small>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html" data-en="Home" data-bn="মূল পৃষ্ঠা">Home</a>
+        <a href="timeline.html" data-en="Timeline" data-bn="টাইমলাইন">Timeline</a>
+        <a href="#themes" data-en="Research Themes" data-bn="গবেষণার বিষয়">Research Themes</a>
+        <button id="language-toggle" type="button">বাংলা</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="eyebrow"
+             data-en="Research Pathway 05"
+             data-bn="গবেষণার পথ ০৫">Research Pathway 05</div>
+
+        <h1 data-en="Themes & Research Questions"
+            data-bn="বিষয়ভিত্তিক গবেষণা ও প্রশ্ন">
+          Themes & Research Questions
+        </h1>
+
+        <p data-en="History is not only a record of what happened. It is also an investigation into why events happened, how people understood their world, and what the surviving evidence can actually tell us."
+           data-bn="ইতিহাস শুধু কী ঘটেছিল তার বিবরণ নয়। কেন ঘটনা ঘটেছিল, মানুষ নিজেদের পৃথিবীকে কীভাবে বুঝত এবং টিকে থাকা প্রমাণ আসলে আমাদের কী জানাতে পারে—এসব অনুসন্ধানও ইতিহাসের অংশ।">
+          History is not only a record of what happened. It is also an investigation into why events happened, how people understood their world, and what the surviving evidence can actually tell us.
+        </p>
+      </div>
+    </section>
+
+    <section id="themes">
+      <div class="container">
+        <div class="eyebrow"
+             data-en="Explore by theme"
+             data-bn="বিষয় ধরে অন্বেষণ">
+          Explore by theme
+        </div>
+
+        <h2 data-en="Six fields of historical inquiry"
+            data-bn="ঐতিহাসিক অনুসন্ধানের ছয়টি ক্ষেত্র">
+          Six fields of historical inquiry
+        </h2>
+
+        <p class="section-intro"
+           data-en="These are starting points for future research, not claims that every question has already been answered. Each topic can become a separate, referenced research article."
+           data-bn="এগুলো ভবিষ্যৎ গবেষণার সূচনাবিন্দু; প্রতিটি প্রশ্নের উত্তর ইতিমধ্যে পাওয়া গেছে—এমন দাবি নয়। প্রতিটি বিষয় সূত্রসহ আলাদা গবেষণাপ্রবন্ধে রূপ নিতে পারে।">
+          These are starting points for future research, not claims that every question has already been answered. Each topic can become a separate, referenced research article.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <div class="tag">THEME 01</div>
+            <h3 data-en="Knowledge, Education & Libraries"
+                data-bn="জ্ঞান, শিক্ষা ও গ্রন্থাগার">Knowledge, Education & Libraries</h3>
+            <p data-en="Investigate how knowledge was taught, preserved, translated and circulated across different periods."
+               data-bn="বিভিন্ন যুগে জ্ঞান কীভাবে শেখানো, সংরক্ষণ, অনুবাদ ও প্রচার করা হতো তা অনুসন্ধান করো।">
+              Investigate how knowledge was taught, preserved, translated and circulated across different periods.
+            </p>
+            <strong data-en="Questions to investigate"
+                    data-bn="অনুসন্ধানের প্রশ্ন">Questions to investigate</strong>
+            <ul class="questions">
+              <li data-en="What roles did libraries and book markets play?"
+                  data-bn="গ্রন্থাগার ও বইয়ের বাজার কী ভূমিকা পালন করত?">What roles did libraries and book markets play?</li>
+              <li data-en="How did scholars access and transmit texts?"
+                  data-bn="পণ্ডিতেরা কীভাবে গ্রন্থ সংগ্রহ ও প্রচার করতেন?">How did scholars access and transmit texts?</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="tag">THEME 02</div>
+            <h3 data-en="Philosophy, Theology & Intellectual Debate"
+                data-bn="দর্শন, কালাম ও বুদ্ধিবৃত্তিক বিতর্ক">
+              Philosophy, Theology & Intellectual Debate
+            </h3>
+            <p data-en="Explore debates about reason, revelation, ethics, knowledge and the nature of reality."
+               data-bn="যুক্তি, ওহি, নৈতিকতা, জ্ঞান ও বাস্তবতার প্রকৃতি নিয়ে বিতর্ক অন্বেষণ করো।">
+              Explore debates about reason, revelation, ethics, knowledge and the nature of reality.
+            </p>
+            <strong data-en="Questions to investigate"
+                    data-bn="অনুসন্ধানের প্রশ্ন">Questions to investigate</strong>
+            <ul class="questions">
+              <li data-en="How did different thinkers define the role of reason?"
+                  data-bn="বিভিন্ন চিন্তাবিদ যুক্তির ভূমিকা কীভাবে ব্যাখ্যা করেছেন?">How did different thinkers define the role of reason?</li>
+              <li data-en="How did intellectual disagreements change over time?"
+                  data-bn="সময় বদলের সঙ্গে বুদ্ধিবৃত্তিক মতভেদ কীভাবে বদলেছে?">How did intellectual disagreements change over time?</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="tag">THEME 03</div>
+            <h3 data-en="Science, Medicine & Mathematics"
+                data-bn="বিজ্ঞান, চিকিৎসা ও গণিত">Science, Medicine & Mathematics</h3>
+            <p data-en="Study scientific practices, instruments, medical texts, mathematical methods and the movement of ideas."
+               data-bn="বৈজ্ঞানিক চর্চা, যন্ত্র, চিকিৎসাগ্রন্থ, গাণিতিক পদ্ধতি এবং ধারণার বিস্তার অধ্যয়ন করো।">
+              Study scientific practices, instruments, medical texts, mathematical methods and the movement of ideas.
+            </p>
+            <strong data-en="Questions to investigate"
+                    data-bn="অনুসন্ধানের প্রশ্ন">Questions to investigate</strong>
+            <ul class="questions">
+              <li data-en="What methods did historical scientists use to test ideas?"
+                  data-bn="ঐতিহাসিক বিজ্ঞানীরা ধারণা যাচাই করতে কী পদ্ধতি ব্যবহার করতেন?">What methods did historical scientists use to test ideas?</li>
+              <li data-en="How did texts and techniques travel between regions?"
+                  data-bn="গ্রন্থ ও কৌশল কীভাবে এক অঞ্চল থেকে অন্য অঞ্চলে ছড়িয়েছে?">How did texts and techniques travel between regions?</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="tag">THEME 04</div>
+            <h3 data-en="Trade, Cities & Economic Life"
+                data-bn="বাণিজ্য, নগর ও অর্থনৈতিক জীবন">Trade, Cities & Economic Life</h3>
+            <p data-en="Explore markets, maritime routes, taxation, crafts, urban institutions and regional connections."
+               data-bn="বাজার, সামুদ্রিক পথ, করব্যবস্থা, কারুশিল্প, নগর প্রতিষ্ঠান ও আঞ্চলিক যোগাযোগ অনুসন্ধান করো।">
+              Explore markets, maritime routes, taxation, crafts, urban institutions and regional connections.
+            </p>
+            <strong data-en="Questions to investigate"
+                    data-bn="অনুসন্ধানের প্রশ্ন">Questions to investigate</strong>
+            <ul class="questions">
+              <li data-en="How did trade connect distant communities?"
+                  data-bn="বাণিজ্য দূরবর্তী জনগোষ্ঠীগুলোকে কীভাবে যুক্ত করেছিল?">How did trade connect distant communities?</li>
+              <li data-en="What evidence reveals everyday economic life?"
+                  data-bn="দৈনন্দিন অর্থনৈতিক জীবনের কী প্রমাণ পাওয়া যায়?">What evidence reveals everyday economic life?</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="tag">THEME 05</div>
+            <h3 data-en="Society, Family & Everyday Life"
+                data-bn="সমাজ, পরিবার ও দৈনন্দিন জীবন">Society, Family & Everyday Life</h3>
+            <p data-en="Examine social groups, family structures, work, urban life and the experiences of ordinary people."
+               data-bn="সামাজিক গোষ্ঠী, পারিবারিক কাঠামো, কাজ, নগরজীবন ও সাধারণ মানুষের অভিজ্ঞতা পরীক্ষা করো।">
+              Examine social groups, family structures, work, urban life and the experiences of ordinary people.
+            </p>
+            <strong data-en="Questions to investigate"
+                    data-bn="অনুসন্ধানের প্রশ্ন">Questions to investigate</strong>
+            <ul class="questions">
+              <li data-en="Whose experiences are preserved in historical sources?"
+                  data-bn="ঐতিহাসিক সূত্রে কার অভিজ্ঞতা সংরক্ষিত হয়েছে?">Whose experiences are preserved in historical sources?</li>
+              <li data-en="What can legal documents tell us about social life?"
+                  data-bn="আইনি দলিল থেকে সামাজিক জীবন সম্পর্কে কী জানা যায়?">What can legal documents tell us about social life?</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="tag">THEME 06</div>
+            <h3 data-en="Environment, Geography & Travel"
+                data-bn="পরিবেশ, ভূগোল ও ভ্রমণ">Environment, Geography & Travel</h3>
+            <p data-en="Study climate, water, landscapes, travel writing, pilgrimage routes and geographical knowledge."
+               data-bn="জলবায়ু, পানি, ভূপ্রকৃতি, ভ্রমণবৃত্তান্ত, তীর্থযাত্রার পথ ও ভৌগোলিক জ্ঞান অধ্যয়ন করো।">
+              Study climate, water, landscapes, travel writing, pilgrimage routes and geographical knowledge.
+            </p>
+            <strong data-en="Questions to investigate"
+                    data-bn="অনুসন্ধানের প্রশ্ন">Questions to investigate</strong>
+            <ul class="questions">
+              <li data-en="How did geography shape settlement and travel?"
+                  data-bn="ভূগোল বসতি ও ভ্রমণকে কীভাবে প্রভাবিত করেছিল?">How did geography shape settlement and travel?</li>
+              <li data-en="How reliable are historical travel accounts?"
+                  data-bn="ঐতিহাসিক ভ্রমণবৃত্তান্ত কতটা নির্ভরযোগ্য?">How reliable are historical travel accounts?</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="notice">
+          <strong data-en="Research principle: "
+                  data-bn="গবেষণার নীতি: ">Research principle: </strong>
+          <span data-en="A question is not a conclusion. Test historical interpretations against sources, consider alternative explanations and clearly distinguish evidence from speculation."
+                data-bn="গবেষণার প্রশ্ন নিজেই কোনো সিদ্ধান্ত নয়। সূত্রের সাহায্যে ঐতিহাসিক ব্যাখ্যা যাচাই করো, বিকল্প ব্যাখ্যা বিবেচনা করো এবং প্রমাণ ও অনুমানের পার্থক্য স্পষ্ট রাখো।">
+            A question is not a conclusion. Test historical interpretations against sources, consider alternative explanations and clearly distinguish evidence from speculation.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="method">
+      <div class="container">
+        <h2 data-en="A practical research workflow"
+            data-bn="গবেষণার একটি ব্যবহারিক পদ্ধতি">A practical research workflow</h2>
+
+        <div class="steps">
+          <div class="step">
+            <strong data-en="01. Define the question"
+                    data-bn="০১. প্রশ্ন নির্ধারণ">01. Define the question</strong>
+            <span data-en="Narrow the topic by period, place, person or historical problem."
+                  data-bn="সময়কাল, স্থান, ব্যক্তিত্ব বা ঐতিহাসিক সমস্যার ভিত্তিতে বিষয়টি নির্দিষ্ট করো।">
+              Narrow the topic by period, place, person or historical problem.
+            </span>
+          </div>
+
+          <div class="step">
+            <strong data-en="02. Locate the evidence"
+                    data-bn="০২. প্রমাণ খুঁজে বের করো">02. Locate the evidence</strong>
+            <span data-en="Find primary sources and reliable modern scholarship. Record full references."
+                  data-bn="প্রাথমিক সূত্র ও নির্ভরযোগ্য আধুনিক গবেষণা খুঁজে পূর্ণ তথ্যসূত্র লিখে রাখো।">
+              Find primary sources and reliable modern scholarship. Record full references.
+            </span>
+          </div>
+
+          <div class="step">
+            <strong data-en="03. Compare and explain"
+                    data-bn="০৩. তুলনা ও ব্যাখ্যা">03. Compare and explain</strong>
+            <span data-en="Compare accounts, assess limitations and support conclusions with evidence."
+                  data-bn="বিভিন্ন বিবরণ তুলনা করো, সীমাবদ্ধতা যাচাই করো এবং প্রমাণ দিয়ে সিদ্ধান্ত সমর্থন করো।">
+              Compare accounts, assess limitations and support conclusions with evidence.
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <h2 data-en="Continue exploring History Atlas"
+            data-bn="History Atlas-এ অন্বেষণ চালিয়ে যাও">Continue exploring History Atlas</h2>
+
+        <p data-en="Connect research themes with the historical timeline, biographies and civilizations already available on the website."
+           data-bn="গবেষণার বিষয়গুলোর সঙ্গে ওয়েবসাইটে থাকা ঐতিহাসিক টাইমলাইন, জীবনী ও সভ্যতার পৃষ্ঠাগুলোর সংযোগ তৈরি করো।">
+          Connect research themes with the historical timeline, biographies and civilizations already available on the website.
+        </p>
+
+        <div class="resource-links">
+          <a href="index.html" data-en="Home page" data-bn="মূল পৃষ্ঠা">Home page</a>
+          <a href="timeline.html" data-en="Historical timeline" data-bn="ঐতিহাসিক টাইমলাইন">Historical timeline</a>
+          <a href="civilizations.html" data-en="Civilizations" data-bn="সভ্যতা">Civilizations</a>
+          <a href="scholars.html" data-en="Scholars" data-bn="মনিষী">Scholars</a>
+          <a href="history.html" data-en="Historical events" data-bn="ঐতিহাসিক ঘটনা">Historical events</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <strong>History Atlas: Islamic Civilizations</strong>
+      <div data-en="A growing educational and research project."
+           data-bn="একটি ক্রমবর্ধমান শিক্ষামূলক ও গবেষণা প্রকল্প।">
+        A growing educational and research project.
+      </div>
+      <a href="index.html" data-en="Return to home" data-bn="মূল পৃষ্ঠায় ফিরে যাও">Return to home</a>
+    </div>
+  </footer>
+
+  <script>
+    const languageButton = document.getElementById("language-toggle");
+    const translatable = document.querySelectorAll("[data-en][data-bn]");
+
+    function setLanguage(language) {
+      document.documentElement.lang = language;
+
+      translatable.forEach(function (element) {
+        element.textContent = element.getAttribute("data-" + language);
+      });
+
+      languageButton.textContent = language === "en" ? "বাংলা" : "English";
+
+      try {
+        localStorage.setItem("historyAtlasLanguage", language);
+      } catch (error) {
+        // Language switching still works without local storage.
+      }
+    }
+
+    languageButton.addEventListener("click", function () {
+      const current = document.documentElement.lang || "en";
+      setLanguage(current === "en" ? "bn" : "en");
+    });
+
+    let savedLanguage = "en";
+
+    try {
+      savedLanguage = localStorage.getItem("historyAtlasLanguage") || "en";
+    } catch (error) {
+      savedLanguage = "en";
+    }
+
+    setLanguage(savedLanguage === "bn" ? "bn" : "en");
+  </script>
+</body>
+</html>
