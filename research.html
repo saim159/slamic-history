@@ -2,509 +2,574 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Explore research themes and questions in Islamic civilization, intellectual history, philosophy, science, society and historical methodology.">
-  <meta name="theme-color" content="#102d25">
-  <title>Research Themes | History Atlas</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#102d25">
+<meta name="description" content="Explore research themes, historical geography, intellectual networks and primary sources of Islamic civilizations.">
+<title>Research Atlas | History Atlas: Islamic Civilizations</title>
 
-  <style>
-    :root {
-      --green: #102d25;
-      --green-light: #1b4638;
-      --gold: #d5b16b;
-      --cream: #f7f3e9;
-      --paper: #fffdf7;
-      --ink: #20352d;
-      --muted: #66756d;
-      --line: #e4dfd1;
-    }
+<style>
+:root {
+  --green: #102d25;
+  --green2: #1b4538;
+  --gold: #d5b16b;
+  --cream: #f7f3e9;
+  --paper: #fffdf7;
+  --ink: #25332d;
+  --muted: #6d786f;
+  --line: #e5dfd0;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.7;
+}
+a { color: inherit; }
+button { font: inherit; cursor: pointer; }
+.wrap { width: min(1160px, 91%); margin: auto; }
 
-    * { box-sizing: border-box; }
+header {
+  background: var(--green);
+  color: white;
+  border-bottom: 3px solid var(--gold);
+}
+.nav {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  padding: 14px 0;
+}
+.brand {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: .3px;
+}
+.brand span { color: var(--gold); }
+.nav-right { display: flex; gap: 17px; align-items: center; flex-wrap: wrap; }
+.nav a:not(.brand) { text-decoration: none; font-size: .94rem; }
+.nav a:hover { color: var(--gold); }
+.lang {
+  border: 1px solid var(--gold);
+  color: white;
+  background: transparent;
+  padding: 7px 12px;
+  border-radius: 4px;
+}
+.lang:hover { background: var(--gold); color: var(--green); }
 
-    html { scroll-behavior: smooth; }
+.hero {
+  color: white;
+  background:
+    radial-gradient(ellipse at 85% 10%, #315c49 0, transparent 42%),
+    linear-gradient(125deg, #102d25, #173e31);
+  padding: 72px 0 66px;
+  position: relative;
+  overflow: hidden;
+}
+.hero:after {
+  content: "✦  ✧  ✦";
+  position: absolute;
+  right: 5%;
+  bottom: 0;
+  color: #d5b16b22;
+  font-size: clamp(4rem, 13vw, 10rem);
+  letter-spacing: 12px;
+  pointer-events: none;
+}
+.eyebrow {
+  color: var(--gold);
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-size: .77rem;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+}
+h1, h2, h3, p { margin-top: 0; }
+h1 {
+  max-width: 780px;
+  font-size: clamp(2.3rem, 5.4vw, 4.5rem);
+  line-height: 1.08;
+  margin: 15px 0 20px;
+  font-weight: 500;
+}
+.hero p { max-width: 720px; color: #e2e9df; font-size: 1.08rem; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn {
+  display: inline-block;
+  padding: 11px 18px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: Arial, sans-serif;
+  font-size: .9rem;
+  font-weight: bold;
+}
+.btn-gold { background: var(--gold); color: var(--green); }
+.btn-outline { border: 1px solid #ffffff70; color: white; }
+.btn:hover { transform: translateY(-2px); }
 
-    body {
-      margin: 0;
-      background: var(--cream);
-      color: var(--ink);
-      font-family: Georgia, "Noto Serif Bengali", "Nirmala UI", serif;
-      line-height: 1.8;
-    }
+section { padding: 66px 0; }
+.section-head { max-width: 760px; margin-bottom: 28px; }
+.section-head h2 { font-size: clamp(1.8rem, 3.3vw, 2.7rem); line-height: 1.2; margin-bottom: 12px; }
+.section-head p { color: var(--muted); }
+.kicker {
+  color: #99743a;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font: bold .76rem Arial, sans-serif;
+}
+.panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 26px #172e2010;
+}
+.map-panel { padding: 20px; }
+.map-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+.map-top h3 { margin: 0; font-size: 1.2rem; }
+.map-tag {
+  font: .74rem Arial, sans-serif;
+  background: #e9eee6;
+  color: var(--green2);
+  border-radius: 30px;
+  padding: 5px 9px;
+}
+.map-scroll { overflow-x: auto; }
+.map-scroll svg { width: 100%; min-width: 580px; display: block; }
+.map-note { color: var(--muted); font: .84rem/1.6 Arial, sans-serif; margin: 12px 0 0; }
+.map-legend { display: flex; gap: 18px; flex-wrap: wrap; font: .82rem Arial, sans-serif; margin-top: 12px; }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; background: #a77d37; margin-right: 6px; }
+.dash { display: inline-block; width: 18px; border-top: 2px dashed #a77d37; margin-right: 6px; vertical-align: middle; }
 
-    a { color: inherit; }
+.theme-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.theme-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform .2s, box-shadow .2s;
+}
+.theme-card:hover { transform: translateY(-4px); box-shadow: 0 12px 28px #172e2017; }
+.theme-card img {
+  width: 100%;
+  height: 205px;
+  object-fit: cover;
+  display: block;
+  background: #d9dfd4;
+}
+.card-body { padding: 20px; }
+.card-no {
+  color: #a27b3c;
+  font: bold .76rem Arial, sans-serif;
+  letter-spacing: 1.5px;
+}
+.card-body h3 { font-size: 1.28rem; margin: 7px 0 9px; line-height: 1.3; }
+.card-body p { font-size: .95rem; color: var(--muted); margin-bottom: 13px; }
+.question {
+  background: #f0ebde;
+  padding: 12px;
+  border-left: 3px solid var(--gold);
+  font-size: .88rem;
+  margin: 12px 0 0;
+}
+.text-link {
+  color: #255744;
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 1px solid #bda36d;
+}
+.text-link:hover { color: #a27630; }
 
-    .container {
-      width: min(1080px, 91%);
-      margin: auto;
-    }
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+}
+.time-item {
+  padding: 19px;
+  background: var(--paper);
+  border-top: 3px solid var(--gold);
+  border-radius: 5px;
+}
+.time-item .date {
+  color: #987136;
+  font: bold .8rem Arial, sans-serif;
+  letter-spacing: .5px;
+}
+.time-item h3 { font-size: 1.05rem; margin: 8px 0; }
+.time-item p { color: var(--muted); font-size: .9rem; margin: 0; }
 
-    header {
-      background: var(--green);
-      color: white;
-      border-bottom: 3px solid var(--gold);
-    }
+.method-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.method-card { padding: 25px; }
+.method-card h3 { font-size: 1.3rem; }
+.method-card ul { padding-left: 20px; margin-bottom: 0; }
+.method-card li { margin: 8px 0; }
+.source-list { display: grid; gap: 10px; }
+.source-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 10px;
+}
+.source-row:last-child { border: 0; padding-bottom: 0; }
+.source-icon {
+  width: 34px; height: 34px; flex: 0 0 34px;
+  display: grid; place-items: center;
+  background: #e8eddf; border-radius: 7px;
+}
+footer { background: var(--green); color: #e6e9df; padding: 34px 0; }
+.footer-row { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+footer p { margin: 4px 0; font-size: .88rem; }
+footer a { color: var(--gold); text-decoration: none; }
 
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 16px;
-      flex-wrap: wrap;
-      padding: 17px 0;
-    }
-
-    .brand {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      line-height: 1.4;
-    }
-
-    .brand small {
-      display: block;
-      color: var(--gold);
-      letter-spacing: 1.5px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a { color: white; text-decoration: none; }
-
-    button {
-      border: 1px solid var(--gold);
-      border-radius: 5px;
-      background: var(--gold);
-      color: var(--green);
-      padding: 8px 13px;
-      font: inherit;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .hero {
-      background: linear-gradient(135deg, var(--green), var(--green-light));
-      color: white;
-      padding: 64px 0;
-    }
-
-    .eyebrow {
-      color: #b9934c;
-      font-weight: bold;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      font-size: .82rem;
-    }
-
-    .hero .eyebrow { color: var(--gold); }
-
-    h1 {
-      font-size: clamp(2.2rem, 5vw, 3.7rem);
-      line-height: 1.2;
-      max-width: 800px;
-      margin: 12px 0;
-    }
-
-    .hero p { max-width: 760px; color: #e3e9e3; }
-
-    section { padding: 48px 0; }
-
-    h2 {
-      color: var(--green);
-      line-height: 1.35;
-      font-size: clamp(1.6rem, 4vw, 2.3rem);
-    }
-
-    .section-intro {
-      max-width: 800px;
-      color: var(--muted);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 25px;
-    }
-
-    .card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 9px;
-      padding: 23px;
-    }
-
-    .card h3 {
-      color: var(--green);
-      margin-top: 5px;
-      line-height: 1.5;
-    }
-
-    .card p { color: var(--muted); }
-
-    .tag {
-      color: #8c6a2c;
-      font-size: .78rem;
-      font-weight: bold;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .questions {
-      padding-left: 22px;
-    }
-
-    .questions li { margin-bottom: 10px; }
-
-    .method {
-      background: #eee8d9;
-      border-block: 1px solid var(--line);
-    }
-
-    .steps {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 15px;
-    }
-
-    .step {
-      background: var(--paper);
-      border-radius: 8px;
-      padding: 18px;
-    }
-
-    .step strong {
-      display: block;
-      color: var(--green);
-      margin-bottom: 5px;
-    }
-
-    .resource-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .resource-links a {
-      background: var(--green);
-      color: white;
-      border-radius: 5px;
-      padding: 10px 15px;
-      text-decoration: none;
-    }
-
-    .notice {
-      background: #fffaf0;
-      border: 1px solid var(--line);
-      border-left: 4px solid var(--gold);
-      border-radius: 6px;
-      padding: 18px;
-      color: #526056;
-      margin-top: 24px;
-    }
-
-    footer {
-      background: var(--green);
-      color: #e6ece6;
-      padding: 26px 0;
-    }
-
-    footer a { color: var(--gold); }
-
-    [hidden] { display: none !important; }
-
-    @media (max-width: 680px) {
-      .grid, .steps { grid-template-columns: 1fr; }
-      .hero { padding: 48px 0; }
-    }
-  </style>
+@media (max-width: 850px) {
+  .theme-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .timeline { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px) {
+  .hero { padding: 52px 0; }
+  section { padding: 48px 0; }
+  .theme-grid, .timeline, .method-grid { grid-template-columns: 1fr; }
+  .nav { align-items: flex-start; }
+  .nav-right { gap: 12px; }
+  .theme-card img { height: 220px; }
+}
+</style>
 </head>
 
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="index.html">
-        HISTORY ATLAS
-        <small>ISLAMIC CIVILIZATIONS</small>
-      </a>
-
-      <nav class="nav-links" aria-label="Main navigation">
-        <a href="index.html" data-en="Home" data-bn="মূল পৃষ্ঠা">Home</a>
-        <a href="timeline.html" data-en="Timeline" data-bn="টাইমলাইন">Timeline</a>
-        <a href="#themes" data-en="Research Themes" data-bn="গবেষণার বিষয়">Research Themes</a>
-        <button id="language-toggle" type="button">বাংলা</button>
-      </nav>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">History Atlas<span>.</span></a>
+    <div class="nav-right">
+      <a href="index.html" data-en="Home" data-bn="হোম">Home</a>
+      <a href="timeline.html" data-en="Timeline" data-bn="সময়রেখা">Timeline</a>
+      <a href="civilizations.html" data-en="Civilizations" data-bn="সভ্যতা">Civilizations</a>
+      <a href="scholars.html" data-en="Scholars" data-bn="পণ্ডিতগণ">Scholars</a>
+      <button class="lang" id="languageBtn" type="button" aria-label="Change language">বাংলা</button>
     </div>
-  </header>
+  </div>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="container">
-        <div class="eyebrow"
-             data-en="Research Pathway 05"
-             data-bn="গবেষণার পথ ০৫">Research Pathway 05</div>
-
-        <h1 data-en="Themes & Research Questions"
-            data-bn="বিষয়ভিত্তিক গবেষণা ও প্রশ্ন">
-          Themes & Research Questions
-        </h1>
-
-        <p data-en="History is not only a record of what happened. It is also an investigation into why events happened, how people understood their world, and what the surviving evidence can actually tell us."
-           data-bn="ইতিহাস শুধু কী ঘটেছিল তার বিবরণ নয়। কেন ঘটনা ঘটেছিল, মানুষ নিজেদের পৃথিবীকে কীভাবে বুঝত এবং টিকে থাকা প্রমাণ আসলে আমাদের কী জানাতে পারে—এসব অনুসন্ধানও ইতিহাসের অংশ।">
-          History is not only a record of what happened. It is also an investigation into why events happened, how people understood their world, and what the surviving evidence can actually tell us.
-        </p>
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow" data-en="Explore · Question · Discover" data-bn="অনুসন্ধান · প্রশ্ন · আবিষ্কার">Explore · Question · Discover</div>
+      <h1 data-en="Research the connected worlds of Islamic history." data-bn="ইসলামি ইতিহাসের সংযুক্ত জগৎকে গবেষণার আলোয় জানো।">Research the connected worlds of Islamic history.</h1>
+      <p data-en="Go beyond names and dates. Explore ideas, cities, manuscripts, trade routes and the historical evidence that helps us understand the past." data-bn="নাম ও তারিখের গণ্ডি পেরিয়ে ধারণা, নগর, পাণ্ডুলিপি, বাণিজ্যপথ এবং অতীতকে বুঝতে সাহায্যকারী ঐতিহাসিক প্রমাণ অনুসন্ধান করো।">Go beyond names and dates. Explore ideas, cities, manuscripts, trade routes and the historical evidence that helps us understand the past.</p>
+      <div class="hero-actions">
+        <a class="btn btn-gold" href="#themes" data-en="Explore research themes ↓" data-bn="গবেষণার বিষয় দেখো ↓">Explore research themes ↓</a>
+        <a class="btn btn-outline" href="#map" data-en="Explore the map" data-bn="মানচিত্র দেখো">Explore the map</a>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="themes">
-      <div class="container">
-        <div class="eyebrow"
-             data-en="Explore by theme"
-             data-bn="বিষয় ধরে অন্বেষণ">
-          Explore by theme
-        </div>
-
-        <h2 data-en="Six fields of historical inquiry"
-            data-bn="ঐতিহাসিক অনুসন্ধানের ছয়টি ক্ষেত্র">
-          Six fields of historical inquiry
-        </h2>
-
-        <p class="section-intro"
-           data-en="These are starting points for future research, not claims that every question has already been answered. Each topic can become a separate, referenced research article."
-           data-bn="এগুলো ভবিষ্যৎ গবেষণার সূচনাবিন্দু; প্রতিটি প্রশ্নের উত্তর ইতিমধ্যে পাওয়া গেছে—এমন দাবি নয়। প্রতিটি বিষয় সূত্রসহ আলাদা গবেষণাপ্রবন্ধে রূপ নিতে পারে।">
-          These are starting points for future research, not claims that every question has already been answered. Each topic can become a separate, referenced research article.
-        </p>
-
-        <div class="grid">
-          <article class="card">
-            <div class="tag">THEME 01</div>
-            <h3 data-en="Knowledge, Education & Libraries"
-                data-bn="জ্ঞান, শিক্ষা ও গ্রন্থাগার">Knowledge, Education & Libraries</h3>
-            <p data-en="Investigate how knowledge was taught, preserved, translated and circulated across different periods."
-               data-bn="বিভিন্ন যুগে জ্ঞান কীভাবে শেখানো, সংরক্ষণ, অনুবাদ ও প্রচার করা হতো তা অনুসন্ধান করো।">
-              Investigate how knowledge was taught, preserved, translated and circulated across different periods.
-            </p>
-            <strong data-en="Questions to investigate"
-                    data-bn="অনুসন্ধানের প্রশ্ন">Questions to investigate</strong>
-            <ul class="questions">
-              <li data-en="What roles did libraries and book markets play?"
-                  data-bn="গ্রন্থাগার ও বইয়ের বাজার কী ভূমিকা পালন করত?">What roles did libraries and book markets play?</li>
-              <li data-en="How did scholars access and transmit texts?"
-                  data-bn="পণ্ডিতেরা কীভাবে গ্রন্থ সংগ্রহ ও প্রচার করতেন?">How did scholars access and transmit texts?</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <div class="tag">THEME 02</div>
-            <h3 data-en="Philosophy, Theology & Intellectual Debate"
-                data-bn="দর্শন, কালাম ও বুদ্ধিবৃত্তিক বিতর্ক">
-              Philosophy, Theology & Intellectual Debate
-            </h3>
-            <p data-en="Explore debates about reason, revelation, ethics, knowledge and the nature of reality."
-               data-bn="যুক্তি, ওহি, নৈতিকতা, জ্ঞান ও বাস্তবতার প্রকৃতি নিয়ে বিতর্ক অন্বেষণ করো।">
-              Explore debates about reason, revelation, ethics, knowledge and the nature of reality.
-            </p>
-            <strong data-en="Questions to investigate"
-                    data-bn="অনুসন্ধানের প্রশ্ন">Questions to investigate</strong>
-            <ul class="questions">
-              <li data-en="How did different thinkers define the role of reason?"
-                  data-bn="বিভিন্ন চিন্তাবিদ যুক্তির ভূমিকা কীভাবে ব্যাখ্যা করেছেন?">How did different thinkers define the role of reason?</li>
-              <li data-en="How did intellectual disagreements change over time?"
-                  data-bn="সময় বদলের সঙ্গে বুদ্ধিবৃত্তিক মতভেদ কীভাবে বদলেছে?">How did intellectual disagreements change over time?</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <div class="tag">THEME 03</div>
-            <h3 data-en="Science, Medicine & Mathematics"
-                data-bn="বিজ্ঞান, চিকিৎসা ও গণিত">Science, Medicine & Mathematics</h3>
-            <p data-en="Study scientific practices, instruments, medical texts, mathematical methods and the movement of ideas."
-               data-bn="বৈজ্ঞানিক চর্চা, যন্ত্র, চিকিৎসাগ্রন্থ, গাণিতিক পদ্ধতি এবং ধারণার বিস্তার অধ্যয়ন করো।">
-              Study scientific practices, instruments, medical texts, mathematical methods and the movement of ideas.
-            </p>
-            <strong data-en="Questions to investigate"
-                    data-bn="অনুসন্ধানের প্রশ্ন">Questions to investigate</strong>
-            <ul class="questions">
-              <li data-en="What methods did historical scientists use to test ideas?"
-                  data-bn="ঐতিহাসিক বিজ্ঞানীরা ধারণা যাচাই করতে কী পদ্ধতি ব্যবহার করতেন?">What methods did historical scientists use to test ideas?</li>
-              <li data-en="How did texts and techniques travel between regions?"
-                  data-bn="গ্রন্থ ও কৌশল কীভাবে এক অঞ্চল থেকে অন্য অঞ্চলে ছড়িয়েছে?">How did texts and techniques travel between regions?</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <div class="tag">THEME 04</div>
-            <h3 data-en="Trade, Cities & Economic Life"
-                data-bn="বাণিজ্য, নগর ও অর্থনৈতিক জীবন">Trade, Cities & Economic Life</h3>
-            <p data-en="Explore markets, maritime routes, taxation, crafts, urban institutions and regional connections."
-               data-bn="বাজার, সামুদ্রিক পথ, করব্যবস্থা, কারুশিল্প, নগর প্রতিষ্ঠান ও আঞ্চলিক যোগাযোগ অনুসন্ধান করো।">
-              Explore markets, maritime routes, taxation, crafts, urban institutions and regional connections.
-            </p>
-            <strong data-en="Questions to investigate"
-                    data-bn="অনুসন্ধানের প্রশ্ন">Questions to investigate</strong>
-            <ul class="questions">
-              <li data-en="How did trade connect distant communities?"
-                  data-bn="বাণিজ্য দূরবর্তী জনগোষ্ঠীগুলোকে কীভাবে যুক্ত করেছিল?">How did trade connect distant communities?</li>
-              <li data-en="What evidence reveals everyday economic life?"
-                  data-bn="দৈনন্দিন অর্থনৈতিক জীবনের কী প্রমাণ পাওয়া যায়?">What evidence reveals everyday economic life?</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <div class="tag">THEME 05</div>
-            <h3 data-en="Society, Family & Everyday Life"
-                data-bn="সমাজ, পরিবার ও দৈনন্দিন জীবন">Society, Family & Everyday Life</h3>
-            <p data-en="Examine social groups, family structures, work, urban life and the experiences of ordinary people."
-               data-bn="সামাজিক গোষ্ঠী, পারিবারিক কাঠামো, কাজ, নগরজীবন ও সাধারণ মানুষের অভিজ্ঞতা পরীক্ষা করো।">
-              Examine social groups, family structures, work, urban life and the experiences of ordinary people.
-            </p>
-            <strong data-en="Questions to investigate"
-                    data-bn="অনুসন্ধানের প্রশ্ন">Questions to investigate</strong>
-            <ul class="questions">
-              <li data-en="Whose experiences are preserved in historical sources?"
-                  data-bn="ঐতিহাসিক সূত্রে কার অভিজ্ঞতা সংরক্ষিত হয়েছে?">Whose experiences are preserved in historical sources?</li>
-              <li data-en="What can legal documents tell us about social life?"
-                  data-bn="আইনি দলিল থেকে সামাজিক জীবন সম্পর্কে কী জানা যায়?">What can legal documents tell us about social life?</li>
-            </ul>
-          </article>
-
-          <article class="card">
-            <div class="tag">THEME 06</div>
-            <h3 data-en="Environment, Geography & Travel"
-                data-bn="পরিবেশ, ভূগোল ও ভ্রমণ">Environment, Geography & Travel</h3>
-            <p data-en="Study climate, water, landscapes, travel writing, pilgrimage routes and geographical knowledge."
-               data-bn="জলবায়ু, পানি, ভূপ্রকৃতি, ভ্রমণবৃত্তান্ত, তীর্থযাত্রার পথ ও ভৌগোলিক জ্ঞান অধ্যয়ন করো।">
-              Study climate, water, landscapes, travel writing, pilgrimage routes and geographical knowledge.
-            </p>
-            <strong data-en="Questions to investigate"
-                    data-bn="অনুসন্ধানের প্রশ্ন">Questions to investigate</strong>
-            <ul class="questions">
-              <li data-en="How did geography shape settlement and travel?"
-                  data-bn="ভূগোল বসতি ও ভ্রমণকে কীভাবে প্রভাবিত করেছিল?">How did geography shape settlement and travel?</li>
-              <li data-en="How reliable are historical travel accounts?"
-                  data-bn="ঐতিহাসিক ভ্রমণবৃত্তান্ত কতটা নির্ভরযোগ্য?">How reliable are historical travel accounts?</li>
-            </ul>
-          </article>
-        </div>
-
-        <div class="notice">
-          <strong data-en="Research principle: "
-                  data-bn="গবেষণার নীতি: ">Research principle: </strong>
-          <span data-en="A question is not a conclusion. Test historical interpretations against sources, consider alternative explanations and clearly distinguish evidence from speculation."
-                data-bn="গবেষণার প্রশ্ন নিজেই কোনো সিদ্ধান্ত নয়। সূত্রের সাহায্যে ঐতিহাসিক ব্যাখ্যা যাচাই করো, বিকল্প ব্যাখ্যা বিবেচনা করো এবং প্রমাণ ও অনুমানের পার্থক্য স্পষ্ট রাখো।">
-            A question is not a conclusion. Test historical interpretations against sources, consider alternative explanations and clearly distinguish evidence from speculation.
-          </span>
-        </div>
+  <section id="map">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker" data-en="01 · Historical geography" data-bn="০১ · ঐতিহাসিক ভূগোল">01 · Historical geography</div>
+        <h2 data-en="Cities connected by knowledge and travel" data-bn="জ্ঞান ও যাত্রাপথে যুক্ত ঐতিহাসিক নগর">Cities connected by knowledge and travel</h2>
+        <p data-en="Ideas travelled with scholars, merchants, pilgrims, books and translations. This schematic map highlights selected centres across Afro-Eurasia." data-bn="পণ্ডিত, বণিক, হাজি, বই ও অনুবাদের সঙ্গে জ্ঞানও এক অঞ্চল থেকে অন্য অঞ্চলে ছড়িয়ে পড়ত। এই ব্যাখ্যামূলক মানচিত্রে আফ্রিকা-ইউরেশিয়ার কয়েকটি ঐতিহাসিক কেন্দ্র দেখানো হয়েছে।">Ideas travelled with scholars, merchants, pilgrims, books and translations. This schematic map highlights selected centres across Afro-Eurasia.</p>
       </div>
-    </section>
 
-    <section class="method">
-      <div class="container">
-        <h2 data-en="A practical research workflow"
-            data-bn="গবেষণার একটি ব্যবহারিক পদ্ধতি">A practical research workflow</h2>
+      <div class="panel map-panel">
+        <div class="map-top">
+          <h3 data-en="A network of historical centres" data-bn="ঐতিহাসিক কেন্দ্রগুলোর নেটওয়ার্ক">A network of historical centres</h3>
+          <span class="map-tag" data-en="Illustrative map · Not to scale" data-bn="ব্যাখ্যামূলক মানচিত্র · মাপানুপাতিক নয়">Illustrative map · Not to scale</span>
+        </div>
 
-        <div class="steps">
-          <div class="step">
-            <strong data-en="01. Define the question"
-                    data-bn="০১. প্রশ্ন নির্ধারণ">01. Define the question</strong>
-            <span data-en="Narrow the topic by period, place, person or historical problem."
-                  data-bn="সময়কাল, স্থান, ব্যক্তিত্ব বা ঐতিহাসিক সমস্যার ভিত্তিতে বিষয়টি নির্দিষ্ট করো।">
-              Narrow the topic by period, place, person or historical problem.
-            </span>
+        <div class="map-scroll">
+          <svg viewBox="0 0 900 420" role="img" aria-labelledby="mapTitle mapDesc">
+            <title id="mapTitle">Selected historical centres of Islamic civilization</title>
+            <desc id="mapDesc">A schematic diagram connecting Cordoba, Cairo, Baghdad, Damascus and Samarkand with dotted lines.</desc>
+            <defs>
+              <linearGradient id="sea" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#dce9e5"/>
+                <stop offset="1" stop-color="#edf0df"/>
+              </linearGradient>
+              <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+                <path d="M30 0H0V30" fill="none" stroke="#b7c9bd" stroke-width=".6" opacity=".45"/>
+              </pattern>
+            </defs>
+            <rect width="900" height="420" rx="10" fill="url(#sea)"/>
+            <rect width="900" height="420" rx="10" fill="url(#grid)"/>
+            <!-- Stylized land shapes, not exact coastlines -->
+            <path d="M60 75 L120 40 L205 55 L250 90 L300 78 L340 112 L325 150 L285 170 L270 205 L230 218 L210 265 L170 290 L135 258 L145 220 L115 180 L80 160 Z"
+                  fill="#c6d2b7" stroke="#9daf9a" stroke-width="1.5"/>
+            <path d="M300 38 L405 30 L470 65 L525 75 L570 55 L635 72 L700 52 L790 83 L840 135 L810 170 L740 164 L695 192 L635 178 L595 205 L545 183 L500 205 L455 180 L410 195 L370 168 L330 160 L300 120 Z"
+                  fill="#c6d2b7" stroke="#9daf9a" stroke-width="1.5"/>
+            <path d="M380 205 L425 195 L465 225 L480 285 L450 340 L420 360 L400 315 L380 275 Z"
+                  fill="#c6d2b7" stroke="#9daf9a" stroke-width="1.5"/>
+            <path d="M520 215 L575 205 L610 235 L590 270 L555 265 L530 245 Z"
+                  fill="#c6d2b7" stroke="#9daf9a" stroke-width="1.5"/>
+            <!-- Routes -->
+            <g fill="none" stroke="#a77d37" stroke-width="2.5" stroke-dasharray="5 7" opacity=".9">
+              <path d="M190 160 Q285 90 390 160"/>
+              <path d="M390 160 Q445 130 495 145"/>
+              <path d="M390 160 Q420 195 450 220"/>
+              <path d="M495 145 Q555 105 625 115"/>
+              <path d="M450 220 Q475 190 495 145"/>
+              <path d="M190 160 Q330 245 450 220"/>
+            </g>
+            <!-- Locations -->
+            <g font-family="Arial, sans-serif" font-size="15" fill="#183b2e">
+              <g transform="translate(190 160)">
+                <circle r="9" fill="#a77d37" stroke="#fffdf7" stroke-width="3"/>
+                <text x="-8" y="-20" text-anchor="middle" font-weight="bold">Córdoba</text>
+              </g>
+              <g transform="translate(390 160)">
+                <circle r="9" fill="#a77d37" stroke="#fffdf7" stroke-width="3"/>
+                <text x="0" y="-20" text-anchor="middle" font-weight="bold">Cairo</text>
+              </g>
+              <g transform="translate(450 220)">
+                <circle r="9" fill="#a77d37" stroke="#fffdf7" stroke-width="3"/>
+                <text x="0" y="27" text-anchor="middle" font-weight="bold">Damascus</text>
+              </g>
+              <g transform="translate(495 145)">
+                <circle r="9" fill="#a77d37" stroke="#fffdf7" stroke-width="3"/>
+                <text x="0" y="-20" text-anchor="middle" font-weight="bold">Baghdad</text>
+              </g>
+              <g transform="translate(625 115)">
+                <circle r="9" fill="#a77d37" stroke="#fffdf7" stroke-width="3"/>
+                <text x="0" y="-20" text-anchor="middle" font-weight="bold">Samarkand</text>
+              </g>
+            </g>
+            <text x="25" y="390" font-family="Arial, sans-serif" font-size="12" fill="#52695b">SCHEMATIC HISTORICAL NETWORK</text>
+            <text x="875" y="390" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#52695b">AFRO-EURASIA</text>
+          </svg>
+        </div>
+
+        <div class="map-legend">
+          <span><i class="dot"></i><span data-en="Selected historical city" data-bn="নির্বাচিত ঐতিহাসিক নগর">Selected historical city</span></span>
+          <span><i class="dash"></i><span data-en="Illustrative connection, not a single dated route" data-bn="ব্যাখ্যামূলক সংযোগ; নির্দিষ্ট সময়ের একক পথ নয়">Illustrative connection, not a single dated route</span></span>
+        </div>
+        <p class="map-note" data-en="Historical note: these cities flourished in different periods. The lines indicate broad connections, not one simultaneous empire or a precise reconstruction of travel routes." data-bn="ঐতিহাসিক দ্রষ্টব্য: এই নগরগুলো বিভিন্ন সময়ে সমৃদ্ধ হয়েছিল। রেখাগুলো সাধারণ যোগাযোগের ধারণা দেয়; এগুলো একই সময়ের এক সাম্রাজ্য বা নির্ভুল যাত্রাপথের পুনর্গঠন নয়।">Historical note: these cities flourished in different periods. The lines indicate broad connections, not one simultaneous empire or a precise reconstruction of travel routes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="themes" style="background:#eee9dc;">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker" data-en="02 · Research pathways" data-bn="০২ · গবেষণার পথ">02 · Research pathways</div>
+        <h2 data-en="Choose a question. Follow the evidence." data-bn="একটি প্রশ্ন বেছে নাও। প্রমাণ অনুসরণ করো।">Choose a question. Follow the evidence.</h2>
+        <p data-en="Each pathway opens a different window into the past. Start with a theme, then develop a focused research question." data-bn="প্রতিটি গবেষণাপথ অতীতকে দেখার আলাদা জানালা খুলে দেয়। একটি বিষয় দিয়ে শুরু করো, তারপর নির্দিষ্ট গবেষণা-প্রশ্ন তৈরি করো।">Each pathway opens a different window into the past. Start with a theme, then develop a focused research question.</p>
+      </div>
+
+      <div class="theme-grid">
+        <article class="theme-card">
+          <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&w=900&q=80" alt="Books arranged on library shelves" loading="lazy">
+          <div class="card-body">
+            <div class="card-no">PATHWAY 01</div>
+            <h3 data-en="Knowledge & Libraries" data-bn="জ্ঞান ও গ্রন্থাগার">Knowledge & Libraries</h3>
+            <p data-en="Explore libraries, madrasas, manuscript culture, translation and the institutions that preserved and transmitted knowledge." data-bn="গ্রন্থাগার, মাদরাসা, পাণ্ডুলিপি-সংস্কৃতি, অনুবাদ এবং জ্ঞান সংরক্ষণ ও বিস্তারের প্রতিষ্ঠানগুলো অনুসন্ধান করো।">Explore libraries, madrasas, manuscript culture, translation and the institutions that preserved and transmitted knowledge.</p>
+            <div class="question"><strong data-en="Research question" data-bn="গবেষণা-প্রশ্ন">Research question</strong><br><span data-en="How did institutions support the circulation of knowledge?" data-bn="প্রতিষ্ঠানগুলো কীভাবে জ্ঞানের বিস্তারে ভূমিকা রেখেছিল?">How did institutions support the circulation of knowledge?</span></div>
           </div>
+        </article>
 
-          <div class="step">
-            <strong data-en="02. Locate the evidence"
-                    data-bn="০২. প্রমাণ খুঁজে বের করো">02. Locate the evidence</strong>
-            <span data-en="Find primary sources and reliable modern scholarship. Record full references."
-                  data-bn="প্রাথমিক সূত্র ও নির্ভরযোগ্য আধুনিক গবেষণা খুঁজে পূর্ণ তথ্যসূত্র লিখে রাখো।">
-              Find primary sources and reliable modern scholarship. Record full references.
-            </span>
+        <article class="theme-card">
+          <img src="https://images.unsplash.com/photo-1455390582262-044cdead277a?auto=format&fit=crop&w=900&q=80" alt="Writing tools and notes on a desk" loading="lazy">
+          <div class="card-body">
+            <div class="card-no">PATHWAY 02</div>
+            <h3 data-en="Philosophy & Ideas" data-bn="দর্শন ও চিন্তাধারা">Philosophy & Ideas</h3>
+            <p data-en="Study philosophical debates, theology, ethics, logic and encounters between different intellectual traditions." data-bn="দার্শনিক বিতর্ক, কালাম, নীতিশাস্ত্র, যুক্তিবিদ্যা এবং বিভিন্ন বুদ্ধিবৃত্তিক ধারার পারস্পরিক সংলাপ অধ্যয়ন করো।">Study philosophical debates, theology, ethics, logic and encounters between different intellectual traditions.</p>
+            <div class="question"><strong data-en="Research question" data-bn="গবেষণা-প্রশ্ন">Research question</strong><br><span data-en="How did scholars respond to competing ideas?" data-bn="পণ্ডিতেরা পরস্পরবিরোধী ধারণার জবাব কীভাবে দিয়েছিলেন?">How did scholars respond to competing ideas?</span></div>
           </div>
+        </article>
 
-          <div class="step">
-            <strong data-en="03. Compare and explain"
-                    data-bn="০৩. তুলনা ও ব্যাখ্যা">03. Compare and explain</strong>
-            <span data-en="Compare accounts, assess limitations and support conclusions with evidence."
-                  data-bn="বিভিন্ন বিবরণ তুলনা করো, সীমাবদ্ধতা যাচাই করো এবং প্রমাণ দিয়ে সিদ্ধান্ত সমর্থন করো।">
-              Compare accounts, assess limitations and support conclusions with evidence.
-            </span>
+        <article class="theme-card">
+          <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&w=900&q=80" alt="Scientific equipment in a laboratory" loading="lazy">
+          <div class="card-body">
+            <div class="card-no">PATHWAY 03</div>
+            <h3 data-en="Science & Medicine" data-bn="বিজ্ঞান ও চিকিৎসা">Science & Medicine</h3>
+            <p data-en="Investigate astronomy, mathematics, optics, medicine and the historical methods used to produce knowledge." data-bn="জ্যোতির্বিজ্ঞান, গণিত, আলোকবিজ্ঞান, চিকিৎসাবিদ্যা এবং জ্ঞান উৎপাদনের ঐতিহাসিক পদ্ধতি অনুসন্ধান করো।">Investigate astronomy, mathematics, optics, medicine and the historical methods used to produce knowledge.</p>
+            <div class="question"><strong data-en="Research question" data-bn="গবেষণা-প্রশ্ন">Research question</strong><br><span data-en="How did observation and experimentation change scientific practice?" data-bn="পর্যবেক্ষণ ও পরীক্ষণ কীভাবে বৈজ্ঞানিক চর্চাকে বদলেছিল?">How did observation and experimentation change scientific practice?</span></div>
+          </div>
+        </article>
+
+        <article class="theme-card">
+          <img src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&w=900&q=80" alt="Cargo containers representing trade and exchange" loading="lazy">
+          <div class="card-body">
+            <div class="card-no">PATHWAY 04</div>
+            <h3 data-en="Trade & Cities" data-bn="বাণিজ্য ও নগর">Trade & Cities</h3>
+            <p data-en="Explore ports, markets, caravan routes, crafts, currencies and the economic relationships linking regions." data-bn="বন্দর, বাজার, কাফেলার পথ, কারুশিল্প, মুদ্রা এবং অঞ্চলগুলোর মধ্যে অর্থনৈতিক সম্পর্ক অনুসন্ধান করো।">Explore ports, markets, caravan routes, crafts, currencies and the economic relationships linking regions.</p>
+            <div class="question"><strong data-en="Research question" data-bn="গবেষণা-প্রশ্ন">Research question</strong><br><span data-en="How did trade shape urban life and cultural exchange?" data-bn="বাণিজ্য কীভাবে নগরজীবন ও সাংস্কৃতিক বিনিময়কে প্রভাবিত করেছিল?">How did trade shape urban life and cultural exchange?</span></div>
+          </div>
+        </article>
+
+        <article class="theme-card">
+          <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?auto=format&fit=crop&w=900&q=80" alt="An open book in soft natural light" loading="lazy">
+          <div class="card-body">
+            <div class="card-no">PATHWAY 05</div>
+            <h3 data-en="Society & Everyday Life" data-bn="সমাজ ও দৈনন্দিন জীবন">Society & Everyday Life</h3>
+            <p data-en="Examine family, education, food, clothing, social class, religious practice and ordinary people's experiences." data-bn="পরিবার, শিক্ষা, খাদ্য, পোশাক, সামাজিক শ্রেণি, ধর্মীয় অনুশীলন এবং সাধারণ মানুষের অভিজ্ঞতা বিশ্লেষণ করো।">Examine family, education, food, clothing, social class, religious practice and ordinary people's experiences.</p>
+            <div class="question"><strong data-en="Research question" data-bn="গবেষণা-প্রশ্ন">Research question</strong><br><span data-en="What can everyday objects reveal about past societies?" data-bn="দৈনন্দিন ব্যবহারের বস্তু অতীতের সমাজ সম্পর্কে কী জানাতে পারে?">What can everyday objects reveal about past societies?</span></div>
+          </div>
+        </article>
+
+        <article class="theme-card">
+          <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80" alt="Mountain landscape suggesting geography and travel" loading="lazy">
+          <div class="card-body">
+            <div class="card-no">PATHWAY 06</div>
+            <h3 data-en="Environment & Travel" data-bn="পরিবেশ ও ভ্রমণ">Environment & Travel</h3>
+            <p data-en="Study travel writing, geography, climate, water systems, pilgrimage and how landscapes shaped human activity." data-bn="ভ্রমণসাহিত্য, ভূগোল, জলবায়ু, পানিব্যবস্থা, হজযাত্রা এবং ভূপ্রকৃতি মানুষের জীবনকে কীভাবে প্রভাবিত করেছে তা অধ্যয়ন করো।">Study travel writing, geography, climate, water systems, pilgrimage and how landscapes shaped human activity.</p>
+            <div class="question"><strong data-en="Research question" data-bn="গবেষণা-প্রশ্ন">Research question</strong><br><span data-en="How did geography influence movement and settlement?" data-bn="ভূগোল মানুষের চলাচল ও বসতি স্থাপনকে কীভাবে প্রভাবিত করেছিল?">How did geography influence movement and settlement?</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="timeline">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker" data-en="03 · A broad chronological guide" data-bn="০৩ · কালানুক্রমিক নির্দেশিকা">03 · A broad chronological guide</div>
+        <h2 data-en="History unfolds across many periods" data-bn="বিভিন্ন যুগে ইতিহাসের বিকাশ">History unfolds across many periods</h2>
+        <p data-en="These are broad historical signposts, not strict boundaries. Different regions experienced change at different times." data-bn="এগুলো ইতিহাসের বিস্তৃত নির্দেশক, কঠোর সময়সীমা নয়। বিভিন্ন অঞ্চলে পরিবর্তন ঘটেছে বিভিন্ন সময়ে।">These are broad historical signposts, not strict boundaries. Different regions experienced change at different times.</p>
+      </div>
+      <div class="timeline">
+        <article class="time-item">
+          <div class="date">7TH–8TH CENTURIES</div>
+          <h3 data-en="Formative Period" data-bn="প্রারম্ভিক বিকাশ">Formative Period</h3>
+          <p data-en="The emergence of early Muslim communities and new political and cultural networks." data-bn="প্রাথমিক মুসলিম সমাজ এবং নতুন রাজনৈতিক ও সাংস্কৃতিক নেটওয়ার্কের বিকাশ।">The emergence of early Muslim communities and new political and cultural networks.</p>
+        </article>
+        <article class="time-item">
+          <div class="date">8TH–13TH CENTURIES</div>
+          <h3 data-en="Intellectual Networks" data-bn="বুদ্ধিবৃত্তিক নেটওয়ার্ক">Intellectual Networks</h3>
+          <p data-en="Translation, scholarship and scientific activity developed in multiple centres." data-bn="বিভিন্ন কেন্দ্রে অনুবাদ, পাণ্ডিত্যচর্চা ও বৈজ্ঞানিক কর্মকাণ্ডের বিকাশ।">Translation, scholarship and scientific activity developed in multiple centres.</p>
+        </article>
+        <article class="time-item">
+          <div class="date">13TH–16TH CENTURIES</div>
+          <h3 data-en="Regional Transformations" data-bn="আঞ্চলিক রূপান্তর">Regional Transformations</h3>
+          <p data-en="Political changes, new dynasties and continuing intellectual and commercial exchange." data-bn="রাজনৈতিক পরিবর্তন, নতুন রাজবংশ এবং চলমান বুদ্ধিবৃত্তিক ও বাণিজ্যিক বিনিময়।">Political changes, new dynasties and continuing intellectual and commercial exchange.</p>
+        </article>
+        <article class="time-item">
+          <div class="date">16TH–19TH CENTURIES</div>
+          <h3 data-en="Early Modern Worlds" data-bn="আদি আধুনিক যুগ">Early Modern Worlds</h3>
+          <p data-en="Large empires, shifting global connections and new institutional developments." data-bn="বৃহৎ সাম্রাজ্য, পরিবর্তনশীল বৈশ্বিক যোগাযোগ এবং নতুন প্রাতিষ্ঠানিক বিকাশ।">Large empires, shifting global connections and new institutional developments.</p>
+        </article>
+      </div>
+      <p style="margin-top:22px;"><a class="text-link" href="timeline.html" data-en="Explore the full timeline →" data-bn="সম্পূর্ণ সময়রেখা দেখো →">Explore the full timeline →</a></p>
+    </div>
+  </section>
+
+  <section id="method" style="background:#eee9dc;">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="kicker" data-en="04 · Research practice" data-bn="০৪ · গবেষণাপদ্ধতি">04 · Research practice</div>
+        <h2 data-en="From curiosity to a credible historical argument" data-bn="কৌতূহল থেকে প্রমাণভিত্তিক ঐতিহাসিক যুক্তি">From curiosity to a credible historical argument</h2>
+        <p data-en="Good historical research distinguishes evidence from interpretation and asks who created a source, when, why and for whom." data-bn="ভালো ঐতিহাসিক গবেষণা প্রমাণ ও ব্যাখ্যাকে আলাদা করে এবং প্রশ্ন করে—কে, কখন, কেন ও কার জন্য কোনো সূত্র তৈরি করেছিলেন।">Good historical research distinguishes evidence from interpretation and asks who created a source, when, why and for whom.</p>
+      </div>
+
+      <div class="method-grid">
+        <div class="panel method-card">
+          <h3 data-en="A practical workflow" data-bn="গবেষণার ব্যবহারিক ধাপ">A practical workflow</h3>
+          <ul>
+            <li data-en="Define a focused, answerable research question." data-bn="নির্দিষ্ট ও উত্তরযোগ্য গবেষণা-প্রশ্ন তৈরি করো।">Define a focused, answerable research question.</li>
+            <li data-en="Identify primary sources and relevant scholarly studies." data-bn="প্রাথমিক সূত্র ও প্রাসঙ্গিক গবেষণাগ্রন্থ চিহ্নিত করো।">Identify primary sources and relevant scholarly studies.</li>
+            <li data-en="Compare accounts, dates, terminology and perspectives." data-bn="বর্ণনা, তারিখ, পরিভাষা ও দৃষ্টিভঙ্গির তুলনা করো।">Compare accounts, dates, terminology and perspectives.</li>
+            <li data-en="Record citations and explain uncertainty honestly." data-bn="তথ্যসূত্র লিখে রাখো এবং অনিশ্চয়তা সততার সঙ্গে ব্যাখ্যা করো।">Record citations and explain uncertainty honestly.</li>
+            <li data-en="Build a conclusion that follows from the evidence." data-bn="প্রমাণ থেকে যৌক্তিকভাবে যে সিদ্ধান্ত আসে, তা উপস্থাপন করো।">Build a conclusion that follows from the evidence.</li>
+          </ul>
+        </div>
+
+        <div class="panel method-card" id="sources">
+          <h3 data-en="Explore types of evidence" data-bn="ঐতিহাসিক প্রমাণের ধরন">Explore types of evidence</h3>
+          <div class="source-list">
+            <div class="source-row">
+              <div class="source-icon">📜</div>
+              <div><strong data-en="Written sources" data-bn="লিখিত সূত্র">Written sources</strong><br><span data-en="Chronicles, letters, legal texts, biographies and manuscripts." data-bn="ইতিহাসগ্রন্থ, চিঠি, আইনগ্রন্থ, জীবনী ও পাণ্ডুলিপি।">Chronicles, letters, legal texts, biographies and manuscripts.</span></div>
+            </div>
+            <div class="source-row">
+              <div class="source-icon">🏺</div>
+              <div><strong data-en="Material evidence" data-bn="বস্তুগত প্রমাণ">Material evidence</strong><br><span data-en="Coins, pottery, buildings, inscriptions and archaeological remains." data-bn="মুদ্রা, মৃৎপাত্র, স্থাপনা, শিলালিপি ও প্রত্নতাত্ত্বিক নিদর্শন।">Coins, pottery, buildings, inscriptions and archaeological remains.</span></div>
+            </div>
+            <div class="source-row">
+              <div class="source-icon">🗺️</div>
+              <div><strong data-en="Maps and travel accounts" data-bn="মানচিত্র ও ভ্রমণবৃত্তান্ত">Maps and travel accounts</strong><br><span data-en="Historical geography, itineraries and descriptions of places." data-bn="ঐতিহাসিক ভূগোল, যাত্রাপথ ও স্থানবিষয়ক বিবরণ।">Historical geography, itineraries and descriptions of places.</span></div>
+            </div>
+            <div class="source-row">
+              <div class="source-icon">📚</div>
+              <div><strong data-en="Modern scholarship" data-bn="আধুনিক গবেষণা">Modern scholarship</strong><br><span data-en="Peer-reviewed books, journal articles and critical editions." data-bn="বিশেষজ্ঞ-পর্যালোচিত বই, জার্নাল প্রবন্ধ ও সমালোচনামূলক সংস্করণ।">Peer-reviewed books, journal articles and critical editions.</span></div>
+            </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section>
-      <div class="container">
-        <h2 data-en="Continue exploring History Atlas"
-            data-bn="History Atlas-এ অন্বেষণ চালিয়ে যাও">Continue exploring History Atlas</h2>
-
-        <p data-en="Connect research themes with the historical timeline, biographies and civilizations already available on the website."
-           data-bn="গবেষণার বিষয়গুলোর সঙ্গে ওয়েবসাইটে থাকা ঐতিহাসিক টাইমলাইন, জীবনী ও সভ্যতার পৃষ্ঠাগুলোর সংযোগ তৈরি করো।">
-          Connect research themes with the historical timeline, biographies and civilizations already available on the website.
-        </p>
-
-        <div class="resource-links">
-          <a href="index.html" data-en="Home page" data-bn="মূল পৃষ্ঠা">Home page</a>
-          <a href="timeline.html" data-en="Historical timeline" data-bn="ঐতিহাসিক টাইমলাইন">Historical timeline</a>
-          <a href="civilizations.html" data-en="Civilizations" data-bn="সভ্যতা">Civilizations</a>
-          <a href="scholars.html" data-en="Scholars" data-bn="মনিষী">Scholars</a>
-          <a href="history.html" data-en="Historical events" data-bn="ঐতিহাসিক ঘটনা">Historical events</a>
+  <section>
+    <div class="wrap">
+      <div class="panel" style="padding:30px;background:var(--green);color:white;">
+        <div class="kicker" data-en="Continue exploring" data-bn="আরও অনুসন্ধান করো">Continue exploring</div>
+        <h2 data-en="Connect people, places and historical change." data-bn="ব্যক্তিত্ব, স্থান ও ঐতিহাসিক পরিবর্তনকে সংযুক্ত করো।">Connect people, places and historical change.</h2>
+        <p style="color:#e0e8de;max-width:700px;" data-en="Move between the timeline, civilizational profiles and scholar biographies to build a richer picture of the past." data-bn="অতীতের আরও সমৃদ্ধ ধারণা পেতে সময়রেখা, সভ্যতার পরিচিতি ও পণ্ডিতদের জীবনী একসঙ্গে অনুসন্ধান করো।">Move between the timeline, civilizational profiles and scholar biographies to build a richer picture of the past.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="civilizations.html" data-en="Explore civilizations →" data-bn="সভ্যতাগুলো দেখো →">Explore civilizations →</a>
+          <a class="btn btn-outline" href="scholars.html" data-en="Meet the scholars →" data-bn="পণ্ডিতদের জানো →">Meet the scholars →</a>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+</main>
 
-  <footer>
-    <div class="container">
+<footer>
+  <div class="wrap footer-row">
+    <div>
       <strong>History Atlas: Islamic Civilizations</strong>
-      <div data-en="A growing educational and research project."
-           data-bn="একটি ক্রমবর্ধমান শিক্ষামূলক ও গবেষণা প্রকল্প।">
-        A growing educational and research project.
-      </div>
-      <a href="index.html" data-en="Return to home" data-bn="মূল পৃষ্ঠায় ফিরে যাও">Return to home</a>
+      <p data-en="A learning and research project." data-bn="একটি শিক্ষামূলক ও গবেষণাভিত্তিক উদ্যোগ।">A learning and research project.</p>
     </div>
-  </footer>
+    <div>
+      <p><a href="index.html" data-en="Home" data-bn="হোম">Home</a> · <a href="history.html" data-en="History" data-bn="ইতিহাস">History</a> · <a href="scholars.html" data-en="Scholars" data-bn="পণ্ডিতগণ">Scholars</a></p>
+      <p>© History Atlas</p>
+    </div>
+  </div>
+</footer>
 
-  <script>
-    const languageButton = document.getElementById("language-toggle");
-    const translatable = document.querySelectorAll("[data-en][data-bn]");
+<script>
+const languageBtn = document.getElementById("languageBtn");
+let currentLanguage = "en";
 
-    function setLanguage(language) {
-      document.documentElement.lang = language;
+function setLanguage(language) {
+  currentLanguage = language;
+  document.documentElement.lang = language;
 
-      translatable.forEach(function (element) {
-        element.textContent = element.getAttribute("data-" + language);
-      });
+  document.querySelectorAll("[data-en][data-bn]").forEach(element => {
+    element.textContent = element.dataset[language];
+  });
 
-      languageButton.textContent = language === "en" ? "বাংলা" : "English";
+  languageBtn.textContent = language === "en" ? "বাংলা" : "English";
+  languageBtn.setAttribute(
+    "aria-label",
+    language === "en" ? "Switch to Bengali" : "Switch to English"
+  );
+}
 
-      try {
-        localStorage.setItem("historyAtlasLanguage", language);
-      } catch (error) {
-        // Language switching still works without local storage.
-      }
-    }
+languageBtn.addEventListener("click", () => {
+  setLanguage(currentLanguage === "en" ? "bn" : "en");
+});
 
-    languageButton.addEventListener("click", function () {
-      const current = document.documentElement.lang || "en";
-      setLanguage(current === "en" ? "bn" : "en");
-    });
-
-    let savedLanguage = "en";
-
-    try {
-      savedLanguage = localStorage.getItem("historyAtlasLanguage") || "en";
-    } catch (error) {
-      savedLanguage = "en";
-    }
-
-    setLanguage(savedLanguage === "bn" ? "bn" : "en");
-  </script>
+setLanguage("en");
+</script>
 </body>
 </html>
