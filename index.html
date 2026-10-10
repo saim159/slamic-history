@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="History Atlas: Islamic Civilizations — explore Islamic history, civilizations, scholars, historical events, research questions and primary sources in English and Bengali.">
   <meta name="theme-color" content="#102d25">
+  <meta name="description" content="History Atlas: Islamic Civilizations — explore Islamic history, civilizations, scholars, historical events and research in Bengali and English.">
   <title>History Atlas: Islamic Civilizations</title>
 
   <style>
     :root {
       --green: #102d25;
-      --green-light: #1b4638;
+      --green2: #1b4638;
       --gold: #d5b16b;
       --cream: #f7f3e9;
       --paper: #fffdf7;
@@ -28,15 +28,15 @@
       margin: 0;
       background: var(--cream);
       color: var(--ink);
-      font-family: Georgia, "Noto Serif Bengali", "Nirmala UI", serif;
+      font-family: Georgia, "Nirmala UI", "Noto Serif Bengali", serif;
       line-height: 1.75;
     }
 
     a { color: inherit; }
 
     .container {
-      width: min(1120px, 91%);
-      margin-inline: auto;
+      width: min(1120px, 92%);
+      margin: auto;
     }
 
     header {
@@ -48,79 +48,80 @@
     .nav {
       min-height: 82px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      align-items: center;
+      gap: 18px;
       flex-wrap: wrap;
-      padding-block: 14px;
+      padding: 14px 0;
     }
 
     .brand {
       color: white;
       text-decoration: none;
-      font-size: 1.1rem;
       font-weight: bold;
+      font-size: 1.12rem;
       line-height: 1.4;
     }
 
     .brand span {
       display: block;
       color: var(--gold);
-      font-size: .78rem;
+      font-size: .76rem;
       letter-spacing: 2px;
       text-transform: uppercase;
     }
 
-    .nav-right {
+    .nav-links {
       display: flex;
-      gap: 14px;
       align-items: center;
       flex-wrap: wrap;
+      gap: 16px;
     }
 
-    .nav a:not(.brand) {
+    .nav-links a {
+      color: white;
       text-decoration: none;
-      font-size: .93rem;
+      font-size: .94rem;
     }
 
     button, .button {
       display: inline-block;
+      padding: 10px 16px;
       border: 1px solid var(--gold);
       border-radius: 5px;
-      padding: 9px 15px;
       background: var(--gold);
       color: var(--green);
       font: inherit;
       font-weight: bold;
-      cursor: pointer;
       text-decoration: none;
+      cursor: pointer;
     }
 
     .hero {
-      background:
-        radial-gradient(ellipse at 85% 20%, #2b5945 0%, transparent 48%),
-        linear-gradient(135deg, #102d25, #173c30);
       color: white;
-      padding: 86px 0 78px;
+      padding: 82px 0;
+      background:
+        radial-gradient(ellipse at 85% 15%, #2b5945 0%, transparent 45%),
+        linear-gradient(135deg, #102d25, #173c30);
     }
 
     .eyebrow {
       color: var(--gold);
-      text-transform: uppercase;
-      letter-spacing: 2.5px;
       font-size: .8rem;
       font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
     }
 
     h1 {
-      max-width: 820px;
+      max-width: 850px;
       margin: 16px 0;
-      font-size: clamp(2.4rem, 6vw, 4.6rem);
-      line-height: 1.12;
+      font-size: clamp(2.35rem, 6vw, 4.5rem);
+      line-height: 1.13;
     }
 
     .hero p {
-      max-width: 720px;
+      max-width: 760px;
       color: #e3e9e3;
       font-size: 1.08rem;
     }
@@ -138,29 +139,26 @@
       border-color: #b9c9bd;
     }
 
+    section { padding: 65px 0; }
+
     .intro {
       max-width: 820px;
-      margin: 0 auto;
+      margin: auto;
       text-align: center;
     }
 
-    section { padding: 68px 0; }
+    .section-heading { margin-bottom: 28px; }
 
-    .section-heading {
-      margin-bottom: 28px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(1.8rem, 4vw, 2.6rem);
-      line-height: 1.3;
+    .section-heading h2,
+    .feature h2 {
       margin: 8px 0;
       color: var(--green);
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.3;
     }
 
-    .section-heading p {
-      color: var(--muted);
-      max-width: 750px;
-    }
+    .section-heading p,
+    .intro p { color: var(--muted); }
 
     .pathways {
       display: grid;
@@ -169,13 +167,13 @@
     }
 
     .card {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 25px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
       transition: transform .2s, box-shadow .2s;
     }
 
@@ -186,29 +184,33 @@
 
     .number {
       color: #967536;
-      font-weight: bold;
       font-size: .82rem;
+      font-weight: bold;
       letter-spacing: 2px;
     }
 
     .card h3 {
-      color: var(--green);
-      font-size: 1.24rem;
-      line-height: 1.4;
       margin: 12px 0 8px;
+      color: var(--green);
+      font-size: 1.22rem;
+      line-height: 1.4;
     }
 
     .card p {
-      color: var(--muted);
-      margin-top: 0;
       flex: 1;
+      margin-top: 0;
+      color: var(--muted);
     }
 
     .card a {
       color: #285743;
       font-weight: bold;
-      text-decoration-thickness: 1px;
       text-underline-offset: 4px;
+    }
+
+    .featured-card {
+      border: 2px solid var(--gold);
+      background: #fffaf0;
     }
 
     .feature {
@@ -219,15 +221,15 @@
     .feature-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 30px;
       align-items: center;
+      gap: 30px;
     }
 
     .feature-panel {
-      background: var(--green);
-      color: white;
       padding: 28px;
       border-radius: 10px;
+      background: var(--green);
+      color: white;
     }
 
     .feature-panel h3 { color: var(--gold); }
@@ -246,9 +248,9 @@
     }
 
     .source-item {
+      padding: 18px;
       border-left: 3px solid var(--gold);
       background: var(--paper);
-      padding: 18px;
     }
 
     .source-item h3 {
@@ -263,18 +265,18 @@
     }
 
     .notice {
-      border: 1px solid var(--line);
-      background: #fffaf0;
-      border-radius: 8px;
-      padding: 18px 20px;
-      color: #526056;
       margin-top: 25px;
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fffaf0;
+      color: #526056;
     }
 
     footer {
+      padding: 35px 0;
       background: var(--green);
       color: #e6ece6;
-      padding: 35px 0;
       font-size: .9rem;
     }
 
@@ -287,8 +289,6 @@
       gap: 18px;
     }
 
-    [hidden] { display: none !important; }
-
     @media (max-width: 820px) {
       .pathways { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .source-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -297,14 +297,15 @@
 
     @media (max-width: 540px) {
       .pathways, .source-list { grid-template-columns: 1fr; }
-      .hero { padding: 60px 0; }
-      section { padding: 48px 0; }
-      .nav-right { gap: 10px; }
+      .hero { padding: 58px 0; }
+      section { padding: 45px 0; }
+      .nav-links { gap: 10px; }
     }
   </style>
 </head>
 
 <body>
+
   <header>
     <div class="container nav">
       <a class="brand" href="index.html">
@@ -312,299 +313,368 @@
         <span>Islamic Civilizations</span>
       </a>
 
-      <nav class="nav-right" aria-label="Main navigation">
+      <nav class="nav-links" aria-label="Main navigation">
         <a href="#pathways" data-en="Explore" data-bn="অন্বেষণ">Explore</a>
         <a href="#sources" data-en="Sources" data-bn="সূত্র">Sources</a>
         <a href="#about" data-en="About" data-bn="পরিচিতি">About</a>
-        <button id="language-toggle" type="button" aria-label="Switch language">বাংলা</button>
+        <button id="language-toggle" type="button">বাংলা</button>
       </nav>
     </div>
   </header>
 
   <main>
+
+    <!-- HERO SECTION -->
     <section class="hero">
       <div class="container">
         <div class="eyebrow"
-             data-en="A research-oriented historical guide"
-             data-bn="গবেষণাভিত্তিক ইতিহাস অন্বেষণ">
-          A research-oriented historical guide
+          data-en="A Research-Oriented Historical Guide"
+          data-bn="গবেষণাভিত্তিক ইতিহাস অন্বেষণ">
+          A Research-Oriented Historical Guide
         </div>
 
-        <h1 data-en="Explore the History of Islamic Civilizations"
-            data-bn="ইসলামি সভ্যতার ইতিহাস অন্বেষণ করো">
+        <h1
+          data-en="Explore the History of Islamic Civilizations"
+          data-bn="ইসলামি সভ্যতার ইতিহাস অন্বেষণ করো">
           Explore the History of Islamic Civilizations
         </h1>
 
-        <p data-en="Travel across historical eras, cities, intellectual traditions and turning points. Discover the sources, questions and connections that help us understand the past."
-           data-bn="ঐতিহাসিক যুগ, নগর, বুদ্ধিবৃত্তিক ঐতিহ্য ও গুরুত্বপূর্ণ সন্ধিক্ষণ ঘুরে দেখো। অতীতকে বুঝতে সাহায্য করে এমন সূত্র, প্রশ্ন ও ঐতিহাসিক সংযোগ আবিষ্কার করো।">
+        <p
+          data-en="Travel across historical eras, cities, intellectual traditions and turning points. Discover the sources, questions and connections that help us understand the past."
+          data-bn="ঐতিহাসিক যুগ, নগর, বুদ্ধিবৃত্তিক ঐতিহ্য ও গুরুত্বপূর্ণ সন্ধিক্ষণ অন্বেষণ করো। অতীতকে বুঝতে সাহায্য করে এমন সূত্র, প্রশ্ন ও ঐতিহাসিক সংযোগ আবিষ্কার করো।">
           Travel across historical eras, cities, intellectual traditions and turning points. Discover the sources, questions and connections that help us understand the past.
         </p>
 
         <div class="hero-actions">
           <a class="button" href="#pathways"
-             data-en="Begin Exploring →"
-             data-bn="অন্বেষণ শুরু করো →">Begin Exploring →</a>
+            data-en="Begin Exploring →"
+            data-bn="অন্বেষণ শুরু করো →">
+            Begin Exploring →
+          </a>
+
           <a class="button button-outline" href="timeline.html"
-             data-en="View Timeline"
-             data-bn="টাইমলাইন দেখো">View Timeline</a>
+            data-en="View Timeline"
+            data-bn="টাইমলাইন দেখো">
+            View Timeline
+          </a>
         </div>
       </div>
     </section>
 
+    <!-- ABOUT SECTION -->
     <section id="about">
       <div class="container intro">
         <div class="eyebrow"
-             data-en="Beyond dates and dynasties"
-             data-bn="তারিখ ও রাজবংশের বাইরেও">
-          Beyond dates and dynasties
+          data-en="Beyond Dates and Dynasties"
+          data-bn="তারিখ ও রাজবংশের বাইরেও">
+          Beyond Dates and Dynasties
         </div>
 
-        <h2 data-en="History is a conversation with evidence"
-            data-bn="ইতিহাস হলো প্রমাণের সঙ্গে সংলাপ">
-          History is a conversation with evidence
+        <h2
+          data-en="History Is a Conversation with Evidence"
+          data-bn="ইতিহাস হলো প্রমাণের সঙ্গে সংলাপ">
+          History Is a Conversation with Evidence
         </h2>
 
-        <p data-en="History Atlas is designed to connect people, places, ideas and primary sources. It encourages readers to examine historical claims critically, compare accounts and ask meaningful research questions."
-           data-bn="History Atlas মানুষ, স্থান, ধারণা ও প্রাথমিক সূত্রের মধ্যে সংযোগ তৈরি করার জন্য সাজানো। এখানে পাঠককে ঐতিহাসিক দাবি সমালোচনামূলকভাবে যাচাই করতে, বিভিন্ন বিবরণ তুলনা করতে এবং গুরুত্বপূর্ণ গবেষণার প্রশ্ন করতে উৎসাহিত করা হয়।">
-          History Atlas is designed to connect people, places, ideas and primary sources. It encourages readers to examine historical claims critically, compare accounts and ask meaningful research questions.
+        <p
+          data-en="History Atlas connects people, places, ideas and historical sources. It encourages readers to examine historical claims critically, compare accounts and ask meaningful research questions."
+          data-bn="History Atlas মানুষ, স্থান, ধারণা ও ঐতিহাসিক সূত্রের মধ্যে সংযোগ তৈরি করে। এখানে পাঠককে ঐতিহাসিক দাবি যাচাই করতে, বিভিন্ন বিবরণ তুলনা করতে এবং গুরুত্বপূর্ণ গবেষণার প্রশ্ন করতে উৎসাহিত করা হয়।">
+          History Atlas connects people, places, ideas and historical sources. It encourages readers to examine historical claims critically, compare accounts and ask meaningful research questions.
         </p>
       </div>
     </section>
 
+    <!-- SEVEN RESEARCH PATHWAYS -->
     <section id="pathways">
       <div class="container">
+
         <div class="section-heading">
           <div class="eyebrow"
-               data-en="Research pathways"
-               data-bn="গবেষণার পথ">
-            Research pathways
+            data-en="Research Pathways"
+            data-bn="গবেষণার পথ">
+            Research Pathways
           </div>
-          <h2 data-en="Six ways to explore the past"
-              data-bn="অতীত অন্বেষণের ছয়টি পথ">
-            Six ways to explore the past
+
+          <h2
+            data-en="Seven Ways to Explore the Past"
+            data-bn="অতীত অন্বেষণের সাতটি পথ">
+            Seven Ways to Explore the Past
           </h2>
-          <p data-en="Choose a pathway based on what you want to investigate. Each pathway connects related topics and will grow as new research pages are added."
-             data-bn="তুমি কী অনুসন্ধান করতে চাও, তার ভিত্তিতে একটি পথ বেছে নাও। প্রতিটি পথ সংশ্লিষ্ট বিষয়কে যুক্ত করবে এবং নতুন গবেষণাপৃষ্ঠা যোগ হওয়ার সঙ্গে সঙ্গে সমৃদ্ধ হবে।">
-            Choose a pathway based on what you want to investigate. Each pathway connects related topics and will grow as new research pages are added.
+
+          <p
+            data-en="Choose a pathway based on what you want to investigate. We will expand these collections as new historical research pages are added."
+            data-bn="তুমি কী অনুসন্ধান করতে চাও, তার ভিত্তিতে একটি পথ বেছে নাও। নতুন গবেষণাপৃষ্ঠা যোগ হওয়ার সঙ্গে সঙ্গে এই সংগ্রহগুলো সমৃদ্ধ করা হবে।">
+            Choose a pathway based on what you want to investigate. We will expand these collections as new historical research pages are added.
           </p>
         </div>
 
         <div class="pathways">
+
           <article class="card">
             <div class="number">PATHWAY 01</div>
-            <h3 data-en="Historical Eras"
-                data-bn="ঐতিহাসিক যুগ">Historical Eras</h3>
-            <p data-en="Explore major periods, caliphates, dynasties and transitions across Islamic history."
-               data-bn="ইসলামি ইতিহাসের প্রধান যুগ, খিলাফত, রাজবংশ ও পরিবর্তনের ধারাগুলো অন্বেষণ করো।">
+            <h3 data-en="Historical Eras" data-bn="ঐতিহাসিক যুগ">Historical Eras</h3>
+            <p
+              data-en="Explore major periods, caliphates, dynasties and transitions across Islamic history."
+              data-bn="ইসলামি ইতিহাসের প্রধান যুগ, খিলাফত, রাজবংশ ও পরিবর্তনের ধারাগুলো অন্বেষণ করো।">
               Explore major periods, caliphates, dynasties and transitions across Islamic history.
             </p>
-            <a href="timeline.html" data-en="Explore the timeline →"
-               data-bn="টাইমলাইন দেখো →">Explore the timeline →</a>
+            <a href="timeline.html"
+              data-en="Explore the Timeline →"
+              data-bn="টাইমলাইন দেখো →">Explore the Timeline →</a>
           </article>
 
           <article class="card">
             <div class="number">PATHWAY 02</div>
-            <h3 data-en="Places & Civilizations"
-                data-bn="স্থান ও সভ্যতা">Places & Civilizations</h3>
-            <p data-en="Discover cities, regions, political centres and cultural networks."
-               data-bn="নগর, অঞ্চল, রাজনৈতিক কেন্দ্র ও সাংস্কৃতিক যোগাযোগের ইতিহাস জানো।">
+            <h3 data-en="Places & Civilizations" data-bn="স্থান ও সভ্যতা">Places & Civilizations</h3>
+            <p
+              data-en="Discover cities, regions, political centres and cultural networks."
+              data-bn="নগর, অঞ্চল, রাজনৈতিক কেন্দ্র ও সাংস্কৃতিক যোগাযোগের ইতিহাস জানো।">
               Discover cities, regions, political centres and cultural networks.
             </p>
-            <a href="civilizations.html" data-en="Explore civilizations →"
-               data-bn="সভ্যতাগুলো দেখো →">Explore civilizations →</a>
+            <a href="civilizations.html"
+              data-en="Explore Civilizations →"
+              data-bn="সভ্যতাগুলো দেখো →">Explore Civilizations →</a>
           </article>
 
           <article class="card">
             <div class="number">PATHWAY 03</div>
-            <h3 data-en="People & Intellectual Traditions"
-                data-bn="ব্যক্তিত্ব ও বুদ্ধিবৃত্তিক ঐতিহ্য">People & Intellectual Traditions</h3>
-            <p data-en="Study scholars, historians, jurists, philosophers and their intellectual legacies."
-               data-bn="আলেম, ঐতিহাসিক, ফকিহ, দার্শনিক ও তাঁদের বুদ্ধিবৃত্তিক অবদান অধ্যয়ন করো।">
+            <h3 data-en="People & Intellectual Traditions" data-bn="ব্যক্তিত্ব ও বুদ্ধিবৃত্তিক ঐতিহ্য">People & Intellectual Traditions</h3>
+            <p
+              data-en="Study scholars, historians, jurists, philosophers and their intellectual legacies."
+              data-bn="আলেম, ঐতিহাসিক, ফকিহ, দার্শনিক ও তাঁদের বুদ্ধিবৃত্তিক অবদান অধ্যয়ন করো।">
               Study scholars, historians, jurists, philosophers and their intellectual legacies.
             </p>
-            <a href="scholars.html" data-en="Meet the scholars →"
-               data-bn="মনিষীদের পরিচয় জানো →">Meet the scholars →</a>
+            <a href="scholars.html"
+              data-en="Meet the Scholars →"
+              data-bn="মনিষীদের পরিচয় জানো →">Meet the Scholars →</a>
           </article>
 
           <article class="card">
             <div class="number">PATHWAY 04</div>
-            <h3 data-en="Events & Turning Points"
-                data-bn="ঘটনা ও ঐতিহাসিক সন্ধিক্ষণ">Events & Turning Points</h3>
-            <p data-en="Investigate major events, conflicts, reforms and changes in historical direction."
-               data-bn="গুরুত্বপূর্ণ ঘটনা, সংঘাত, সংস্কার ও ইতিহাসের গতিপথ বদলে দেওয়া পরিবর্তন অনুসন্ধান করো।">
+            <h3 data-en="Events & Turning Points" data-bn="ঘটনা ও ঐতিহাসিক সন্ধিক্ষণ">Events & Turning Points</h3>
+            <p
+              data-en="Investigate major events, conflicts, reforms and changes in historical direction."
+              data-bn="গুরুত্বপূর্ণ ঘটনা, সংঘাত, সংস্কার ও ইতিহাসের গতিপথ বদলে দেওয়া পরিবর্তন অনুসন্ধান করো।">
               Investigate major events, conflicts, reforms and changes in historical direction.
             </p>
-            <a href="history.html" data-en="Explore historical events →"
-               data-bn="ঐতিহাসিক ঘটনা দেখো →">Explore historical events →</a>
+            <a href="history.html"
+              data-en="Explore Historical Events →"
+              data-bn="ঐতিহাসিক ঘটনা দেখো →">Explore Historical Events →</a>
           </article>
 
           <article class="card">
             <div class="number">PATHWAY 05</div>
-            <h3 data-en="Themes & Research Questions"
-                data-bn="বিষয়ভিত্তিক গবেষণা ও প্রশ্ন">Themes & Research Questions</h3>
-            <p data-en="Investigate knowledge, philosophy, trade, society, science and unanswered historical questions."
-               data-bn="জ্ঞানচর্চা, দর্শন, বাণিজ্য, সমাজ, বিজ্ঞান ও ইতিহাসের অনুত্তরিত প্রশ্ন অনুসন্ধান করো।">
+            <h3 data-en="Themes & Research Questions" data-bn="বিষয়ভিত্তিক গবেষণা ও প্রশ্ন">Themes & Research Questions</h3>
+            <p
+              data-en="Investigate knowledge, philosophy, trade, society, science and unanswered historical questions."
+              data-bn="জ্ঞানচর্চা, দর্শন, বাণিজ্য, সমাজ, বিজ্ঞান ও ইতিহাসের অনুত্তরিত প্রশ্ন অনুসন্ধান করো।">
               Investigate knowledge, philosophy, trade, society, science and unanswered historical questions.
             </p>
-            <a href="research.html" data-en="Explore research themes →"
-               data-bn="গবেষণার বিষয় দেখো →">Explore research themes →</a>
+            <a href="research.html"
+              data-en="Explore Research Themes →"
+              data-bn="গবেষণার বিষয় দেখো →">Explore Research Themes →</a>
           </article>
 
           <article class="card">
             <div class="number">PATHWAY 06</div>
-            <h3 data-en="Sources & Historical Evidence"
-                data-bn="সূত্র ও ঐতিহাসিক প্রমাণ">Sources & Historical Evidence</h3>
-            <p data-en="Learn about chronicles, manuscripts, inscriptions, primary sources and source criticism."
-               data-bn="ইতিহাসগ্রন্থ, পাণ্ডুলিপি, শিলালিপি, প্রাথমিক সূত্র ও সূত্র-সমালোচনা সম্পর্কে জানো।">
+            <h3 data-en="Sources & Historical Evidence" data-bn="সূত্র ও ঐতিহাসিক প্রমাণ">Sources & Historical Evidence</h3>
+            <p
+              data-en="Learn about chronicles, manuscripts, inscriptions, primary sources and source criticism."
+              data-bn="ইতিহাসগ্রন্থ, পাণ্ডুলিপি, শিলালিপি, প্রাথমিক সূত্র ও সূত্র-সমালোচনা সম্পর্কে জানো।">
               Learn about chronicles, manuscripts, inscriptions, primary sources and source criticism.
             </p>
-            <a href="#sources" data-en="Explore source guidance →"
-               data-bn="সূত্র নির্দেশিকা দেখো →">Explore source guidance →</a>
+            <a href="#sources"
+              data-en="Read Source Guidance →"
+              data-bn="সূত্র নির্দেশিকা দেখো →">Read Source Guidance →</a>
           </article>
+
+          <!-- NEW MUSLIM UMMAH HISTORY SECTION -->
+          <article class="card featured-card">
+            <div class="number">PATHWAY 07</div>
+            <h3 data-en="History of the Muslim Ummah" data-bn="মুসলিম উম্মাহর ইতিহাস">History of the Muslim Ummah</h3>
+            <p
+              data-en="Explore a planned 20-volume historical guide covering early history, the Prophet's era, caliphates, dynasties, Muslim civilizations and the modern Muslim world."
+              data-bn="প্রাথমিক ইতিহাস, নবিজির যুগ, খিলাফত, রাজবংশ, মুসলিম সভ্যতা ও আধুনিক মুসলিম বিশ্ব নিয়ে পরিকল্পিত ২০ খণ্ডের ইতিহাস অন্বেষণ করো।">
+              Explore a planned 20-volume historical guide covering early history, the Prophet's era, caliphates, dynasties, Muslim civilizations and the modern Muslim world.
+            </p>
+            <a href="muslim-ummah-history.html"
+              data-en="Explore the 20-Volume Guide →"
+              data-bn="২০ খণ্ডের ইতিহাস দেখো →">Explore the 20-Volume Guide →</a>
+          </article>
+
         </div>
 
         <div class="notice">
-          <strong data-en="Research note: "
-                  data-bn="গবেষণা-সংক্রান্ত নোট: ">Research note: </strong>
-          <span data-en="The pathways organise the website; they do not imply that every historical topic has already been researched or documented. Individual pages will be expanded with evidence and references over time."
-                data-bn="এই পথগুলো ওয়েবসাইটের বিষয়বস্তু সাজায়; এর অর্থ এই নয় যে প্রতিটি ঐতিহাসিক বিষয় ইতিমধ্যে গবেষণা করে নথিবদ্ধ করা হয়েছে। সময়ের সঙ্গে সূত্র ও তথ্যের ভিত্তিতে আলাদা পৃষ্ঠাগুলো সমৃদ্ধ করা হবে।">
-            The pathways organise the website; they do not imply that every historical topic has already been researched or documented. Individual pages will be expanded with evidence and references over time.
+          <strong data-en="Research note: " data-bn="গবেষণা-সংক্রান্ত নোট: ">Research note: </strong>
+          <span
+            data-en="These pathways organise the website. They do not imply that every topic has already been researched or documented. Individual pages will be expanded with evidence and references over time."
+            data-bn="এই পথগুলো ওয়েবসাইটের বিষয়বস্তু সাজায়। এর অর্থ এই নয় যে প্রতিটি বিষয় ইতিমধ্যে গবেষণা করে নথিবদ্ধ করা হয়েছে। সময়ের সঙ্গে সূত্র ও তথ্যের ভিত্তিতে আলাদা পৃষ্ঠাগুলো সমৃদ্ধ করা হবে।">
+            These pathways organise the website. They do not imply that every topic has already been researched or documented. Individual pages will be expanded with evidence and references over time.
           </span>
         </div>
+
       </div>
     </section>
 
+    <!-- EXISTING COLLECTIONS -->
     <section class="feature">
       <div class="container feature-grid">
+
         <div>
           <div class="eyebrow"
-               data-en="Connect the evidence"
-               data-bn="প্রমাণের মধ্যে সংযোগ খোঁজো">
-            Connect the evidence
+            data-en="Connect the Evidence"
+            data-bn="প্রমাণের মধ্যে সংযোগ খোঁজো">
+            Connect the Evidence
           </div>
-          <h2 data-en="From a place to a person, from a source to a question"
-              data-bn="স্থান থেকে ব্যক্তিত্ব, সূত্র থেকে গবেষণার প্রশ্ন">
-            From a place to a person, from a source to a question
+
+          <h2
+            data-en="From Places to People, from Sources to Questions"
+            data-bn="স্থান থেকে ব্যক্তিত্ব, সূত্র থেকে গবেষণার প্রশ্ন">
+            From Places to People, from Sources to Questions
           </h2>
-          <p data-en="Historical understanding grows when timelines, geography, biographies and written evidence are studied together. Use the existing collections as a starting point."
-             data-bn="টাইমলাইন, ভূগোল, জীবনী ও লিখিত প্রমাণ একসঙ্গে অধ্যয়ন করলে ইতিহাস সম্পর্কে গভীর উপলব্ধি তৈরি হয়। শুরু করার জন্য বিদ্যমান সংগ্রহগুলো ব্যবহার করো।">
-            Historical understanding grows when timelines, geography, biographies and written evidence are studied together. Use the existing collections as a starting point.
+
+          <p
+            data-en="Historical understanding grows when timelines, geography, biographies and written evidence are studied together. Use these existing pages as a starting point."
+            data-bn="টাইমলাইন, ভূগোল, জীবনী ও লিখিত প্রমাণ একসঙ্গে অধ্যয়ন করলে ইতিহাস সম্পর্কে গভীর উপলব্ধি তৈরি হয়। শুরু করার জন্য এই পৃষ্ঠাগুলো ব্যবহার করো।">
+            Historical understanding grows when timelines, geography, biographies and written evidence are studied together. Use these existing pages as a starting point.
           </p>
         </div>
 
         <div class="feature-panel">
-          <h3 data-en="Explore existing collections"
-              data-bn="বিদ্যমান সংগ্রহগুলো দেখো">Explore existing collections</h3>
+          <h3 data-en="Explore Existing Collections" data-bn="বিদ্যমান সংগ্রহগুলো দেখো">Explore Existing Collections</h3>
+
           <a href="al-andalus.html">Al-Andalus</a>
           <a href="abbasid-baghdad.html">Abbasid Baghdad</a>
+          <a href="fatimid.html">Fatimid Caliphate</a>
+          <a href="ottoman.html">Ottoman Empire</a>
+          <a href="seljuk.html">Seljuk Empire</a>
+          <a href="mamluk.html">Mamluk Sultanate</a>
           <a href="al-biruni.html">Al-Biruni</a>
+          <a href="al-farabi.html">Al-Farabi</a>
+          <a href="ibn-al-haytham.html">Ibn al-Haytham</a>
           <a href="ibn-khaldun.html">Ibn Khaldun</a>
-          <a href="ghazali.html">Al-Ghazali</a>
           <a href="ibn-sina.html">Ibn Sina</a>
-          <a href="timeline.html" data-en="Historical Timeline"
-             data-bn="ঐতিহাসিক টাইমলাইন">Historical Timeline</a>
+          <a href="ghazali.html">Al-Ghazali</a>
+          <a href="imam-al-bukhari.html">Imam al-Bukhari</a>
+          <a href="imam-al-shafii.html">Imam al-Shafi'i</a>
+          <a href="timeline.html" data-en="Historical Timeline" data-bn="ঐতিহাসিক টাইমলাইন">Historical Timeline</a>
+          <a href="muslim-ummah-history.html" data-en="Muslim Ummah History" data-bn="মুসলিম উম্মাহর ইতিহাস">Muslim Ummah History</a>
         </div>
+
       </div>
     </section>
 
+    <!-- SOURCES SECTION -->
     <section id="sources">
       <div class="container">
+
         <div class="section-heading">
-          <div class="eyebrow"
-               data-en="Historical evidence"
-               data-bn="ঐতিহাসিক প্রমাণ">Historical evidence</div>
-          <h2 data-en="How to read historical sources"
-              data-bn="ঐতিহাসিক সূত্র কীভাবে পড়বে">How to read historical sources</h2>
-          <p data-en="A research-oriented history website should distinguish surviving evidence, later interpretations and modern scholarship."
-             data-bn="গবেষণাভিত্তিক ইতিহাসের ওয়েবসাইটে টিকে থাকা প্রমাণ, পরবর্তী ব্যাখ্যা এবং আধুনিক গবেষণার মধ্যে পার্থক্য করা প্রয়োজন।">
+          <div class="eyebrow" data-en="Historical Evidence" data-bn="ঐতিহাসিক প্রমাণ">Historical Evidence</div>
+
+          <h2
+            data-en="How to Read Historical Sources"
+            data-bn="ঐতিহাসিক সূত্র কীভাবে পড়বে">
+            How to Read Historical Sources
+          </h2>
+
+          <p
+            data-en="A research-oriented history website should distinguish surviving evidence, later interpretations and modern scholarship."
+            data-bn="গবেষণাভিত্তিক ইতিহাসের ওয়েবসাইটে টিকে থাকা প্রমাণ, পরবর্তী ব্যাখ্যা এবং আধুনিক গবেষণার মধ্যে পার্থক্য করা প্রয়োজন।">
             A research-oriented history website should distinguish surviving evidence, later interpretations and modern scholarship.
           </p>
         </div>
 
         <div class="source-list">
+
           <article class="source-item">
-            <h3 data-en="Primary sources"
-                data-bn="প্রাথমিক সূত্র">Primary sources</h3>
-            <p data-en="Texts, documents, inscriptions, coins and other evidence connected to the period under study."
-               data-bn="গবেষণাধীন সময়ের সঙ্গে সম্পর্কিত গ্রন্থ, দলিল, শিলালিপি, মুদ্রা ও অন্যান্য প্রমাণ।">
+            <h3 data-en="Primary Sources" data-bn="প্রাথমিক সূত্র">Primary Sources</h3>
+            <p
+              data-en="Texts, documents, inscriptions, coins and other evidence connected to the period under study."
+              data-bn="গবেষণাধীন সময়ের সঙ্গে সম্পর্কিত গ্রন্থ, দলিল, শিলালিপি, মুদ্রা ও অন্যান্য প্রমাণ।">
               Texts, documents, inscriptions, coins and other evidence connected to the period under study.
             </p>
           </article>
 
           <article class="source-item">
-            <h3 data-en="Historical chronicles"
-                data-bn="ঐতিহাসিক বিবরণ">Historical chronicles</h3>
-            <p data-en="Compare authors, dates, intended audiences and the circumstances in which accounts were written."
-               data-bn="লেখক, রচনাকাল, পাঠকগোষ্ঠী এবং বিবরণ রচনার পরিস্থিতি তুলনা করো।">
+            <h3 data-en="Historical Chronicles" data-bn="ঐতিহাসিক বিবরণ">Historical Chronicles</h3>
+            <p
+              data-en="Compare authors, dates, intended audiences and the circumstances in which accounts were written."
+              data-bn="লেখক, রচনাকাল, পাঠকগোষ্ঠী এবং বিবরণ রচনার পরিস্থিতি তুলনা করো।">
               Compare authors, dates, intended audiences and the circumstances in which accounts were written.
             </p>
           </article>
 
           <article class="source-item">
-            <h3 data-en="Modern scholarship"
-                data-bn="আধুনিক গবেষণা">Modern scholarship</h3>
-            <p data-en="Use scholarly books and peer-reviewed research to compare interpretations and trace citations."
-               data-bn="ব্যাখ্যা তুলনা করতে এবং উদ্ধৃতির সূত্র খুঁজতে গবেষণাধর্মী বই ও peer-reviewed গবেষণা ব্যবহার করো।">
+            <h3 data-en="Modern Scholarship" data-bn="আধুনিক গবেষণা">Modern Scholarship</h3>
+            <p
+              data-en="Use scholarly books and peer-reviewed research to compare interpretations and trace citations."
+              data-bn="ব্যাখ্যা তুলনা করতে এবং উদ্ধৃতির সূত্র খুঁজতে গবেষণাধর্মী বই ও peer-reviewed গবেষণা ব্যবহার করো।">
               Use scholarly books and peer-reviewed research to compare interpretations and trace citations.
             </p>
           </article>
+
         </div>
 
         <div class="notice">
-          <strong data-en="A useful habit: "
-                  data-bn="একটি কার্যকর অভ্যাস: ">A useful habit: </strong>
-          <span data-en="Record the author, title, date, edition or translation, page number and a stable link whenever available. Do not treat every historical report as independently verified fact."
-                data-bn="সম্ভব হলে লেখক, গ্রন্থের নাম, তারিখ, সংস্করণ বা অনুবাদ, পৃষ্ঠা নম্বর এবং স্থায়ী লিংক নথিবদ্ধ করো। প্রতিটি ঐতিহাসিক বর্ণনাকে স্বাধীনভাবে যাচাইকৃত সত্য হিসেবে ধরে নিও না।">
+          <strong data-en="A useful habit: " data-bn="একটি কার্যকর অভ্যাস: ">A useful habit: </strong>
+          <span
+            data-en="Record the author, title, date, edition or translation, page number and a stable link whenever available. Do not treat every historical report as independently verified fact."
+            data-bn="সম্ভব হলে লেখক, গ্রন্থের নাম, তারিখ, সংস্করণ বা অনুবাদ, পৃষ্ঠা নম্বর এবং স্থায়ী লিংক নথিবদ্ধ করো। প্রতিটি ঐতিহাসিক বর্ণনাকে স্বাধীনভাবে যাচাইকৃত সত্য হিসেবে ধরে নিও না।">
             Record the author, title, date, edition or translation, page number and a stable link whenever available. Do not treat every historical report as independently verified fact.
           </span>
         </div>
+
       </div>
     </section>
+
   </main>
 
   <footer>
     <div class="container footer-row">
       <div>
         <strong>History Atlas: Islamic Civilizations</strong>
-        <div data-en="Explore the past. Examine the evidence."
-             data-bn="অতীত অন্বেষণ করো। প্রমাণ যাচাই করো।">
+        <div
+          data-en="Explore the past. Examine the evidence."
+          data-bn="অতীত অন্বেষণ করো। প্রমাণ যাচাই করো।">
           Explore the past. Examine the evidence.
         </div>
       </div>
+
       <div>
         <a href="index.html" data-en="Home" data-bn="মূল পৃষ্ঠা">Home</a>
         &nbsp;·&nbsp;
         <a href="timeline.html" data-en="Timeline" data-bn="টাইমলাইন">Timeline</a>
         &nbsp;·&nbsp;
-        <a href="scholars.html" data-en="Scholars" data-bn="মনিষী">Scholars</a>
+        <a href="scholars.html" data-en="Scholars" data-bn="মনীষী">Scholars</a>
+        &nbsp;·&nbsp;
+        <a href="muslim-ummah-history.html" data-en="Muslim Ummah History" data-bn="মুসলিম উম্মাহর ইতিহাস">Muslim Ummah History</a>
       </div>
     </div>
   </footer>
 
+  <!-- BILINGUAL LANGUAGE SWITCH -->
   <script>
     const languageButton = document.getElementById("language-toggle");
-    const translatable = document.querySelectorAll("[data-en][data-bn]");
+    const translatableElements = document.querySelectorAll("[data-en][data-bn]");
 
     function setLanguage(language) {
       document.documentElement.lang = language;
 
-      translatable.forEach(function (element) {
-        const text = element.getAttribute("data-" + language);
-        if (text !== null) {
-          element.textContent = text;
-        }
+      translatableElements.forEach(function (element) {
+        element.textContent = element.getAttribute("data-" + language);
       });
 
       languageButton.textContent = language === "en" ? "বাংলা" : "English";
+
       languageButton.setAttribute(
         "aria-label",
-        language === "en" ? "বাংলায় পরিবর্তন করুন" : "Switch to English"
+        language === "en" ? "Switch to Bengali" : "Switch to English"
       );
 
       try {
         localStorage.setItem("historyAtlasLanguage", language);
       } catch (error) {
-        // The language switch still works if storage is unavailable.
+        // The page still works if browser storage is unavailable.
       }
     }
 
@@ -618,10 +688,11 @@
     try {
       savedLanguage = localStorage.getItem("historyAtlasLanguage") || "en";
     } catch (error) {
-      savedLanguage = "en";
+      // Default to English if browser storage is unavailable.
     }
 
     setLanguage(savedLanguage === "bn" ? "bn" : "en");
   </script>
+
 </body>
 </html>
